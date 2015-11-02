@@ -51,11 +51,11 @@
             this.ribbonGroup12 = new Elegant.Ui.RibbonGroup();
             this.btnConceptosClientes = new Elegant.Ui.Button();
             this.btnGestiónClientes = new Elegant.Ui.Button();
+            this.btnVehiculos = new Elegant.Ui.Button();
             this.ribbonGroup8 = new Elegant.Ui.RibbonGroup();
             this.btnTarifas = new Elegant.Ui.Button();
             this.btnGestonTarifas = new Elegant.Ui.Button();
             this.ribbonVehiculos = new Elegant.Ui.RibbonGroup();
-            this.btnVehiculos = new Elegant.Ui.Button();
             this.btnGestionVehiculos = new Elegant.Ui.Button();
             themeSelector = new Elegant.Ui.ThemeSelector(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon1)).BeginInit();
@@ -98,7 +98,7 @@
             this.ribbon1.Id = "80d5119b-9a8c-4698-a56b-e01c1a6ded9f";
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.Name = "ribbon1";
-            this.ribbon1.Size = new System.Drawing.Size(1179, 153);
+            this.ribbon1.Size = new System.Drawing.Size(1171, 153);
             this.ribbon1.TabIndex = 2;
             this.ribbon1.TabPages.AddRange(new Elegant.Ui.RibbonTabPage[] {
             this.ribbonTabPage1});
@@ -135,9 +135,9 @@
             // btnNuevaPoliza
             // 
             this.btnNuevaPoliza.Id = "eef41777-4c5a-41b8-abc2-1636e636535e";
-            this.btnNuevaPoliza.Location = new System.Drawing.Point(6, 0);
+            this.btnNuevaPoliza.Location = new System.Drawing.Point(4, 0);
             this.btnNuevaPoliza.Name = "btnNuevaPoliza";
-            this.btnNuevaPoliza.Size = new System.Drawing.Size(72, 0);
+            this.btnNuevaPoliza.Size = new System.Drawing.Size(42, 72);
             this.btnNuevaPoliza.TabIndex = 1;
             this.btnNuevaPoliza.Text = "Nueva Poliza";
             this.btnNuevaPoliza.Click += new System.EventHandler(this.btnNuevaPoliza_Click);
@@ -145,9 +145,9 @@
             // btnGestionPoliza
             // 
             this.btnGestionPoliza.Id = "d37d4a4c-4c93-47bd-bc3f-8b2040af579a";
-            this.btnGestionPoliza.Location = new System.Drawing.Point(6, 0);
+            this.btnGestionPoliza.Location = new System.Drawing.Point(48, 0);
             this.btnGestionPoliza.Name = "btnGestionPoliza";
-            this.btnGestionPoliza.Size = new System.Drawing.Size(96, 0);
+            this.btnGestionPoliza.Size = new System.Drawing.Size(56, 72);
             this.btnGestionPoliza.TabIndex = 2;
             this.btnGestionPoliza.Text = "Gestión de Polizas";
             // 
@@ -251,7 +251,7 @@
             this.ribbonTabPage1.KeyTip = null;
             this.ribbonTabPage1.Location = new System.Drawing.Point(0, 0);
             this.ribbonTabPage1.Name = "ribbonTabPage1";
-            this.ribbonTabPage1.Size = new System.Drawing.Size(1179, 99);
+            this.ribbonTabPage1.Size = new System.Drawing.Size(1171, 99);
             this.ribbonTabPage1.TabIndex = 0;
             this.ribbonTabPage1.Text = "CATALOGO";
             // 
@@ -284,6 +284,16 @@
             this.btnGestiónClientes.TabIndex = 2;
             this.btnGestiónClientes.Text = "Gestión Clientes";
             this.btnGestiónClientes.Click += new System.EventHandler(this.btnGestiónClientes_Click);
+            // 
+            // btnVehiculos
+            // 
+            this.btnVehiculos.Id = "682758ff-9ca2-42a6-a0ea-06f79a211692";
+            this.btnVehiculos.Location = new System.Drawing.Point(4, 0);
+            this.btnVehiculos.Name = "btnVehiculos";
+            this.btnVehiculos.Size = new System.Drawing.Size(54, 72);
+            this.btnVehiculos.TabIndex = 3;
+            this.btnVehiculos.Text = "Nuevo Vehiculos";
+            this.btnVehiculos.Click += new System.EventHandler(this.btnVehiculos_Click);
             // 
             // ribbonGroup8
             // 
@@ -324,16 +334,6 @@
             this.ribbonVehiculos.TabIndex = 12;
             this.ribbonVehiculos.Text = "VEHICULOS";
             // 
-            // btnVehiculos
-            // 
-            this.btnVehiculos.Id = "682758ff-9ca2-42a6-a0ea-06f79a211692";
-            this.btnVehiculos.Location = new System.Drawing.Point(4, 0);
-            this.btnVehiculos.Name = "btnVehiculos";
-            this.btnVehiculos.Size = new System.Drawing.Size(54, 72);
-            this.btnVehiculos.TabIndex = 3;
-            this.btnVehiculos.Text = "Nuevo Vehiculos";
-            this.btnVehiculos.Click += new System.EventHandler(this.btnVehiculos_Click);
-            // 
             // btnGestionVehiculos
             // 
             this.btnGestionVehiculos.Id = "7998a474-41e6-4366-b0c4-6b709613662a";
@@ -347,9 +347,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 632);
+            this.ClientSize = new System.Drawing.Size(1171, 632);
             this.Controls.Add(this.ribbon1);
-            this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Seguro para Vehiculos  ";
