@@ -41,7 +41,7 @@ namespace Seguros_American.Forms.Clientes
             try
             {
                 Basedatos db = new Basedatos();
-<<<<<<< HEAD
+
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.CommandText = "INSERT INTO cliente(nombre,rfcCliente,sexo, edad, calle, noExterior, noInterior, colonia, estado, cuidad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs) " +
                  "VALUES(@nombre,@rfcCliente, @sexo, @edad, @calle, @noExterior, @noInterior, @colonia, @estado, @cuidad, @cp, @pais, @telefono, @cel, @email, @fechaAlta, @ocupacion, @obs)";
@@ -65,30 +65,7 @@ namespace Seguros_American.Forms.Clientes
                 cmd.Parameters.AddWithValue("@ocupacion", txtOcupacion);
                 cmd.Parameters.AddWithValue("@obs", txtBoxObs);
                 db.Insertar(cmd);
-=======
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = "INSERT INTO cliente(nombre,rfcCliente,sexo, edad, calle, noExterior, noInterior, colonia, estado, cuidad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs) " +
-             "VALUES(@nombre,@rfcCliente, @sexo, @edad, @calle, @noExterior, @noInterior, @colonia, @estado, @cuidad, @cp, @pais, @telefono, @cel, @email, @fechaAlta, @ocupacion,@obs)";
-            cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
-            cmd.Parameters.AddWithValue("@rfcCliente", txtRfc.Text);
-            cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text);
-            cmd.Parameters.AddWithValue("@fechaNacimiento", txtEdad.Text);//fecha de nacimiento genera edad actual.
-            cmd.Parameters.AddWithValue("@calle", txtCalle.Text);
-            cmd.Parameters.AddWithValue("@noExterior", txtNoE.Text);
-            cmd.Parameters.AddWithValue("@noInterior", txtNoI.Text);
-            cmd.Parameters.AddWithValue("@colonia", txtColonia.Text);
-            cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
-            cmd.Parameters.AddWithValue("@cuidad", txtCiudad.Text);
-            cmd.Parameters.AddWithValue("@cp", txtCp.Text);
-            cmd.Parameters.AddWithValue("@pais", cmbPais.Text);
-            cmd.Parameters.AddWithValue("@telefono", txtTel.Text);
-            cmd.Parameters.AddWithValue("@cel", txtBoxCel.Text);
-            cmd.Parameters.AddWithValue("@email", txtCorreo);
-            cmd.Parameters.AddWithValue("@fechaAlta", );//se toma del sistema
-            cmd.Parameters.AddWithValue("@ocupacion", txtOcupacion);
-            cmd.Parameters.AddWithValue("@obs", txtBoxObs);
-            db.Insertar(cmd);
->>>>>>> c986c4ba20bd043164bc9f05e08eb62b6b61b60f
+
             }
             catch (Exception)
             {
