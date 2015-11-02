@@ -59,7 +59,7 @@ namespace Seguros_American.Forms.Clientes
             cmd.Parameters.AddWithValue("@telefono", txtTel.Text);
             cmd.Parameters.AddWithValue("@cel", txtBoxCel.Text);
             cmd.Parameters.AddWithValue("@email", txtCorreo);
-            cmd.Parameters.AddWithValue("@fechaAlta", ) //se toma del sistema
+            cmd.Parameters.AddWithValue("@fechaAlta", );//se toma del sistema
             cmd.Parameters.AddWithValue("@ocupacion", txtOcupacion);
             cmd.Parameters.AddWithValue("@obs", txtBoxObs);
             db.Insertar(cmd);
