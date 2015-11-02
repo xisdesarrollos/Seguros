@@ -15,6 +15,8 @@ namespace Seguros_American.Forms.Clientes
         public FrmGestionClientes()
         {
             InitializeComponent();
+            String sqlSelect = "SELECT * FROM clientes ORDER BY nombre ASC";
+            Globales.cargaGrid(sqlSelect, dgvClientes);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
