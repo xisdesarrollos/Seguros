@@ -38,6 +38,11 @@ namespace Seguros_American
 
         }
 
+        private void frmLoging_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }
