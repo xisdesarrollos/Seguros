@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace Seguros_American.Forms.Clientes
 {
     public partial class FrmNuevoCliente : Form
@@ -26,14 +27,6 @@ namespace Seguros_American.Forms.Clientes
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            if(guardaCliente())
-            {
-                MessageBox.Show("Se guardaron correctamente los datos del cliente");
-                this.Close();
-            }else
-            {
-                MessageBox.Show("Verifique con su proveedor");
-            }
         }
 
         private bool guardaCliente()
@@ -47,8 +40,8 @@ namespace Seguros_American.Forms.Clientes
                     Basedatos db = new Basedatos();
 
                     MySqlCommand cmd = new MySqlCommand();
-                    cmd.CommandText = "INSERT INTO cliente(nombre,rfcCliente,sexo, edad, calle, noExterior, noInterior, colonia, estado, cuidad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs) " +
-                     "VALUES(@nombre,@rfcCliente, @sexo, @edad, @calle, @noExterior, @noInterior, @colonia, @estado, @cuidad, @cp, @pais, @telefono, @cel, @email, @fechaAlta, @ocupacion, @obs)";
+                    cmd.CommandText = "INSERT INTO clientes(nombre,rfcCliente,sexo, fechaNacimiento, calle, noExterior, noInterior, colonia, estado, cuidad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs) " +
+                     "VALUES(@nombre,@rfcCliente, @sexo, @fechaNacimiento, @calle, @noExterior, @noInterior, @colonia, @estado, @cuidad, @cp, @pais, @telefono, @cel, @email, @fechaAlta, @ocupacion, @obs)";
                     cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@rfcCliente", txtRfc.Text);
                     cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text);
@@ -76,9 +69,11 @@ namespace Seguros_American.Forms.Clientes
                 }
 
             }
-            catch (Exception)
+            catch (MySqlException e)
             {
-                valorDeRetorno = false;                
+                valorDeRetorno = false;
+                Console.WriteLine(e);
+   
             }
             return valorDeRetorno;
         }
