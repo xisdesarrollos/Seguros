@@ -43,7 +43,8 @@ namespace Seguros_American.Forms
         private void btnGestiónClientes_Click(object sender, EventArgs e)
         {
             FrmGestionClientes gestionclientes = new FrmGestionClientes();
-            gestionclientes.ShowDialog();
+            gestionclientes.MdiParent = this;
+            gestionclientes.Show();
 
         }
 

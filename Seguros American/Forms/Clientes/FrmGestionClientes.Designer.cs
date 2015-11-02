@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.btnMostrarTodos = new Elegant.Ui.Button();
             this.txtCriterio = new Elegant.Ui.TextBox();
@@ -35,8 +36,13 @@
             this.btnNuevo = new Elegant.Ui.Button();
             this.groupFiltro = new Elegant.Ui.GroupBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.contextMenu1 = new Elegant.Ui.ContextMenu(this.components);
+            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
+            this.button1 = new Elegant.Ui.Button();
+            this.button2 = new Elegant.Ui.Button();
             this.groupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // formFrameSkinner
@@ -111,24 +117,55 @@
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contextMenuExtenderProvider1.SetContextPopupMenu(this.dgvClientes, this.contextMenu1);
             this.dgvClientes.Location = new System.Drawing.Point(14, 116);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(736, 368);
             this.dgvClientes.TabIndex = 4;
             // 
+            // contextMenu1
+            // 
+            this.contextMenu1.Items.AddRange(new System.Windows.Forms.Control[] {
+            this.button1,
+            this.button2});
+            this.contextMenu1.KeepPopupsWithOffsetPlacementWithinPlacementArea = false;
+            this.contextMenu1.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom;
+            this.contextMenu1.PlacementOffset = new System.Drawing.Size(218, 106);
+            this.contextMenu1.Size = new System.Drawing.Size(100, 100);
+            // 
+            // button1
+            // 
+            this.button1.Id = "fabab058-8600-41fe-bf76-3a9acdc5d78e";
+            this.button1.Location = new System.Drawing.Point(2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            // 
+            // button2
+            // 
+            this.button2.Id = "fccac47c-aac2-4493-ab55-c14617728a00";
+            this.button2.Location = new System.Drawing.Point(2, 25);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "button2";
+            // 
             // FrmGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 500);
+            this.ClientSize = new System.Drawing.Size(776, 508);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);
             this.Name = "FrmGestionClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupFiltro.ResumeLayout(false);
             this.groupFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -142,5 +179,9 @@
         private Elegant.Ui.ComboBox cmbFiltro;
         private Elegant.Ui.Button btnMostrarTodos;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private Elegant.Ui.ContextMenuExtenderProvider contextMenuExtenderProvider1;
+        private Elegant.Ui.ContextMenu contextMenu1;
+        private Elegant.Ui.Button button1;
+        private Elegant.Ui.Button button2;
     }
 }
