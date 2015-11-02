@@ -91,3 +91,6 @@ C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros Ame
 C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros American.csproj.GenerateResource.Cache
 C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros American.exe
 C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros American.pdb
+C:\Users\Programacion2\Desktop\Seguros-Develop\Seguros\Seguros American\bin\Debug\Seguros American.exe.config
+C:\Users\Programacion2\Desktop\Seguros-Develop\Seguros\Seguros American\obj\Debug\Seguros American.exe
+C:\Users\Programacion2\Desktop\Seguros-Develop\Seguros\Seguros American\obj\Debug\Seguros American.pdb
