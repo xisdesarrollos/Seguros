@@ -70,3 +70,24 @@ C:\Users\Josue Santacruz\Documents\New folder\Dropbox\Seguros American\Seguros A
 C:\Users\Programacion2\Dropbox\Seguros American\Seguros American\obj\Debug\Seguros_American.Forms.Configuracion.NuevoUsuario.resources
 C:\Users\Programacion2\Dropbox\Seguros American\Seguros American\obj\Debug\Seguros_American.Forms.SegurosAmericanos.FrmSegurosAmericanos2.resources
 C:\Users\Programacion2\Dropbox\Seguros American\Seguros American\obj\Debug\Seguros_American.Forms.Vehiculos.FrmNuevoVehiculo.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\bin\Debug\Seguros American.exe.config
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\bin\Debug\Seguros American.exe
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\bin\Debug\Seguros American.pdb
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros American.csprojResolveAssemblyReference.cache
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Clientes.FrmAuxCliente.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Clientes.FrmNuevoCliente.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Clientes.FrmGestionClientes.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Configuracion.FrmBaseDatos.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Configuracion.NuevoUsuario.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Configuracion.FrmUsuarios.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Configuracion.FrmTarifasAutos.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.FrmPrincipal.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.frmLoging.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.SegurosAmericanos.FrmSegurosAmericanos2.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Vehiculos.FrmAuxVehiculos.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Vehiculos.FrmNuevoVehiculo.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Properties.Resources.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.SegurosAmericanos.FrmSeguroAmericano.resources
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros American.csproj.GenerateResource.Cache
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros American.exe
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros American.pdb
