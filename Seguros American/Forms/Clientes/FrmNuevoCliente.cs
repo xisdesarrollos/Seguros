@@ -25,6 +25,7 @@ namespace Seguros_American.Forms.Clientes
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
             if(guardaCliente())
             {
                 MessageBox.Show("Se guardaron correctamente los datos del cliente");
@@ -40,31 +41,39 @@ namespace Seguros_American.Forms.Clientes
             bool valorDeRetorno = true;
             try
             {
-                Basedatos db = new Basedatos();
 
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = "INSERT INTO cliente(nombre,rfcCliente,sexo, edad, calle, noExterior, noInterior, colonia, estado, cuidad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs) " +
-                 "VALUES(@nombre,@rfcCliente, @sexo, @edad, @calle, @noExterior, @noInterior, @colonia, @estado, @cuidad, @cp, @pais, @telefono, @cel, @email, @fechaAlta, @ocupacion, @obs)";
-                cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
-                cmd.Parameters.AddWithValue("@rfcCliente", txtRfc.Text);
-                cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text);
-                cmd.Parameters.AddWithValue("@fechaNacimiento", dateNacimiento.Text);//fecha de nacimiento genera edad actual.
-                cmd.Parameters.AddWithValue("@calle", txtCalle.Text);
-                cmd.Parameters.AddWithValue("@noExterior", txtNoE.Text);
-                cmd.Parameters.AddWithValue("@noInterior", txtNoI.Text);
-                cmd.Parameters.AddWithValue("@colonia", txtColonia.Text);
-                cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
-                cmd.Parameters.AddWithValue("@cuidad", txtCiudad.Text);
-                cmd.Parameters.AddWithValue("@cp", txtCp.Text);
-                cmd.Parameters.AddWithValue("@pais", cmbPais.Text);
-                cmd.Parameters.AddWithValue("@telefono", txtTel.Text);
-                cmd.Parameters.AddWithValue("@cel", txtBoxCel.Text);
-                cmd.Parameters.AddWithValue("@email", txtCorreo);
-                DateTime dateNow = DateTime.Now;
-                cmd.Parameters.AddWithValue("@fechaAlta", dateNow.ToString("yyyy-MM-dd HH:mm:ss")); //se toma del sistema
-                cmd.Parameters.AddWithValue("@ocupacion", txtOcupacion);
-                cmd.Parameters.AddWithValue("@obs", txtBoxObs);
-                db.Insertar(cmd);
+                if (verificarValores())
+                {
+                    Basedatos db = new Basedatos();
+
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.CommandText = "INSERT INTO cliente(nombre,rfcCliente,sexo, edad, calle, noExterior, noInterior, colonia, estado, cuidad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs) " +
+                     "VALUES(@nombre,@rfcCliente, @sexo, @edad, @calle, @noExterior, @noInterior, @colonia, @estado, @cuidad, @cp, @pais, @telefono, @cel, @email, @fechaAlta, @ocupacion, @obs)";
+                    cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
+                    cmd.Parameters.AddWithValue("@rfcCliente", txtRfc.Text);
+                    cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text);
+                    cmd.Parameters.AddWithValue("@fechaNacimiento", dateNacimiento.Text);//fecha de nacimiento genera edad actual.
+                    cmd.Parameters.AddWithValue("@calle", txtCalle.Text);
+                    cmd.Parameters.AddWithValue("@noExterior", txtNoE.Text);
+                    cmd.Parameters.AddWithValue("@noInterior", txtNoI.Text);
+                    cmd.Parameters.AddWithValue("@colonia", txtColonia.Text);
+                    cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
+                    cmd.Parameters.AddWithValue("@cuidad", txtCiudad.Text);
+                    cmd.Parameters.AddWithValue("@cp", txtCp.Text);
+                    cmd.Parameters.AddWithValue("@pais", cmbPais.Text);
+                    cmd.Parameters.AddWithValue("@telefono", txtTel.Text);
+                    cmd.Parameters.AddWithValue("@cel", txtBoxCel.Text);
+                    cmd.Parameters.AddWithValue("@email", txtCorreo);
+                    DateTime dateNow = DateTime.Now;
+                    cmd.Parameters.AddWithValue("@fechaAlta", dateNow.ToString("yyyy-MM-dd HH:mm:ss")); //se toma del sistema
+                    cmd.Parameters.AddWithValue("@ocupacion", txtOcupacion);
+                    cmd.Parameters.AddWithValue("@obs", txtBoxObs);
+                    db.Insertar(cmd);
+                }
+                else
+                {
+                    valorDeRetorno = false;
+                }
 
             }
             catch (Exception)
@@ -74,6 +83,28 @@ namespace Seguros_American.Forms.Clientes
             return valorDeRetorno;
         }
 
+        private bool verificarValores() {
+            bool value = true;
+            //verificar campos del form...
+            //nombre,rfcCliente,sexo, edad, calle, noExterior, noInterior, colonia, estado, 
+            //cuidad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs
+            if (string.IsNullOrEmpty(txtNombre.Text) ||string.IsNullOrEmpty(txtRfc.Text) ||
+                string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrEmpty(txtEdad.Text) ||
+                string.IsNullOrEmpty(txtCalle.Text) || string.IsNullOrEmpty(txtNoE.Text) ||
+                string.IsNullOrEmpty(txtColonia.Text) || string.IsNullOrEmpty(txtEstado.Text) ||
+                string.IsNullOrEmpty(txtCiudad.Text) || string.IsNullOrEmpty(txtCp.Text) ||
+                string.IsNullOrEmpty(cmbPais.Text) || string.IsNullOrEmpty(txtTel.Text) ||
+                string.IsNullOrEmpty(txtBoxCel.Text) || string.IsNullOrEmpty(txtCorreo.Text) ||
+                string.IsNullOrEmpty(txtOcupacion.Text))
+            {
+                MessageBox.Show("Verifique campos vacios");
+                value = false;
+            }
+            //verificar edad.
+            //verificar 
+            return value;
+
+        }
         private void txtCiudad_TextChanged(object sender, EventArgs e)
         {
 
@@ -81,7 +112,15 @@ namespace Seguros_American.Forms.Clientes
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            
+            if (guardaCliente())
+            {
+                MessageBox.Show("Se guardaron correctamente los datos del cliente");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Verifique con su proveedor");
+            }
         }
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
