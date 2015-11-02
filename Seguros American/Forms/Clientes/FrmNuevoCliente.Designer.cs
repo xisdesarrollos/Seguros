@@ -266,6 +266,8 @@
             this.dateNacimiento.TabIndex = 1;
             this.dateNacimiento.TextEditorWidth = 121;
             this.dateNacimiento.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
+            this.dateNacimiento.ValueChanged += new System.EventHandler(this.dateNacimiento_ValueChanged);
+            this.dateNacimiento.Click += new System.EventHandler(this.dateNacimiento_Click);
             // 
             // cmbSexo
             // 
