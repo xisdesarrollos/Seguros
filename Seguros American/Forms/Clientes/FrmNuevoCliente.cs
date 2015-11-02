@@ -35,6 +35,7 @@ namespace Seguros_American.Forms.Clientes
             try
             {
 
+
                 if (verificarValores())
                 {
                     Basedatos db = new Basedatos();
@@ -67,6 +68,7 @@ namespace Seguros_American.Forms.Clientes
                 {
                     valorDeRetorno = false;
                 }
+
 
             }
             catch (MySqlException e)
