@@ -291,6 +291,7 @@
             this.txtCorreo.Size = new System.Drawing.Size(244, 21);
             this.txtCorreo.TabIndex = 15;
             this.txtCorreo.TextEditorWidth = 148;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // txtNombre
             // 
@@ -319,12 +320,13 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
             this.btnGuardar.TabIndex = 20;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // FrmNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 522);
+            this.ClientSize = new System.Drawing.Size(739, 530);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObsv);
             this.Controls.Add(this.groupBoxClientes);
