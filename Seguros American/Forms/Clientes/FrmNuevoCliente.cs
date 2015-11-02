@@ -40,27 +40,27 @@ namespace Seguros_American.Forms.Clientes
                     Basedatos db = new Basedatos();
 
                     MySqlCommand cmd = new MySqlCommand();
-                    cmd.CommandText = "INSERT INTO clientes(nombre,rfcCliente,sexo, fechaNacimiento, calle, noExterior, noInterior, colonia, estado, cuidad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs) " +
-                     "VALUES(@nombre,@rfcCliente, @sexo, @fechaNacimiento, @calle, @noExterior, @noInterior, @colonia, @estado, @cuidad, @cp, @pais, @telefono, @cel, @email, @fechaAlta, @ocupacion, @obs)";
+                    cmd.CommandText = "INSERT INTO clientes(nombre,rfcCliente,sexo, fechaNacimiento, calle, noExterior, noInterior, colonia, estado, ciudad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs) " +
+                     "VALUES(@nombre,@rfcCliente, @sexo, @fechaNacimiento, @calle, @noExterior, @noInterior, @colonia, @estado, @ciudad, @cp, @pais, @telefono, @cel, @email, @fechaAlta, @ocupacion, @obs)";
                     cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@rfcCliente", txtRfc.Text);
                     cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text);
-                    cmd.Parameters.AddWithValue("@fechaNacimiento", dateNacimiento.Text);//fecha de nacimiento genera edad actual.
+                    cmd.Parameters.AddWithValue("@fechaNacimiento",  DateTime.Parse(dateNacimiento.Value.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
                     cmd.Parameters.AddWithValue("@calle", txtCalle.Text);
                     cmd.Parameters.AddWithValue("@noExterior", txtNoE.Text);
                     cmd.Parameters.AddWithValue("@noInterior", txtNoI.Text);
                     cmd.Parameters.AddWithValue("@colonia", txtColonia.Text);
                     cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
-                    cmd.Parameters.AddWithValue("@cuidad", txtCiudad.Text);
+                    cmd.Parameters.AddWithValue("@ciudad", txtCiudad.Text);
                     cmd.Parameters.AddWithValue("@cp", txtCp.Text);
                     cmd.Parameters.AddWithValue("@pais", cmbPais.Text);
                     cmd.Parameters.AddWithValue("@telefono", txtTel.Text);
                     cmd.Parameters.AddWithValue("@cel", txtBoxCel.Text);
-                    cmd.Parameters.AddWithValue("@email", txtCorreo);
+                    cmd.Parameters.AddWithValue("@email", txtCorreo.Text);
                     DateTime dateNow = DateTime.Now;
                     cmd.Parameters.AddWithValue("@fechaAlta", dateNow.ToString("yyyy-MM-dd HH:mm:ss")); //se toma del sistema
-                    cmd.Parameters.AddWithValue("@ocupacion", txtOcupacion);
-                    cmd.Parameters.AddWithValue("@obs", txtBoxObs);
+                    cmd.Parameters.AddWithValue("@ocupacion", txtOcupacion.Text);
+                    cmd.Parameters.AddWithValue("@obs", txtBoxObs.Text);
                     db.Insertar(cmd);
                 }
                 else
