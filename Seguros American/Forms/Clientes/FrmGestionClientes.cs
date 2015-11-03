@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Seguros_American.Forms.Clientes
 {
@@ -26,6 +28,7 @@ namespace Seguros_American.Forms.Clientes
             Globales.EsNuevoCliente = true;
             FrmNuevoCliente nuevocliente = new FrmNuevoCliente();
             nuevocliente.ShowDialog();
+            Globales.cargaGrid(sqlSelect, dgvClientes);
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -61,6 +64,24 @@ namespace Seguros_American.Forms.Clientes
             nuevocliente.ShowDialog();
 
             Globales.cargaGrid(sqlSelect, dgvClientes);
+        }
+
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            Globales.cargaGrid(sqlSelect, dgvClientes);
+        }
+
+        private void txtCriterio_TextChanged(object sender, EventArgs e)
+        {
+            
+            string filter = cmbFiltro.Text.ToString();
+            string value = txtCriterio.Text.ToString();
+
+            string sqlCustomQuery = "SELECT * FROM clientes WHERE " + filter +
+                                    " LIKE '%" + value + "%' ORDER BY " + filter + " ASC";
+
+            Globales.cargaGrid(sqlCustomQuery, dgvClientes);
+          
         }
     }
 }

@@ -39,9 +39,9 @@
             this.groupFiltro = new Elegant.Ui.GroupBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.menuOpcionesClientes = new Elegant.Ui.ContextMenu(this.components);
-            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             this.btnEliminarCli = new Elegant.Ui.Button();
             this.btnEditarCli = new Elegant.Ui.Button();
+            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             this.groupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuOpcionesClientes)).BeginInit();
@@ -61,6 +61,7 @@
             this.btnMostrarTodos.Size = new System.Drawing.Size(82, 38);
             this.btnMostrarTodos.TabIndex = 2;
             this.btnMostrarTodos.Text = "Mostrar Todos";
+            this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // txtCriterio
             // 
@@ -73,6 +74,7 @@
             this.txtCriterio.Size = new System.Drawing.Size(248, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 393;
+            this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
             // 
             // cmbFiltro
             // 
@@ -80,10 +82,10 @@
             this.cmbFiltro.FormattingEnabled = false;
             this.cmbFiltro.Id = "0727ce68-1d48-4501-a43a-b1e01564947f";
             this.cmbFiltro.Items.AddRange(new object[] {
-            "ID",
-            "Nombre",
-            "Ciudad",
-            "Teléfono"});
+            "idCliente",
+            "nombre",
+            "ciudad",
+            "telefono"});
             this.cmbFiltro.LabelText = "Filtrar por:";
             this.cmbFiltro.Location = new System.Drawing.Point(15, 28);
             this.cmbFiltro.Name = "cmbFiltro";
@@ -177,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 508);
+            this.ClientSize = new System.Drawing.Size(784, 516);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);
             this.Name = "FrmGestionClientes";
