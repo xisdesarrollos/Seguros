@@ -47,5 +47,20 @@ namespace Seguros_American.Forms.Clientes
 
             Globales.cargaGrid(sqlSelect,dgvClientes);
         }
+
+        private void btnEditarCli_Click(object sender, EventArgs e)
+        {
+            Globales.EsNuevoCliente = false;
+            //set id
+            int index = dgvClientes.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dgvClientes.Rows[index];
+            string idCliente = selectedRow.Cells[0].Value.ToString();
+           
+            //enviar id 
+            FrmNuevoCliente nuevocliente = new FrmNuevoCliente(idCliente);
+            nuevocliente.ShowDialog();
+
+            Globales.cargaGrid(sqlSelect, dgvClientes);
+        }
     }
 }
