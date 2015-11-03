@@ -71,7 +71,6 @@
             // 
             // cmbModelo
             // 
-            this.cmbModelo.Editable = false;
             this.cmbModelo.FormattingEnabled = false;
             this.cmbModelo.Id = "e7a5ebf1-988b-406a-9744-e3d8a47a6a7d";
             this.cmbModelo.Items.AddRange(new object[] {
@@ -127,7 +126,6 @@
             // 
             // cmbMarca
             // 
-            this.cmbMarca.Editable = false;
             this.cmbMarca.FormattingEnabled = false;
             this.cmbMarca.Id = "eb3f3480-fec0-44ac-8e3b-261f72d423cd";
             this.cmbMarca.Items.AddRange(new object[] {
@@ -223,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 517);
+            this.ClientSize = new System.Drawing.Size(530, 525);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObs);
             this.Controls.Add(this.groupCliente);

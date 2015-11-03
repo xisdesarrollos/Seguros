@@ -15,102 +15,46 @@ namespace Seguros_American.Forms.Configuracion
     public partial class FrmTarifasAutos : Form
     {
 
-        Basedatos bd;
-        
-
         public FrmTarifasAutos()
         {
             InitializeComponent();
         }
 
-
-        private void FrmTarifasAutos30_60_25_Load(object sender, EventArgs e)
+        private void FrmTarifasAutos_Load(object sender, EventArgs e)
         {
-           foreach (Form frm in Application.OpenForms)
-           
+            // TODO: esta línea de código carga datos en la tabla 'dataSet1.tarifasautos' Puede moverla o quitarla según sea necesario.
+            try
             {
-                if (frm.Name == "Elegant UI")
-                    frm.Hide();
+                this.tarifasautosTableAdapter.Fill(this.dataSet1.tarifasautos);
+                dgvTarifa.Columns[0].ReadOnly = true;
+                dgvTarifa.AllowUserToAddRows = false;
+                dgvTarifa.AllowUserToDeleteRows = false;
             }
+            catch (MySqlException sqle)
+            {
+                Console.WriteLine(sqle);
+            }
+        }
 
-            bd = new Basedatos();
-            cargaTarifas();
-            //Globales.cargaGrid("SELECT dias, dp, gm, dp, total FROM tarifasautos ORDER BY dias ASC", dgv);
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            tarifasautosBindingSource.EndEdit();
+            tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
+            MessageBox.Show("Cambios realizados correctamente");
+            this.Close();
+
+        }
+
+        private void d(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void dgvTarifa_DataError(object sender, DataGridViewDataErrorEventArgs anError)
+        {
+            MessageBox.Show("Error al validar " + anError.Context.ToString());
             
-
-
-
-
-        }
-
-        
-
-        private void btnMostrarTodo_Click(object sender, EventArgs e)
-        {
-            Globales.cargaGrid("SELECT * FROM tarifasautos ORDER BY dias ASC", dgv);
-             
-        
-        }
-   
-
-     
-
-        private void eliminarTarifa(float dias)
-        {
-            bd.Eliminar("tarifasautos", "dias = " + Globales.auxTarifa);
-        }
-
-        private void FrmTarifasAutos30_60_25_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void cargaTarifas()
-        {
-            //dgv2.DataSource = bd.ConsultarAlterno("SELECT * FROM tarifas");
-            Globales.cargaGrid("Select * from tarifasautos", dgv);
-        }
-
-        private void dgv_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            int fila = e.RowIndex;
-            int columna = e.ColumnIndex;
-            MessageBox.Show("Fila; " + fila.ToString() + " Columna: " + columna.ToString());
-            //if (e.ColumnIndex == 0)
-            //{
-
-            //}
-        }
-
-        private void dgv_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-        
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+        } 
     }
 }

@@ -70,5 +70,16 @@ namespace Seguros_American.Properties {
                 this["db"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.1.200;user id=root;password=9753186400;database=seguros_americanos" +
+            ";persistsecurityinfo=True")]
+        public string seguros_americanosConnectionString {
+            get {
+                return ((string)(this["seguros_americanosConnectionString"]));
+            }
+        }
     }
 }

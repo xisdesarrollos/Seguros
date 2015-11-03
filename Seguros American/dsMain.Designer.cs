@@ -24,7 +24,7 @@ namespace Seguros_American {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSet1 : global::System.Data.DataSet {
         
-        private tarifasautos30DataTable tabletarifasautos30;
+        private tarifasautosDataTable tabletarifasautos;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace Seguros_American {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["tarifasautos30"] != null)) {
-                    base.Tables.Add(new tarifasautos30DataTable(ds.Tables["tarifasautos30"]));
+                if ((ds.Tables["tarifasautos"] != null)) {
+                    base.Tables.Add(new tarifasautosDataTable(ds.Tables["tarifasautos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Seguros_American {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public tarifasautos30DataTable tarifasautos30 {
+        public tarifasautosDataTable tarifasautos {
             get {
-                return this.tabletarifasautos30;
+                return this.tabletarifasautos;
             }
         }
         
@@ -152,8 +152,8 @@ namespace Seguros_American {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["tarifasautos30"] != null)) {
-                    base.Tables.Add(new tarifasautos30DataTable(ds.Tables["tarifasautos30"]));
+                if ((ds.Tables["tarifasautos"] != null)) {
+                    base.Tables.Add(new tarifasautosDataTable(ds.Tables["tarifasautos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Seguros_American {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabletarifasautos30 = ((tarifasautos30DataTable)(base.Tables["tarifasautos30"]));
+            this.tabletarifasautos = ((tarifasautosDataTable)(base.Tables["tarifasautos"]));
             if ((initTable == true)) {
-                if ((this.tabletarifasautos30 != null)) {
-                    this.tabletarifasautos30.InitVars();
+                if ((this.tabletarifasautos != null)) {
+                    this.tabletarifasautos.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace Seguros_American {
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabletarifasautos30 = new tarifasautos30DataTable();
-            base.Tables.Add(this.tabletarifasautos30);
+            this.tabletarifasautos = new tarifasautosDataTable();
+            base.Tables.Add(this.tabletarifasautos);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializetarifasautos30() {
+        private bool ShouldSerializetarifasautos() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace Seguros_American {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void tarifasautos30RowChangeEventHandler(object sender, tarifasautos30RowChangeEvent e);
+        public delegate void tarifasautosRowChangeEventHandler(object sender, tarifasautosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class tarifasautos30DataTable : global::System.Data.TypedTableBase<tarifasautos30Row> {
+        public partial class tarifasautosDataTable : global::System.Data.TypedTableBase<tarifasautosRow> {
             
             private global::System.Data.DataColumn columndias;
             
@@ -291,8 +291,8 @@ namespace Seguros_American {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tarifasautos30DataTable() {
-                this.TableName = "tarifasautos30";
+            public tarifasautosDataTable() {
+                this.TableName = "tarifasautos";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -300,7 +300,7 @@ namespace Seguros_American {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tarifasautos30DataTable(global::System.Data.DataTable table) {
+            internal tarifasautosDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -317,7 +317,7 @@ namespace Seguros_American {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected tarifasautos30DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected tarifasautosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -373,56 +373,56 @@ namespace Seguros_American {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tarifasautos30Row this[int index] {
+            public tarifasautosRow this[int index] {
                 get {
-                    return ((tarifasautos30Row)(this.Rows[index]));
+                    return ((tarifasautosRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tarifasautos30RowChangeEventHandler tarifasautos30RowChanging;
+            public event tarifasautosRowChangeEventHandler tarifasautosRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tarifasautos30RowChangeEventHandler tarifasautos30RowChanged;
+            public event tarifasautosRowChangeEventHandler tarifasautosRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tarifasautos30RowChangeEventHandler tarifasautos30RowDeleting;
+            public event tarifasautosRowChangeEventHandler tarifasautosRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event tarifasautos30RowChangeEventHandler tarifasautos30RowDeleted;
+            public event tarifasautosRowChangeEventHandler tarifasautosRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addtarifasautos30Row(tarifasautos30Row row) {
+            public void AddtarifasautosRow(tarifasautosRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tarifasautos30Row Addtarifasautos30Row(int dias, float pb, float gm, float dp, float total) {
-                tarifasautos30Row rowtarifasautos30Row = ((tarifasautos30Row)(this.NewRow()));
+            public tarifasautosRow AddtarifasautosRow(int dias, float pb, float gm, float dp, float total) {
+                tarifasautosRow rowtarifasautosRow = ((tarifasautosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         dias,
                         pb,
                         gm,
                         dp,
                         total};
-                rowtarifasautos30Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowtarifasautos30Row);
-                return rowtarifasautos30Row;
+                rowtarifasautosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtarifasautosRow);
+                return rowtarifasautosRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tarifasautos30Row FindBydias(int dias) {
-                return ((tarifasautos30Row)(this.Rows.Find(new object[] {
+            public tarifasautosRow FindBydias(int dias) {
+                return ((tarifasautosRow)(this.Rows.Find(new object[] {
                             dias})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                tarifasautos30DataTable cln = ((tarifasautos30DataTable)(base.Clone()));
+                tarifasautosDataTable cln = ((tarifasautosDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -430,7 +430,7 @@ namespace Seguros_American {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new tarifasautos30DataTable();
+                return new tarifasautosDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -468,28 +468,28 @@ namespace Seguros_American {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tarifasautos30Row Newtarifasautos30Row() {
-                return ((tarifasautos30Row)(this.NewRow()));
+            public tarifasautosRow NewtarifasautosRow() {
+                return ((tarifasautosRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new tarifasautos30Row(builder);
+                return new tarifasautosRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(tarifasautos30Row);
+                return typeof(tarifasautosRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.tarifasautos30RowChanged != null)) {
-                    this.tarifasautos30RowChanged(this, new tarifasautos30RowChangeEvent(((tarifasautos30Row)(e.Row)), e.Action));
+                if ((this.tarifasautosRowChanged != null)) {
+                    this.tarifasautosRowChanged(this, new tarifasautosRowChangeEvent(((tarifasautosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -497,8 +497,8 @@ namespace Seguros_American {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.tarifasautos30RowChanging != null)) {
-                    this.tarifasautos30RowChanging(this, new tarifasautos30RowChangeEvent(((tarifasautos30Row)(e.Row)), e.Action));
+                if ((this.tarifasautosRowChanging != null)) {
+                    this.tarifasautosRowChanging(this, new tarifasautosRowChangeEvent(((tarifasautosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -506,8 +506,8 @@ namespace Seguros_American {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.tarifasautos30RowDeleted != null)) {
-                    this.tarifasautos30RowDeleted(this, new tarifasautos30RowChangeEvent(((tarifasautos30Row)(e.Row)), e.Action));
+                if ((this.tarifasautosRowDeleted != null)) {
+                    this.tarifasautosRowDeleted(this, new tarifasautosRowChangeEvent(((tarifasautosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -515,14 +515,14 @@ namespace Seguros_American {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.tarifasautos30RowDeleting != null)) {
-                    this.tarifasautos30RowDeleting(this, new tarifasautos30RowChangeEvent(((tarifasautos30Row)(e.Row)), e.Action));
+                if ((this.tarifasautosRowDeleting != null)) {
+                    this.tarifasautosRowDeleting(this, new tarifasautosRowChangeEvent(((tarifasautosRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removetarifasautos30Row(tarifasautos30Row row) {
+            public void RemovetarifasautosRow(tarifasautosRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -549,7 +549,7 @@ namespace Seguros_American {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "tarifasautos30DataTable";
+                attribute2.FixedValue = "tarifasautosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -593,25 +593,25 @@ namespace Seguros_American {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class tarifasautos30Row : global::System.Data.DataRow {
+        public partial class tarifasautosRow : global::System.Data.DataRow {
             
-            private tarifasautos30DataTable tabletarifasautos30;
+            private tarifasautosDataTable tabletarifasautos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal tarifasautos30Row(global::System.Data.DataRowBuilder rb) : 
+            internal tarifasautosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabletarifasautos30 = ((tarifasautos30DataTable)(this.Table));
+                this.tabletarifasautos = ((tarifasautosDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int dias {
                 get {
-                    return ((int)(this[this.tabletarifasautos30.diasColumn]));
+                    return ((int)(this[this.tabletarifasautos.diasColumn]));
                 }
                 set {
-                    this[this.tabletarifasautos30.diasColumn] = value;
+                    this[this.tabletarifasautos.diasColumn] = value;
                 }
             }
             
@@ -619,10 +619,10 @@ namespace Seguros_American {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public float pb {
                 get {
-                    return ((float)(this[this.tabletarifasautos30.pbColumn]));
+                    return ((float)(this[this.tabletarifasautos.pbColumn]));
                 }
                 set {
-                    this[this.tabletarifasautos30.pbColumn] = value;
+                    this[this.tabletarifasautos.pbColumn] = value;
                 }
             }
             
@@ -630,10 +630,10 @@ namespace Seguros_American {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public float gm {
                 get {
-                    return ((float)(this[this.tabletarifasautos30.gmColumn]));
+                    return ((float)(this[this.tabletarifasautos.gmColumn]));
                 }
                 set {
-                    this[this.tabletarifasautos30.gmColumn] = value;
+                    this[this.tabletarifasautos.gmColumn] = value;
                 }
             }
             
@@ -641,10 +641,10 @@ namespace Seguros_American {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public float dp {
                 get {
-                    return ((float)(this[this.tabletarifasautos30.dpColumn]));
+                    return ((float)(this[this.tabletarifasautos.dpColumn]));
                 }
                 set {
-                    this[this.tabletarifasautos30.dpColumn] = value;
+                    this[this.tabletarifasautos.dpColumn] = value;
                 }
             }
             
@@ -652,10 +652,10 @@ namespace Seguros_American {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public float total {
                 get {
-                    return ((float)(this[this.tabletarifasautos30.totalColumn]));
+                    return ((float)(this[this.tabletarifasautos.totalColumn]));
                 }
                 set {
-                    this[this.tabletarifasautos30.totalColumn] = value;
+                    this[this.tabletarifasautos.totalColumn] = value;
                 }
             }
         }
@@ -664,22 +664,22 @@ namespace Seguros_American {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class tarifasautos30RowChangeEvent : global::System.EventArgs {
+        public class tarifasautosRowChangeEvent : global::System.EventArgs {
             
-            private tarifasautos30Row eventRow;
+            private tarifasautosRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tarifasautos30RowChangeEvent(tarifasautos30Row row, global::System.Data.DataRowAction action) {
+            public tarifasautosRowChangeEvent(tarifasautosRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tarifasautos30Row Row {
+            public tarifasautosRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -707,7 +707,7 @@ namespace Seguros_American.DataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class tarifasautos30TableAdapter : global::System.ComponentModel.Component {
+    public partial class tarifasautosTableAdapter : global::System.ComponentModel.Component {
         
         private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
         
@@ -721,7 +721,7 @@ namespace Seguros_American.DataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public tarifasautos30TableAdapter() {
+        public tarifasautosTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -818,7 +818,7 @@ namespace Seguros_American.DataSet1TableAdapters {
             this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "tarifasautos30";
+            tableMapping.DataSetTable = "tarifasautos";
             tableMapping.ColumnMappings.Add("dias", "dias");
             tableMapping.ColumnMappings.Add("pb", "pb");
             tableMapping.ColumnMappings.Add("gm", "gm");
@@ -827,8 +827,8 @@ namespace Seguros_American.DataSet1TableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `tarifasautos30` WHERE ((`dias` = @p1) AND (`pb` = @p2) AND (`gm` = @" +
-                "p3) AND (`dp` = @p4) AND (`total` = @p5))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `tarifasautos` WHERE ((`dias` = @p1) AND (`pb` = @p2) AND (`gm` = @p3" +
+                ") AND (`dp` = @p4) AND (`total` = @p5))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -872,8 +872,8 @@ namespace Seguros_American.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `tarifasautos30` (`dias`, `pb`, `gm`, `dp`, `total`) VALUES (@p1, @p2" +
-                ", @p3, @p4, @p5)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `tarifasautos` (`dias`, `pb`, `gm`, `dp`, `total`) VALUES (@p1, @p2, " +
+                "@p3, @p4, @p5)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -912,9 +912,9 @@ namespace Seguros_American.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `tarifasautos30` SET `dias` = @p1, `pb` = @p2, `gm` = @p3, `dp` = @p4, `to" +
-                "tal` = @p5 WHERE ((`dias` = @p6) AND (`pb` = @p7) AND (`gm` = @p8) AND (`dp` = @" +
-                "p9) AND (`total` = @p10))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `tarifasautos` SET `dias` = @p1, `pb` = @p2, `gm` = @p3, `dp` = @p4, `tota" +
+                "l` = @p5 WHERE ((`dias` = @p6) AND (`pb` = @p7) AND (`gm` = @p8) AND (`dp` = @p9" +
+                ") AND (`total` = @p10))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -997,6 +997,7 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::Seguros_American.Properties.Settings.Default.seguros_americanosConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1005,7 +1006,7 @@ namespace Seguros_American.DataSet1TableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        tarifasautos30.*\r\nFROM            tarifasautos30";
+            this._commandCollection[0].CommandText = "SELECT        dias, pb, gm, dp, total\r\nFROM            tarifasautos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1013,7 +1014,7 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.tarifasautos30DataTable dataTable) {
+        public virtual int Fill(DataSet1.tarifasautosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1026,9 +1027,9 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.tarifasautos30DataTable GetData() {
+        public virtual DataSet1.tarifasautosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.tarifasautos30DataTable dataTable = new DataSet1.tarifasautos30DataTable();
+            DataSet1.tarifasautosDataTable dataTable = new DataSet1.tarifasautosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1036,7 +1037,7 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.tarifasautos30DataTable dataTable) {
+        public virtual int Update(DataSet1.tarifasautosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -1044,7 +1045,7 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "tarifasautos30");
+            return this.Adapter.Update(dataSet, "tarifasautos");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1166,7 +1167,7 @@ namespace Seguros_American.DataSet1TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private tarifasautos30TableAdapter _tarifasautos30TableAdapter;
+        private tarifasautosTableAdapter _tarifasautosTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1188,12 +1189,12 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public tarifasautos30TableAdapter tarifasautos30TableAdapter {
+        public tarifasautosTableAdapter tarifasautosTableAdapter {
             get {
-                return this._tarifasautos30TableAdapter;
+                return this._tarifasautosTableAdapter;
             }
             set {
-                this._tarifasautos30TableAdapter = value;
+                this._tarifasautosTableAdapter = value;
             }
         }
         
@@ -1216,9 +1217,9 @@ namespace Seguros_American.DataSet1TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._tarifasautos30TableAdapter != null) 
-                            && (this._tarifasautos30TableAdapter.Connection != null))) {
-                    return this._tarifasautos30TableAdapter.Connection;
+                if (((this._tarifasautosTableAdapter != null) 
+                            && (this._tarifasautosTableAdapter.Connection != null))) {
+                    return this._tarifasautosTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1233,7 +1234,7 @@ namespace Seguros_American.DataSet1TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._tarifasautos30TableAdapter != null)) {
+                if ((this._tarifasautosTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1247,12 +1248,12 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tarifasautos30TableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.tarifasautos30.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tarifasautosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.tarifasautos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tarifasautos30TableAdapter.Update(updatedRows));
+                    result = (result + this._tarifasautosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1266,11 +1267,11 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tarifasautos30TableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.tarifasautos30.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tarifasautosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.tarifasautos.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tarifasautos30TableAdapter.Update(addedRows));
+                    result = (result + this._tarifasautosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1284,11 +1285,11 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._tarifasautos30TableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tarifasautos30.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tarifasautosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tarifasautos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tarifasautos30TableAdapter.Update(deletedRows));
+                    result = (result + this._tarifasautosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1331,8 +1332,8 @@ namespace Seguros_American.DataSet1TableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._tarifasautos30TableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tarifasautos30TableAdapter.Connection) == false))) {
+            if (((this._tarifasautosTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tarifasautosTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -1368,13 +1369,13 @@ namespace Seguros_American.DataSet1TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._tarifasautos30TableAdapter != null)) {
-                    revertConnections.Add(this._tarifasautos30TableAdapter, this._tarifasautos30TableAdapter.Connection);
-                    this._tarifasautos30TableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
-                    this._tarifasautos30TableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
-                    if (this._tarifasautos30TableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tarifasautos30TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tarifasautos30TableAdapter.Adapter);
+                if ((this._tarifasautosTableAdapter != null)) {
+                    revertConnections.Add(this._tarifasautosTableAdapter, this._tarifasautosTableAdapter.Connection);
+                    this._tarifasautosTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
+                    this._tarifasautosTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
+                    if (this._tarifasautosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tarifasautosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tarifasautosTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1435,9 +1436,9 @@ namespace Seguros_American.DataSet1TableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._tarifasautos30TableAdapter != null)) {
-                    this._tarifasautos30TableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._tarifasautos30TableAdapter]));
-                    this._tarifasautos30TableAdapter.Transaction = null;
+                if ((this._tarifasautosTableAdapter != null)) {
+                    this._tarifasautosTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._tarifasautosTableAdapter]));
+                    this._tarifasautosTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
