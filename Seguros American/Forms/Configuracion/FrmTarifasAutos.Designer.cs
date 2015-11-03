@@ -41,6 +41,7 @@
             this.dataSet1 = new Seguros_American.DataSet1();
             this.tarifasautosTableAdapter = new Seguros_American.DataSet1TableAdapters.tarifasautosTableAdapter();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnTarifasCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarifasautosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -75,6 +76,7 @@
             this.dgvTarifa.Name = "dgvTarifa";
             this.dgvTarifa.Size = new System.Drawing.Size(543, 701);
             this.dgvTarifa.TabIndex = 1;
+            this.dgvTarifa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellEndEdit);
             this.dgvTarifa.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTarifa_DataError);
             // 
             // diasDataGridViewTextBoxColumn
@@ -123,19 +125,30 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(466, 761);
+            this.btnSave.Location = new System.Drawing.Point(456, 765);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(100, 23);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Ok";
+            this.btnSave.Text = "Guardar Cambios";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnTarifasCancel
+            // 
+            this.btnTarifasCancel.Location = new System.Drawing.Point(364, 765);
+            this.btnTarifasCancel.Name = "btnTarifasCancel";
+            this.btnTarifasCancel.Size = new System.Drawing.Size(86, 23);
+            this.btnTarifasCancel.TabIndex = 4;
+            this.btnTarifasCancel.Text = "Cancelar";
+            this.btnTarifasCancel.UseVisualStyleBackColor = true;
+            this.btnTarifasCancel.Click += new System.EventHandler(this.btnTarifasCancel_Click);
             // 
             // FrmTarifasAutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 867);
+            this.ClientSize = new System.Drawing.Size(620, 883);
+            this.Controls.Add(this.btnTarifasCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dgvTarifa);
             this.Controls.Add(this.label1);
@@ -165,6 +178,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnTarifasCancel;
 
     }
 }

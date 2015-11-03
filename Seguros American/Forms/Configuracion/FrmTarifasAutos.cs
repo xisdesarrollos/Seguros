@@ -27,6 +27,7 @@ namespace Seguros_American.Forms.Configuracion
             {
                 this.tarifasautosTableAdapter.Fill(this.dataSet1.tarifasautos);
                 dgvTarifa.Columns[0].ReadOnly = true;
+                dgvTarifa.Columns[4].ReadOnly = true;
                 dgvTarifa.AllowUserToAddRows = false;
                 dgvTarifa.AllowUserToDeleteRows = false;
             }
@@ -55,6 +56,29 @@ namespace Seguros_American.Forms.Configuracion
         {
             MessageBox.Show("Error al validar " + anError.Context.ToString());
             
-        } 
+        }
+
+        private void dgvTarifa_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+          
+            //calcular el valor total automaticamente          
+            int rindex = e.RowIndex;
+            //obtener los datos para la operacion
+            int dias = int.Parse(dgvTarifa.Rows[rindex].Cells[0].Value.ToString());
+            int pb = int.Parse(dgvTarifa.Rows[rindex].Cells[1].Value.ToString());
+            int gm = int.Parse(dgvTarifa.Rows[rindex].Cells[2].Value.ToString());
+            int dp = int.Parse(dgvTarifa.Rows[rindex].Cells[3].Value.ToString());
+            int total = pb + gm + dp;
+            //editar en el grid con el resultado de la operacion
+            dgvTarifa.Rows[rindex].Cells[4].Value = total;
+            this.tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
+        }
+
+        private void btnTarifasCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+       
     }
 }
