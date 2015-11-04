@@ -75,6 +75,9 @@ namespace Seguros_American.Forms.Clientes
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
+            //reset values.
+            txtCriterio.Text = string.Empty;
+            cmbFiltro.SelectedIndex = -1;
             Globales.cargaGrid(sqlSelect, dgvClientes);
         }
 
