@@ -14,9 +14,6 @@ namespace Seguros_American.Forms.Vehiculos
     public partial class FrmNuevoVehiculo : Form , FrmGestionClientes.IGestionClientes
     {
 
-        
-        
-
         public FrmNuevoVehiculo()
         {
             InitializeComponent();
