@@ -116,3 +116,4 @@ C:\Users\Programacion2\Desktop\SA\Seguros\Seguros American\obj\Debug\Seguros_Ame
 C:\Users\Programacion2\Desktop\SA\Seguros\Seguros American\obj\Debug\Seguros_American.Properties.Resources.resources
 C:\Users\Programacion2\Desktop\SA\Seguros\Seguros American\obj\Debug\Seguros_American.SegurosAmericanos.FrmSeguroAmericano.resources
 C:\Users\Programacion2\Desktop\SA\Seguros\Seguros American\obj\Debug\Seguros American.csproj.GenerateResource.Cache
+C:\Users\PROGRAMACION3\Documents\Visual Studio 2013\Projects\Seguros\Seguros American\obj\Debug\Seguros_American.Forms.Configuracion.FrmPermisos.resources
