@@ -39,9 +39,10 @@
             this.groupFiltro = new Elegant.Ui.GroupBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.menuOpcionesClientes = new Elegant.Ui.ContextMenu(this.components);
-            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             this.btnEliminarCli = new Elegant.Ui.Button();
             this.btnEditarCli = new Elegant.Ui.Button();
+            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
+            this.btnOk = new System.Windows.Forms.Button();
             this.groupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuOpcionesClientes)).BeginInit();
@@ -61,6 +62,7 @@
             this.btnMostrarTodos.Size = new System.Drawing.Size(82, 38);
             this.btnMostrarTodos.TabIndex = 2;
             this.btnMostrarTodos.Text = "Mostrar Todos";
+            this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // txtCriterio
             // 
@@ -73,6 +75,7 @@
             this.txtCriterio.Size = new System.Drawing.Size(248, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 393;
+            this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
             // 
             // cmbFiltro
             // 
@@ -80,10 +83,10 @@
             this.cmbFiltro.FormattingEnabled = false;
             this.cmbFiltro.Id = "0727ce68-1d48-4501-a43a-b1e01564947f";
             this.cmbFiltro.Items.AddRange(new object[] {
-            "ID",
-            "Nombre",
-            "Ciudad",
-            "Teléfono"});
+            "idCliente",
+            "nombre",
+            "ciudad",
+            "telefono"});
             this.cmbFiltro.LabelText = "Filtrar por:";
             this.cmbFiltro.Location = new System.Drawing.Point(15, 28);
             this.cmbFiltro.Name = "cmbFiltro";
@@ -173,16 +176,28 @@
             this.btnEditarCli.Text = "Editar";
             this.btnEditarCli.Click += new System.EventHandler(this.btnEditarCli_Click);
             // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(675, 489);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 13;
+            this.btnOk.Text = "Ok";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
             // FrmGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 508);
+            this.ClientSize = new System.Drawing.Size(800, 532);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);
             this.Name = "FrmGestionClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Clientes";
+            this.Load += new System.EventHandler(this.FrmGestionClientes_Load);
             this.groupFiltro.ResumeLayout(false);
             this.groupFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
@@ -204,5 +219,6 @@
         private Elegant.Ui.Button btnEliminarCli;
         private Elegant.Ui.Button btnEditarCli;
         private Elegant.Ui.ContextMenuExtenderProvider contextMenuExtenderProvider1;
+        private System.Windows.Forms.Button btnOk;
     }
 }

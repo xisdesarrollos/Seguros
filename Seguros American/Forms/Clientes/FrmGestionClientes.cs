@@ -7,17 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Seguros_American.Forms.Clientes
 {
     public partial class FrmGestionClientes : Form
     {
         private String sqlSelect = "SELECT * FROM clientes ORDER BY nombre ASC";
-
+        private IGestionClientes iGestionClientes;
         public FrmGestionClientes()
         {
             InitializeComponent();
             
+            Globales.cargaGrid(sqlSelect, dgvClientes);
+        }
+
+        public FrmGestionClientes(IGestionClientes iGestionClientes)
+        {
+            InitializeComponent();
+            this.iGestionClientes = iGestionClientes;
             Globales.cargaGrid(sqlSelect, dgvClientes);
         }
 
@@ -26,6 +35,7 @@ namespace Seguros_American.Forms.Clientes
             Globales.EsNuevoCliente = true;
             FrmNuevoCliente nuevocliente = new FrmNuevoCliente();
             nuevocliente.ShowDialog();
+            Globales.cargaGrid(sqlSelect, dgvClientes);
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -61,6 +71,42 @@ namespace Seguros_American.Forms.Clientes
             nuevocliente.ShowDialog();
 
             Globales.cargaGrid(sqlSelect, dgvClientes);
+        }
+
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            Globales.cargaGrid(sqlSelect, dgvClientes);
+        }
+
+        private void txtCriterio_TextChanged(object sender, EventArgs e)
+        {
+            
+            string filter = cmbFiltro.Text.ToString();
+            string value = txtCriterio.Text.ToString();
+
+            string sqlCustomQuery = "SELECT * FROM clientes WHERE " + filter +
+                                    " LIKE '%" + value + "%' ORDER BY " + filter + " ASC";
+
+            Globales.cargaGrid(sqlCustomQuery, dgvClientes);
+          
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (this.iGestionClientes != null)  {
+                iGestionClientes.onDataGridOk(dgvClientes);
+            }
+            this.Close();
+        }
+
+        public interface IGestionClientes
+        {
+           void onDataGridOk(DataGridView dgv);
+        }
+
+        private void FrmGestionClientes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
