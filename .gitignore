@@ -1,4 +1,4 @@
 *.exe
 *.pdb
-**/*.suo
+*.suo
 *.v12.suo
