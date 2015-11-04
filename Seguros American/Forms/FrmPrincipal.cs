@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Seguros_American.Forms.Clientes;
-using Seguros_American.Forms.Configuracion;
 using Seguros_American.Forms.Vehiculos;
 using Seguros_American.SegurosAmericanos;
 using Seguros_American.Forms.SegurosAmericanos;
+using Seguros_American.Forms.Configuracion;
+
 
 
 
@@ -28,8 +29,7 @@ namespace Seguros_American.Forms
 
         private void btnTarifas_Click(object sender, EventArgs e)
         {
-            FrmTarifasAutos tarifa = new FrmTarifasAutos();
-            tarifa.ShowDialog();
+            
         }
 
         private void btnConceptosClientes_Click(object sender, EventArgs e)
@@ -67,6 +67,17 @@ namespace Seguros_American.Forms
             FrmSegurosAmericanos2 seguros2 = new FrmSegurosAmericanos2();
             seguros2.ShowDialog();
 
+        }
+
+        private void btnGestonTarifas_Click(object sender, EventArgs e)
+        {
+            FrmTarifasAutos tarifa = new FrmTarifasAutos();
+            tarifa.ShowDialog();
+        }
+
+        private void btnNuevoUsuario_Click(object sender, EventArgs e)
+        {
+           
         }
 
         
