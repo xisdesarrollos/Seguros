@@ -185,8 +185,11 @@
             this.btnBuscarCliente.Id = "0ab863ad-e15a-42f4-8218-4ccea992abfb";
             this.btnBuscarCliente.Location = new System.Drawing.Point(164, 11);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(32, 31);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(71, 31);
             this.btnBuscarCliente.TabIndex = 1;
+            this.btnBuscarCliente.Text = "Seleccionar";
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+
             // 
             // groupObs
             // 
@@ -221,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 525);
+            this.ClientSize = new System.Drawing.Size(546, 541);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObs);
             this.Controls.Add(this.groupCliente);

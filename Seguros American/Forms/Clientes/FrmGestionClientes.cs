@@ -15,11 +15,18 @@ namespace Seguros_American.Forms.Clientes
     public partial class FrmGestionClientes : Form
     {
         private String sqlSelect = "SELECT * FROM clientes ORDER BY nombre ASC";
-
+        private IGestionClientes iGestionClientes;
         public FrmGestionClientes()
         {
             InitializeComponent();
             
+            Globales.cargaGrid(sqlSelect, dgvClientes);
+        }
+
+        public FrmGestionClientes(IGestionClientes iGestionClientes)
+        {
+            InitializeComponent();
+            this.iGestionClientes = iGestionClientes;
             Globales.cargaGrid(sqlSelect, dgvClientes);
         }
 
@@ -82,6 +89,19 @@ namespace Seguros_American.Forms.Clientes
 
             Globales.cargaGrid(sqlCustomQuery, dgvClientes);
           
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (this.iGestionClientes != null)  {
+                iGestionClientes.onDataGridOk(dgvClientes);
+            }
+            this.Close();
+        }
+
+        public interface IGestionClientes
+        {
+           void onDataGridOk(DataGridView dgv);
         }
     }
 }

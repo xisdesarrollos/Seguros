@@ -42,6 +42,7 @@
             this.btnEliminarCli = new Elegant.Ui.Button();
             this.btnEditarCli = new Elegant.Ui.Button();
             this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
+            this.btnOk = new System.Windows.Forms.Button();
             this.groupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuOpcionesClientes)).BeginInit();
@@ -175,11 +176,22 @@
             this.btnEditarCli.Text = "Editar";
             this.btnEditarCli.Click += new System.EventHandler(this.btnEditarCli_Click);
             // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(675, 489);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 13;
+            this.btnOk.Text = "Ok";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
             // FrmGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 516);
+            this.ClientSize = new System.Drawing.Size(792, 524);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);
             this.Name = "FrmGestionClientes";
@@ -206,5 +218,6 @@
         private Elegant.Ui.Button btnEliminarCli;
         private Elegant.Ui.Button btnEditarCli;
         private Elegant.Ui.ContextMenuExtenderProvider contextMenuExtenderProvider1;
+        private System.Windows.Forms.Button btnOk;
     }
 }
