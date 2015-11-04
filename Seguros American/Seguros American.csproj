@@ -90,6 +90,12 @@
     <Compile Include="Forms\Clientes\FrmGestionClientes.Designer.cs">
       <DependentUpon>FrmGestionClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Configuracion\FrmPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Configuracion\FrmPermisos.Designer.cs">
+      <DependentUpon>FrmPermisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configuracion\FrmNuevoUsuario.resx">
       <DependentUpon>FrmNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Configuracion\FrmPermisos.resx">
+      <DependentUpon>FrmPermisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configuracion\FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>

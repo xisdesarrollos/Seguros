@@ -42,6 +42,7 @@
             this.btnNuevoVehiculo.Size = new System.Drawing.Size(86, 49);
             this.btnNuevoVehiculo.TabIndex = 1;
             this.btnNuevoVehiculo.Text = "Agregar Vehiculo";
+            this.btnNuevoVehiculo.Click += new System.EventHandler(this.btnNuevoVehiculo_Click);
             // 
             // dgv
             // 
@@ -64,10 +65,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 230);
+            this.ClientSize = new System.Drawing.Size(847, 238);
             this.Controls.Add(this.btnNuevoVehiculo);
             this.Controls.Add(this.dgv);
             this.Name = "FrmAuxVehiculos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehiculos";
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
