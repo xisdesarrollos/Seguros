@@ -93,12 +93,12 @@
             this.ribbonContextualTabGroup1,
             this.ribbonContextualTabGroup2,
             this.ribbonContextualTabGroup3});
-            this.ribbon1.CurrentTabPage = this.ribbonTabPage3;
+            this.ribbon1.CurrentTabPage = this.ribbonTabPage1;
             this.ribbon1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbon1.Id = "80d5119b-9a8c-4698-a56b-e01c1a6ded9f";
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.Name = "ribbon1";
-            this.ribbon1.Size = new System.Drawing.Size(1179, 153);
+            this.ribbon1.Size = new System.Drawing.Size(1195, 153);
             this.ribbon1.TabIndex = 2;
             this.ribbon1.TabPages.AddRange(new Elegant.Ui.RibbonTabPage[] {
             this.ribbonTabPage1});
@@ -166,7 +166,7 @@
             this.ribbonTabPage3.KeyTip = null;
             this.ribbonTabPage3.Location = new System.Drawing.Point(0, 0);
             this.ribbonTabPage3.Name = "ribbonTabPage3";
-            this.ribbonTabPage3.Size = new System.Drawing.Size(1179, 99);
+            this.ribbonTabPage3.Size = new System.Drawing.Size(1195, 99);
             this.ribbonTabPage3.TabIndex = 0;
             this.ribbonTabPage3.Text = "CONFIGURACIÓN";
             // 
@@ -198,6 +198,7 @@
             this.btnUsuarios.Size = new System.Drawing.Size(60, 72);
             this.btnUsuarios.TabIndex = 2;
             this.btnUsuarios.Text = "Gestión de usuarios";
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // ribbonGroup5
             // 
@@ -216,6 +217,7 @@
             this.btnBase.Size = new System.Drawing.Size(44, 72);
             this.btnBase.TabIndex = 3;
             this.btnBase.Text = "Base de datos";
+            this.btnBase.Click += new System.EventHandler(this.btnBase_Click);
             // 
             // ribbonContextualTabGroup3
             // 
@@ -252,7 +254,7 @@
             this.ribbonTabPage1.KeyTip = null;
             this.ribbonTabPage1.Location = new System.Drawing.Point(0, 0);
             this.ribbonTabPage1.Name = "ribbonTabPage1";
-            this.ribbonTabPage1.Size = new System.Drawing.Size(1179, 99);
+            this.ribbonTabPage1.Size = new System.Drawing.Size(1195, 99);
             this.ribbonTabPage1.TabIndex = 0;
             this.ribbonTabPage1.Text = "CATALOGO";
             // 
@@ -349,8 +351,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 632);
+            this.ClientSize = new System.Drawing.Size(1195, 632);
             this.Controls.Add(this.ribbon1);
+            this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Seguro para Vehiculos  ";

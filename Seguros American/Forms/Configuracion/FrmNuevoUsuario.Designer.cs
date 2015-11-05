@@ -1,6 +1,6 @@
 ﻿namespace Seguros_American.Forms.Configuracion
 {
-    partial class NuevoUsuario
+    partial class FrmNuevoUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -121,16 +121,18 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
             this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
-            // NuevoUsuario
+            // FrmNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 204);
+            this.ClientSize = new System.Drawing.Size(479, 194);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox1);
-            this.Name = "NuevoUsuario";
-            this.Text = "FrmNuevoUsuario";
+            this.Name = "FrmNuevoUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nuevo Usuario";
             this.Load += new System.EventHandler(this.NuevoUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
