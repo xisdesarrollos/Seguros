@@ -73,6 +73,19 @@
             this.comboSec = new Elegant.Ui.ComboBox();
             this.comboNoP = new Elegant.Ui.ComboBox();
             this.tabSegurosAmericanos = new Elegant.Ui.TabControl();
+            this.tabVehiculos = new Elegant.Ui.TabPage();
+            this.groupVehiculos = new Elegant.Ui.GroupBox();
+            this.vbl = new ComponentOwl.BetterListView.BetterListView();
+            this.btnVehiculo = new Elegant.Ui.Button();
+            this.tabDatoscliente = new Elegant.Ui.TabPage();
+            this.groupDatosCliente = new Elegant.Ui.GroupBox();
+            this.txtEstado = new Elegant.Ui.TextBox();
+            this.cmbPais = new Elegant.Ui.ComboBox();
+            this.txtCiudad = new Elegant.Ui.TextBox();
+            this.txtDireccion = new Elegant.Ui.TextBox();
+            this.txtNombre = new Elegant.Ui.TextBox();
+            this.btnClientes = new Elegant.Ui.Button();
+            this.txtNoCliente = new Elegant.Ui.TextBox();
             this.tabPage3 = new Elegant.Ui.TabPage();
             this.groupPrimas = new Elegant.Ui.GroupBox();
             this.cmbSeguro = new Elegant.Ui.ComboBox();
@@ -90,19 +103,6 @@
             this.dateIncVig = new Elegant.Ui.DateTimePicker();
             this.dateHoraInc = new Elegant.Ui.DateTimePicker();
             this.dateFinVig = new Elegant.Ui.DateTimePicker();
-            this.tabDatoscliente = new Elegant.Ui.TabPage();
-            this.groupDatosCliente = new Elegant.Ui.GroupBox();
-            this.txtEstado = new Elegant.Ui.TextBox();
-            this.cmbPais = new Elegant.Ui.ComboBox();
-            this.txtCiudad = new Elegant.Ui.TextBox();
-            this.txtDireccion = new Elegant.Ui.TextBox();
-            this.txtNombre = new Elegant.Ui.TextBox();
-            this.btnClientes = new Elegant.Ui.Button();
-            this.txtNoCliente = new Elegant.Ui.TextBox();
-            this.tabVehiculos = new Elegant.Ui.TabPage();
-            this.groupVehiculos = new Elegant.Ui.GroupBox();
-            this.vbl = new ComponentOwl.BetterListView.BetterListView();
-            this.btnVehiculo = new Elegant.Ui.Button();
             this.tabConductores = new Elegant.Ui.TabPage();
             this.groupConductores = new Elegant.Ui.GroupBox();
             this.txtEdad2 = new Elegant.Ui.TextBox();
@@ -124,13 +124,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.betterListView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabSegurosAmericanos)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            this.groupPrimas.SuspendLayout();
-            this.tabDatoscliente.SuspendLayout();
-            this.groupDatosCliente.SuspendLayout();
             this.tabVehiculos.SuspendLayout();
             this.groupVehiculos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vbl)).BeginInit();
+            this.tabDatoscliente.SuspendLayout();
+            this.groupDatosCliente.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupPrimas.SuspendLayout();
             this.tabConductores.SuspendLayout();
             this.groupConductores.SuspendLayout();
             this.SuspendLayout();
@@ -141,7 +141,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Id = "81358128-bbfd-4f70-8b26-733cfa17764f";
+            this.btnGuardar.Id = "887dafe4-c5e7-4cda-b5fe-252eebc02a14";
             this.btnGuardar.Location = new System.Drawing.Point(597, 391);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
@@ -636,6 +636,145 @@
             this.tabVehiculos,
             this.tabConductores});
             // 
+            // tabVehiculos
+            // 
+            this.tabVehiculos.ActiveControl = null;
+            this.tabVehiculos.Controls.Add(this.groupVehiculos);
+            this.tabVehiculos.KeyTip = null;
+            this.tabVehiculos.Name = "tabVehiculos";
+            this.tabVehiculos.Size = new System.Drawing.Size(649, 312);
+            this.tabVehiculos.TabIndex = 3;
+            this.tabVehiculos.Text = "Vehiculos";
+            // 
+            // groupVehiculos
+            // 
+            this.groupVehiculos.Controls.Add(this.vbl);
+            this.groupVehiculos.Controls.Add(this.btnVehiculo);
+            this.groupVehiculos.Id = "ed9a1abd-3bb7-463c-aaa8-13db6b489b64";
+            this.groupVehiculos.Location = new System.Drawing.Point(32, 35);
+            this.groupVehiculos.Name = "groupVehiculos";
+            this.groupVehiculos.Size = new System.Drawing.Size(586, 264);
+            this.groupVehiculos.TabIndex = 13;
+            this.groupVehiculos.Text = " Datos Vehiculos";
+            // 
+            // vbl
+            // 
+            this.vbl.Location = new System.Drawing.Point(11, 29);
+            this.vbl.Name = "vbl";
+            this.vbl.Size = new System.Drawing.Size(562, 151);
+            this.vbl.TabIndex = 28;
+            this.vbl.SelectedIndexChanged += new System.EventHandler(this.vbl_SelectedIndexChanged);
+            // 
+            // btnVehiculo
+            // 
+            this.btnVehiculo.Id = "6f9ca374-ea6c-4834-92a6-b8a57ba0b4a5";
+            this.btnVehiculo.Location = new System.Drawing.Point(520, 198);
+            this.btnVehiculo.Name = "btnVehiculo";
+            this.btnVehiculo.Size = new System.Drawing.Size(57, 52);
+            this.btnVehiculo.TabIndex = 0;
+            this.btnVehiculo.Text = "Vehiculo";
+            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
+            // 
+            // tabDatoscliente
+            // 
+            this.tabDatoscliente.ActiveControl = null;
+            this.tabDatoscliente.Controls.Add(this.groupDatosCliente);
+            this.tabDatoscliente.KeyTip = null;
+            this.tabDatoscliente.Name = "tabDatoscliente";
+            this.tabDatoscliente.Size = new System.Drawing.Size(649, 312);
+            this.tabDatoscliente.TabIndex = 1;
+            this.tabDatoscliente.Text = "Cliente";
+            // 
+            // groupDatosCliente
+            // 
+            this.groupDatosCliente.Controls.Add(this.txtEstado);
+            this.groupDatosCliente.Controls.Add(this.cmbPais);
+            this.groupDatosCliente.Controls.Add(this.txtCiudad);
+            this.groupDatosCliente.Controls.Add(this.txtDireccion);
+            this.groupDatosCliente.Controls.Add(this.txtNombre);
+            this.groupDatosCliente.Controls.Add(this.btnClientes);
+            this.groupDatosCliente.Controls.Add(this.txtNoCliente);
+            this.groupDatosCliente.Id = "7d90b642-fb0d-4d6a-87a6-8211e78c1536";
+            this.groupDatosCliente.Location = new System.Drawing.Point(37, 37);
+            this.groupDatosCliente.Name = "groupDatosCliente";
+            this.groupDatosCliente.Size = new System.Drawing.Size(578, 247);
+            this.groupDatosCliente.TabIndex = 8;
+            this.groupDatosCliente.Text = "Datos del Cliente";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Id = "1c76eca9-c90a-476a-bd92-c43e8b2bdb9b";
+            this.txtEstado.LabelText = "Estado:";
+            this.txtEstado.Location = new System.Drawing.Point(295, 180);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(247, 21);
+            this.txtEstado.TabIndex = 6;
+            this.txtEstado.TextEditorWidth = 202;
+            // 
+            // cmbPais
+            // 
+            this.cmbPais.Editable = false;
+            this.cmbPais.FormattingEnabled = false;
+            this.cmbPais.Id = "0192e059-b594-48d8-847c-c92f34c2af10";
+            this.cmbPais.Items.AddRange(new object[] {
+            "MÉXICO",
+            "USA"});
+            this.cmbPais.LabelText = "Pais:";
+            this.cmbPais.Location = new System.Drawing.Point(345, 52);
+            this.cmbPais.Name = "cmbPais";
+            this.cmbPais.Size = new System.Drawing.Size(197, 21);
+            this.cmbPais.TabIndex = 2;
+            this.cmbPais.TextEditorWidth = 152;
+            // 
+            // txtCiudad
+            // 
+            this.txtCiudad.Id = "1636c877-fd7a-418e-95fa-f07dc65e23be";
+            this.txtCiudad.LabelText = "Ciudad:";
+            this.txtCiudad.Location = new System.Drawing.Point(37, 180);
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(246, 21);
+            this.txtCiudad.TabIndex = 5;
+            this.txtCiudad.TextEditorWidth = 201;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Id = "a540bea3-6e16-4f8c-83f1-f9998544c8a7";
+            this.txtDireccion.LabelText = "Dirección:";
+            this.txtDireccion.Location = new System.Drawing.Point(37, 139);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(505, 21);
+            this.txtDireccion.TabIndex = 4;
+            this.txtDireccion.TextEditorWidth = 448;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Id = "fcd7eefd-cc45-4538-b81d-35be4cf3a285";
+            this.txtNombre.LabelText = "Nombre:";
+            this.txtNombre.Location = new System.Drawing.Point(37, 97);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(505, 21);
+            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TextEditorWidth = 456;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Id = "c388d68c-1a50-416c-869a-f4d00de5e52e";
+            this.btnClientes.Location = new System.Drawing.Point(284, 47);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(35, 35);
+            this.btnClientes.TabIndex = 1;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // txtNoCliente
+            // 
+            this.txtNoCliente.Id = "1e321c45-ddf3-4b2f-8e0e-6c840cd13742";
+            this.txtNoCliente.LabelText = "Número de Cliente:";
+            this.txtNoCliente.Location = new System.Drawing.Point(37, 52);
+            this.txtNoCliente.Name = "txtNoCliente";
+            this.txtNoCliente.Size = new System.Drawing.Size(239, 21);
+            this.txtNoCliente.TabIndex = 0;
+            this.txtNoCliente.TextEditorWidth = 140;
+            // 
             // tabPage3
             // 
             this.tabPage3.ActiveControl = null;
@@ -885,144 +1024,6 @@
             this.dateFinVig.TextEditorWidth = 98;
             this.dateFinVig.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
             // 
-            // tabDatoscliente
-            // 
-            this.tabDatoscliente.ActiveControl = null;
-            this.tabDatoscliente.Controls.Add(this.groupDatosCliente);
-            this.tabDatoscliente.KeyTip = null;
-            this.tabDatoscliente.Name = "tabDatoscliente";
-            this.tabDatoscliente.Size = new System.Drawing.Size(649, 312);
-            this.tabDatoscliente.TabIndex = 1;
-            this.tabDatoscliente.Text = "Cliente";
-            // 
-            // groupDatosCliente
-            // 
-            this.groupDatosCliente.Controls.Add(this.txtEstado);
-            this.groupDatosCliente.Controls.Add(this.cmbPais);
-            this.groupDatosCliente.Controls.Add(this.txtCiudad);
-            this.groupDatosCliente.Controls.Add(this.txtDireccion);
-            this.groupDatosCliente.Controls.Add(this.txtNombre);
-            this.groupDatosCliente.Controls.Add(this.btnClientes);
-            this.groupDatosCliente.Controls.Add(this.txtNoCliente);
-            this.groupDatosCliente.Id = "7d90b642-fb0d-4d6a-87a6-8211e78c1536";
-            this.groupDatosCliente.Location = new System.Drawing.Point(37, 37);
-            this.groupDatosCliente.Name = "groupDatosCliente";
-            this.groupDatosCliente.Size = new System.Drawing.Size(578, 247);
-            this.groupDatosCliente.TabIndex = 8;
-            this.groupDatosCliente.Text = "Datos del Cliente";
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Id = "1c76eca9-c90a-476a-bd92-c43e8b2bdb9b";
-            this.txtEstado.LabelText = "Estado:";
-            this.txtEstado.Location = new System.Drawing.Point(295, 180);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(247, 21);
-            this.txtEstado.TabIndex = 6;
-            this.txtEstado.TextEditorWidth = 202;
-            // 
-            // cmbPais
-            // 
-            this.cmbPais.Editable = false;
-            this.cmbPais.FormattingEnabled = false;
-            this.cmbPais.Id = "0192e059-b594-48d8-847c-c92f34c2af10";
-            this.cmbPais.Items.AddRange(new object[] {
-            "MÉXICO",
-            "USA"});
-            this.cmbPais.LabelText = "Pais:";
-            this.cmbPais.Location = new System.Drawing.Point(345, 52);
-            this.cmbPais.Name = "cmbPais";
-            this.cmbPais.Size = new System.Drawing.Size(197, 21);
-            this.cmbPais.TabIndex = 2;
-            this.cmbPais.TextEditorWidth = 152;
-            // 
-            // txtCiudad
-            // 
-            this.txtCiudad.Id = "1636c877-fd7a-418e-95fa-f07dc65e23be";
-            this.txtCiudad.LabelText = "Ciudad:";
-            this.txtCiudad.Location = new System.Drawing.Point(37, 180);
-            this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(246, 21);
-            this.txtCiudad.TabIndex = 5;
-            this.txtCiudad.TextEditorWidth = 201;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Id = "a540bea3-6e16-4f8c-83f1-f9998544c8a7";
-            this.txtDireccion.LabelText = "Dirección:";
-            this.txtDireccion.Location = new System.Drawing.Point(37, 139);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(505, 21);
-            this.txtDireccion.TabIndex = 4;
-            this.txtDireccion.TextEditorWidth = 448;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Id = "fcd7eefd-cc45-4538-b81d-35be4cf3a285";
-            this.txtNombre.LabelText = "Nombre:";
-            this.txtNombre.Location = new System.Drawing.Point(37, 97);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(505, 21);
-            this.txtNombre.TabIndex = 3;
-            this.txtNombre.TextEditorWidth = 456;
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Id = "c388d68c-1a50-416c-869a-f4d00de5e52e";
-            this.btnClientes.Location = new System.Drawing.Point(284, 47);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(35, 35);
-            this.btnClientes.TabIndex = 1;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // txtNoCliente
-            // 
-            this.txtNoCliente.Id = "1e321c45-ddf3-4b2f-8e0e-6c840cd13742";
-            this.txtNoCliente.LabelText = "Número de Cliente:";
-            this.txtNoCliente.Location = new System.Drawing.Point(37, 52);
-            this.txtNoCliente.Name = "txtNoCliente";
-            this.txtNoCliente.Size = new System.Drawing.Size(239, 21);
-            this.txtNoCliente.TabIndex = 0;
-            this.txtNoCliente.TextEditorWidth = 140;
-            // 
-            // tabVehiculos
-            // 
-            this.tabVehiculos.ActiveControl = null;
-            this.tabVehiculos.Controls.Add(this.groupVehiculos);
-            this.tabVehiculos.KeyTip = null;
-            this.tabVehiculos.Name = "tabVehiculos";
-            this.tabVehiculos.Size = new System.Drawing.Size(649, 312);
-            this.tabVehiculos.TabIndex = 3;
-            this.tabVehiculos.Text = "Vehiculos";
-            // 
-            // groupVehiculos
-            // 
-            this.groupVehiculos.Controls.Add(this.vbl);
-            this.groupVehiculos.Controls.Add(this.btnVehiculo);
-            this.groupVehiculos.Id = "ed9a1abd-3bb7-463c-aaa8-13db6b489b64";
-            this.groupVehiculos.Location = new System.Drawing.Point(32, 35);
-            this.groupVehiculos.Name = "groupVehiculos";
-            this.groupVehiculos.Size = new System.Drawing.Size(586, 264);
-            this.groupVehiculos.TabIndex = 13;
-            this.groupVehiculos.Text = " Datos Vehiculos";
-            // 
-            // vbl
-            // 
-            this.vbl.Location = new System.Drawing.Point(11, 29);
-            this.vbl.Name = "vbl";
-            this.vbl.Size = new System.Drawing.Size(562, 151);
-            this.vbl.TabIndex = 28;
-            // 
-            // btnVehiculo
-            // 
-            this.btnVehiculo.Id = "6f9ca374-ea6c-4834-92a6-b8a57ba0b4a5";
-            this.btnVehiculo.Location = new System.Drawing.Point(520, 198);
-            this.btnVehiculo.Name = "btnVehiculo";
-            this.btnVehiculo.Size = new System.Drawing.Size(57, 52);
-            this.btnVehiculo.TabIndex = 0;
-            this.btnVehiculo.Text = "Vehiculo";
-            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
-            // 
             // tabConductores
             // 
             this.tabConductores.ActiveControl = null;
@@ -1198,7 +1199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 464);
+            this.ClientSize = new System.Drawing.Size(728, 480);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.IsMdiContainer = true;
@@ -1217,15 +1218,15 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabSegurosAmericanos)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.groupPrimas.ResumeLayout(false);
-            this.groupPrimas.PerformLayout();
-            this.tabDatoscliente.ResumeLayout(false);
-            this.groupDatosCliente.ResumeLayout(false);
-            this.groupDatosCliente.PerformLayout();
             this.tabVehiculos.ResumeLayout(false);
             this.groupVehiculos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vbl)).EndInit();
+            this.tabDatoscliente.ResumeLayout(false);
+            this.groupDatosCliente.ResumeLayout(false);
+            this.groupDatosCliente.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.groupPrimas.ResumeLayout(false);
+            this.groupPrimas.PerformLayout();
             this.tabConductores.ResumeLayout(false);
             this.groupConductores.ResumeLayout(false);
             this.groupConductores.PerformLayout();

@@ -50,7 +50,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 7);
+            this.label1.Location = new System.Drawing.Point(400, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(352, 33);
             this.label1.TabIndex = 2;
@@ -72,9 +72,9 @@
             this.dpDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn});
             this.dgvTarifa.DataSource = this.tarifasautosBindingSource;
-            this.dgvTarifa.Location = new System.Drawing.Point(13, 45);
+            this.dgvTarifa.Location = new System.Drawing.Point(315, 43);
             this.dgvTarifa.Name = "dgvTarifa";
-            this.dgvTarifa.Size = new System.Drawing.Size(543, 701);
+            this.dgvTarifa.Size = new System.Drawing.Size(564, 545);
             this.dgvTarifa.TabIndex = 1;
             this.dgvTarifa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellEndEdit);
             this.dgvTarifa.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTarifa_DataError);
@@ -125,9 +125,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(456, 765);
+            this.btnSave.Location = new System.Drawing.Point(914, 81);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 23);
+            this.btnSave.Size = new System.Drawing.Size(86, 23);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Guardar Cambios";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             // 
             // btnTarifasCancel
             // 
-            this.btnTarifasCancel.Location = new System.Drawing.Point(364, 765);
+            this.btnTarifasCancel.Location = new System.Drawing.Point(914, 52);
             this.btnTarifasCancel.Name = "btnTarifasCancel";
             this.btnTarifasCancel.Size = new System.Drawing.Size(86, 23);
             this.btnTarifasCancel.TabIndex = 4;
@@ -147,13 +147,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 883);
+            this.ClientSize = new System.Drawing.Size(1270, 739);
             this.Controls.Add(this.btnTarifasCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dgvTarifa);
             this.Controls.Add(this.label1);
             this.Name = "FrmTarifasAutos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmTarifasAutos_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.d);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifa)).EndInit();

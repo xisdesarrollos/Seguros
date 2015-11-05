@@ -55,55 +55,59 @@ namespace Seguros_American.Forms
 
         }
 
-        private void btnNuevaTrans_Click(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void btnNuevaPoliza_Click(object sender, EventArgs e)
-        {
-            //FrmSeguroAmericano segurosamer = new FrmSeguroAmericano();
-            //segurosamer.ShowDialog();
-            FrmSegurosAmericanos2 seguros2 = new FrmSegurosAmericanos2();
-            seguros2.Show();
-
-        }
-
+        
         private void btnGestonTarifas_Click(object sender, EventArgs e)
         {
             FrmTarifasAutos tarifa = new FrmTarifasAutos();
+            tarifa.MdiParent = this;
             tarifa.Show();
         }
 
         
-
-        private void btnBase_Click(object sender, EventArgs e)
-        {
-            FrmBaseDatos basedatos = new FrmBaseDatos();
-            basedatos.Show();
-
-
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            FrmUsuarios frmUsuarios = new FrmUsuarios();
-            frmUsuarios.MdiParent = this;
-            frmUsuarios.Show();    
-        }
-
-        private void btnNuevoUsuario_Click(object sender, EventArgs e)
+        private void btnNuevoUsuario_Click_1(object sender, EventArgs e)
         {
             Globales.EsNuevoUsuario = true;
             FrmNuevoUsuario frmNuevoUsuario = new FrmNuevoUsuario();
             frmNuevoUsuario.Show();
         }
 
+        private void btnGestionUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frmUsuarios = new FrmUsuarios();
+            frmUsuarios.MdiParent = this;
+            frmUsuarios.Show();  
+        }
+
+        private void btnBase_Click(object sender, EventArgs e)
+        {
+            FrmBaseDatos basedatos = new FrmBaseDatos();
+            basedatos.Show();
+        }
+
+        private void btnNuevaPoliza_Click(object sender, EventArgs e)
+        {
+            FrmSegurosAmericanos2 seguros2 = new FrmSegurosAmericanos2();
+            seguros2.Show();
+        }
+
+        private void btnGestionVehiculos_Click(object sender, EventArgs e)
+        {
+            FrmGestionVeh frmgestionveh = new FrmGestionVeh();
+            frmgestionveh.MdiParent = this;
+            frmgestionveh.Show();
+        }
+
         private void btnGestionPoliza_Click(object sender, EventArgs e)
         {
+            FrmGestionPolizas gestionpolizas = new FrmGestionPolizas();
+            gestionpolizas.MdiParent = this;           
+            gestionpolizas.Show();
 
         }
+
+        
+
+       
 
         
 

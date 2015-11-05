@@ -37,7 +37,7 @@
             // btnNuevoVehiculo
             // 
             this.btnNuevoVehiculo.Id = "69336b0e-cecf-4116-b8d9-5c19fbab5c3c";
-            this.btnNuevoVehiculo.Location = new System.Drawing.Point(725, 172);
+            this.btnNuevoVehiculo.Location = new System.Drawing.Point(680, 190);
             this.btnNuevoVehiculo.Name = "btnNuevoVehiculo";
             this.btnNuevoVehiculo.Size = new System.Drawing.Size(86, 49);
             this.btnNuevoVehiculo.TabIndex = 1;
@@ -54,7 +54,7 @@
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(818, 147);
+            this.dgv.Size = new System.Drawing.Size(757, 147);
             this.dgv.TabIndex = 0;
             // 
             // formFrameSkinner
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 238);
+            this.ClientSize = new System.Drawing.Size(781, 256);
             this.Controls.Add(this.btnNuevoVehiculo);
             this.Controls.Add(this.dgv);
             this.Name = "FrmAuxVehiculos";

@@ -102,6 +102,12 @@
     <Compile Include="Forms\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SegurosAmericanos\FrmGestionPolizas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SegurosAmericanos\FrmGestionPolizas.Designer.cs">
+      <DependentUpon>FrmGestionPolizas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\SegurosAmericanos\FrmSeguroAmericano.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     </Compile>
     <Compile Include="Forms\Vehiculos\FrmAuxVehiculos.Designer.cs">
       <DependentUpon>FrmAuxVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Vehiculos\FrmGestionVeh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Vehiculos\FrmGestionVeh.Designer.cs">
+      <DependentUpon>FrmGestionVeh.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Vehiculos\FrmNuevoVehiculo.cs">
       <SubType>Form</SubType>
@@ -206,11 +218,17 @@
     <EmbeddedResource Include="Forms\Frmlogin.resx">
       <DependentUpon>Frmlogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SegurosAmericanos\FrmGestionPolizas.resx">
+      <DependentUpon>FrmGestionPolizas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SegurosAmericanos\FrmSegurosAmericanos2.resx">
       <DependentUpon>FrmSegurosAmericanos2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Vehiculos\FrmAuxVehiculos.resx">
       <DependentUpon>FrmAuxVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Vehiculos\FrmGestionVeh.resx">
+      <DependentUpon>FrmGestionVeh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Vehiculos\FrmNuevoVehiculo.resx">
       <DependentUpon>FrmNuevoVehiculo.cs</DependentUpon>

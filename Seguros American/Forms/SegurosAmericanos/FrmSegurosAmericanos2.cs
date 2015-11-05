@@ -38,6 +38,13 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         }
 
+        private void vbl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
        
     }
 }

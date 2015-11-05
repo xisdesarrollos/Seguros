@@ -63,7 +63,7 @@
             this.groupAuto.Controls.Add(this.cmbMarca);
             this.groupAuto.Controls.Add(this.txtSub);
             this.groupAuto.Id = "833c2dfa-0304-4fd6-b8ac-843fb6310f6c";
-            this.groupAuto.Location = new System.Drawing.Point(20, 97);
+            this.groupAuto.Location = new System.Drawing.Point(28, 97);
             this.groupAuto.Name = "groupAuto";
             this.groupAuto.Size = new System.Drawing.Size(469, 234);
             this.groupAuto.TabIndex = 5;
@@ -162,7 +162,7 @@
             this.groupCliente.Controls.Add(this.btnBuscarCliente);
             this.groupCliente.Controls.Add(this.txtNoCliente);
             this.groupCliente.Id = "3f85fe7e-2cdf-4dfc-aab3-800176f1f18d";
-            this.groupCliente.Location = new System.Drawing.Point(20, 22);
+            this.groupCliente.Location = new System.Drawing.Point(28, 22);
             this.groupCliente.Name = "groupCliente";
             this.groupCliente.Size = new System.Drawing.Size(469, 55);
             this.groupCliente.TabIndex = 7;
@@ -189,7 +189,7 @@
             // 
             this.groupObs.Controls.Add(this.txtBoxObs);
             this.groupObs.Id = "efdb789f-caf0-4468-817b-28d2fbe5a900";
-            this.groupObs.Location = new System.Drawing.Point(20, 348);
+            this.groupObs.Location = new System.Drawing.Point(28, 348);
             this.groupObs.Name = "groupObs";
             this.groupObs.Size = new System.Drawing.Size(469, 101);
             this.groupObs.TabIndex = 9;
@@ -208,7 +208,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Id = "79bfdc32-d0f8-4cb3-9df4-cddcb6a3e2df";
-            this.btnGuardar.Location = new System.Drawing.Point(414, 456);
+            this.btnGuardar.Location = new System.Drawing.Point(422, 456);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 48);
             this.btnGuardar.TabIndex = 11;
@@ -219,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 541);
+            this.ClientSize = new System.Drawing.Size(514, 520);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObs);
             this.Controls.Add(this.groupCliente);
