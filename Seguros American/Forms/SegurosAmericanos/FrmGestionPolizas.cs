@@ -23,5 +23,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
             FrmSegurosAmericanos2 segurosamer = new FrmSegurosAmericanos2();
             segurosamer.Show();
         }
+
+        private void FrmGestionPolizas_Load(object sender, EventArgs e)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name == "Elegant UI")
+                    frm.Hide();
+            }
+        }
     }
 }
