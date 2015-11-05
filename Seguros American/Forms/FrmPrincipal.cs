@@ -100,6 +100,11 @@ namespace Seguros_American.Forms
             frmNuevoUsuario.Show();
         }
 
+        private void btnGestionPoliza_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
 
         

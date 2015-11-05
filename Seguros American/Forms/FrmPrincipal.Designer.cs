@@ -93,12 +93,12 @@
             this.ribbonContextualTabGroup1,
             this.ribbonContextualTabGroup2,
             this.ribbonContextualTabGroup3});
-            this.ribbon1.CurrentTabPage = this.ribbonTabPage1;
+            this.ribbon1.CurrentTabPage = this.ribbonTabPage2;
             this.ribbon1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbon1.Id = "80d5119b-9a8c-4698-a56b-e01c1a6ded9f";
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.Name = "ribbon1";
-            this.ribbon1.Size = new System.Drawing.Size(1195, 153);
+            this.ribbon1.Size = new System.Drawing.Size(1203, 153);
             this.ribbon1.TabIndex = 2;
             this.ribbon1.TabPages.AddRange(new Elegant.Ui.RibbonTabPage[] {
             this.ribbonTabPage1});
@@ -118,7 +118,7 @@
             this.ribbonTabPage2.KeyTip = null;
             this.ribbonTabPage2.Location = new System.Drawing.Point(0, 0);
             this.ribbonTabPage2.Name = "ribbonTabPage2";
-            this.ribbonTabPage2.Size = new System.Drawing.Size(1171, 99);
+            this.ribbonTabPage2.Size = new System.Drawing.Size(1203, 99);
             this.ribbonTabPage2.TabIndex = 0;
             this.ribbonTabPage2.Text = "OPERACIONES";
             // 
@@ -135,9 +135,9 @@
             // btnNuevaPoliza
             // 
             this.btnNuevaPoliza.Id = "eef41777-4c5a-41b8-abc2-1636e636535e";
-            this.btnNuevaPoliza.Location = new System.Drawing.Point(6, 0);
+            this.btnNuevaPoliza.Location = new System.Drawing.Point(4, 0);
             this.btnNuevaPoliza.Name = "btnNuevaPoliza";
-            this.btnNuevaPoliza.Size = new System.Drawing.Size(72, 0);
+            this.btnNuevaPoliza.Size = new System.Drawing.Size(42, 72);
             this.btnNuevaPoliza.TabIndex = 1;
             this.btnNuevaPoliza.Text = "Nueva Poliza";
             this.btnNuevaPoliza.Click += new System.EventHandler(this.btnNuevaPoliza_Click);
@@ -145,11 +145,12 @@
             // btnGestionPoliza
             // 
             this.btnGestionPoliza.Id = "d37d4a4c-4c93-47bd-bc3f-8b2040af579a";
-            this.btnGestionPoliza.Location = new System.Drawing.Point(6, 0);
+            this.btnGestionPoliza.Location = new System.Drawing.Point(48, 0);
             this.btnGestionPoliza.Name = "btnGestionPoliza";
-            this.btnGestionPoliza.Size = new System.Drawing.Size(96, 0);
+            this.btnGestionPoliza.Size = new System.Drawing.Size(56, 72);
             this.btnGestionPoliza.TabIndex = 2;
             this.btnGestionPoliza.Text = "Gestión de Polizas";
+            this.btnGestionPoliza.Click += new System.EventHandler(this.btnGestionPoliza_Click);
             // 
             // ribbonContextualTabGroup2
             // 
@@ -166,7 +167,7 @@
             this.ribbonTabPage3.KeyTip = null;
             this.ribbonTabPage3.Location = new System.Drawing.Point(0, 0);
             this.ribbonTabPage3.Name = "ribbonTabPage3";
-            this.ribbonTabPage3.Size = new System.Drawing.Size(1195, 99);
+            this.ribbonTabPage3.Size = new System.Drawing.Size(1203, 99);
             this.ribbonTabPage3.TabIndex = 0;
             this.ribbonTabPage3.Text = "CONFIGURACIÓN";
             // 
@@ -234,7 +235,7 @@
             this.ribbonTabPage4.KeyTip = null;
             this.ribbonTabPage4.Location = new System.Drawing.Point(0, 0);
             this.ribbonTabPage4.Name = "ribbonTabPage4";
-            this.ribbonTabPage4.Size = new System.Drawing.Size(1179, 99);
+            this.ribbonTabPage4.Size = new System.Drawing.Size(1203, 99);
             this.ribbonTabPage4.TabIndex = 0;
             this.ribbonTabPage4.Text = "REPORTES";
             // 
@@ -254,7 +255,7 @@
             this.ribbonTabPage1.KeyTip = null;
             this.ribbonTabPage1.Location = new System.Drawing.Point(0, 0);
             this.ribbonTabPage1.Name = "ribbonTabPage1";
-            this.ribbonTabPage1.Size = new System.Drawing.Size(1195, 99);
+            this.ribbonTabPage1.Size = new System.Drawing.Size(1203, 99);
             this.ribbonTabPage1.TabIndex = 0;
             this.ribbonTabPage1.Text = "CATALOGO";
             // 
@@ -351,7 +352,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 632);
+            this.ClientSize = new System.Drawing.Size(1203, 632);
             this.Controls.Add(this.ribbon1);
             this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
