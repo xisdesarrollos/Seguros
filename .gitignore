@@ -10,3 +10,6 @@ Seguros American/obj/Debug/Seguros American.csproj.GenerateResource.Cache
 Seguros American/obj/*.*
 *.dll
 *.cache
+*.cache
+*.dll
+*.cache
