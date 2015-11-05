@@ -38,11 +38,12 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         }
 
-
-        
-
-        
-
-       
+        private bool verificaCampos()
+        {
+            if(string.IsNullOrEmpty(txtFolio.Text) || string.IsNullOrEmpty(cmbAgent.Text )){
+               
+            }
+            return false;
+        }
     }
 }
