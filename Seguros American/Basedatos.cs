@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
-
+using System.Windows.Forms;
 
 namespace Seguros_American
 {
@@ -147,20 +147,35 @@ namespace Seguros_American
 
         public DataTable Consultar(string filtro, string tabla, string condicion)
         {
-            if (cn.State == ConnectionState.Open) cn.Close();
-            cn.Open();
-            string sql = "SELECT " + filtro + " FROM " + tabla + " WHERE " + condicion;
-            da = new MySqlDataAdapter(sql, cn);
-            DataSet dts = new DataSet();
-            //MessageBox.Show(sql);
-            da.Fill(dts, tabla);
             DataTable dt = new DataTable();
-            dt = dts.Tables[tabla];
-            cn.Close();
+            try
+            {
+                if (cn.State == ConnectionState.Open) cn.Close();
+                cn.Open();
+                string sql = "SELECT " + filtro + " FROM " + tabla + " WHERE " + condicion;
+                da = new MySqlDataAdapter(sql, cn);
+                DataSet dts = new DataSet();
+                //MessageBox.Show(sql);
+                da.Fill(dts, tabla);
+                dt = dts.Tables[tabla];
+                cn.Close();
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);
+            }
             return dt;
         }
 
-
+        public bool Existe(string tabla, string columns, string condicion)
+        {
+           DataTable dataTable = Consultar(columns, tabla,condicion);
+           
+            if (dataTable.Rows.Count == 0)
+                return false;
+            
+            return true;
+        }
 
         public bool Eliminar(string tabla, string condicion)
         {
@@ -243,8 +258,5 @@ namespace Seguros_American
 
             }
         }
-
-
-
     }
 }
