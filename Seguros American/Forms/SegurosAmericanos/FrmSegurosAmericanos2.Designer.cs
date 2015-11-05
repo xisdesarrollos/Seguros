@@ -627,7 +627,7 @@
             // 
             this.tabSegurosAmericanos.Location = new System.Drawing.Point(21, 30);
             this.tabSegurosAmericanos.Name = "tabSegurosAmericanos";
-            this.tabSegurosAmericanos.SelectedTabPage = this.tabVehiculos;
+            this.tabSegurosAmericanos.SelectedTabPage = this.tabPage3;
             this.tabSegurosAmericanos.Size = new System.Drawing.Size(651, 333);
             this.tabSegurosAmericanos.TabIndex = 29;
             this.tabSegurosAmericanos.TabPages.AddRange(new Elegant.Ui.TabPage[] {
@@ -823,6 +823,7 @@
             this.cmbSeguro.Size = new System.Drawing.Size(263, 21);
             this.cmbSeguro.TabIndex = 1;
             this.cmbSeguro.TextEditorWidth = 165;
+            this.cmbSeguro.SelectedValueChanged += new System.EventHandler(this.cmbSeguro_SelectedValueChanged);
             // 
             // dateFechaE
             // 
@@ -835,6 +836,7 @@
             this.dateFechaE.TabIndex = 4;
             this.dateFechaE.TextEditorWidth = 81;
             this.dateFechaE.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
+            this.dateFechaE.ValueChanged += new System.EventHandler(this.dateFechaE_ValueChanged);
             // 
             // txtTotalPoliza
             // 
@@ -974,6 +976,7 @@
             this.cmbDia.TabIndex = 3;
             this.cmbDia.Text = "1";
             this.cmbDia.TextEditorWidth = 24;
+            this.cmbDia.SelectedIndexChanged += new System.EventHandler(this.cmbDia_SelectedIndexChanged);
             // 
             // dateHorafin
             // 
@@ -1194,18 +1197,20 @@
             this.cmbCondExtra.Size = new System.Drawing.Size(235, 21);
             this.cmbCondExtra.TabIndex = 1;
             this.cmbCondExtra.TextEditorWidth = 27;
+            this.cmbCondExtra.SelectedIndexChanged += new System.EventHandler(this.cmbCondExtra_SelectedIndexChanged);
             // 
             // FrmSegurosAmericanos2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 480);
+            this.ClientSize = new System.Drawing.Size(736, 488);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.IsMdiContainer = true;
             this.Name = "FrmSegurosAmericanos2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seguros Americanos";
+            this.Load += new System.EventHandler(this.FrmSegurosAmericanos2_Load);
             this.groupPoliza.ResumeLayout(false);
             this.groupPoliza.PerformLayout();
             this.groupCliente.ResumeLayout(false);
