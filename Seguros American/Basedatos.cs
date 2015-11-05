@@ -152,7 +152,7 @@ namespace Seguros_American
             {
                 if (cn.State == ConnectionState.Open) cn.Close();
                 cn.Open();
-                string sql = "SELECT " + filtro + " FROM " + tabla + " WHERE " + condicion;
+                string sql = "SELECT " + filtro + " FROM " + tabla + " WHERE " + condicion + ";";
                 da = new MySqlDataAdapter(sql, cn);
                 DataSet dts = new DataSet();
                 //MessageBox.Show(sql);

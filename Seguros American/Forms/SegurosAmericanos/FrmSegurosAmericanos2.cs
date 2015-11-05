@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Seguros_American.Forms.Clientes;
 using Seguros_American.Forms.Vehiculos;
+using MySql.Data.MySqlClient;
 
 namespace Seguros_American.Forms.SegurosAmericanos
 {
@@ -64,6 +65,93 @@ namespace Seguros_American.Forms.SegurosAmericanos
             txtCiudad.Text = cuidad;
             txtEstado.Text = estado;
 
+        }
+
+        private void cmbSeguro_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string cmbValue = cmbSeguro.Text.ToString();
+            int cmbIndex = cmbSeguro.SelectedIndex;
+          
+
+            switch (cmbIndex)
+            {
+                case 0:
+                    //generar poliza american
+                    txtFolio.Text = "SA";
+                    break;
+                case 1:
+                    //generar poliza transmigrante
+                    txtFolio.Text = "TR";
+                    break;
+            }
+        }
+
+        private void cmbDia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+            //calcular el valor y el total dependiendo de los dias y el tipo de tarifa.
+            //#seleccionar gastos,bienes, derecho_poliza de tarifas donde dias = al valor introducido.
+            updateFechaFin();
+            consultarTarifa(cmbDia.Text.ToString());
+           
+        }
+
+ 
+
+        private void FrmSegurosAmericanos2_Load(object sender, EventArgs e)
+        {
+            updateFechaFin();
+            updateFechaInit();
+
+        }
+
+        private void dateFechaE_ValueChanged(object sender, EventArgs e)
+        {
+            updateFechaInit();
+            updateFechaFin();
+        }
+
+        //helps
+        private void updateFechaFin()
+        {
+            //cuando cambia dias cambia la fecha de fin dependiendo de la fecha de emision.
+            //DateTime.Parse(dateNacimiento.Value.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
+            //cambiar edad automaticamente.
+            //DateTime today = DateTime.Today;
+            DateTime fechaEmision = DateTime.Parse(dateFechaE.Value.ToString());
+            int dias = int.Parse(cmbDia.Text);
+            DateTime fechaFin = fechaEmision.AddDays(dias);
+            dateFinVig.Text = fechaFin.ToString();
+
+        }
+        private void updateFechaInit()
+        {
+            dateIncVig.Text = dateFechaE.Value.ToString();
+        }
+
+        private void consultarTarifa(string dias)
+        {
+            Basedatos bd = new Basedatos();
+
+            string filtro = " pb, gm, dp, total ";
+            string tabla = " tarifasautos ";
+            string condicion = " dias = '" + dias + "' ";
+            try
+            {
+                DataTable tableRow = bd.Consultar(filtro, tabla, condicion);
+                if (tableRow.Rows.Count == 1)
+                {
+                    txtBienes.Text = tableRow.Rows[0][0].ToString();
+                    txtGasto.Text = tableRow.Rows[0][1].ToString();
+                    txtDerchPoliza.Text = tableRow.Rows[0][2].ToString();
+                    txtTotalPoliza.Text = tableRow.Rows[0][3].ToString();
+                }
+            }
+            catch (MySqlException esql)
+            {
+                Console.WriteLine(esql);
+            }
         }
     }
 }
