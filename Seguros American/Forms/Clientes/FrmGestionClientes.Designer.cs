@@ -57,7 +57,7 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "7d6d16c6-7730-4a31-9037-f4b468099530";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(502, 20);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(925, 20);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(82, 38);
             this.btnMostrarTodos.TabIndex = 2;
@@ -70,11 +70,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCriterio.Id = "c5bbe4c4-e81d-4a01-9278-56ae63584866";
             this.txtCriterio.LabelText = "Criterio:";
-            this.txtCriterio.Location = new System.Drawing.Point(227, 28);
+            this.txtCriterio.Location = new System.Drawing.Point(530, 28);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(248, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(294, 21);
             this.txtCriterio.TabIndex = 1;
-            this.txtCriterio.TextEditorWidth = 393;
+            this.txtCriterio.TextEditorWidth = 437;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
             // 
             // cmbFiltro
@@ -88,18 +88,18 @@
             "ciudad",
             "telefono"});
             this.cmbFiltro.LabelText = "Filtrar por:";
-            this.cmbFiltro.Location = new System.Drawing.Point(15, 28);
+            this.cmbFiltro.Location = new System.Drawing.Point(31, 28);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(188, 21);
+            this.cmbFiltro.Size = new System.Drawing.Size(352, 21);
             this.cmbFiltro.TabIndex = 0;
-            this.cmbFiltro.TextEditorWidth = 120;
+            this.cmbFiltro.TextEditorWidth = 284;
             // 
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "504c2201-c57b-49d8-9ab3-aab6f73b6a0a";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(599, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(1028, 16);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(120, 45);
             this.btnNuevo.TabIndex = 3;
@@ -114,9 +114,9 @@
             this.groupFiltro.Controls.Add(this.cmbFiltro);
             this.groupFiltro.Controls.Add(this.btnMostrarTodos);
             this.groupFiltro.Id = "c0a9dae8-1b03-4cb4-84ea-645d02d27465";
-            this.groupFiltro.Location = new System.Drawing.Point(13, 12);
+            this.groupFiltro.Location = new System.Drawing.Point(14, 9);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(737, 91);
+            this.groupFiltro.Size = new System.Drawing.Size(1172, 91);
             this.groupFiltro.TabIndex = 12;
             // 
             // dgvClientes
@@ -142,7 +142,7 @@
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(736, 368);
+            this.dgvClientes.Size = new System.Drawing.Size(1172, 305);
             this.dgvClientes.TabIndex = 4;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
@@ -178,9 +178,9 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(675, 489);
+            this.btnOk.Location = new System.Drawing.Point(1111, 427);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.Size = new System.Drawing.Size(75, 39);
             this.btnOk.TabIndex = 13;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -190,13 +190,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 532);
+            this.ClientSize = new System.Drawing.Size(1214, 473);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);
             this.Name = "FrmGestionClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmGestionClientes_Load);
             this.groupFiltro.ResumeLayout(false);
             this.groupFiltro.PerformLayout();

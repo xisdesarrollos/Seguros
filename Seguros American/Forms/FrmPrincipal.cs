@@ -36,21 +36,22 @@ namespace Seguros_American.Forms
         {
             Globales.EsNuevoCliente = true;
             FrmNuevoCliente nuevocliente = new FrmNuevoCliente();
-            nuevocliente.ShowDialog();
+            nuevocliente.Show();
 
         }
 
         private void btnGestiónClientes_Click(object sender, EventArgs e)
         {
             FrmGestionClientes gestionclientes = new FrmGestionClientes();
-            gestionclientes.ShowDialog();
+            gestionclientes.MdiParent = this;
+            gestionclientes.Show();
 
         }
 
         private void btnVehiculos_Click(object sender, EventArgs e)
         {
           FrmNuevoVehiculo catalogovehiculos = new FrmNuevoVehiculo();
-            catalogovehiculos.ShowDialog();
+            catalogovehiculos.Show();
 
         }
 
@@ -65,19 +66,38 @@ namespace Seguros_American.Forms
             //FrmSeguroAmericano segurosamer = new FrmSeguroAmericano();
             //segurosamer.ShowDialog();
             FrmSegurosAmericanos2 seguros2 = new FrmSegurosAmericanos2();
-            seguros2.ShowDialog();
+            seguros2.Show();
 
         }
 
         private void btnGestonTarifas_Click(object sender, EventArgs e)
         {
             FrmTarifasAutos tarifa = new FrmTarifasAutos();
-            tarifa.ShowDialog();
+            tarifa.Show();
+        }
+
+        
+
+        private void btnBase_Click(object sender, EventArgs e)
+        {
+            FrmBaseDatos basedatos = new FrmBaseDatos();
+            basedatos.Show();
+
+
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frmUsuarios = new FrmUsuarios();
+            frmUsuarios.MdiParent = this;
+            frmUsuarios.Show();    
         }
 
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
-           
+            Globales.EsNuevoUsuario = true;
+            FrmNuevoUsuario frmNuevoUsuario = new FrmNuevoUsuario();
+            frmNuevoUsuario.Show();
         }
 
         
