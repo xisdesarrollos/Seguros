@@ -89,7 +89,7 @@ namespace Seguros_American.Forms.Vehiculos
 
         private bool guardaVehiculo()
         {
-            bool valueToReturn = false;
+         
             //Obtener los datos.
             if (verificaCampos())
             {
