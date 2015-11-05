@@ -38,11 +38,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         }
 
-
-        
-
-        
-
        
     }
 }
