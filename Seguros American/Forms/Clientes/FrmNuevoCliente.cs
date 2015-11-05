@@ -213,7 +213,6 @@ namespace Seguros_American.Forms.Clientes
             try
             {
                 DataTable dataTable = bd.Consultar(filtro, tabla, condicion);
-                dataTable.Rows[0][1].ToString();
                 //llenar el formulario con esa info.
                 txtNombre.Text      = dataTable.Rows[0][1].ToString(); 
                 txtRfc.Text         = dataTable.Rows[0][2].ToString();
