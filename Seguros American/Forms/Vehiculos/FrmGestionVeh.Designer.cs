@@ -149,10 +149,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1222, 501);
+            this.ClientSize = new System.Drawing.Size(1230, 509);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvVehiculos);
             this.Controls.Add(this.groupFiltro);
+            this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "FrmGestionVeh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Vehiculos";
