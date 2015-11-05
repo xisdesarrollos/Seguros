@@ -83,6 +83,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     //generar poliza transmigrante
                     txtFolio.Text = "TR";
                     break;
+                default:
+                    break;
             }
         }
 
@@ -153,5 +155,32 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 Console.WriteLine(esql);
             }
         }
+
+        private void cmbCondExtra_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int cmbIndex = cmbCondExtra.SelectedIndex;
+           
+            switch (cmbIndex)
+            {
+                case 0:
+                    //un conductor
+                    txtNomCod2.Enabled =
+                    dateFechaNac2.Enabled =
+                    txtNoLic2.Enabled =
+                    txtEdad2.Enabled =
+                    txtEdoEm2.Enabled = false;
+                    break;
+                case 1:
+                    //dos conductores
+                    txtNomCod2.Enabled =
+                    dateFechaNac2.Enabled =
+                    txtNoLic2.Enabled =
+                    txtEdoEm2.Enabled = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 }
