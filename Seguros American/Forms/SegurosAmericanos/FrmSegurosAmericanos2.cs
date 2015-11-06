@@ -20,7 +20,9 @@ namespace Seguros_American.Forms.SegurosAmericanos
         string idCliente;
         string nombreCliente;
         string idVehiculo;
-      
+        string clienteLicencia;
+
+        Basedatos bd = new Basedatos();
 
         public FrmSegurosAmericanos2()
         {
@@ -135,8 +137,10 @@ namespace Seguros_American.Forms.SegurosAmericanos
             string direccion = calle + " #" + noE + "," + colonia;//
             string cuidad = selectedRow.Cells[10].Value.ToString();
             string estado = selectedRow.Cells[11].Value.ToString();
+            clienteLicencia = selectedRow.Cells[19].Value.ToString();
 
             txtNoCliente.Text = idCliente;
+            txtNoLic1.Text = clienteLicencia;
             txtNombre.Text = nombreCliente;
             txtNomCod1.Text = nombreCliente;
             cmbPais.Text = pais;
@@ -165,8 +169,52 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
             if (verificaCampos())
             {
-                return true;
+                //recoletar todos los datos para crear la consulta a la tabla
+                MySqlCommand cmdPoliza = new MySqlCommand();
+                
+                cmdPoliza.CommandText = "INSERT INTO polizas_americanas(folio, idCliente, usuario, idVehiculo, dias,inVig, finVig, fechaAlta, fechaEm, horaDesd, horaHast, primaBienes, primaGm, primaDerPol, total, nombreCod, nombreCod2, edadCod, edadCod2, ocupacionCod, ocupacionCod2,noLicencia,noLicencia2, edoLicencia, edoLicencia2)" +
+                    "VALUES(@folio, @idCliente, @usuario, @idVehiculo, @dias,@inVig, @finVig, @fechaAlta, @fechaEm, @horaDesd, @horaHast, @primaBienes, @primaGm, @primaDerPol, @total, @nombreCod, @nombreCod2, @edadCod, @edadCod2, @ocupacionCod, @ocupacionCod2, @noLicencia, @noLicencia2, @edoLicencia, @edoLicencia2)";
+
+                cmdPoliza.Parameters.AddWithValue("@folio" , txtFolio.Text);
+
+                cmdPoliza.Parameters.AddWithValue("@idCliente", txtIdCliente.Text);
+                cmdPoliza.Parameters.AddWithValue("@usuario", "NULL");
+                cmdPoliza.Parameters.AddWithValue("@idVehiculo", idVehiculo);//obtener cuando se llama a gestion vehiculos.
+                cmdPoliza.Parameters.AddWithValue("@dias", cmbDia.Text);
+                cmdPoliza.Parameters.AddWithValue("@inVig", DateTime.Parse(dateIncVig.Value.ToString()).ToString("yyyy-MM-dd"));
+                cmdPoliza.Parameters.AddWithValue("@finVig", DateTime.Parse(dateFinVig.Value.ToString()).ToString("yyyy-MM-dd"));
+                DateTime dateNow = DateTime.Now;
+                cmdPoliza.Parameters.AddWithValue("@fechaAlta", dateNow.ToString("yyyy-MM-dd HH:mm:ss"));
+                cmdPoliza.Parameters.AddWithValue("@fechaEm", DateTime.Parse(dateEm.Value.ToString()).ToString("yyyy-MM-dd"));
+                cmdPoliza.Parameters.AddWithValue("@horaDesd", "NULL");//WAR
+                cmdPoliza.Parameters.AddWithValue("@horaHast","NULL");//WAR
+                //tarifas
+                cmdPoliza.Parameters.AddWithValue("@primaBienes",txtBienes.Text);
+                cmdPoliza.Parameters.AddWithValue("@primaGm", txtGasto.Text);
+                cmdPoliza.Parameters.AddWithValue("@primaDerPol", txtDerchPoliza.Text);
+                cmdPoliza.Parameters.AddWithValue("@total",txtTotalPoliza.Text);
+                //conductores
+                cmdPoliza.Parameters.AddWithValue("@nombreCod",txtNomCod1.Text);
+                cmdPoliza.Parameters.AddWithValue("@nombreCod2",txtNomCod2.Text);
+                cmdPoliza.Parameters.AddWithValue("@edadCod",txtEdad1.Text);
+                cmdPoliza.Parameters.AddWithValue("@edadCod2",txtEdad2.Text);
+                cmdPoliza.Parameters.AddWithValue("@ocupacionCod","NINGUNA");//war
+                cmdPoliza.Parameters.AddWithValue("@ocupacionCod2","NINGUNA");//war
+                cmdPoliza.Parameters.AddWithValue("@noLicencia",txtNoLic1.Text);
+                cmdPoliza.Parameters.AddWithValue("@noLicencia2",txtNoLic2.Text);
+                cmdPoliza.Parameters.AddWithValue("@edoLicencia",txtEdoEm1.Text);
+                cmdPoliza.Parameters.AddWithValue("@edoLicencia2",txtEdoEm2.Text);
+                try
+                {
+                    return bd.Insertar(cmdPoliza);
+                }
+                catch (MySqlException sqlex)
+                {
+                    Console.WriteLine(sqlex);
+                    return false;
+                }     
             }
+
             return false; 
         }
         private bool verificaCampos() { 
@@ -199,7 +247,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 string.IsNullOrEmpty(txtNomCod1.Text) || string.IsNullOrEmpty(txtNoLic1.Text) ||
                 string.IsNullOrEmpty(txtEdad1.Text) || string.IsNullOrEmpty(txtEdoEm1.Text) ) {
 
-                MessageBox.Show("Verifique que los campos en la seccion Conductores esten correctos");
+                MessageBox.Show("Verifique que los campos en la seccion Conductores sean correctos");
                 
                 return false;
             }
@@ -255,6 +303,11 @@ namespace Seguros_American.Forms.SegurosAmericanos
             if (guardaPoliza())
             {
                 MessageBox.Show("Datos guardados correctamente");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo completar la transaccion");
             }
         }
 
@@ -268,13 +321,24 @@ namespace Seguros_American.Forms.SegurosAmericanos
             {
                 case 0:
                     txtNomCod1.Text = nombreCliente;
+                    txtNoLic1.Text = clienteLicencia;
                     break;
                 case 1:
                     txtNomCod1.Text = string.Empty;
+                    txtNoLic1.Text = string.Empty;
                     break;
                 default:
                     break;
             }
+        }
+
+        private void dateFechaNac1_ValueChanged(object sender, EventArgs e)
+        {
+            //cambiar edad automaticamente.
+            DateTime today = DateTime.Today;
+            DateTime nacimiento = DateTime.Parse(dateFechaNac1.Value.ToString());
+            int edad = today.Year - nacimiento.Year;
+            txtEdad1.Text = edad.ToString();
         }
 
     }

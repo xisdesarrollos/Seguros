@@ -630,7 +630,7 @@
             // 
             this.tabSegurosAmericanos.Location = new System.Drawing.Point(21, 30);
             this.tabSegurosAmericanos.Name = "tabSegurosAmericanos";
-            this.tabSegurosAmericanos.SelectedTabPage = this.tabConductores;
+            this.tabSegurosAmericanos.SelectedTabPage = this.tabDatoscliente;
             this.tabSegurosAmericanos.Size = new System.Drawing.Size(651, 333);
             this.tabSegurosAmericanos.TabIndex = 29;
             this.tabSegurosAmericanos.TabPages.AddRange(new Elegant.Ui.TabPage[] {
@@ -723,6 +723,7 @@
             this.dateFechaNac1.TabIndex = 3;
             this.dateFechaNac1.TextEditorWidth = 59;
             this.dateFechaNac1.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
+            this.dateFechaNac1.ValueChanged += new System.EventHandler(this.dateFechaNac1_ValueChanged);
             // 
             // txtNomCod1
             // 
@@ -1207,7 +1208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 520);
+            this.ClientSize = new System.Drawing.Size(776, 528);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.IsMdiContainer = true;
