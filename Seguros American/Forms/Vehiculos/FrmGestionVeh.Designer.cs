@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.btnOk = new System.Windows.Forms.Button();
             this.dgvVehiculos = new System.Windows.Forms.DataGridView();
@@ -54,24 +54,25 @@
             this.btnOk.TabIndex = 16;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // dgvVehiculos
             // 
             this.dgvVehiculos.AllowUserToAddRows = false;
             this.dgvVehiculos.AllowUserToDeleteRows = false;
             this.dgvVehiculos.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvVehiculos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvVehiculos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVehiculos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVehiculos.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvVehiculos.Location = new System.Drawing.Point(17, 125);
             this.dgvVehiculos.Name = "dgvVehiculos";
             this.dgvVehiculos.ReadOnly = true;
@@ -116,6 +117,7 @@
             this.txtCriterio.Size = new System.Drawing.Size(294, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 437;
+            this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
             // 
             // cmbFiltro
             // 
@@ -123,10 +125,16 @@
             this.cmbFiltro.FormattingEnabled = false;
             this.cmbFiltro.Id = "d80b703c-ee7a-491a-ade7-e3dd8f843872";
             this.cmbFiltro.Items.AddRange(new object[] {
-            "idCliente",
-            "nombre",
-            "ciudad",
-            "telefono"});
+            "IDVEHICULO",
+            "IDCLIENTE",
+            "USUARIO",
+            "TIPO",
+            "MARCA",
+            "SUBMARCA",
+            "MODELO",
+            "PLACAS",
+            "ESTADOPLACAS",
+            "NUMEROSERIE"});
             this.cmbFiltro.LabelText = "Filtrar por:";
             this.cmbFiltro.Location = new System.Drawing.Point(31, 28);
             this.cmbFiltro.Name = "cmbFiltro";
@@ -144,12 +152,13 @@
             this.btnMostrarTodos.Size = new System.Drawing.Size(82, 38);
             this.btnMostrarTodos.TabIndex = 2;
             this.btnMostrarTodos.Text = "Mostrar Todos";
+            this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
             // FrmGestionVeh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 509);
+            this.ClientSize = new System.Drawing.Size(1238, 517);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvVehiculos);
             this.Controls.Add(this.groupFiltro);

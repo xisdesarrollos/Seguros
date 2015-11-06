@@ -15,12 +15,28 @@ namespace Seguros_American.Forms.Vehiculos
     public partial class FrmNuevoVehiculo : Form, FrmGestionClientes.IGestionClientes
     {
         Basedatos bd = new Basedatos();
+        string idCliente;
 
         public FrmNuevoVehiculo()
         {
             InitializeComponent();
         }
 
+        public FrmNuevoVehiculo(string idCliente)
+        {
+            InitializeComponent();
+
+            try
+            {
+                DataTable dataTable = bd.Consultar("idCliente,nombre", "clientes", "idCliente = '" + idCliente + "';");
+                txtNoCliente.Text = dataTable.Rows[0][0].ToString();
+                lblNombreCliente.Text = dataTable.Rows[0][1].ToString();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);//debug
+            }
+        }
         private void FrmCatalogoVehiculos_Load(object sender, EventArgs e)
         {
             string valueModelo = cmbModelo.Text.ToString();
@@ -48,7 +64,7 @@ namespace Seguros_American.Forms.Vehiculos
         }
 
 
-        public void onDataGridOk(DataGridView dgv)
+        public void onDataGridClientes(DataGridView dgv)
         {
             // Obtener los datos del cliente seleccionado.
             int index = dgv.CurrentCell.RowIndex; //no existe en el contexto actual. 

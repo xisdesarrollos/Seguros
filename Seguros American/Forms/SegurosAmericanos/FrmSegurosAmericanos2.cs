@@ -13,8 +13,13 @@ using MySql.Data.MySqlClient;
 
 namespace Seguros_American.Forms.SegurosAmericanos
 {
-    public partial class FrmSegurosAmericanos2 : Form, FrmGestionClientes.IGestionClientes
+    public partial class FrmSegurosAmericanos2 : Form, 
+                                                 FrmGestionClientes.IGestionClientes,
+                                                 FrmGestionVeh.IGestionVehiculos
     {
+        string idCliente;
+        string idVehiculo;
+
         public FrmSegurosAmericanos2()
         {
             InitializeComponent();
@@ -27,7 +32,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void btnVehiculo_Click(object sender, EventArgs e)
         {
-            FrmAuxVehiculos auxvehiculos = new FrmAuxVehiculos();
+            FrmGestionVeh auxvehiculos = new FrmGestionVeh(this,idCliente);
             auxvehiculos.ShowDialog();
 
         }
@@ -89,14 +94,36 @@ namespace Seguros_American.Forms.SegurosAmericanos
             }
         }
 
-        //callback
-        public void onDataGridOk(DataGridView dgv)
+        //callbacks
+        public void onDataGridVehiculos(DataGridView dgv)
       {
             // Obtener los datos del cliente seleccionado.
             int index = dgv.CurrentCell.RowIndex; //no existe en el contexto actual. 
             DataGridViewRow selectedRow = dgv.Rows[index];
+            
             // Mostrarlos en los campos de nuevo vehiculo.
-            string idCliente = selectedRow.Cells[0].Value.ToString();
+                   idVehiculo = selectedRow.Cells[0].Value.ToString();
+                   idCliente = selectedRow.Cells[1].Value.ToString();
+            string usuario = selectedRow.Cells[2].Value.ToString();
+            string tipo= selectedRow.Cells[3].Value.ToString();
+            string marca= selectedRow.Cells[4].Value.ToString();
+            string submarca = selectedRow.Cells[5].Value.ToString();
+            string modelo = selectedRow.Cells[6].Value.ToString();
+            string placas = selectedRow.Cells[7].Value.ToString();
+            string estadoPlacas = selectedRow.Cells[8].Value.ToString();
+            string numeroSerie = selectedRow.Cells[9].Value.ToString();
+
+            vbl.Items.Add(numeroSerie);
+
+
+        }
+        public void onDataGridClientes(DataGridView dgv)
+        {
+            // Obtener los datos del cliente seleccionado.
+            int index = dgv.CurrentCell.RowIndex; //no existe en el contexto actual. 
+            DataGridViewRow selectedRow = dgv.Rows[index];
+            // Mostrarlos en los campos de nuevo vehiculo.
+            idCliente = selectedRow.Cells[0].Value.ToString();
             string nombreCliente = selectedRow.Cells[1].Value.ToString();
             string pais = selectedRow.Cells[12].Value.ToString();
             string calle = selectedRow.Cells[5].Value.ToString();
@@ -105,7 +132,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             string noI = selectedRow.Cells[7].Value.ToString();
             string direccion = calle + " #" + noE + "," + colonia;//
             string cuidad = selectedRow.Cells[10].Value.ToString();
-            string estado = selectedRow.Cells[9].Value.ToString();
+            string estado = selectedRow.Cells[11].Value.ToString();
 
             txtNoCliente.Text = idCliente;
             txtNombre.Text = nombreCliente;
@@ -113,7 +140,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
             txtDireccion.Text = direccion;
             txtCiudad.Text = cuidad;
             txtEstado.Text = estado;
-
         }
          //helps
         private void updateFechaFin()
@@ -176,8 +202,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
             updateFechaInit();
             updateFechaFin();
         }
-        
 
-       
     }
 }

@@ -97,14 +97,14 @@ namespace Seguros_American.Forms.Clientes
         private void btnOk_Click(object sender, EventArgs e)
         {
             if (this.iGestionClientes != null)  {
-                iGestionClientes.onDataGridOk(dgvClientes);
+                iGestionClientes.onDataGridClientes(dgvClientes);
             }
             this.Close();
         }
 
         public interface IGestionClientes
         {
-           void onDataGridOk(DataGridView dgv);
+           void onDataGridClientes(DataGridView dgv);
         }
 
         private void FrmGestionClientes_Load(object sender, EventArgs e)
