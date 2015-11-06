@@ -21,6 +21,10 @@ namespace Seguros_American.Forms.SegurosAmericanos
         string nombreCliente;
         string idVehiculo;
         string clienteLicencia;
+        string clienteNacimiento;
+        string estado;
+        string idFolio;
+        DateTime dateInserted;
 
         Basedatos bd = new Basedatos();
 
@@ -136,17 +140,18 @@ namespace Seguros_American.Forms.SegurosAmericanos
             string noI = selectedRow.Cells[7].Value.ToString();
             string direccion = calle + " #" + noE + "," + colonia;//
             string cuidad = selectedRow.Cells[10].Value.ToString();
-            string estado = selectedRow.Cells[11].Value.ToString();
+            estado = selectedRow.Cells[11].Value.ToString();
             clienteLicencia = selectedRow.Cells[19].Value.ToString();
+            clienteNacimiento = selectedRow.Cells[4].Value.ToString();
 
             txtNoCliente.Text = idCliente;
             txtNoLic1.Text = clienteLicencia;
-            txtNombre.Text = nombreCliente;
-            txtNomCod1.Text = nombreCliente;
+            txtNombre.Text = txtNomCod1.Text = nombreCliente;
             cmbPais.Text = pais;
             txtDireccion.Text = direccion;
             txtCiudad.Text = cuidad;
-            txtEstado.Text = estado;
+            txtEstado.Text = txtEdoEm1.Text = estado;
+            dateFechaNac1.Value = DateTime.Parse(clienteNacimiento);
         }
          //helps
         private void updateFechaFin()
@@ -165,7 +170,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         {
             dateIncVig.Text = dateFechaE.Value.ToString();
         }
-        private bool guardaPoliza() {
+        private bool guardaPoliza()    {
 
             if (verificaCampos())
             {
@@ -177,14 +182,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
                 cmdPoliza.Parameters.AddWithValue("@folio" , txtFolio.Text);
 
-                cmdPoliza.Parameters.AddWithValue("@idCliente", txtIdCliente.Text);
+                cmdPoliza.Parameters.AddWithValue("@idCliente", txtNoCliente.Text);
                 cmdPoliza.Parameters.AddWithValue("@usuario", "NULL");
                 cmdPoliza.Parameters.AddWithValue("@idVehiculo", idVehiculo);//obtener cuando se llama a gestion vehiculos.
                 cmdPoliza.Parameters.AddWithValue("@dias", cmbDia.Text);
                 cmdPoliza.Parameters.AddWithValue("@inVig", DateTime.Parse(dateIncVig.Value.ToString()).ToString("yyyy-MM-dd"));
                 cmdPoliza.Parameters.AddWithValue("@finVig", DateTime.Parse(dateFinVig.Value.ToString()).ToString("yyyy-MM-dd"));
-                DateTime dateNow = DateTime.Now;
-                cmdPoliza.Parameters.AddWithValue("@fechaAlta", dateNow.ToString("yyyy-MM-dd HH:mm:ss"));
+                dateInserted = DateTime.Now;
+                cmdPoliza.Parameters.AddWithValue("@fechaAlta", dateInserted.ToString("yyyy-MM-dd HH:mm:ss"));
                 cmdPoliza.Parameters.AddWithValue("@fechaEm", DateTime.Parse(dateEm.Value.ToString()).ToString("yyyy-MM-dd"));
                 cmdPoliza.Parameters.AddWithValue("@horaDesd", "NULL");//WAR
                 cmdPoliza.Parameters.AddWithValue("@horaHast","NULL");//WAR
@@ -204,6 +209,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 cmdPoliza.Parameters.AddWithValue("@noLicencia2",txtNoLic2.Text);
                 cmdPoliza.Parameters.AddWithValue("@edoLicencia",txtEdoEm1.Text);
                 cmdPoliza.Parameters.AddWithValue("@edoLicencia2",txtEdoEm2.Text);
+                
                 try
                 {
                     return bd.Insertar(cmdPoliza);
@@ -290,6 +296,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         {
             updateFechaFin();
             updateFechaInit();
+            consultarTarifa(cmbDia.Text.ToString());
         }
 
         private void dateFechaE_ValueChanged(object sender, EventArgs e)
@@ -297,12 +304,25 @@ namespace Seguros_American.Forms.SegurosAmericanos
             updateFechaInit();
             updateFechaFin();
         }
-
+        
+        //CLICK GUARDAR
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (guardaPoliza())
-            {
-                MessageBox.Show("Datos guardados correctamente");
+            if (guardaPoliza()) {
+                DialogResult response =  MessageBox.Show("Desea imprimir poliza? ","Datos guardados correctamente", MessageBoxButtons.YesNo);
+                //mandar al visor.
+                if (response == DialogResult.Yes) {
+                    //mostrar visor
+                    //select this poliza.
+                    string sqlGetFolio = "SELECT idFolio FROM polizas_americanas"+
+                        " WHERE  idCliente = " + idCliente + " AND " + "fechaAlta = '" + dateInserted.ToString("yyyy-MM-dd HH:mm:ss") + "';";
+                    
+                    idFolio = bd.ConsultaEscalarString(sqlGetFolio);
+                    
+                    FrmReporte reporte = new FrmReporte(idFolio);
+                    reporte.Show();
+                } 
+
                 this.Close();
             }
             else

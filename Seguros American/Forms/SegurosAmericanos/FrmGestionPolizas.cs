@@ -13,9 +13,11 @@ namespace Seguros_American.Forms.SegurosAmericanos
 {
     public partial class FrmGestionPolizas : Form
     {
+        private String sqlSelect = "SELECT * FROM polizas_americanas ORDER BY idFolio ASC";
         public FrmGestionPolizas()
         {
             InitializeComponent();
+            Globales.cargaGrid(sqlSelect, dgvPolizas);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -38,6 +40,19 @@ namespace Seguros_American.Forms.SegurosAmericanos
             //verificar todos los campos 
         }
 
-        
+        public interface IGestionPolizas
+        {
+            void onGridPolizas(DataGridView dgv);
+        }
+
+        private void btnImprimirPolizas_Click(object sender, EventArgs e)
+        {
+            int index = dgvPolizas.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dgvPolizas.Rows[index];
+            string idFolio = selectedRow.Cells[0].Value.ToString();
+
+            FrmReporte reporte = new FrmReporte(idFolio);
+            reporte.Show();
+        }
     }
 }

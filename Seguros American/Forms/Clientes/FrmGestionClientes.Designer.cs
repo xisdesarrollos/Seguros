@@ -116,7 +116,7 @@
             this.groupFiltro.Controls.Add(this.cmbFiltro);
             this.groupFiltro.Controls.Add(this.btnMostrarTodos);
             this.groupFiltro.Id = "c0a9dae8-1b03-4cb4-84ea-645d02d27465";
-            this.groupFiltro.Location = new System.Drawing.Point(36, 25);
+            this.groupFiltro.Location = new System.Drawing.Point(44, 33);
             this.groupFiltro.Name = "groupFiltro";
             this.groupFiltro.Size = new System.Drawing.Size(1103, 91);
             this.groupFiltro.TabIndex = 12;
@@ -140,7 +140,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvClientes.Location = new System.Drawing.Point(36, 132);
+            this.dgvClientes.Location = new System.Drawing.Point(44, 140);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
@@ -156,7 +156,7 @@
             this.btnEditarCli});
             this.menuOpcionesClientes.KeepPopupsWithOffsetPlacementWithinPlacementArea = false;
             this.menuOpcionesClientes.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom;
-            this.menuOpcionesClientes.PlacementOffset = new System.Drawing.Size(261, 106);
+            this.menuOpcionesClientes.PlacementOffset = new System.Drawing.Size(219, 106);
             this.menuOpcionesClientes.Size = new System.Drawing.Size(100, 100);
             // 
             // btnEliminarCli
@@ -183,7 +183,7 @@
             // 
             this.btnOk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOk.Id = "e3930a5e-d2a6-4177-9b06-b67a08ce6653";
-            this.btnOk.Location = new System.Drawing.Point(1056, 565);
+            this.btnOk.Location = new System.Drawing.Point(1064, 573);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(85, 68);
             this.btnOk.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -196,7 +196,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1169, 650);
+            this.ClientSize = new System.Drawing.Size(1185, 666);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);

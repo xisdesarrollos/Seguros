@@ -28,33 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvPolizas = new System.Windows.Forms.DataGridView();
             this.groupFiltro = new Elegant.Ui.GroupBox();
             this.btnNuevo = new Elegant.Ui.Button();
             this.txtCriterio = new Elegant.Ui.TextBox();
             this.cmbFiltro = new Elegant.Ui.ComboBox();
             this.btnMostrarTodos = new Elegant.Ui.Button();
             this.btnGuardar = new Elegant.Ui.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.contextMenu1 = new Elegant.Ui.ContextMenu(this.components);
+            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
+            this.btnImprimirPolizas = new Elegant.Ui.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPolizas)).BeginInit();
             this.groupFiltro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // formFrameSkinner
             // 
             this.formFrameSkinner.Form = this;
             // 
-            // dgvClientes
+            // dgvPolizas
             // 
-            this.dgvClientes.AllowUserToAddRows = false;
-            this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.AllowUserToOrderColumns = true;
+            this.dgvPolizas.AllowUserToAddRows = false;
+            this.dgvPolizas.AllowUserToDeleteRows = false;
+            this.dgvPolizas.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Azure;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPolizas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPolizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contextMenuExtenderProvider1.SetContextPopupMenu(this.dgvPolizas, this.contextMenu1);
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -62,14 +68,14 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvClientes.Location = new System.Drawing.Point(34, 124);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.ReadOnly = true;
-            this.dgvClientes.RowHeadersVisible = false;
-            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1115, 440);
-            this.dgvClientes.TabIndex = 14;
+            this.dgvPolizas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPolizas.Location = new System.Drawing.Point(34, 124);
+            this.dgvPolizas.Name = "dgvPolizas";
+            this.dgvPolizas.ReadOnly = true;
+            this.dgvPolizas.RowHeadersVisible = false;
+            this.dgvPolizas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPolizas.Size = new System.Drawing.Size(1115, 440);
+            this.dgvPolizas.TabIndex = 14;
             // 
             // groupFiltro
             // 
@@ -146,13 +152,32 @@
             this.btnGuardar.TabIndex = 16;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // contextMenu1
+            // 
+            this.contextMenu1.Items.AddRange(new System.Windows.Forms.Control[] {
+            this.btnImprimirPolizas});
+            this.contextMenu1.KeepPopupsWithOffsetPlacementWithinPlacementArea = false;
+            this.contextMenu1.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom;
+            this.contextMenu1.PlacementOffset = new System.Drawing.Size(219, 106);
+            this.contextMenu1.Size = new System.Drawing.Size(100, 100);
+            // 
+            // btnImprimirPolizas
+            // 
+            this.btnImprimirPolizas.Id = "3101da49-2312-4843-97da-8ee02919087e";
+            this.btnImprimirPolizas.Location = new System.Drawing.Point(2, 2);
+            this.btnImprimirPolizas.Name = "btnImprimirPolizas";
+            this.btnImprimirPolizas.Size = new System.Drawing.Size(138, 23);
+            this.btnImprimirPolizas.TabIndex = 3;
+            this.btnImprimirPolizas.Text = "Imprimir";
+            this.btnImprimirPolizas.Click += new System.EventHandler(this.btnImprimirPolizas_Click);
+            // 
             // FrmGestionPolizas
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1189, 666);
+            this.ClientSize = new System.Drawing.Size(1197, 674);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.dgvPolizas);
             this.Controls.Add(this.groupFiltro);
             this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "FrmGestionPolizas";
@@ -160,9 +185,10 @@
             this.Text = "Gestión Polizas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmGestionPolizas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPolizas)).EndInit();
             this.groupFiltro.ResumeLayout(false);
             this.groupFiltro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,12 +196,15 @@
         #endregion
 
         private Elegant.Ui.FormFrameSkinner formFrameSkinner;
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridView dgvPolizas;
         private Elegant.Ui.GroupBox groupFiltro;
         private Elegant.Ui.Button btnNuevo;
         private Elegant.Ui.TextBox txtCriterio;
         private Elegant.Ui.ComboBox cmbFiltro;
         private Elegant.Ui.Button btnMostrarTodos;
         private Elegant.Ui.Button btnGuardar;
+        private Elegant.Ui.ContextMenu contextMenu1;
+        private Elegant.Ui.Button btnImprimirPolizas;
+        private Elegant.Ui.ContextMenuExtenderProvider contextMenuExtenderProvider1;
     }
 }

@@ -124,5 +124,10 @@ namespace Seguros_American.Forms.Clientes
             }
             this.Close();
         }
+
+        private void btnImprimirPoliza_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

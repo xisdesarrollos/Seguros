@@ -1208,7 +1208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 528);
+            this.ClientSize = new System.Drawing.Size(792, 544);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.IsMdiContainer = true;

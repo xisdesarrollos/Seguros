@@ -81,5 +81,26 @@ namespace Seguros_American.Properties {
                 return ((string)(this["seguros_americanosConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.0.200;user id=root;database=seguros_americanos")]
+        public string seguros_americanosConnectionPoliza {
+            get {
+                return ((string)(this["seguros_americanosConnectionPoliza"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.0.200;user id=root;persistsecurityinfo=True;database=seguros_ameri" +
+            "canos")]
+        public string seguros_americanosConnectionString1 {
+            get {
+                return ((string)(this["seguros_americanosConnectionString1"]));
+            }
+        }
     }
 }

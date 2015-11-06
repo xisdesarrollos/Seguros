@@ -96,9 +96,9 @@ namespace Seguros_American
                 cn.Close();
                 return i;
             }
-            catch (Exception)
+            catch (MySqlException e)
             {
-
+                Console.WriteLine(e);
                 //System.Windows.Forms.MessageBox.Show(e.Message);
                 cn.Close();
                 return null;
