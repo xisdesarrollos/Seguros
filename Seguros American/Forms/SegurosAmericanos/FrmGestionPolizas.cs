@@ -33,6 +33,11 @@ namespace Seguros_American.Forms.SegurosAmericanos
             }
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //verificar todos los campos 
+        }
+
         
     }
 }

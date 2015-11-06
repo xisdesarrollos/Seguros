@@ -18,7 +18,9 @@ namespace Seguros_American.Forms.SegurosAmericanos
                                                  FrmGestionVeh.IGestionVehiculos
     {
         string idCliente;
+        string nombreCliente;
         string idVehiculo;
+      
 
         public FrmSegurosAmericanos2()
         {
@@ -124,7 +126,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             DataGridViewRow selectedRow = dgv.Rows[index];
             // Mostrarlos en los campos de nuevo vehiculo.
             idCliente = selectedRow.Cells[0].Value.ToString();
-            string nombreCliente = selectedRow.Cells[1].Value.ToString();
+            nombreCliente = selectedRow.Cells[1].Value.ToString();
             string pais = selectedRow.Cells[12].Value.ToString();
             string calle = selectedRow.Cells[5].Value.ToString();
             string colonia = selectedRow.Cells[8].Value.ToString();
@@ -136,6 +138,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
             txtNoCliente.Text = idCliente;
             txtNombre.Text = nombreCliente;
+            txtNomCod1.Text = nombreCliente;
             cmbPais.Text = pais;
             txtDireccion.Text = direccion;
             txtCiudad.Text = cuidad;
@@ -158,7 +161,51 @@ namespace Seguros_American.Forms.SegurosAmericanos
         {
             dateIncVig.Text = dateFechaE.Value.ToString();
         }
+        private bool guardaPoliza() {
 
+            if (verificaCampos())
+            {
+                return true;
+            }
+            return false; 
+        }
+        private bool verificaCampos() { 
+            //verifica tal clientes.
+            if (string.IsNullOrEmpty(txtNoCliente.Text) || string.IsNullOrEmpty(cmbPais.Text) ||
+                string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtDireccion.Text) ||
+                string.IsNullOrEmpty(txtCiudad.Text) || string.IsNullOrEmpty(txtEstado.Text) ) {
+
+                    MessageBox.Show("Algunos campos en la informacion cliente estan vacios");
+
+                    return false;
+            }
+            //verifica campos primas
+            if(string.IsNullOrEmpty(txtFolio.Text) || string.IsNullOrEmpty(cmbSeguro.Text) ||
+                string.IsNullOrEmpty(cmbSuma.Text) || string.IsNullOrEmpty(cmbDia.Text) ) {
+
+                    MessageBox.Show("Verifique que los campos en la seccion Primas esten correctos");
+                    
+                return false;
+            }
+            
+            //verifica que haya al menos un vehiculo
+            if(!vbl.Items.Any()){
+                MessageBox.Show("Debe seleccionar al menos un vehiculo para poder generar la poliza");
+                return false;
+            }
+
+            //conductores
+            if (string.IsNullOrEmpty(cmbNcod.Text) || string.IsNullOrEmpty(cmbCondExtra.Text) ||
+                string.IsNullOrEmpty(txtNomCod1.Text) || string.IsNullOrEmpty(txtNoLic1.Text) ||
+                string.IsNullOrEmpty(txtEdad1.Text) || string.IsNullOrEmpty(txtEdoEm1.Text) ) {
+
+                MessageBox.Show("Verifique que los campos en la seccion Conductores esten correctos");
+                
+                return false;
+            }
+            return true; 
+        
+        }
         private void consultarTarifa(string dias)
         {
             Basedatos bd = new Basedatos();
@@ -201,6 +248,33 @@ namespace Seguros_American.Forms.SegurosAmericanos
         {
             updateFechaInit();
             updateFechaFin();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (guardaPoliza())
+            {
+                MessageBox.Show("Datos guardados correctamente");
+            }
+        }
+
+
+        private void cmbNcod_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //
+            int cmbCondIndex = cmbNcod.SelectedIndex;
+
+            switch (cmbCondIndex)
+            {
+                case 0:
+                    txtNomCod1.Text = nombreCliente;
+                    break;
+                case 1:
+                    txtNomCod1.Text = string.Empty;
+                    break;
+                default:
+                    break;
+            }
         }
 
     }

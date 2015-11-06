@@ -144,12 +144,13 @@
             this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.ok)});
             this.btnGuardar.TabIndex = 16;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmGestionPolizas
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1181, 658);
+            this.ClientSize = new System.Drawing.Size(1189, 666);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);
