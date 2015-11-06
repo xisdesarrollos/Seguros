@@ -62,8 +62,8 @@
             this.groupAuto.Controls.Add(this.txtNoS);
             this.groupAuto.Controls.Add(this.cmbMarca);
             this.groupAuto.Controls.Add(this.txtSub);
-            this.groupAuto.Id = "713ce55e-53ee-4857-aff0-90bb3afca545";
-            this.groupAuto.Location = new System.Drawing.Point(20, 97);
+            this.groupAuto.Id = "833c2dfa-0304-4fd6-b8ac-843fb6310f6c";
+            this.groupAuto.Location = new System.Drawing.Point(28, 97);
             this.groupAuto.Name = "groupAuto";
             this.groupAuto.Size = new System.Drawing.Size(469, 234);
             this.groupAuto.TabIndex = 5;
@@ -71,11 +71,10 @@
             // 
             // cmbModelo
             // 
+            this.cmbModelo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbModelo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbModelo.FormattingEnabled = false;
             this.cmbModelo.Id = "e7a5ebf1-988b-406a-9744-e3d8a47a6a7d";
-            this.cmbModelo.Items.AddRange(new object[] {
-            "MASCULINO",
-            "FEMENINO"});
             this.cmbModelo.LabelText = "Modelo:";
             this.cmbModelo.Location = new System.Drawing.Point(21, 89);
             this.cmbModelo.Name = "cmbModelo";
@@ -126,18 +125,16 @@
             // 
             // cmbMarca
             // 
+            this.cmbMarca.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbMarca.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbMarca.FormattingEnabled = false;
             this.cmbMarca.Id = "eb3f3480-fec0-44ac-8e3b-261f72d423cd";
-            this.cmbMarca.Items.AddRange(new object[] {
-            "MASCULINO",
-            "FEMENINO"});
             this.cmbMarca.LabelText = "Marca:";
             this.cmbMarca.Location = new System.Drawing.Point(237, 45);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(212, 21);
             this.cmbMarca.TabIndex = 4;
             this.cmbMarca.TextEditorWidth = 157;
-            this.cmbMarca.SelectedIndexChanged += new System.EventHandler(this.comboMarca_SelectedIndexChanged);
             // 
             // txtSub
             // 
@@ -158,7 +155,6 @@
             this.txtNoCliente.Size = new System.Drawing.Size(137, 21);
             this.txtNoCliente.TabIndex = 0;
             this.txtNoCliente.TextEditorWidth = 73;
-            this.txtNoCliente.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupCliente
             // 
@@ -166,7 +162,7 @@
             this.groupCliente.Controls.Add(this.btnBuscarCliente);
             this.groupCliente.Controls.Add(this.txtNoCliente);
             this.groupCliente.Id = "3f85fe7e-2cdf-4dfc-aab3-800176f1f18d";
-            this.groupCliente.Location = new System.Drawing.Point(20, 22);
+            this.groupCliente.Location = new System.Drawing.Point(28, 22);
             this.groupCliente.Name = "groupCliente";
             this.groupCliente.Size = new System.Drawing.Size(469, 55);
             this.groupCliente.TabIndex = 7;
@@ -187,12 +183,13 @@
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(32, 31);
             this.btnBuscarCliente.TabIndex = 1;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // groupObs
             // 
             this.groupObs.Controls.Add(this.txtBoxObs);
             this.groupObs.Id = "efdb789f-caf0-4468-817b-28d2fbe5a900";
-            this.groupObs.Location = new System.Drawing.Point(20, 348);
+            this.groupObs.Location = new System.Drawing.Point(28, 348);
             this.groupObs.Name = "groupObs";
             this.groupObs.Size = new System.Drawing.Size(469, 101);
             this.groupObs.TabIndex = 9;
@@ -211,17 +208,18 @@
             // btnGuardar
             // 
             this.btnGuardar.Id = "79bfdc32-d0f8-4cb3-9df4-cddcb6a3e2df";
-            this.btnGuardar.Location = new System.Drawing.Point(414, 456);
+            this.btnGuardar.Location = new System.Drawing.Point(422, 456);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 48);
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmNuevoVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 525);
+            this.ClientSize = new System.Drawing.Size(514, 520);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObs);
             this.Controls.Add(this.groupCliente);

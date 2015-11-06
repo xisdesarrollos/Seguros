@@ -15,11 +15,18 @@ namespace Seguros_American.Forms.Clientes
     public partial class FrmGestionClientes : Form
     {
         private String sqlSelect = "SELECT * FROM clientes ORDER BY nombre ASC";
-
+        private IGestionClientes iGestionClientes;
         public FrmGestionClientes()
         {
             InitializeComponent();
             
+            Globales.cargaGrid(sqlSelect, dgvClientes);
+        }
+
+        public FrmGestionClientes(IGestionClientes iGestionClientes)
+        {
+            InitializeComponent();
+            this.iGestionClientes = iGestionClientes;
             Globales.cargaGrid(sqlSelect, dgvClientes);
         }
 
@@ -68,6 +75,9 @@ namespace Seguros_American.Forms.Clientes
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
+            //reset values.
+            txtCriterio.Text = string.Empty;
+            cmbFiltro.SelectedIndex = -1;
             Globales.cargaGrid(sqlSelect, dgvClientes);
         }
 
@@ -82,6 +92,28 @@ namespace Seguros_American.Forms.Clientes
 
             Globales.cargaGrid(sqlCustomQuery, dgvClientes);
           
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (this.iGestionClientes != null)  {
+                iGestionClientes.onDataGridClientes(dgvClientes);
+            }
+            this.Close();
+        }
+
+        public interface IGestionClientes
+        {
+           void onDataGridClientes(DataGridView dgv);
+        }
+
+        private void FrmGestionClientes_Load(object sender, EventArgs e)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name == "Elegant UI")
+                    frm.Hide();
+            }
         }
     }
 }

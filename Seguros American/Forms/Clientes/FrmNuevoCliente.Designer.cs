@@ -92,7 +92,7 @@
             this.groupBoxClientes.Controls.Add(this.txtCorreo);
             this.groupBoxClientes.Controls.Add(this.txtNombre);
             this.groupBoxClientes.Id = "c802533e-3e9e-45f6-aa60-22806db59684";
-            this.groupBoxClientes.Location = new System.Drawing.Point(15, 13);
+            this.groupBoxClientes.Location = new System.Drawing.Point(21, 15);
             this.groupBoxClientes.Name = "groupBoxClientes";
             this.groupBoxClientes.Size = new System.Drawing.Size(701, 321);
             this.groupBoxClientes.TabIndex = 31;
@@ -309,7 +309,7 @@
             // 
             this.groupObsv.Controls.Add(this.txtBoxObs);
             this.groupObsv.Id = "deb294fe-0363-463b-b3df-2e87b9d32f52";
-            this.groupObsv.Location = new System.Drawing.Point(14, 344);
+            this.groupObsv.Location = new System.Drawing.Point(20, 346);
             this.groupObsv.Name = "groupObsv";
             this.groupObsv.Size = new System.Drawing.Size(702, 98);
             this.groupObsv.TabIndex = 33;
@@ -318,7 +318,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Id = "6269f893-12ea-43ce-a99e-25f3389ed6d7";
-            this.btnGuardar.Location = new System.Drawing.Point(641, 455);
+            this.btnGuardar.Location = new System.Drawing.Point(647, 457);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
             this.btnGuardar.TabIndex = 20;
@@ -328,7 +328,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 530);
+            this.ClientSize = new System.Drawing.Size(737, 526);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObsv);
             this.Controls.Add(this.groupBoxClientes);

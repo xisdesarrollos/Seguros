@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="seguros_americanosDataSet" targetNamespace="http://tempuri.org/seguros_americanosDataSet.xsd" xmlns:mstns="http://tempuri.org/seguros_americanosDataSet.xsd" xmlns="http://tempuri.org/seguros_americanosDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="seguros_americanosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="seguros_americanosConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Seguros_American.Properties.Settings.GlobalReference.Default.seguros_americanosConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vehiculosTableAdapter" GeneratorDataComponentClassName="vehiculosTableAdapter" Name="vehiculos" UserDataComponentName="vehiculosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="seguros_americanosConnectionString (Settings)" DbObjectName="seguros_americanos.vehiculos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `marca` FROM `vehiculos`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="marca" DataSetColumn="marca" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="seguros_americanosDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="seguros_americanosDataSet" msprop:Generator_UserDSName="seguros_americanosDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vehiculos" msprop:Generator_TableClassName="vehiculosDataTable" msprop:Generator_TableVarName="tablevehiculos" msprop:Generator_TablePropName="vehiculos" msprop:Generator_RowDeletingName="vehiculosRowDeleting" msprop:Generator_RowChangingName="vehiculosRowChanging" msprop:Generator_RowEvHandlerName="vehiculosRowChangeEventHandler" msprop:Generator_RowDeletedName="vehiculosRowDeleted" msprop:Generator_UserTableName="vehiculos" msprop:Generator_RowChangedName="vehiculosRowChanged" msprop:Generator_RowEvArgName="vehiculosRowChangeEvent" msprop:Generator_RowClassName="vehiculosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="marca" msprop:Generator_ColumnVarNameInTable="columnmarca" msprop:Generator_ColumnPropNameInRow="marca" msprop:Generator_ColumnPropNameInTable="marcaColumn" msprop:Generator_UserColumnName="marca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

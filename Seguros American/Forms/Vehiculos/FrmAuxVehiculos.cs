@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Seguros_American.Forms.Vehiculos;
 
 namespace Seguros_American.Forms.Vehiculos
 {
@@ -15,6 +16,12 @@ namespace Seguros_American.Forms.Vehiculos
         public FrmAuxVehiculos()
         {
             InitializeComponent();
+        }
+
+        private void btnNuevoVehiculo_Click(object sender, EventArgs e)
+        {
+            FrmNuevoVehiculo nuevovehiculo = new FrmNuevoVehiculo();
+            nuevovehiculo.ShowDialog();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Seguros_American.Forms.Configuracion
 {
-    partial class NuevoUsuario
+    partial class FrmNuevoUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,9 @@
             this.txtUsuario = new Elegant.Ui.TextBox();
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.btnGuardar = new Elegant.Ui.Button();
+            this.virtualGridControl1 = new Elegant.Ui.Grid.VirtualGridControl();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.virtualGridControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -121,18 +123,36 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
             this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
-            // NuevoUsuario
+            // virtualGridControl1
+            // 
+            this.virtualGridControl1.DataRowIndent = 0;
+            this.virtualGridControl1.HorizontalScrollBarEnabled = false;
+            this.virtualGridControl1.HorizontalScrollBarVisible = false;
+            this.virtualGridControl1.Id = "a3066727-400b-49f7-bce8-ca170f369b91";
+            this.virtualGridControl1.Location = new System.Drawing.Point(0, 0);
+            this.virtualGridControl1.Name = "virtualGridControl1";
+            this.virtualGridControl1.RowCount = 0;
+            this.virtualGridControl1.Size = new System.Drawing.Size(100, 100);
+            this.virtualGridControl1.TabIndex = 0;
+            this.virtualGridControl1.VerticalScrollBarEnabled = true;
+            this.virtualGridControl1.VerticalScrollBarVisible = true;
+            // 
+            // FrmNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 196);
+            this.ClientSize = new System.Drawing.Size(487, 202);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox1);
-            this.Name = "NuevoUsuario";
-            this.Text = "FrmNuevoUsuario";
+            this.Name = "FrmNuevoUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nuevo Usuario";
+            this.Load += new System.EventHandler(this.NuevoUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.virtualGridControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,5 +167,6 @@
         private Elegant.Ui.TextBox txtUsuario;
         private Elegant.Ui.FormFrameSkinner formFrameSkinner;
         private Elegant.Ui.Button btnGuardar;
+        private Elegant.Ui.Grid.VirtualGridControl virtualGridControl1;
     }
 }

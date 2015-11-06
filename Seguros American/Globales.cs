@@ -40,6 +40,21 @@ namespace Seguros_American
             }
         }
 
+        public static void cargaCombo(String sql, Elegant.Ui.ComboBox cmb)
+        {
+            Basedatos bd = new Basedatos();
+            try {
+                DataTable dt = bd.ConsultarAlterno(sql);
+                cmb.DataSource = dt;
+                cmb.DisplayMember = dt.Columns[0].ToString();
+                cmb.ValueMember = dt.Columns[1].ToString();
+              
+
+            }catch (Exception e){
+                MessageBox.Show(e.Message, "Error al cargar datos, conecte al Administrador", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public static string Right(string param, int length)
         {
             int value = param.Length - length;
