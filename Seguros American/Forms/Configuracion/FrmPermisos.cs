@@ -41,7 +41,7 @@ namespace Seguros_American.Forms.Configuracion
             cmbUsuario.ValueMember = "usuario";
             cmbUsuario.SelectedIndex = 0;
             //cuenta();
-            //carga();
+            carga();
         }
 
         private void creaCheckbox(String text, String name, int x, int y, int tabindex)
@@ -57,18 +57,119 @@ namespace Seguros_American.Forms.Configuracion
         }
 
 
+        private void carga()
+        {
+            DataTable dt = bd.Consultar("*", "permisos", "usuario = '" + cmbUsuario.SelectedValue + "'");
+            int i = 1;
+
+            foreach (Elegant.Ui.CheckBox checkbox in GetAll(this, typeof(Elegant.Ui.CheckBox)))
+            {
+                checkbox.Checked = Convert.ToBoolean(dt.Rows[0][i]);
+                i++;
+            }
+
+        }
 
 
-         
+        private void cuenta()
+        {
+            int x = 20;
+            int y = 35;
+            int tabindex = 0;
+            int paddingx = 190;
+            int paddingy = 20;
 
+            foreach (Control boton in GetAll(_frmp.TabCatalogo, typeof(Elegant.Ui.Button)))
+            {
+                y = y + paddingy;
+                creaCheckbox(boton.Text, "chk" + tabindex.ToString(), x, y, tabindex);
+                tabindex++;
+            }
 
+            x = x + paddingx;
+            y = 35;
 
+            foreach (Control boton in GetAll(_frmp.TabOperaciones, typeof(Elegant.Ui.Button)))
+            {
+                y = y + paddingy;
+                creaCheckbox(boton.Text, "chk" + tabindex.ToString(), x, y, tabindex);
+                tabindex++;
+            }
 
+            x = x + paddingx;
+            y = 35;
 
+            foreach (Control boton in GetAll(_frmp.TabConfiguracion, typeof(Elegant.Ui.Button)))
+            {
+                y = y + paddingy;
+                creaCheckbox(boton.Text, "chk" + tabindex.ToString(), x, y, tabindex);
+                tabindex++;
+            }
 
+            x = x + paddingx;
+            y = 35;
 
+            foreach (Control boton in GetAll(_frmp.TabReportes, typeof(Elegant.Ui.Button)))
+            {
+                y = y + paddingy;
+                creaCheckbox(boton.Text, "chk" + tabindex.ToString(), x, y, tabindex);
+                tabindex++;
+            }
 
+        }
 
+        public IEnumerable<Control> GetAll(Control control, Type type)
+        {
+            var controls = control.Controls.Cast<Control>();
 
+            return controls.SelectMany(ctrl => GetAll(ctrl, type))
+                                      .Concat(controls)
+                                      .Where(c => c.GetType() == type);
+        }
+
+        private void cmbUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            carga();
+        }
+
+        private void frmPermisos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void guardaPermisos()
+        {
+            int indice = 0;
+            int[] i = new int[12];
+            foreach (Elegant.Ui.CheckBox chk in GetAll(this, typeof(Elegant.Ui.CheckBox)))
+            {
+                i[indice] = Convert.ToInt32(chk.Checked);
+                indice++;
+            }
+            MySqlCommand cmd = new MySqlCommand();
+            String sql = "UPDATE permisos SET a=@a,b=@b,c=@c,d=@d,e=@e,f=@f,g=@g,h=@h,i=@i,j=@j,k=@k,l=@l,m=@m  WHERE usuario = @usuario";
+            cmd.CommandText = sql;
+            cmd.Parameters.AddWithValue("@a", i[0]);
+            cmd.Parameters.AddWithValue("@b", i[1]);
+            cmd.Parameters.AddWithValue("@c", i[2]);
+            cmd.Parameters.AddWithValue("@d", i[3]);
+            cmd.Parameters.AddWithValue("@e", i[4]);
+            cmd.Parameters.AddWithValue("@f", i[5]);
+            cmd.Parameters.AddWithValue("@g", i[6]);
+            cmd.Parameters.AddWithValue("@h", i[7]);
+            cmd.Parameters.AddWithValue("@i", i[8]);
+            cmd.Parameters.AddWithValue("@j", i[9]);
+            cmd.Parameters.AddWithValue("@k", i[10]);
+            cmd.Parameters.AddWithValue("@l", i[11]);
+            cmd.Parameters.AddWithValue("@m", i[12]);
+            cmd.Parameters.AddWithValue("@usuario", cmbUsuario.SelectedValue);
+            bd.Actualizar(cmd);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            guardaPermisos();
+            this.Dispose();
+        }
     }
 }

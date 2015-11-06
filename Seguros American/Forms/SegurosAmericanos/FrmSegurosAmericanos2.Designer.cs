@@ -142,9 +142,11 @@
             // btnGuardar
             // 
             this.btnGuardar.Id = "887dafe4-c5e7-4cda-b5fe-252eebc02a14";
-            this.btnGuardar.Location = new System.Drawing.Point(597, 391);
+            this.btnGuardar.Location = new System.Drawing.Point(609, 382);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 56);
+            this.btnGuardar.Size = new System.Drawing.Size(61, 59);
+            this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._48guardar)});
             this.btnGuardar.TabIndex = 5;
             // 
             // textPvehiculo
@@ -1203,7 +1205,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(744, 496);
+
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.IsMdiContainer = true;

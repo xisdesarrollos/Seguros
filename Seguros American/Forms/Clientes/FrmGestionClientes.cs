@@ -115,5 +115,14 @@ namespace Seguros_American.Forms.Clientes
                     frm.Hide();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.iGestionClientes != null)
+            {
+                iGestionClientes.onDataGridOk(dgvClientes);
+            }
+            this.Close();
+        }
     }
 }

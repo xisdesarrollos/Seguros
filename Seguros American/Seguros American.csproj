@@ -286,6 +286,11 @@
     <Folder Include="Forms\Operaciones\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Recursos\48Vendedores.png" />
+    <None Include="Recursos\16Add.png" />
+    <None Include="Recursos\48guardar.png" />
+    <None Include="Recursos\24Add.png" />
+    <None Include="Recursos\16search.png" />
     <Content Include="Recursos\add24.png" />
     <Content Include="Recursos\block48.png" />
     <Content Include="Recursos\calc48.png" />
@@ -297,7 +302,9 @@
     <Content Include="Recursos\dialog-ok-apply.png" />
     <Content Include="Recursos\dollar48.png" />
     <Content Include="Recursos\edit24.png" />
+    <None Include="Resources\new48.png" />
     <None Include="Recursos\ExecutiveCar.png" />
+    <None Include="Recursos\Folder_32.png" />
     <Content Include="Recursos\fuel.png" />
     <Content Include="Recursos\gas64.png" />
     <Content Include="Recursos\inventory48.png" />
@@ -318,8 +325,10 @@
     <Content Include="Recursos\print48.png" />
     <Content Include="Recursos\pump64.png" />
     <Content Include="Recursos\report48.png" />
+    <None Include="Recursos\sales48.png" />
     <Content Include="Recursos\save48.png" />
     <Content Include="Recursos\sucursales64.png" />
+    <None Include="Recursos\test24.png" />
     <Content Include="Recursos\user24.png" />
     <Content Include="Recursos\volumetric48.png" />
   </ItemGroup>

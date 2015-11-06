@@ -97,6 +97,8 @@
             this.btnGuardar.Location = new System.Drawing.Point(256, 155);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
+            this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.dialog_ok_apply)});
             this.btnGuardar.TabIndex = 4;
             // 
             // FrmBaseDatos

@@ -37,15 +37,7 @@ namespace Seguros_American.Forms.Configuracion
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            tarifasautosBindingSource.EndEdit();
-            tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
-            MessageBox.Show("Cambios realizados correctamente");
-            this.Close();
-
-        }
+        
 
         private void d(object sender, DragEventArgs e)
         {
@@ -74,8 +66,16 @@ namespace Seguros_American.Forms.Configuracion
             this.tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
         }
 
-        private void btnTarifasCancel_Click(object sender, EventArgs e)
+        
+
+      
+
+        private void button2_Click(object sender, EventArgs e)
         {
+            this.Validate();
+            tarifasautosBindingSource.EndEdit();
+            tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
+            MessageBox.Show("Cambios realizados correctamente");
             this.Close();
         }
 

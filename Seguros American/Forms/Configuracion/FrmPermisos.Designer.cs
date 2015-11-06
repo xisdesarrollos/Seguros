@@ -43,6 +43,8 @@
             this.btnGuardar.Location = new System.Drawing.Point(740, 304);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 57);
+            this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._48guardar)});
             this.btnGuardar.TabIndex = 7;
             // 
             // cmbUsuario
@@ -61,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 376);
+            this.ClientSize = new System.Drawing.Size(839, 384);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cmbUsuario);
             this.Name = "FrmPermisos";

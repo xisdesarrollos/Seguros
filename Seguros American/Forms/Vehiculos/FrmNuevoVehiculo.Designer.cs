@@ -40,10 +40,10 @@
             this.txtNoCliente = new Elegant.Ui.TextBox();
             this.groupCliente = new Elegant.Ui.GroupBox();
             this.lblNombreCliente = new Elegant.Ui.Label();
-            this.btnBuscarCliente = new Elegant.Ui.Button();
             this.groupObs = new Elegant.Ui.GroupBox();
             this.txtBoxObs = new Elegant.Ui.TextBox();
             this.btnGuardar = new Elegant.Ui.Button();
+            this.btnBuscarCliente = new Elegant.Ui.Button();
             this.groupAuto.SuspendLayout();
             this.groupCliente.SuspendLayout();
             this.groupObs.SuspendLayout();
@@ -176,15 +176,6 @@
             this.lblNombreCliente.TabIndex = 2;
             this.lblNombreCliente.Text = "____________________________";
             // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.Id = "0ab863ad-e15a-42f4-8218-4ccea992abfb";
-            this.btnBuscarCliente.Location = new System.Drawing.Point(164, 11);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(32, 31);
-            this.btnBuscarCliente.TabIndex = 1;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
             // groupObs
             // 
             this.groupObs.Controls.Add(this.txtBoxObs);
@@ -210,16 +201,28 @@
             this.btnGuardar.Id = "79bfdc32-d0f8-4cb3-9df4-cddcb6a3e2df";
             this.btnGuardar.Location = new System.Drawing.Point(422, 456);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 48);
+            this.btnGuardar.Size = new System.Drawing.Size(75, 63);
+            this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._48guardar)});
             this.btnGuardar.TabIndex = 11;
-            this.btnGuardar.Text = "Guardar";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Id = "0ab863ad-e15a-42f4-8218-4ccea992abfb";
+            this.btnBuscarCliente.Location = new System.Drawing.Point(164, 11);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(32, 31);
+            this.btnBuscarCliente.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._16search)});
+            this.btnBuscarCliente.TabIndex = 1;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // FrmNuevoVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 520);
+            this.ClientSize = new System.Drawing.Size(522, 528);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObs);
             this.Controls.Add(this.groupCliente);

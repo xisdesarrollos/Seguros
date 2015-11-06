@@ -32,5 +32,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     frm.Hide();
             }
         }
+
+        
     }
 }
