@@ -120,7 +120,7 @@ namespace Seguros_American.Forms.Clientes
         {
             if (this.iGestionClientes != null)
             {
-                iGestionClientes.onDataGridOk(dgvClientes);
+                iGestionClientes.onDataGridClientes(dgvClientes);
             }
             this.Close();
         }
