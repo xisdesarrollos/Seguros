@@ -20,16 +20,14 @@ namespace Seguros_American.Forms
 {
     public partial class FrmPrincipal : Form
     {
+        Basedatos db;
+
         public FrmPrincipal()
         {
+            db = new Basedatos();
             InitializeComponent();
-        }
 
-        
 
-        private void btnTarifas_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnConceptosClientes_Click(object sender, EventArgs e)
@@ -48,14 +46,11 @@ namespace Seguros_American.Forms
 
         }
 
-        private void btnVehiculos_Click(object sender, EventArgs e)
+        private void btnTarifas_Click(object sender, EventArgs e)
         {
-          FrmNuevoVehiculo catalogovehiculos = new FrmNuevoVehiculo();
-            catalogovehiculos.Show();
 
         }
 
-        
         private void btnGestonTarifas_Click(object sender, EventArgs e)
         {
             FrmTarifasAutos tarifa = new FrmTarifasAutos();
@@ -63,31 +58,12 @@ namespace Seguros_American.Forms
             tarifa.Show();
         }
 
-        
-        private void btnNuevoUsuario_Click_1(object sender, EventArgs e)
-        {
-            Globales.EsNuevoUsuario = true;
-            FrmNuevoUsuario frmNuevoUsuario = new FrmNuevoUsuario();
-            frmNuevoUsuario.Show();
-        }
 
-        private void btnGestionUsuarios_Click(object sender, EventArgs e)
+        private void btnVehiculos_Click(object sender, EventArgs e)
         {
-            FrmUsuarios frmUsuarios = new FrmUsuarios();
-            frmUsuarios.MdiParent = this;
-            frmUsuarios.Show();  
-        }
+          FrmNuevoVehiculo catalogovehiculos = new FrmNuevoVehiculo();
+            catalogovehiculos.Show();
 
-        private void btnBase_Click(object sender, EventArgs e)
-        {
-            FrmBaseDatos basedatos = new FrmBaseDatos();
-            basedatos.Show();
-        }
-
-        private void btnNuevaPoliza_Click(object sender, EventArgs e)
-        {
-            FrmSegurosAmericanos2 seguros2 = new FrmSegurosAmericanos2();
-            seguros2.Show();
         }
 
         private void btnGestionVehiculos_Click(object sender, EventArgs e)
@@ -97,15 +73,91 @@ namespace Seguros_American.Forms
             frmgestionveh.Show();
         }
 
+
+        private void btnNuevaPoliza_Click(object sender, EventArgs e)
+        {
+            FrmSegurosAmericanos2 seguros2 = new FrmSegurosAmericanos2();
+            seguros2.Show();
+        }
+
+
         private void btnGestionPoliza_Click(object sender, EventArgs e)
         {
             FrmGestionPolizas gestionpolizas = new FrmGestionPolizas();
-            gestionpolizas.MdiParent = this;           
+            gestionpolizas.MdiParent = this;
             gestionpolizas.Show();
 
         }
 
+
+        private void btnNuevoUsuario_Click_1(object sender, EventArgs e)
+        {
+            Globales.EsNuevoUsuario = true;
+            FrmNuevoUsuario frmNuevoUsuario = new FrmNuevoUsuario();
+            frmNuevoUsuario.Show();
+        }
+
+
+        private void btnGestionUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frmUsuarios = new FrmUsuarios();
+            frmUsuarios.MdiParent = this;
+            frmUsuarios.Show();  
+        }
+
         
+        private void btnBase_Click(object sender, EventArgs e)
+        {
+            FrmBaseDatos basedatos = new FrmBaseDatos();
+            basedatos.Show();
+        }
+
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verificaPermisos()
+        {
+            DataTable dt = db.Consultar("*", "permisos", "usuario = '" + Globales.idUsuario + "'");
+
+            int i = 1;
+
+            foreach (Control boton in GetAll(this.TabCatalogo, typeof(Elegant.Ui.Button)))
+            {
+                boton.Enabled = Convert.ToBoolean(dt.Rows[0][i]);
+                i++;
+            }
+
+            foreach (Control boton in GetAll(this.TabOperaciones, typeof(Elegant.Ui.Button)))
+            {
+                boton.Enabled = Convert.ToBoolean(dt.Rows[0][i]);
+                i++;
+            }
+
+            foreach (Control boton in GetAll(this.TabConfiguracion, typeof(Elegant.Ui.Button)))
+            {
+                boton.Enabled = Convert.ToBoolean(dt.Rows[0][i]);
+                i++;
+            }
+
+            foreach (Control boton in GetAll(this.TabReportes, typeof(Elegant.Ui.Button)))
+            {
+                boton.Enabled = Convert.ToBoolean(dt.Rows[0][i]);
+                i++;
+            }
+
+        }
+
+        public IEnumerable<Control> GetAll(Control control, Type type)
+        {
+            var controls = control.Controls.Cast<Control>();
+
+            return controls.SelectMany(ctrl => GetAll(ctrl, type))
+                                      .Concat(controls)
+                                      .Where(c => c.GetType() == type);
+        }
 
        
 

@@ -321,6 +321,8 @@
             this.btnGuardar.Location = new System.Drawing.Point(647, 457);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
+            this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._48guardar)});
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
@@ -328,7 +330,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 526);
+            this.ClientSize = new System.Drawing.Size(745, 534);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObsv);
             this.Controls.Add(this.groupBoxClientes);
