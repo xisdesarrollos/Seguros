@@ -14,38 +14,130 @@ namespace Seguros_American.Forms.Clientes
 {
     public partial class FrmGestionClientes : Form
     {
-        private String sqlSelect = "SELECT * FROM clientes ORDER BY nombre ASC";
-        private IGestionClientes iGestionClientes;
+        Basedatos db = new Basedatos();
+        DataTable dt = new DataTable();
+        private String sqlSelect ="idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs FROM clientes ORDER BY idcliente DESC";
+        
+        public void cargaGrid()
+        {
+
+            dt = db.Consultar("idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs", "clientes ORDER BY idcliente DESC");
+            dgvClientes.DataSource = dt;
+            estilizaGrid();
+        }
+
+        private void estilizaGrid()
+        {
+            dgvClientes.Columns[0].HeaderText = "No.";
+            dgvClientes.Columns[1].HeaderText = "Nombre";
+            dgvClientes.Columns[2].HeaderText = "Telefono";
+            dgvClientes.Columns[3].HeaderText = "Cel";
+            dgvClientes.Columns[4].HeaderText = "Correo";
+            dgvClientes.Columns[5].HeaderText = "Pais";
+            dgvClientes.Columns[6].HeaderText = "Estado";
+            dgvClientes.Columns[7].HeaderText = "Ciudad";
+            dgvClientes.Columns[8].HeaderText = "Obs";
+            
+
+            dgvClientes.Columns[0].Width = 30;
+            dgvClientes.Columns[1].Width = 120;
+            dgvClientes.Columns[2].Width = 100;
+            dgvClientes.Columns[3].Width = 80;
+            dgvClientes.Columns[4].Width = 80;
+            dgvClientes.Columns[5].Width = 90;
+            dgvClientes.Columns[6].Width = 90;
+            dgvClientes.Columns[7].Width = 90;
+            dgvClientes.Columns[8].Width = 150;
+        }
+
+        public void Eliminar(string id)
+        {
+            try
+            {
+                db.Eliminar("clientes", "idcliente = " + id);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error al eliminar cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public FrmGestionClientes()
         {
             InitializeComponent();
-            
-            Globales.cargaGrid(sqlSelect, dgvClientes);
         }
 
-        public FrmGestionClientes(IGestionClientes iGestionClientes)
+        private void FrmGestionClientes_Load(object sender, EventArgs e)
         {
-            InitializeComponent();
-            this.iGestionClientes = iGestionClientes;
-            Globales.cargaGrid(sqlSelect, dgvClientes);
+            SendKeys.Send("{TAB}");
+            SendKeys.Send("{TAB}");
+            cargaGrid();
+            cmbFiltro.SelectedIndex = 0;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            Globales.EsNuevoCliente = true;
-            FrmNuevoCliente nuevocliente = new FrmNuevoCliente();
-            nuevocliente.ShowDialog();
-            Globales.cargaGrid(sqlSelect, dgvClientes);
+            
         }
 
-        private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
-           
+            cargaGrid();
+        }
+
+      
+
+        
+
+        private void dgv_MouseEnter(object sender, EventArgs e)
+        {
+            cargaGrid();
+        }
+
+        private void txtCriterio_TextChanged(object sender, EventArgs e)
+        {
+            string filtro = "";
+            if (db.Consultar("clientes").Rows.Count > 0 || cmbFiltro.Text != "")
+            {
+                try
+                {
+                    if (cmbFiltro.Text == "ID")
+                    {
+                        filtro = "idCliente";
+                    }
+                    else if (cmbFiltro.Text == "Nombre")
+                    {
+                        filtro = "nombre";
+                    }
+                    else if (cmbFiltro.Text == "Ciudad")
+                    {
+                        filtro = "ciudad";
+                    }
+                    else if (cmbFiltro.Text == "Teléfono")
+                    {
+                        filtro = "telefono";
+                    }
+
+                    dgvClientes.DataSource = db.Consultar("idcliente,nombre,telefono", "clientes", filtro + " LIKE '%" + txtCriterio.Text + "%'");
+                    estilizaGrid();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "");
+                }
+
+            }
+        }
+
+        private void frmClientes_MouseEnter(object sender, EventArgs e)
+        {
+            cargaGrid();
         }
 
         private void btnEliminarCli_Click(object sender, EventArgs e)
         {
-            int index = dgvClientes.CurrentCell.RowIndex;
+           int index = dgvClientes.CurrentCell.RowIndex;
             DataGridViewRow selectedRow = dgvClientes.Rows[index];
             string idCliente = selectedRow.Cells[0].Value.ToString();
 
@@ -65,70 +157,32 @@ namespace Seguros_American.Forms.Clientes
             int index = dgvClientes.CurrentCell.RowIndex;
             DataGridViewRow selectedRow = dgvClientes.Rows[index];
             string idCliente = selectedRow.Cells[0].Value.ToString();
-           
+
             //enviar id 
             FrmNuevoCliente nuevocliente = new FrmNuevoCliente(idCliente);
             nuevocliente.ShowDialog();
 
-            Globales.cargaGrid(sqlSelect, dgvClientes);
+            cargaGrid();
+
+
+
+
         }
 
-        private void btnMostrarTodos_Click(object sender, EventArgs e)
-        {
-            //reset values.
-            txtCriterio.Text = string.Empty;
-            cmbFiltro.SelectedIndex = -1;
-            Globales.cargaGrid(sqlSelect, dgvClientes);
-        }
-
-        private void txtCriterio_TextChanged(object sender, EventArgs e)
-        {
-            
-            string filter = cmbFiltro.Text.ToString();
-            string value = txtCriterio.Text.ToString();
-
-            string sqlCustomQuery = "SELECT * FROM clientes WHERE " + filter +
-                                    " LIKE '%" + value + "%' ORDER BY " + filter + " ASC";
-
-            Globales.cargaGrid(sqlCustomQuery, dgvClientes);
-          
-        }
-
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            if (this.iGestionClientes != null)  {
-                iGestionClientes.onDataGridClientes(dgvClientes);
-            }
-            this.Close();
-        }
 
         public interface IGestionClientes
         {
-           void onDataGridClientes(DataGridView dgv);
+            void onDataGridClientes (DataGridView dgvCliente);
         }
 
-        private void FrmGestionClientes_Load(object sender, EventArgs e)
-        {
-            cmbFiltro.SelectedIndex = 1;
-            foreach (Form frm in Application.OpenForms)
-            {
-                if (frm.Name == "Elegant UI")
-                    frm.Hide();
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (this.iGestionClientes != null)
-            {
-                iGestionClientes.onDataGridClientes(dgvClientes);
-            }
-            this.Close();
-        }
-
-        private void btnImprimirPoliza_Click(object sender, EventArgs e)
+        private void btnNuevo_Click_1(object sender, EventArgs e)
         {
 
+            Globales.EsNuevoCliente = true;
+            FrmNuevoCliente nuevocliente = new FrmNuevoCliente();
+            nuevocliente.Show();
+            cargaGrid();
         }
+
     }
 }

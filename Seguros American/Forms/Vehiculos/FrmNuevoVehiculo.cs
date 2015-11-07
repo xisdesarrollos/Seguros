@@ -58,7 +58,7 @@ namespace Seguros_American.Forms.Vehiculos
         {
             //siempre que el click es hecho la posicion del grid de clientes es 0.
             // Abrir formulario Gestion clientes.
-            FrmGestionClientes gClientes = new FrmGestionClientes(this);
+            FrmGestionClientes gClientes = new FrmGestionClientes();
             gClientes.Show();
 
         }

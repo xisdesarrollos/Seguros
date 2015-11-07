@@ -57,7 +57,7 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "7d6d16c6-7730-4a31-9037-f4b468099530";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(811, 18);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(732, 18);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(83, 41);
             this.btnMostrarTodos.TabIndex = 2;
@@ -70,11 +70,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCriterio.Id = "c5bbe4c4-e81d-4a01-9278-56ae63584866";
             this.txtCriterio.LabelText = "Criterio:";
-            this.txtCriterio.Location = new System.Drawing.Point(424, 28);
+            this.txtCriterio.Location = new System.Drawing.Point(370, 28);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(305, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(306, 21);
             this.txtCriterio.TabIndex = 1;
-            this.txtCriterio.TextEditorWidth = 341;
+            this.txtCriterio.TextEditorWidth = 262;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
             // 
             // cmbFiltro
@@ -90,47 +90,46 @@
             this.cmbFiltro.LabelText = "Filtrar por:";
             this.cmbFiltro.Location = new System.Drawing.Point(31, 28);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(352, 21);
+            this.cmbFiltro.Size = new System.Drawing.Size(286, 21);
             this.cmbFiltro.TabIndex = 0;
-            this.cmbFiltro.TextEditorWidth = 284;
+            this.cmbFiltro.TextEditorWidth = 218;
             // 
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "504c2201-c57b-49d8-9ab3-aab6f73b6a0a";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(942, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(834, 16);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(120, 45);
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Nuevo Cliente...  ";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click_1);
             // 
             // groupFiltro
             // 
-            this.groupFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupFiltro.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupFiltro.AutoSize = true;
             this.groupFiltro.Controls.Add(this.btnNuevo);
+            this.groupFiltro.Controls.Add(this.btnMostrarTodos);
             this.groupFiltro.Controls.Add(this.txtCriterio);
             this.groupFiltro.Controls.Add(this.cmbFiltro);
-            this.groupFiltro.Controls.Add(this.btnMostrarTodos);
             this.groupFiltro.Id = "c0a9dae8-1b03-4cb4-84ea-645d02d27465";
-            this.groupFiltro.Location = new System.Drawing.Point(48, 37);
+            this.groupFiltro.Location = new System.Drawing.Point(34, -1);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(1103, 91);
+            this.groupFiltro.Size = new System.Drawing.Size(1056, 91);
             this.groupFiltro.TabIndex = 12;
             // 
             // dgvClientes
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Azure;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvClientes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.Window;
             this.contextMenuExtenderProvider1.SetContextPopupMenu(this.dgvClientes, this.menuOpcionesClientes);
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -140,14 +139,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvClientes.Location = new System.Drawing.Point(48, 144);
+            this.dgvClientes.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgvClientes.Location = new System.Drawing.Point(47, 97);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1103, 420);
+            this.dgvClientes.Size = new System.Drawing.Size(1040, 421);
             this.dgvClientes.TabIndex = 4;
-            this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
             // menuOpcionesClientes
             // 
@@ -156,7 +155,7 @@
             this.btnEditarCli});
             this.menuOpcionesClientes.KeepPopupsWithOffsetPlacementWithinPlacementArea = false;
             this.menuOpcionesClientes.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom;
-            this.menuOpcionesClientes.PlacementOffset = new System.Drawing.Size(219, 106);
+            this.menuOpcionesClientes.PlacementOffset = new System.Drawing.Size(207, 106);
             this.menuOpcionesClientes.Size = new System.Drawing.Size(100, 100);
             // 
             // btnEliminarCli
@@ -181,22 +180,21 @@
             // 
             // btnOk
             // 
-            this.btnOk.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOk.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnOk.Id = "e3930a5e-d2a6-4177-9b06-b67a08ce6653";
-            this.btnOk.Location = new System.Drawing.Point(1068, 577);
+            this.btnOk.Location = new System.Drawing.Point(1002, 527);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(85, 68);
             this.btnOk.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.ok1)});
             this.btnOk.TabIndex = 14;
-            this.btnOk.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmGestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1193, 674);
+            this.ClientSize = new System.Drawing.Size(1135, 622);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);

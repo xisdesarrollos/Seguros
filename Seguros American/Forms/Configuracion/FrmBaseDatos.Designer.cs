@@ -58,7 +58,6 @@
             this.txtBase.Size = new System.Drawing.Size(274, 21);
             this.txtBase.TabIndex = 3;
             this.txtBase.TextEditorWidth = 194;
-            this.txtBase.TextChanged += new System.EventHandler(this.txtBase_TextChanged);
             // 
             // txtPassword
             // 
@@ -98,19 +97,21 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
             this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
-            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.dialog_ok_apply)});
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.ok48)});
             this.btnGuardar.TabIndex = 4;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmBaseDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 221);
+            this.ClientSize = new System.Drawing.Size(339, 217);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnGuardar);
             this.Name = "FrmBaseDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración MySQL";
+            this.Load += new System.EventHandler(this.FrmBaseDatos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

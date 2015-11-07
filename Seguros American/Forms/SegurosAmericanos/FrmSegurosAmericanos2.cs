@@ -55,7 +55,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            FrmGestionClientes auxclientes = new FrmGestionClientes(this);
+            FrmGestionClientes auxclientes = new FrmGestionClientes();
             auxclientes.ShowDialog();
 
         }

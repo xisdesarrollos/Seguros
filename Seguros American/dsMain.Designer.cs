@@ -3047,7 +3047,7 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::Seguros_American.Properties.Settings.Default.seguros_americanosConnectionString;
+            this._connection.ConnectionString = global::Seguros_American.Properties.Settings.Default.seguros_americanosConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

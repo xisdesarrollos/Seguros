@@ -49,7 +49,7 @@
             this.groupBox1.Controls.Add(this.txtPass);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Id = "03d2638d-e95c-4e78-a233-d77ffcdbb4e3";
-            this.groupBox1.Location = new System.Drawing.Point(153, 18);
+            this.groupBox1.Location = new System.Drawing.Point(176, 43);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(241, 81);
             this.groupBox1.TabIndex = 6;
@@ -79,19 +79,18 @@
             // 
             this.btnCancela.BackColor = System.Drawing.Color.Thistle;
             this.btnCancela.Id = "b04fe299-4928-426d-af25-042b2b75aae7";
-            this.btnCancela.Location = new System.Drawing.Point(216, 115);
+            this.btnCancela.Location = new System.Drawing.Point(244, 141);
             this.btnCancela.Name = "btnCancela";
             this.btnCancela.Size = new System.Drawing.Size(75, 23);
             this.btnCancela.TabIndex = 7;
             this.btnCancela.Text = " Cancelar";
             this.btnCancela.UseVisualThemeForBackground = false;
-            this.btnCancela.Click += new System.EventHandler(this.btnCancela_Click);
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLogin.Id = "786cf9dd-7bdf-488e-93a1-c41c29d2db72";
-            this.btnLogin.Location = new System.Drawing.Point(314, 115);
+            this.btnLogin.Location = new System.Drawing.Point(342, 141);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 8;
@@ -102,7 +101,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Seguros_American.Properties.Resources.login;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(40, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 102);
             this.pictureBox1.TabIndex = 9;
@@ -114,7 +113,7 @@
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(9, 128);
+            this.label2.Location = new System.Drawing.Point(26, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 13);
             this.label2.TabIndex = 10;
@@ -124,7 +123,7 @@
             // label1
             // 
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(23, 115);
+            this.label1.Location = new System.Drawing.Point(40, 138);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 11;
@@ -136,7 +135,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(432, 182);
+            this.ClientSize = new System.Drawing.Size(456, 206);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);

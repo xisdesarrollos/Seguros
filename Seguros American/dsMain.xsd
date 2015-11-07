@@ -11,7 +11,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tarifasautosTableAdapter" GeneratorDataComponentClassName="tarifasautosTableAdapter" Name="tarifasautos" UserDataComponentName="tarifasautosTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="seguros_americanosConnectionString (Settings)" DbObjectName="seguros_americanos.tarifasautos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="seguros_americanosConnectionString1 (Settings)" DbObjectName="seguros_americanos.tarifasautos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `tarifasautos` WHERE ((`dias` = @p1) AND (`pb` = @p2) AND (`gm` = @p3) AND (`dp` = @p4) AND (`total` = @p5))</CommandText>

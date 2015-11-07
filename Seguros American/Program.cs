@@ -17,7 +17,7 @@ namespace Seguros_American
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Seguros_American.Forms.FrmPrincipal());
+            Application.Run(new Seguros_American.frmLoging());
         }
     }
 }
