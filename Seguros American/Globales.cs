@@ -22,9 +22,9 @@ namespace Seguros_American
         public static String auxUsuario;
         public static String auxTarifa;
         public static String tipoReporte;
-         public static String fechaReporte;
-
+        public static String fechaReporte;
         public static DateTime fechaAux;
+        public static string auxCliente;
 
         public static void cargaGrid(String sql, DataGridView dgv)
         {

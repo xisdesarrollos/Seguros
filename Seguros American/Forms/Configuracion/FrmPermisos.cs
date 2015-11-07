@@ -23,7 +23,7 @@ namespace Seguros_American.Forms.Configuracion
             _frmp = frmp;
             bd = new Basedatos();
             InitializeComponent();
-            InitializeComponent();
+          
         }
 
         private void FrmPermisos_Load(object sender, EventArgs e)
@@ -39,8 +39,8 @@ namespace Seguros_American.Forms.Configuracion
             cmbUsuario.DataSource = dt;
             cmbUsuario.DisplayMember = "nombre";
             cmbUsuario.ValueMember = "usuario";
-            cmbUsuario.SelectedIndex = 0;
-            //cuenta();
+            //cmbUsuario.SelectedIndex = 0;
+            cuenta();
             carga();
         }
 
@@ -64,7 +64,7 @@ namespace Seguros_American.Forms.Configuracion
 
             foreach (Elegant.Ui.CheckBox checkbox in GetAll(this, typeof(Elegant.Ui.CheckBox)))
             {
-                checkbox.Checked = Convert.ToBoolean(dt.Rows[0][i]);
+                checkbox.Checked = Convert.ToBoolean(dt.Rows[0][1]);
                 i++;
             }
 
@@ -127,11 +127,7 @@ namespace Seguros_American.Forms.Configuracion
                                       .Where(c => c.GetType() == type);
         }
 
-        private void cmbUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            carga();
-        }
-
+      
         private void frmPermisos_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
@@ -140,7 +136,7 @@ namespace Seguros_American.Forms.Configuracion
         private void guardaPermisos()
         {
             int indice = 0;
-            int[] i = new int[12];
+            int[] i = new int[11];
             foreach (Elegant.Ui.CheckBox chk in GetAll(this, typeof(Elegant.Ui.CheckBox)))
             {
                 i[indice] = Convert.ToInt32(chk.Checked);
@@ -161,7 +157,6 @@ namespace Seguros_American.Forms.Configuracion
             cmd.Parameters.AddWithValue("@j", i[9]);
             cmd.Parameters.AddWithValue("@k", i[10]);
             cmd.Parameters.AddWithValue("@l", i[11]);
-            cmd.Parameters.AddWithValue("@m", i[12]);
             cmd.Parameters.AddWithValue("@usuario", cmbUsuario.SelectedValue);
             bd.Actualizar(cmd);
         }
@@ -171,5 +166,14 @@ namespace Seguros_American.Forms.Configuracion
             guardaPermisos();
             this.Dispose();
         }
+
+        private void cmbUsuario_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            carga();
+        }
+
+        
+
+        
     }
 }

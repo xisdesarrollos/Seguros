@@ -12,10 +12,10 @@ using MySql.Data.MySqlClient;
 
 namespace Seguros_American.Forms.Configuracion
 {
-    public partial class FrmTarifasAutos : Form
+    public partial class FrmGestionTarifasVehiculos : Form
     {
 
-        public FrmTarifasAutos()
+        public FrmGestionTarifasVehiculos()
         {
             InitializeComponent();
         }
@@ -78,6 +78,8 @@ namespace Seguros_American.Forms.Configuracion
             MessageBox.Show("Cambios realizados correctamente");
             this.Close();
         }
+
+        
 
        
     }

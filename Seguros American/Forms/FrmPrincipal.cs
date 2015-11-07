@@ -48,13 +48,13 @@ namespace Seguros_American.Forms
 
         private void btnTarifas_Click(object sender, EventArgs e)
         {
-
+            FrmTarifasVehiculos gestiontarifas = new FrmTarifasVehiculos();
+            gestiontarifas.Show();
         }
 
         private void btnGestonTarifas_Click(object sender, EventArgs e)
         {
-            FrmTarifasAutos tarifa = new FrmTarifasAutos();
-            tarifa.MdiParent = this;
+            FrmGestionTarifasVehiculos tarifa = new FrmGestionTarifasVehiculos();
             tarifa.Show();
         }
 
@@ -69,7 +69,6 @@ namespace Seguros_American.Forms
         private void btnGestionVehiculos_Click(object sender, EventArgs e)
         {
             FrmGestionVeh frmgestionveh = new FrmGestionVeh();
-            frmgestionveh.MdiParent = this;
             frmgestionveh.Show();
         }
 

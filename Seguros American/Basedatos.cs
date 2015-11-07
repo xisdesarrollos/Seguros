@@ -34,10 +34,10 @@ namespace Seguros_American
             password = Properties.Settings.Default.password;
             db = Properties.Settings.Default.db;
 
-            servidor = "192.168.0.200";
-            usuario = "root";
-            password = "9753186400";
-            db = "seguros_americanos";
+            //servidor = "192.168.0.200";
+            //usuario = "root";
+            //password = "9753186400";
+            //db = "seguros_americanos";
                 
             Conectar();
         }

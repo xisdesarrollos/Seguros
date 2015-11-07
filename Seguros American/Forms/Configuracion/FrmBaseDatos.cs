@@ -17,9 +17,37 @@ namespace Seguros_American.Forms.Configuracion
             InitializeComponent();
         }
 
-        private void txtBase_TextChanged(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
 
+            Properties.Settings.Default.servidor = txtServer.Text;
+            Properties.Settings.Default.usuario = txtUsuario.Text;
+            Properties.Settings.Default.password = txtPassword.Text;
+            Properties.Settings.Default.db = txtBase.Text;
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Configuración guardada correctamente", "Mysql", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Dispose();
         }
+
+        private void FrmBaseDatos_Load(object sender, EventArgs e)
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm.Name == "Elegant UI")
+                    frm.Hide();
+            }
+
+            txtServer.Text = Properties.Settings.Default.servidor;
+            txtUsuario.Text = Properties.Settings.Default.usuario;
+            txtPassword.Text = Properties.Settings.Default.password;
+            txtBase.Text = Properties.Settings.Default.db;
+        }
+
+
+        private void FrmDatos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Dispose();
+        }
+
     }
 }
