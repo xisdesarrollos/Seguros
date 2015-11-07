@@ -84,7 +84,6 @@
             this.txtBienes = new Elegant.Ui.TextBox();
             this.cmbSuma = new Elegant.Ui.ComboBox();
             this.cmbDia = new Elegant.Ui.ComboBox();
-            this.dateHorafin = new Elegant.Ui.DateTimePicker();
             this.dateIncVig = new Elegant.Ui.DateTimePicker();
             this.dateHoraInc = new Elegant.Ui.DateTimePicker();
             this.dateFinVig = new Elegant.Ui.DateTimePicker();
@@ -628,7 +627,7 @@
             // 
             this.tabSegurosAmericanos.Location = new System.Drawing.Point(21, 30);
             this.tabSegurosAmericanos.Name = "tabSegurosAmericanos";
-            this.tabSegurosAmericanos.SelectedTabPage = this.tabPage3;
+            this.tabSegurosAmericanos.SelectedTabPage = this.tabVehiculos;
             this.tabSegurosAmericanos.Size = new System.Drawing.Size(651, 333);
             this.tabSegurosAmericanos.TabIndex = 29;
             this.tabSegurosAmericanos.TabPages.AddRange(new Elegant.Ui.TabPage[] {
@@ -658,7 +657,6 @@
             this.groupPrimas.Controls.Add(this.txtBienes);
             this.groupPrimas.Controls.Add(this.cmbSuma);
             this.groupPrimas.Controls.Add(this.cmbDia);
-            this.groupPrimas.Controls.Add(this.dateHorafin);
             this.groupPrimas.Controls.Add(this.dateIncVig);
             this.groupPrimas.Controls.Add(this.dateHoraInc);
             this.groupPrimas.Controls.Add(this.dateFinVig);
@@ -683,7 +681,6 @@
             this.cmbSeguro.Size = new System.Drawing.Size(263, 21);
             this.cmbSeguro.TabIndex = 1;
             this.cmbSeguro.TextEditorWidth = 165;
-            this.cmbSeguro.SelectedValueChanged += new System.EventHandler(this.cmbSeguro_SelectedValueChanged);
             // 
             // dateFechaE
             // 
@@ -733,7 +730,6 @@
             // 
             // txtFolio
             // 
-            this.txtFolio.Enabled = false;
             this.txtFolio.Id = "4002e181-22a4-4701-9cbb-6b63ce177dec";
             this.txtFolio.LabelText = "Número de Folio:";
             this.txtFolio.Location = new System.Drawing.Point(44, 17);
@@ -818,18 +814,6 @@
             this.cmbDia.TextEditorWidth = 24;
             this.cmbDia.SelectedIndexChanged += new System.EventHandler(this.cmbDia_SelectedIndexChanged);
             // 
-            // dateHorafin
-            // 
-            this.dateHorafin.Format = Elegant.Ui.DateTimePickerFormat.ShortTime;
-            this.dateHorafin.Id = "4f55945e-e376-456f-918d-10cf756e2c4a";
-            this.dateHorafin.LabelText = "Hora Fin:";
-            this.dateHorafin.Location = new System.Drawing.Point(280, 148);
-            this.dateHorafin.Name = "dateHorafin";
-            this.dateHorafin.Size = new System.Drawing.Size(175, 21);
-            this.dateHorafin.TabIndex = 8;
-            this.dateHorafin.TextEditorWidth = 110;
-            this.dateHorafin.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
-            // 
             // dateIncVig
             // 
             this.dateIncVig.Enabled = false;
@@ -895,6 +879,7 @@
             // 
             // txtEstado
             // 
+            this.txtEstado.Enabled = false;
             this.txtEstado.Id = "1c76eca9-c90a-476a-bd92-c43e8b2bdb9b";
             this.txtEstado.LabelText = "Estado:";
             this.txtEstado.Location = new System.Drawing.Point(295, 180);
@@ -906,6 +891,7 @@
             // cmbPais
             // 
             this.cmbPais.Editable = false;
+            this.cmbPais.Enabled = false;
             this.cmbPais.FormattingEnabled = false;
             this.cmbPais.Id = "0192e059-b594-48d8-847c-c92f34c2af10";
             this.cmbPais.Items.AddRange(new object[] {
@@ -920,6 +906,7 @@
             // 
             // txtCiudad
             // 
+            this.txtCiudad.Enabled = false;
             this.txtCiudad.Id = "1636c877-fd7a-418e-95fa-f07dc65e23be";
             this.txtCiudad.LabelText = "Ciudad:";
             this.txtCiudad.Location = new System.Drawing.Point(37, 180);
@@ -930,6 +917,7 @@
             // 
             // txtDireccion
             // 
+            this.txtDireccion.Enabled = false;
             this.txtDireccion.Id = "a540bea3-6e16-4f8c-83f1-f9998544c8a7";
             this.txtDireccion.LabelText = "Dirección:";
             this.txtDireccion.Location = new System.Drawing.Point(37, 139);
@@ -940,6 +928,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Id = "fcd7eefd-cc45-4538-b81d-35be4cf3a285";
             this.txtNombre.LabelText = "Nombre:";
             this.txtNombre.Location = new System.Drawing.Point(37, 97);
@@ -959,6 +948,7 @@
             // 
             // txtNoCliente
             // 
+            this.txtNoCliente.Enabled = false;
             this.txtNoCliente.Id = "1e321c45-ddf3-4b2f-8e0e-6c840cd13742";
             this.txtNoCliente.LabelText = "Número de Cliente:";
             this.txtNoCliente.Location = new System.Drawing.Point(37, 52);
@@ -1184,7 +1174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 560);
+            this.ClientSize = new System.Drawing.Size(824, 576);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.IsMdiContainer = true;
@@ -1286,7 +1276,6 @@
         private Elegant.Ui.TextBox txtBienes;
         private Elegant.Ui.ComboBox cmbSuma;
         private Elegant.Ui.ComboBox cmbDia;
-        private Elegant.Ui.DateTimePicker dateHorafin;
         private Elegant.Ui.DateTimePicker dateIncVig;
         private Elegant.Ui.DateTimePicker dateHoraInc;
         private Elegant.Ui.DateTimePicker dateFinVig;
