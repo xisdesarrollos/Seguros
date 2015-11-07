@@ -54,6 +54,7 @@ namespace Seguros_American.Forms.Vehiculos
 
         private void FrmGestionVeh_Load(object sender, EventArgs e)
         {
+            cmbFiltro.SelectedIndex = 1;
             foreach (Form frm in Application.OpenForms)
             {
                 if (frm.Name == "Elegant UI")

@@ -109,6 +109,7 @@ namespace Seguros_American.Forms.Clientes
 
         private void FrmGestionClientes_Load(object sender, EventArgs e)
         {
+            cmbFiltro.SelectedIndex = 1;
             foreach (Form frm in Application.OpenForms)
             {
                 if (frm.Name == "Elegant UI")

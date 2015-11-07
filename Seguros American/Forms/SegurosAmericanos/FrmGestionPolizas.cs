@@ -28,6 +28,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void FrmGestionPolizas_Load(object sender, EventArgs e)
         {
+            cmbFiltro.SelectedIndex = 1;
             foreach (Form frm in Application.OpenForms)
             {
                 if (frm.Name == "Elegant UI")
