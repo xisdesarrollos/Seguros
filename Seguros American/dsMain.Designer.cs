@@ -1281,7 +1281,7 @@ namespace Seguros_American {
                         System.DateTime inVig, 
                         System.DateTime finVig, 
                         System.DateTime fechaAlta, 
-                        int fechaEm, 
+                        System.DateTime fechaEm, 
                         System.TimeSpan horaDesd, 
                         System.TimeSpan horaHast, 
                         float primaBienes, 
@@ -1496,7 +1496,7 @@ namespace Seguros_American {
                 base.Columns.Add(this.columnfinVig);
                 this.columnfechaAlta = new global::System.Data.DataColumn("fechaAlta", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechaAlta);
-                this.columnfechaEm = new global::System.Data.DataColumn("fechaEm", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnfechaEm = new global::System.Data.DataColumn("fechaEm", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfechaEm);
                 this.columnhoraDesd = new global::System.Data.DataColumn("horaDesd", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnhoraDesd);
@@ -1998,9 +1998,9 @@ namespace Seguros_American {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int fechaEm {
+            public System.DateTime fechaEm {
                 get {
-                    return ((int)(this[this.tablepolizas_americanas.fechaEmColumn]));
+                    return ((global::System.DateTime)(this[this.tablepolizas_americanas.fechaEmColumn]));
                 }
                 set {
                     this[this.tablepolizas_americanas.fechaEmColumn] = value;

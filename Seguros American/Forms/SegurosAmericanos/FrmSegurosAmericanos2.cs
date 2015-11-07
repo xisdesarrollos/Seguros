@@ -190,7 +190,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 cmdPoliza.Parameters.AddWithValue("@finVig", DateTime.Parse(dateFinVig.Value.ToString()).ToString("yyyy-MM-dd"));
                 dateInserted = DateTime.Now;
                 cmdPoliza.Parameters.AddWithValue("@fechaAlta", dateInserted.ToString("yyyy-MM-dd HH:mm:ss"));
-                cmdPoliza.Parameters.AddWithValue("@fechaEm", DateTime.Parse(dateEm.Value.ToString()).ToString("yyyy-MM-dd"));
+                cmdPoliza.Parameters.AddWithValue("@fechaEm", DateTime.Parse(dateFechaE.Value.ToString()).ToString("yyyy-MM-dd"));
                 cmdPoliza.Parameters.AddWithValue("@horaDesd", "NULL");//WAR
                 cmdPoliza.Parameters.AddWithValue("@horaHast","NULL");//WAR
                 //tarifas
