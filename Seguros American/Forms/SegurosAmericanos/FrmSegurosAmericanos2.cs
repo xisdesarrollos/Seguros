@@ -109,13 +109,15 @@ namespace Seguros_American.Forms.SegurosAmericanos
             string placas = selectedRow.Cells[7].Value.ToString();
             string estadoPlacas = selectedRow.Cells[8].Value.ToString();
             string numeroSerie = selectedRow.Cells[9].Value.ToString();
-
+            //al principio esta vacio
             if (vbl.Items.Any())
-            {
                 vbl.Clear();
-                vbl.Items.Add(numeroSerie);
-            }
-
+            
+            vbl.Items.Add("Año: " + modelo);
+            vbl.Items.Add("Marca: " + marca);
+            vbl.Items.Add("Modelo: " + submarca);
+            vbl.Items.Add("Placas: " + placas);
+            vbl.Items.Add("Numero de Serie: " + numeroSerie);
 
         }
         public void onDataGridClientes(DataGridView dgv)
