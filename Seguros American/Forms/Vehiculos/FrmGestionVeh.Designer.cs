@@ -49,7 +49,7 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(919, 426);
+            this.btnOk.Location = new System.Drawing.Point(927, 434);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 48);
             this.btnOk.TabIndex = 16;
@@ -82,7 +82,7 @@
             this.dgvVehiculos.ReadOnly = true;
             this.dgvVehiculos.RowHeadersVisible = false;
             this.dgvVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehiculos.Size = new System.Drawing.Size(995, 305);
+            this.dgvVehiculos.Size = new System.Drawing.Size(1003, 313);
             this.dgvVehiculos.TabIndex = 14;
             // 
             // groupFiltro
@@ -97,7 +97,7 @@
             this.groupFiltro.Id = "c4d31b6a-286b-427b-aecd-87ee16dc8b03";
             this.groupFiltro.Location = new System.Drawing.Point(11, 5);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(996, 91);
+            this.groupFiltro.Size = new System.Drawing.Size(1004, 99);
             this.groupFiltro.TabIndex = 15;
             // 
             // btnNuevo
@@ -105,7 +105,7 @@
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "0ded2b42-9c1f-4ca4-82ad-3d4aae35331e";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(864, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(872, 16);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(108, 45);
             this.btnNuevo.TabIndex = 3;
@@ -121,7 +121,7 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(419, 28);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(263, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(271, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 244;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
@@ -154,7 +154,7 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "b7d2eae5-43e7-428d-8607-32ecb3f22c93";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(749, 20);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(757, 20);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(82, 38);
             this.btnMostrarTodos.TabIndex = 2;
@@ -165,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 486);
+            this.ClientSize = new System.Drawing.Size(1027, 494);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvVehiculos);
             this.Controls.Add(this.groupFiltro);

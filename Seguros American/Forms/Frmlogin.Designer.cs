@@ -56,13 +56,14 @@
             // 
             // txtPass
             // 
+            this.txtPass.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtPass.Id = "4fae2840-20ab-4caa-abbd-1970f6956a73";
             this.txtPass.LabelText = "Contraseña:";
             this.txtPass.Location = new System.Drawing.Point(21, 46);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(204, 21);
-            this.txtPass.TabIndex = 2;
+            this.txtPass.TabIndex = 1;
             this.txtPass.TextEditorWidth = 138;
             // 
             // txtUsuario
@@ -72,7 +73,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(39, 16);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(186, 21);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextEditorWidth = 138;
             // 
             // btnCancela
@@ -135,7 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(456, 206);
+            this.ClientSize = new System.Drawing.Size(464, 214);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);

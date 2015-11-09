@@ -46,8 +46,12 @@ namespace Seguros_American.Forms.Configuracion
         
         private void btnNuevoUsuario_Click(object sender, EventArgs e)
         {
-            FrmNuevoUsuario nuevousuario = new FrmNuevoUsuario();
-            nuevousuario.Show();
+            Globales.EsNuevoUsuario = true;
+            FrmNuevoUsuario frmNU = new FrmNuevoUsuario();
+            frmNU.ShowDialog();
+            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC", dgv);
+            cmbFiltro.SelectedIndex = 0;
+            txtCriterio.Select();
 
         }
 
@@ -66,16 +70,7 @@ namespace Seguros_American.Forms.Configuracion
             txtCriterio.Select();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            Globales.EsNuevoUsuario = false;
-            Globales.auxUsuario = dgv[0, dgv.CurrentRow.Index].Value.ToString();
-            FrmNuevoUsuario frmNu = new FrmNuevoUsuario();
-            frmNu.ShowDialog();
-            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC", dgv);
-            cmbFiltro.SelectedIndex = 0;
-            txtCriterio.Select();
-        }
+        
 
         private void eliminaUsuario(String id_usuario)
         {
@@ -87,7 +82,20 @@ namespace Seguros_American.Forms.Configuracion
             this.Dispose();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+       
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            Globales.EsNuevoUsuario = false;
+            Globales.auxUsuario = dgv[0, dgv.CurrentRow.Index].Value.ToString();
+            FrmNuevoUsuario frmNu = new FrmNuevoUsuario();
+            frmNu.ShowDialog();
+            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC", dgv);
+            cmbFiltro.SelectedIndex = 0;
+            txtCriterio.Select();
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("¿Seguro que desea eliminar al usuario seleccionado?", "Usuarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes)

@@ -39,7 +39,7 @@ namespace Seguros_American.Forms.Configuracion
             cmbUsuario.DataSource = dt;
             cmbUsuario.DisplayMember = "nombre";
             cmbUsuario.ValueMember = "usuario";
-            //cmbUsuario.SelectedIndex = 0;
+            cmbUsuario.SelectedIndex = 0;
             cuenta();
             carga();
         }
@@ -60,7 +60,7 @@ namespace Seguros_American.Forms.Configuracion
         private void carga()
         {
             DataTable dt = bd.Consultar("*", "permisos", "usuario = '" + cmbUsuario.SelectedValue + "'");
-            int i = 1;
+            int i = 0;
 
             foreach (Elegant.Ui.CheckBox checkbox in GetAll(this, typeof(Elegant.Ui.CheckBox)))
             {
@@ -75,7 +75,7 @@ namespace Seguros_American.Forms.Configuracion
         {
             int x = 20;
             int y = 35;
-            int tabindex = 0;
+            int tabindex = 1;
             int paddingx = 190;
             int paddingy = 20;
 
@@ -136,7 +136,7 @@ namespace Seguros_American.Forms.Configuracion
         private void guardaPermisos()
         {
             int indice = 0;
-            int[] i = new int[11];
+            int[] i = new int[40];
             foreach (Elegant.Ui.CheckBox chk in GetAll(this, typeof(Elegant.Ui.CheckBox)))
             {
                 i[indice] = Convert.ToInt32(chk.Checked);

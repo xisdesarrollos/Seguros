@@ -93,7 +93,7 @@
             this.ribbon1.Id = "80d5119b-9a8c-4698-a56b-e01c1a6ded9f";
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.Name = "ribbon1";
-            this.ribbon1.Size = new System.Drawing.Size(1271, 153);
+            this.ribbon1.Size = new System.Drawing.Size(1279, 153);
             this.ribbon1.TabIndex = 2;
             this.ribbon1.TabPages.AddRange(new Elegant.Ui.RibbonTabPage[] {
             this.TabCatalogo,
@@ -110,7 +110,7 @@
             this.TabCatalogo.KeyTip = null;
             this.TabCatalogo.Location = new System.Drawing.Point(0, 0);
             this.TabCatalogo.Name = "TabCatalogo";
-            this.TabCatalogo.Size = new System.Drawing.Size(1271, 99);
+            this.TabCatalogo.Size = new System.Drawing.Size(1279, 99);
             this.TabCatalogo.TabIndex = 0;
             this.TabCatalogo.Text = "CATALOGO";
             // 
@@ -223,7 +223,7 @@
             this.TabOperaciones.KeyTip = null;
             this.TabOperaciones.Location = new System.Drawing.Point(0, 0);
             this.TabOperaciones.Name = "TabOperaciones";
-            this.TabOperaciones.Size = new System.Drawing.Size(1271, 99);
+            this.TabOperaciones.Size = new System.Drawing.Size(1279, 99);
             this.TabOperaciones.TabIndex = 0;
             this.TabOperaciones.Text = "OPERACIONES";
             // 
@@ -269,7 +269,7 @@
             this.TabConfiguracion.KeyTip = null;
             this.TabConfiguracion.Location = new System.Drawing.Point(0, 0);
             this.TabConfiguracion.Name = "TabConfiguracion";
-            this.TabConfiguracion.Size = new System.Drawing.Size(1247, 99);
+            this.TabConfiguracion.Size = new System.Drawing.Size(1279, 99);
             this.TabConfiguracion.TabIndex = 0;
             this.TabConfiguracion.Text = "CONFIGURACIÓN";
             // 
@@ -279,7 +279,7 @@
             this.ribbonGroup3.Controls.Add(this.btnGestionUsuarios);
             this.ribbonGroup3.Location = new System.Drawing.Point(5, 5);
             this.ribbonGroup3.Name = "ribbonGroup3";
-            this.ribbonGroup3.Size = new System.Drawing.Size(114, 0);
+            this.ribbonGroup3.Size = new System.Drawing.Size(114, 89);
             this.ribbonGroup3.TabIndex = 3;
             this.ribbonGroup3.Text = "USUARIOS";
             // 
@@ -288,9 +288,9 @@
             this.btnNuevoUsuario.Id = "3122fa98-7abd-4fb9-84fa-c2fccf662137";
             this.btnNuevoUsuario.LargeImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.new48)});
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(5, 0);
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(4, 0);
             this.btnNuevoUsuario.Name = "btnNuevoUsuario";
-            this.btnNuevoUsuario.Size = new System.Drawing.Size(78, 0);
+            this.btnNuevoUsuario.Size = new System.Drawing.Size(43, 72);
             this.btnNuevoUsuario.TabIndex = 1;
             this.btnNuevoUsuario.Text = "Nuevo usuario";
             this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click_1);
@@ -300,9 +300,9 @@
             this.btnGestionUsuarios.Id = "a7dc7d8a-3ee5-4071-bbbe-cf686280f843";
             this.btnGestionUsuarios.LargeImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._48Vendedores)});
-            this.btnGestionUsuarios.Location = new System.Drawing.Point(5, 0);
+            this.btnGestionUsuarios.Location = new System.Drawing.Point(49, 0);
             this.btnGestionUsuarios.Name = "btnGestionUsuarios";
-            this.btnGestionUsuarios.Size = new System.Drawing.Size(102, 0);
+            this.btnGestionUsuarios.Size = new System.Drawing.Size(60, 72);
             this.btnGestionUsuarios.TabIndex = 2;
             this.btnGestionUsuarios.Text = "Gestión de usuarios";
             this.btnGestionUsuarios.Click += new System.EventHandler(this.btnGestionUsuarios_Click);
@@ -312,7 +312,7 @@
             this.ribbonGroup5.Controls.Add(this.btnBase);
             this.ribbonGroup5.Location = new System.Drawing.Point(119, 5);
             this.ribbonGroup5.Name = "ribbonGroup5";
-            this.ribbonGroup5.Size = new System.Drawing.Size(70, 0);
+            this.ribbonGroup5.Size = new System.Drawing.Size(70, 89);
             this.ribbonGroup5.TabIndex = 4;
             this.ribbonGroup5.Text = "GENERAL";
             // 
@@ -321,9 +321,9 @@
             this.btnBase.Id = "61203426-8d2e-4288-a15b-dd82fc72c6a3";
             this.btnBase.LargeImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.database48)});
-            this.btnBase.Location = new System.Drawing.Point(4, 0);
+            this.btnBase.Location = new System.Drawing.Point(12, 0);
             this.btnBase.Name = "btnBase";
-            this.btnBase.Size = new System.Drawing.Size(77, 0);
+            this.btnBase.Size = new System.Drawing.Size(44, 72);
             this.btnBase.TabIndex = 3;
             this.btnBase.Text = "Base de datos";
             this.btnBase.Click += new System.EventHandler(this.btnBase_Click);
@@ -335,7 +335,7 @@
             this.TabReportes.KeyTip = null;
             this.TabReportes.Location = new System.Drawing.Point(0, 0);
             this.TabReportes.Name = "TabReportes";
-            this.TabReportes.Size = new System.Drawing.Size(1255, 99);
+            this.TabReportes.Size = new System.Drawing.Size(1279, 99);
             this.TabReportes.TabIndex = 0;
             this.TabReportes.Text = "REPORTES";
             // 
@@ -344,7 +344,7 @@
             this.ribbonGroup1.Controls.Add(this.btnReportes);
             this.ribbonGroup1.Location = new System.Drawing.Point(5, 5);
             this.ribbonGroup1.Name = "ribbonGroup1";
-            this.ribbonGroup1.Size = new System.Drawing.Size(59, 0);
+            this.ribbonGroup1.Size = new System.Drawing.Size(59, 89);
             this.ribbonGroup1.TabIndex = 0;
             // 
             // btnReportes
@@ -354,7 +354,7 @@
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.report48)});
             this.btnReportes.Location = new System.Drawing.Point(4, 0);
             this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(52, 0);
+            this.btnReportes.Size = new System.Drawing.Size(50, 72);
             this.btnReportes.TabIndex = 4;
             this.btnReportes.Text = "Reportes";
             this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
@@ -363,7 +363,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1271, 738);
+            this.ClientSize = new System.Drawing.Size(1279, 738);
             this.Controls.Add(this.ribbon1);
             this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
