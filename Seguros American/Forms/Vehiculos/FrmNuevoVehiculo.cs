@@ -93,7 +93,7 @@ namespace Seguros_American.Forms.Vehiculos
         {
             //siempre que el click es hecho la posicion del grid de clientes es 0.
             // Abrir formulario Gestion clientes.
-            FrmGestionClientes gClientes = new FrmGestionClientes();
+            FrmGestionClientes gClientes = new FrmGestionClientes(this);
             gClientes.Show();
 
         }
@@ -146,6 +146,11 @@ namespace Seguros_American.Forms.Vehiculos
 
                     MessageBox.Show("Verifique que todos los campos esten correctos");
                     return false;
+            }
+            //verificar que no se repita el numero de serie en la base de datos
+            if(verificarNumeroSerie()){
+                MessageBox.Show("El numero de serie se duplico en la tabla, verifique");
+                return false;
             }
             return true;
         }
@@ -273,6 +278,16 @@ namespace Seguros_American.Forms.Vehiculos
                 return false;
             }
             return true;
+        }
+
+        public bool verificarNumeroSerie()
+        {
+            string sqlNumeroSerie = "SELECT EXISTS(SELECT 1 FROM vehiculos_cliente WHERE numeroSerie = " + txtNoS.Text.ToString() +" )";
+            int response = bd.ConsultaEscalar(sqlNumeroSerie);
+            if (response == 1)
+                return true;
+            
+            return false;
         }
     }
 }
