@@ -16,6 +16,7 @@ namespace Seguros_American.Forms.Vehiculos
 
         private String sqlSelect = "SELECT * FROM vehiculos_cliente ORDER BY idVehiculo ASC";
         private String idCliente;
+        private String idVehiculo;
         IAuxVehiculos iAuxVehiculos;
 
         public FrmAuxVehiculos()
@@ -35,7 +36,7 @@ namespace Seguros_American.Forms.Vehiculos
         private void btnNuevoVehiculo_Click(object sender, EventArgs e)
         {
             //enviar idCLIENTE
-            FrmNuevoVehiculo nuevovehiculo = new FrmNuevoVehiculo(idCliente);
+            FrmNuevoVehiculo nuevovehiculo = new FrmNuevoVehiculo(idCliente,idVehiculo);
             nuevovehiculo.Show();
         }
         public interface IAuxVehiculos
@@ -73,6 +74,21 @@ namespace Seguros_American.Forms.Vehiculos
             string valoreditado = dgv.Rows[rindex].Cells[cindex].Value.ToString();
             MessageBox.Show(valoreditado);
            
+        }
+
+        private void btnEditarAuxVehiculo_Click(object sender, EventArgs e)
+        {
+            //set id
+            int index = dgv.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dgv.Rows[index];
+            this.idVehiculo = selectedRow.Cells[0].Value.ToString();
+            this.idCliente = selectedRow.Cells[1].Value.ToString();
+
+            //enviar id 
+            FrmNuevoVehiculo nuevocliente = new FrmNuevoVehiculo(idVehiculo, idCliente, false);
+            nuevocliente.ShowDialog();
+
+            Globales.cargaGrid(sqlSelect, dgv);
         }
     }
 }
