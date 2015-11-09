@@ -61,6 +61,7 @@
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(383, 201);
             this.dgv.TabIndex = 2;
+            this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
             // 
             // txtCriterio
             // 
@@ -71,6 +72,7 @@
             this.txtCriterio.Size = new System.Drawing.Size(346, 21);
             this.txtCriterio.TabIndex = 0;
             this.txtCriterio.TextEditorWidth = 302;
+            this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
             // 
             // formFrameSkinner
             // 
@@ -91,13 +93,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 269);
+            this.ClientSize = new System.Drawing.Size(436, 285);
             this.Controls.Add(this.btnNuevoCliente);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.txtCriterio);
             this.Name = "FrmAuxCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auxiliar Cliente";
+            this.Load += new System.EventHandler(this.FrmAuxCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

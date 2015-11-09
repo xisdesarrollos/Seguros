@@ -54,6 +54,13 @@ namespace Seguros_American.Forms.Vehiculos
 
         private void FrmGestionVeh_Load(object sender, EventArgs e)
         {
+            cmbFiltro.SelectedIndex = 1;
+            // TODO: esta línea de código carga datos en la tabla 'dataSet1.tarifasautos' Puede moverla o quitarla según sea necesario.
+
+            dgvVehiculos.EditMode = DataGridViewEditMode.EditOnEnter;
+            dgvVehiculos.AllowUserToAddRows = false;
+            dgvVehiculos.AllowUserToDeleteRows = false;
+   
             foreach (Form frm in Application.OpenForms)
             {
                 if (frm.Name == "Elegant UI")
@@ -95,6 +102,11 @@ namespace Seguros_American.Forms.Vehiculos
         public interface IGestionVehiculos
         {
             void onDataGridVehiculos(DataGridView dgv);
+        }
+
+        private void dgvVehiculos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
     }

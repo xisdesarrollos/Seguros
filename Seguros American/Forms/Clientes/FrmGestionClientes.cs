@@ -16,12 +16,13 @@ namespace Seguros_American.Forms.Clientes
     {
         Basedatos db = new Basedatos();
         DataTable dt = new DataTable();
-        private String sqlSelect ="idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs FROM clientes ORDER BY idcliente DESC";
-        
+        private String sqlSelect ="SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs FROM clientes ORDER BY idcliente DESC";
+        IGestionClientes iGestionClientes;
         public void cargaGrid()
         {
 
-            dt = db.Consultar("idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs", "clientes ORDER BY idcliente DESC");
+            dt = db.Consultar("idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs", "clientes");
+           
             dgvClientes.DataSource = dt;
             estilizaGrid();
         }
@@ -62,6 +63,12 @@ namespace Seguros_American.Forms.Clientes
             }
         }
 
+        public FrmGestionClientes(IGestionClientes iGestionClientes)
+        {
+            InitializeComponent();
+            this.iGestionClientes = iGestionClientes;
+            Globales.cargaGrid(sqlSelect, dgvClientes);
+        }
         public FrmGestionClientes()
         {
             InitializeComponent();
@@ -85,9 +92,7 @@ namespace Seguros_American.Forms.Clientes
             cargaGrid();
         }
 
-      
-
-        
+    
 
         private void dgv_MouseEnter(object sender, EventArgs e)
         {
@@ -160,7 +165,7 @@ namespace Seguros_American.Forms.Clientes
 
             //enviar id 
             FrmNuevoCliente nuevocliente = new FrmNuevoCliente(idCliente);
-            nuevocliente.ShowDialog();
+            nuevocliente.Show();
 
             cargaGrid();
 
@@ -177,13 +182,21 @@ namespace Seguros_American.Forms.Clientes
 
         private void btnNuevo_Click_1(object sender, EventArgs e)
         {
+
             Globales.EsNuevoCliente = true;
             FrmNuevoCliente nuevocliente = new FrmNuevoCliente();
             nuevocliente.Show();
             cargaGrid();
         }
 
-        
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (this.iGestionClientes != null)
+            {
+                iGestionClientes.onDataGridClientes(dgvClientes);
+            }
+            this.Close();
+        }
 
     }
 }

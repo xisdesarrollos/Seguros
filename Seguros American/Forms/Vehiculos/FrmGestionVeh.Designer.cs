@@ -79,11 +79,11 @@
             this.dgvVehiculos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVehiculos.Location = new System.Drawing.Point(12, 108);
             this.dgvVehiculos.Name = "dgvVehiculos";
-            this.dgvVehiculos.ReadOnly = true;
             this.dgvVehiculos.RowHeadersVisible = false;
             this.dgvVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVehiculos.Size = new System.Drawing.Size(1003, 313);
             this.dgvVehiculos.TabIndex = 14;
+            this.dgvVehiculos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehiculos_CellValueChanged);
             // 
             // groupFiltro
             // 
