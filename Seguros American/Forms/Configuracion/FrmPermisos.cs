@@ -59,14 +59,14 @@ namespace Seguros_American.Forms.Configuracion
 
         private void carga()
         {
-            DataTable dt = bd.Consultar("*", "permisos", "usuario = '" + cmbUsuario.SelectedValue + "'");
+            DataTable dt = bd.Consultar("*", "permisos", "usuario = '" + cmbUsuario.Text + "'");
             int i = 0;
 
             foreach (Elegant.Ui.CheckBox checkbox in GetAll(this, typeof(Elegant.Ui.CheckBox)))
             {
                 checkbox.Checked = Convert.ToBoolean(dt.Rows[0][1]);
                 i++;
-            }
+            } 
 
         }
 
@@ -143,7 +143,7 @@ namespace Seguros_American.Forms.Configuracion
                 indice++;
             }
             MySqlCommand cmd = new MySqlCommand();
-            String sql = "UPDATE permisos SET a=@a,b=@b,c=@c,d=@d,e=@e,f=@f,g=@g,h=@h,i=@i,j=@j,k=@k,l=@l,m=@m  WHERE usuario = @usuario";
+            String sql = "UPDATE permisos SET a=@a,b=@b,c=@c,d=@d,e=@e,f=@f,g=@g,h=@h,i=@i,j=@j,k=@k,l=@l WHERE usuario = @usuario";
             cmd.CommandText = sql;
             cmd.Parameters.AddWithValue("@a", i[0]);
             cmd.Parameters.AddWithValue("@b", i[1]);
