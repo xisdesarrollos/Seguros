@@ -42,6 +42,7 @@ namespace Seguros_American.Forms.Vehiculos
 
             Globales.cargaGrid(sqlSelectVehiculoCliente, dgvVehiculos);
         }
+        
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             FrmNuevoVehiculo nuevovehiculo = new FrmNuevoVehiculo(this.idCliente);

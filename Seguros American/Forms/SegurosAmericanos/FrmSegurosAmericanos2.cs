@@ -16,7 +16,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 {
     public partial class FrmSegurosAmericanos2 : Form,
                                                  FrmAuxCliente.IAuxClientes,
-                                                 FrmGestionVeh.IGestionVehiculos
+                                                 FrmAuxVehiculos.IAuxVehiculos
     {
         string idCliente;
         string nombreCliente;
@@ -44,7 +44,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             //hay seleccionado un cliente?.
             if (!string.IsNullOrEmpty(idCliente))
             {
-                FrmGestionVeh auxvehiculos = new FrmGestionVeh(this, idCliente);
+                FrmAuxVehiculos auxvehiculos = new FrmAuxVehiculos(this, idCliente);
                 auxvehiculos.Show();
             }
             else
@@ -95,30 +95,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         //callbacks
         public void onDataGridVehiculos(DataGridView dgv)
       {
-            // Obtener los datos del cliente seleccionado.
-            int index = dgv.CurrentCell.RowIndex; //no existe en el contexto actual. 
-            DataGridViewRow selectedRow = dgv.Rows[index];
-            
-            // Mostrarlos en los campos de nuevo vehiculo.
-                   idVehiculo = selectedRow.Cells[0].Value.ToString();
-                   idCliente = selectedRow.Cells[1].Value.ToString();
-            string usuario = selectedRow.Cells[2].Value.ToString();
-            string tipo= selectedRow.Cells[3].Value.ToString();
-            string marca= selectedRow.Cells[4].Value.ToString();
-            string submarca = selectedRow.Cells[5].Value.ToString();
-            string modelo = selectedRow.Cells[6].Value.ToString();
-            string placas = selectedRow.Cells[7].Value.ToString();
-            string estadoPlacas = selectedRow.Cells[8].Value.ToString();
-            string numeroSerie = selectedRow.Cells[9].Value.ToString();
-            //al principio esta vacio
-            if (vbl.Items.Any())
-                vbl.Clear();
-            
-            vbl.Items.Add("Año: " + modelo);
-            vbl.Items.Add("Marca: " + marca);
-            vbl.Items.Add("Modelo: " + submarca);
-            vbl.Items.Add("Placas: " + placas);
-            vbl.Items.Add("Numero de Serie: " + numeroSerie);
+          
 
         }
        
@@ -368,6 +345,34 @@ namespace Seguros_American.Forms.SegurosAmericanos
             txtCiudad.Text = cuidad;
             txtEstado.Text = txtEdoEm1.Text = estado;
             dateFechaNac1.Value = DateTime.Parse(clienteNacimiento);
+        }
+
+
+
+        public void onDataGridAuxVehiculos(DataGridView dgv)
+        {
+            // Obtener los datos del cliente seleccionado.
+            int index = dgv.CurrentCell.RowIndex; //no existe en el contexto actual. 
+            DataGridViewRow selectedRow = dgv.Rows[index];
+
+            // Mostrarlos en los campos de nuevo vehiculo.
+            idVehiculo = selectedRow.Cells[0].Value.ToString();
+            string modelo = selectedRow.Cells[1].Value.ToString();
+            string marca = selectedRow.Cells[2].Value.ToString();
+            string submarca = selectedRow.Cells[3].Value.ToString();
+            string placas = selectedRow.Cells[4].Value.ToString();
+            string numeroSerie = selectedRow.Cells[5].Value.ToString();
+            string estado = selectedRow.Cells[6].Value.ToString();
+
+            //al principio esta vacio
+            if (vbl.Items.Any())
+                vbl.Clear();
+
+            vbl.Items.Add("Año: " + modelo);
+            vbl.Items.Add("Marca: " + marca);
+            vbl.Items.Add("Modelo: " + submarca);
+            vbl.Items.Add("Placas: " + placas);
+            vbl.Items.Add("Numero de Serie: " + numeroSerie);
         }
     }
 }
