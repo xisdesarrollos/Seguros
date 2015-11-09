@@ -32,15 +32,15 @@
             this.label1 = new Elegant.Ui.Label();
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.dgvTarifa = new System.Windows.Forms.DataGridView();
-            this.btnTarifaGuardar = new Elegant.Ui.Button();
-            this.tarifasautosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.diasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tarifasautosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new Seguros_American.DataSet1();
+            this.btnTarifaGuardar = new Elegant.Ui.Button();
             this.tarifasautosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tarifasautosTableAdapter = new Seguros_American.DataSet1TableAdapters.tarifasautosTableAdapter();
             this.cmbTarifa = new Elegant.Ui.ComboBox();
@@ -80,26 +80,10 @@
             this.dgvTarifa.DataSource = this.tarifasautosBindingSource1;
             this.dgvTarifa.Location = new System.Drawing.Point(21, 134);
             this.dgvTarifa.Name = "dgvTarifa";
-            this.dgvTarifa.Size = new System.Drawing.Size(549, 735);
+            this.dgvTarifa.Size = new System.Drawing.Size(549, 743);
             this.dgvTarifa.TabIndex = 1;
             this.dgvTarifa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellEndEdit);
             this.dgvTarifa.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTarifa_DataError);
-            // 
-            // btnTarifaGuardar
-            // 
-            this.btnTarifaGuardar.Id = "eb7a0091-c9f9-42b6-9222-e0183ff7d5e4";
-            this.btnTarifaGuardar.Location = new System.Drawing.Point(485, 876);
-            this.btnTarifaGuardar.Name = "btnTarifaGuardar";
-            this.btnTarifaGuardar.Size = new System.Drawing.Size(85, 62);
-            this.btnTarifaGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
-            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._48guardar)});
-            this.btnTarifaGuardar.TabIndex = 6;
-            this.btnTarifaGuardar.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // tarifasautosBindingSource1
-            // 
-            this.tarifasautosBindingSource1.DataMember = "tarifasautos";
-            this.tarifasautosBindingSource1.DataSource = this.dataSet1BindingSource;
             // 
             // diasDataGridViewTextBoxColumn
             // 
@@ -131,6 +115,11 @@
             this.totalDataGridViewTextBoxColumn.HeaderText = "total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             // 
+            // tarifasautosBindingSource1
+            // 
+            this.tarifasautosBindingSource1.DataMember = "tarifasautos";
+            this.tarifasautosBindingSource1.DataSource = this.dataSet1BindingSource;
+            // 
             // dataSet1BindingSource
             // 
             this.dataSet1BindingSource.DataSource = this.dataSet1;
@@ -140,6 +129,17 @@
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnTarifaGuardar
+            // 
+            this.btnTarifaGuardar.Id = "eb7a0091-c9f9-42b6-9222-e0183ff7d5e4";
+            this.btnTarifaGuardar.Location = new System.Drawing.Point(485, 876);
+            this.btnTarifaGuardar.Name = "btnTarifaGuardar";
+            this.btnTarifaGuardar.Size = new System.Drawing.Size(85, 62);
+            this.btnTarifaGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._48guardar)});
+            this.btnTarifaGuardar.TabIndex = 6;
+            this.btnTarifaGuardar.Click += new System.EventHandler(this.button2_Click);
             // 
             // tarifasautosBindingSource
             // 
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 943);
+            this.ClientSize = new System.Drawing.Size(605, 951);
             this.Controls.Add(this.cmbTarifa);
             this.Controls.Add(this.btnTarifaGuardar);
             this.Controls.Add(this.dgvTarifa);

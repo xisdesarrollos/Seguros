@@ -46,7 +46,7 @@
             this.cmbUsuario.Location = new System.Drawing.Point(150, 9);
             this.cmbUsuario.Name = "cmbUsuario";
             this.cmbUsuario.Size = new System.Drawing.Size(219, 21);
-            this.cmbUsuario.TabIndex = 0;
+            this.cmbUsuario.TabIndex = 4;
             this.cmbUsuario.TextEditorWidth = 158;
             this.cmbUsuario.SelectedIndexChanged += new System.EventHandler(this.cmbUsuario_SelectedIndexChanged_1);
             // 
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(863, 408);
+            this.ClientSize = new System.Drawing.Size(871, 416);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.cmbUsuario);
             this.Name = "FrmPermisos";

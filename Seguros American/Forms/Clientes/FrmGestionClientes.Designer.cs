@@ -116,7 +116,7 @@
             this.groupFiltro.Controls.Add(this.txtCriterio);
             this.groupFiltro.Controls.Add(this.cmbFiltro);
             this.groupFiltro.Id = "c0a9dae8-1b03-4cb4-84ea-645d02d27465";
-            this.groupFiltro.Location = new System.Drawing.Point(50, -1);
+            this.groupFiltro.Location = new System.Drawing.Point(54, -1);
             this.groupFiltro.Name = "groupFiltro";
             this.groupFiltro.Size = new System.Drawing.Size(1056, 91);
             this.groupFiltro.TabIndex = 12;
@@ -140,12 +140,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClientes.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvClientes.Location = new System.Drawing.Point(63, 97);
+            this.dgvClientes.Location = new System.Drawing.Point(67, 97);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1040, 453);
+            this.dgvClientes.Size = new System.Drawing.Size(1040, 461);
             this.dgvClientes.TabIndex = 4;
             // 
             // menuOpcionesClientes
@@ -182,7 +182,7 @@
             // 
             this.btnOk.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnOk.Id = "e3930a5e-d2a6-4177-9b06-b67a08ce6653";
-            this.btnOk.Location = new System.Drawing.Point(1018, 559);
+            this.btnOk.Location = new System.Drawing.Point(1022, 567);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(85, 68);
             this.btnOk.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -195,7 +195,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1167, 654);
+            this.ClientSize = new System.Drawing.Size(1175, 662);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);
