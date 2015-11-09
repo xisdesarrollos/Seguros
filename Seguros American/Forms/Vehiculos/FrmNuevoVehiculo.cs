@@ -16,6 +16,8 @@ namespace Seguros_American.Forms.Vehiculos
     {
         Basedatos bd = new Basedatos();
         string idCliente;
+        string idVehiculo;
+        bool esNuevo = true;
 
         public FrmNuevoVehiculo()
         {
@@ -37,21 +39,54 @@ namespace Seguros_American.Forms.Vehiculos
                 MessageBox.Show(ex.Message);//debug
             }
         }
+        public FrmNuevoVehiculo(string idCliente, bool esNuevo = true)
+        {
+            InitializeComponent();
+            this.esNuevo = esNuevo;
+            try
+            {
+                DataTable dataTable = bd.Consultar("idCliente,nombre", "clientes", "idCliente = '" + idCliente + "';");
+                txtNoCliente.Text = dataTable.Rows[0][0].ToString();
+                lblNombreCliente.Text = dataTable.Rows[0][1].ToString();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);//debug
+            }
+        }
+        public FrmNuevoVehiculo(string idVehiculo,string idCliente, bool esNuevo = true)
+        {
+            InitializeComponent();
+            this.esNuevo = esNuevo;
+            this.idVehiculo = idVehiculo;
+            this.idCliente = idCliente;
+               
+        }
         private void FrmCatalogoVehiculos_Load(object sender, EventArgs e)
         {
-            string valueModelo = cmbModelo.Text.ToString();
-            string valueMarca = cmbMarca.Text.ToString();
-            string valueTipo = cmbTipo.Text.ToString();
 
-            string sqlQueryModelo = "SELECT modelo,modelo FROM modelo_vehiculos " +
-                                    " WHERE modelo LIKE '%" + valueModelo + "%' ORDER BY modelo ASC";
-            string sqlQueryMarca = "SELECT marca,marca FROM marca_vehiculos " +
-                                    " WHERE marca LIKE '%" + valueMarca + "%' ORDER BY marca ASC";
-            string sqlQueryTipo = "SELECT tipo,tipo FROM tipo_vehiculos " +
-                                    " WHERE tipo LIKE '%" + valueTipo + "%' ORDER BY tipo ASC";
-            Globales.cargaCombo(sqlQueryModelo, cmbModelo);
-            Globales.cargaCombo(sqlQueryMarca, cmbMarca);
-            Globales.cargaCombo(sqlQueryTipo, cmbTipo);
+            //here 
+            if (esNuevo)
+            {
+
+                string valueModelo = cmbModelo.Text.ToString();
+                string valueMarca = cmbMarca.Text.ToString();
+                string valueTipo = cmbTipo.Text.ToString();
+
+                string sqlQueryModelo = "SELECT modelo,modelo FROM modelo_vehiculos " +
+                                        " WHERE modelo LIKE '%" + valueModelo + "%' ORDER BY modelo ASC";
+                string sqlQueryMarca = "SELECT marca,marca FROM marca_vehiculos " +
+                                        " WHERE marca LIKE '%" + valueMarca + "%' ORDER BY marca ASC";
+                string sqlQueryTipo = "SELECT tipo,tipo FROM tipo_vehiculos " +
+                                        " WHERE tipo LIKE '%" + valueTipo + "%' ORDER BY tipo ASC";
+                Globales.cargaCombo(sqlQueryModelo, cmbModelo);
+                Globales.cargaCombo(sqlQueryMarca, cmbMarca);
+                Globales.cargaCombo(sqlQueryTipo, cmbTipo);
+            }
+            else
+            {
+                cargarDatos(idVehiculo);
+            }
         }
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
@@ -80,10 +115,21 @@ namespace Seguros_American.Forms.Vehiculos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (guardaVehiculo())
+            if (esNuevo)
             {
-                MessageBox.Show("Datos guardados correctamente");
-                this.Close();
+                if (guardaVehiculo())
+                {
+                    MessageBox.Show("Datos guardados correctamente");
+                    this.Close();
+                }
+            }
+            else
+            {
+                if (actualizaVehiculo())
+                {
+                    MessageBox.Show("Datos actualizados correctamente");
+                    this.Close();
+                }
             }
             
            
@@ -164,6 +210,69 @@ namespace Seguros_American.Forms.Vehiculos
             }
             return false;
         }
-        
+        //edicion
+        private void cargarDatos(String id)
+        {
+            //obteber la info de la BD usando el id del usuario.
+            string filtro = "*";
+            string condicion = "idVehiculo = " + id;
+            string tabla = "vehiculos_cliente";
+            
+            try
+            {
+                DataTable dataTable = bd.Consultar(filtro, tabla, condicion);
+                //llenar el formulario con esa info.
+                txtNoCliente.Text = dataTable.Rows[0][1].ToString();
+                txtNoCliente.Enabled = false;
+                cmbTipo.Text = dataTable.Rows[0][3].ToString();
+                cmbTipo.Enabled = false;
+                cmbMarca.Text = dataTable.Rows[0][4].ToString();
+                cmbMarca.Enabled = false;
+                txtSub.Text = dataTable.Rows[0][5].ToString();
+                txtSub.Enabled = false;
+                cmbModelo.Text = dataTable.Rows[0][6].ToString();
+                cmbModelo.Enabled = false;
+                txtPlacas.Text = dataTable.Rows[0][7].ToString();
+                txtPestado.Text = dataTable.Rows[0][8].ToString();
+                txtNoS.Text = dataTable.Rows[0][9].ToString();
+                txtNoS.Enabled = false;
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e);//debug
+            }
+        }
+
+        private bool actualizaVehiculo()
+        {
+            try
+            {
+                if (verificaCampos())
+                {
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.CommandText = "UPDATE vehiculos_cliente " +
+                        "SET placas=@placas, estadoPlacas=@estadoPlacas " +
+                        "WHERE idVehiculo = @idVehiculo";
+
+                    cmd.Parameters.AddWithValue("@idVehiculo", this.idVehiculo);
+                    cmd.Parameters.AddWithValue("@placas", txtPlacas.Text.ToString());
+                    cmd.Parameters.AddWithValue("@estadoPlacas", txtPestado.Text.ToString());
+                    bd.Actualizar(cmd);
+
+                }
+                else
+                {
+                    MessageBox.Show("Verifique campos vacios");
+                    return false;
+                }
+            }
+            catch (MySqlException e)
+            {
+
+                Console.WriteLine(e);//debug
+                return false;
+            }
+            return true;
+        }
     }
 }

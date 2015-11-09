@@ -41,11 +41,11 @@
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.Location = new System.Drawing.Point(14, 12);
             this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(757, 147);
             this.dgv.TabIndex = 0;
+            this.dgv.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellEndEdit);
             this.dgv.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
             // 
             // formFrameSkinner
@@ -69,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 264);
+            this.ClientSize = new System.Drawing.Size(801, 272);
             this.Controls.Add(this.btnNuevoVehiculo);
             this.Controls.Add(this.dgv);
             this.Name = "FrmAuxVehiculos";

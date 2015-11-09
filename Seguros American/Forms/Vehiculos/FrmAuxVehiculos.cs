@@ -46,6 +46,11 @@ namespace Seguros_American.Forms.Vehiculos
         private void FrmAuxVehiculos_Load(object sender, EventArgs e)
         {
             Globales.cargaGrid(sqlSelect, dgv);
+            dgv.Columns[0].ReadOnly = 
+            dgv.Columns[1].ReadOnly =
+            dgv.Columns[2].ReadOnly =
+            dgv.Columns[3].ReadOnly =
+            dgv.Columns[5].ReadOnly = true;
         }
 
         private void dgv_DoubleClick(object sender, EventArgs e)
@@ -56,6 +61,18 @@ namespace Seguros_American.Forms.Vehiculos
                 iAuxVehiculos.onDataGridAuxVehiculos(dgv);
             }
             this.Close();
+        }
+
+        private void dgv_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            //index de la columna editada.        
+            int rindex = e.RowIndex;
+            int cindex = e.ColumnIndex;
+
+            //obtener los datos para la operacion(placas,estado, etc)
+            string valoreditado = dgv.Rows[rindex].Cells[cindex].Value.ToString();
+            MessageBox.Show(valoreditado);
+           
         }
     }
 }

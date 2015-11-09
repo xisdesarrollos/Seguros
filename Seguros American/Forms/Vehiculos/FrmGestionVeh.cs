@@ -16,6 +16,8 @@ namespace Seguros_American.Forms.Vehiculos
         private String sqlSelect = "SELECT * FROM vehiculos_cliente ORDER BY idVehiculo ASC";
         
         private String idCliente;
+        private String idVehiculo;
+
         public IGestionVehiculos iGestionVehiculos;
         
         public FrmGestionVeh()
@@ -108,6 +110,37 @@ namespace Seguros_American.Forms.Vehiculos
         private void dgvVehiculos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnEditarVehiculo_Click(object sender, EventArgs e)
+        {
+            
+            //set id
+            int index = dgvVehiculos.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dgvVehiculos.Rows[index];
+            this.idVehiculo = selectedRow.Cells[0].Value.ToString();
+            this.idCliente = selectedRow.Cells[1].Value.ToString();
+           
+            //enviar id 
+            FrmNuevoVehiculo nuevocliente = new FrmNuevoVehiculo(idVehiculo,idCliente, false);
+            nuevocliente.ShowDialog();
+
+            Globales.cargaGrid(sqlSelect, dgvVehiculos);
+        }
+
+        private void btnEliminarVehiculo_Click(object sender, EventArgs e)
+        {
+            int index = dgvVehiculos.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dgvVehiculos.Rows[index];
+            this.idVehiculo = selectedRow.Cells[0].Value.ToString();
+
+            Basedatos bd = new Basedatos();
+            string nTabla = "vehiculos_cliente";
+
+            string condicion = "idVehiculo = " + idVehiculo;
+            bd.Eliminar(nTabla, condicion);
+
+            Globales.cargaGrid(sqlSelect, dgvVehiculos);
         }
 
     }

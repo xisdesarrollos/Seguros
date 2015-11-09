@@ -80,7 +80,7 @@
             this.dgvTarifa.DataSource = this.tarifasautosBindingSource1;
             this.dgvTarifa.Location = new System.Drawing.Point(21, 134);
             this.dgvTarifa.Name = "dgvTarifa";
-            this.dgvTarifa.Size = new System.Drawing.Size(549, 743);
+            this.dgvTarifa.Size = new System.Drawing.Size(549, 751);
             this.dgvTarifa.TabIndex = 1;
             this.dgvTarifa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellEndEdit);
             this.dgvTarifa.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTarifa_DataError);
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 951);
+            this.ClientSize = new System.Drawing.Size(613, 959);
             this.Controls.Add(this.cmbTarifa);
             this.Controls.Add(this.btnTarifaGuardar);
             this.Controls.Add(this.dgvTarifa);
