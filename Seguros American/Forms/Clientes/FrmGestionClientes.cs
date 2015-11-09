@@ -16,13 +16,12 @@ namespace Seguros_American.Forms.Clientes
     {
         Basedatos db = new Basedatos();
         DataTable dt = new DataTable();
-        private String sqlSelect ="SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs FROM clientes ORDER BY idcliente DESC";
+        String sqlSelect ="SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs FROM clientes ORDER BY idcliente DESC";
         IGestionClientes iGestionClientes;
         public void cargaGrid()
         {
 
             dt = db.Consultar("idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs", "clientes");
-           
             dgvClientes.DataSource = dt;
             estilizaGrid();
         }
@@ -101,38 +100,14 @@ namespace Seguros_American.Forms.Clientes
 
         private void txtCriterio_TextChanged(object sender, EventArgs e)
         {
-            string filtro = "";
-            if (db.Consultar("clientes").Rows.Count > 0 || cmbFiltro.Text != "")
-            {
-                try
-                {
-                    if (cmbFiltro.Text == "ID")
-                    {
-                        filtro = "idCliente";
-                    }
-                    else if (cmbFiltro.Text == "Nombre")
-                    {
-                        filtro = "nombre";
-                    }
-                    else if (cmbFiltro.Text == "Ciudad")
-                    {
-                        filtro = "ciudad";
-                    }
-                    else if (cmbFiltro.Text == "Teléfono")
-                    {
-                        filtro = "telefono";
-                    }
+            string filter = cmbFiltro.Text.ToString();
+            string value = txtCriterio.Text.ToString();
 
-                    dgvClientes.DataSource = db.Consultar("idcliente,nombre,telefono", "clientes", filtro + " LIKE '%" + txtCriterio.Text + "%'");
-                    estilizaGrid();
-                }
-                catch (Exception ex)
-                {
+            string sqlCustomQuery = "SELECT * FROM clientes " +
+                                    " WHERE " + filter + " LIKE '%" + value + "%' ORDER BY " + filter + " ASC";
 
-                    MessageBox.Show(ex.Message, "");
-                }
-
-            }
+            Globales.cargaGrid(sqlCustomQuery, dgvClientes);
+           
         }
 
         private void frmClientes_MouseEnter(object sender, EventArgs e)

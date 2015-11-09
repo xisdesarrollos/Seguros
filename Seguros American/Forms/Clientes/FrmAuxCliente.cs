@@ -42,6 +42,12 @@ namespace Seguros_American.Forms.Clientes
         private void txtCriterio_TextChanged(object sender, EventArgs e)
         {
             //buscar cliente por nombre.
+            string value = txtCriterio.Text.ToString();
+
+            string sqlCustomQuery = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fechaNacimiento,calle,colonia,noExterior,cp,noLicencia FROM clientes " +
+                                    " WHERE nombre LIKE '%" + value + "%' ORDER BY nombre ASC";
+
+            Globales.cargaGrid(sqlCustomQuery, dgv);
         }
         public void cargaGrid()
         {
@@ -91,6 +97,5 @@ namespace Seguros_American.Forms.Clientes
             this.Close();
         }
 
-       
     }
 }
