@@ -195,7 +195,7 @@ namespace Seguros_American.Forms.Vehiculos
                 cmd.CommandText = "INSERT INTO vehiculos_cliente(idCliente, usuario, tipo, marca, subMarca, modelo, placas, estadoPlacas, numeroSerie)" +
                     "VALUES(@idCliente, @usuario, @tipo, @marca, @subMarca, @modelo, @placas, @estadoPlacas, @numeroSerie);";
                 cmd.Parameters.AddWithValue("@idCliente", txtNoCliente.Text);
-                cmd.Parameters.AddWithValue("@usuario","NULL");
+                cmd.Parameters.AddWithValue("@usuario",Globales.nombreUsuario);
                 cmd.Parameters.AddWithValue("@tipo",cmbTipo.Text);
                 cmd.Parameters.AddWithValue("@marca",cmbMarca.Text);
                 cmd.Parameters.AddWithValue("@subMarca",txtSub.Text);

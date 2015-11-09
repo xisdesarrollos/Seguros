@@ -130,7 +130,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 cmdPoliza.Parameters.AddWithValue("@folio" , txtFolio.Text);
                 cmdPoliza.Parameters.AddWithValue("@tipo", cmbSeguro.Text);
                 cmdPoliza.Parameters.AddWithValue("@idCliente", txtNoCliente.Text);
-                cmdPoliza.Parameters.AddWithValue("@usuario", "NULL");
+                cmdPoliza.Parameters.AddWithValue("@usuario", Globales.nombreUsuario);
                 cmdPoliza.Parameters.AddWithValue("@idVehiculo", idVehiculo);//obtener cuando se llama a gestion vehiculos.
                 cmdPoliza.Parameters.AddWithValue("@dias", cmbDia.Text);
                 cmdPoliza.Parameters.AddWithValue("@inVig", DateTime.Parse(dateIncVig.Value.ToString()).ToString("yyyy-MM-dd"));
