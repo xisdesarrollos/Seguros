@@ -36,7 +36,7 @@ namespace Seguros_American.Forms.Configuracion
             cmbNivel.SelectedIndex = 0;
             if (Globales.EsNuevoUsuario == false)
             {
-                //cargaUsuario(Globales.auxUsuario);
+                cargaUsuario(Globales.auxUsuario);
             }
         }
 
@@ -51,7 +51,7 @@ namespace Seguros_American.Forms.Configuracion
             cmd.Parameters.AddWithValue("@nivel", cmbNivel.Text);
             cmd.CommandText = sql;
             bd.Insertar(cmd);
-            //insertaPermisos();
+            insertaPermisos();
             MessageBox.Show("Usuario registrado correctamente", "Alta de Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -96,12 +96,15 @@ namespace Seguros_American.Forms.Configuracion
 
         private void insertaPermisos()
         {
-            bd.Insertar("INSERT INTO permisos VALUES('" + txtUsuario.Text + "',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)");
+            //bd.Insertar("INSERT INTO permisos VALUES('" + txtUsuario.Text + "',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)");
+
+            bd.Insertar("INSERT INTO permisos(usuario) VALUES ('" + txtUsuario.Text + "')");
+        
         }
 
         private void cargaUsuario(String id)
         {
-            DataTable dt = bd.Consultar("*", "usuarios", "id_usuario = " + id);
+            DataTable dt = bd.Consultar("*", "usuarios", "idusuario = " + id);
             txtUsuario.Text = dt.Rows[0][1].ToString();
             txtPassword.Text = dt.Rows[0][2].ToString();
             txtPassword2.Text = dt.Rows[0][2].ToString();
@@ -142,22 +145,8 @@ namespace Seguros_American.Forms.Configuracion
         }
 
 
-        //private void insertaPermisos()
-        //{
-        //    bd.Insertar("INSERT INTO permisos VALUES('" + txtUsuario.Text + "',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)");
-        //}
-
-        //private void cargaUsuario(String id)
-        //{
-        //    DataTable dt = bd.Consultar("*", "usuarios", "id_usuario = " + id);
-        //    txtUsuario.Text = dt.Rows[0][1].ToString();
-        //    txtPassword.Text = dt.Rows[0][2].ToString();
-        //    txtPassword2.Text = dt.Rows[0][2].ToString();
-        //    txtNombre.Text = dt.Rows[0][3].ToString();
-        //    cmbNivel.Text = dt.Rows[0][5].ToString();
-        //    txtUsuario.Select();
-        //}
-
+        
+      
         
 
     }

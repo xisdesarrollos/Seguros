@@ -19,7 +19,6 @@ namespace Seguros_American.Forms.Configuracion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
             Properties.Settings.Default.servidor = txtServer.Text;
             Properties.Settings.Default.usuario = txtUsuario.Text;
             Properties.Settings.Default.password = txtPassword.Text;

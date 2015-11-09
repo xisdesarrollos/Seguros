@@ -26,7 +26,7 @@ namespace Seguros_American.Forms
         {
             db = new Basedatos();
             InitializeComponent();
-
+            verificaPermisos();
 
         }
 

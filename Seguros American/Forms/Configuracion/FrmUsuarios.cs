@@ -38,7 +38,7 @@ namespace Seguros_American.Forms.Configuracion
             }
         }
 
-        private void txtCriterio_TextChanged(object sender, EventArgs e)
+        private void txtCriterio_TextChanged_1(object sender, EventArgs e)
         {
             Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios WHERE " + cmbFiltro.Text + " LIKE '%" + txtCriterio.Text + "%' ORDER BY idusuario ASC", dgv);
         }
@@ -72,7 +72,7 @@ namespace Seguros_American.Forms.Configuracion
 
         
 
-        private void eliminaUsuario(String id_usuario)
+        private void eliminaUsuario(String idusuario)
         {
             bd.Eliminar("usuarios", "idusuario = " + Globales.auxUsuario);
         }
@@ -107,6 +107,10 @@ namespace Seguros_American.Forms.Configuracion
                 txtCriterio.Select();
             }
         }
+
+   
+
+        
 
 
     }

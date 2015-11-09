@@ -60,14 +60,14 @@
             this.groupBox1.Id = "2c49db72-b391-4131-9cb3-969acf7e179e";
             this.groupBox1.Location = new System.Drawing.Point(-10, -1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1232, 71);
+            this.groupBox1.Size = new System.Drawing.Size(1248, 71);
             this.groupBox1.TabIndex = 1;
             // 
             // btnPermisos
             // 
             this.btnPermisos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPermisos.Id = "40cc59b6-9cb1-47c7-ad7a-935caaa72e35";
-            this.btnPermisos.Location = new System.Drawing.Point(981, 17);
+            this.btnPermisos.Location = new System.Drawing.Point(997, 17);
             this.btnPermisos.Name = "btnPermisos";
             this.btnPermisos.Size = new System.Drawing.Size(87, 41);
             this.btnPermisos.TabIndex = 4;
@@ -78,7 +78,7 @@
             // 
             this.btnNuevoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevoUsuario.Id = "1c22dac9-7980-471c-8679-ab44666a906d";
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(1083, 17);
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(1099, 17);
             this.btnNuevoUsuario.Name = "btnNuevoUsuario";
             this.btnNuevoUsuario.Size = new System.Drawing.Size(87, 41);
             this.btnNuevoUsuario.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.btnMostrarTodo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodo.Id = "e763c0c0-b595-4c94-bc00-8330cbd41698";
-            this.btnMostrarTodo.Location = new System.Drawing.Point(879, 17);
+            this.btnMostrarTodo.Location = new System.Drawing.Point(895, 17);
             this.btnMostrarTodo.Name = "btnMostrarTodo";
             this.btnMostrarTodo.Size = new System.Drawing.Size(87, 41);
             this.btnMostrarTodo.TabIndex = 2;
@@ -104,9 +104,10 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(350, 27);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(488, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(504, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 396;
+            this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged_1);
             // 
             // cmbFiltro
             // 
@@ -152,7 +153,7 @@
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1180, 615);
+            this.dgv.Size = new System.Drawing.Size(1196, 631);
             this.dgv.TabIndex = 3;
             // 
             // formFrameSkinner
@@ -193,13 +194,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1213, 690);
+            this.ClientSize = new System.Drawing.Size(1229, 706);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "FrmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema Seguros American";
+            this.Text = "Usuarios Seguros American";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmUsuarios_Load);
             this.groupBox1.ResumeLayout(false);
