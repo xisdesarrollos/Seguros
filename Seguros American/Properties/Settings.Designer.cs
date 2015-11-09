@@ -85,6 +85,8 @@ namespace Seguros_American.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.0.200;user id=root;password=9753186400;persistsecurityinfo=True;da" +
+            "tabase=seguros_americanos")]
         public string seguros_americanosConnectionString {
             get {
                 return ((string)(this["seguros_americanosConnectionString"]));
@@ -100,7 +102,5 @@ namespace Seguros_American.Properties {
                 return ((string)(this["seguros_americanosConnectionPoliza"]));
             }
         }
-        
-        
     }
 }
