@@ -35,8 +35,8 @@ namespace Seguros_American.Forms.Clientes
         {
             Globales.EsNuevoCliente = true;
             FrmNuevoCliente nuevoclientes = new FrmNuevoCliente();
-            nuevoclientes.Show();
-
+            nuevoclientes.ShowDialog();
+            Globales.cargaGrid(sql, dgv);
         }
 
         private void txtCriterio_TextChanged(object sender, EventArgs e)
