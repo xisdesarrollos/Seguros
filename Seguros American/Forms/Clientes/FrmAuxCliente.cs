@@ -51,11 +51,13 @@ namespace Seguros_American.Forms.Clientes
         }
         public void cargaGrid()
         {
+         
             try
             {
                 dt = db.ConsultarAlterno(sql);
                 dgv.DataSource = dt;
                 estilizaGrid();
+                
             }
             catch (MySqlException exsql)
             {
@@ -71,7 +73,23 @@ namespace Seguros_American.Forms.Clientes
             dgv.Columns[1].HeaderText = "Nombre";
            
             dgv.Columns[0].Width = 30;
-            dgv.Columns[1].Width = 120;  
+            dgv.Columns[1].Width = 400;
+
+            //desaparecer todas excepto 0 y 1
+
+            dgv.Columns[2].Visible =
+            dgv.Columns[3].Visible =
+            dgv.Columns[4].Visible =
+            dgv.Columns[5].Visible =
+            dgv.Columns[6].Visible =
+            dgv.Columns[7].Visible =
+            dgv.Columns[8].Visible =
+            dgv.Columns[9].Visible =
+            dgv.Columns[10].Visible =
+            dgv.Columns[11].Visible =
+            dgv.Columns[12].Visible =
+            dgv.Columns[13].Visible = false;
+            
         }
 
         public interface IAuxClientes {
