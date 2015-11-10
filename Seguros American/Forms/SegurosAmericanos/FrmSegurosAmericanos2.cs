@@ -23,6 +23,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         string idVehiculo;
         string clienteLicencia;
         string clienteNacimiento;
+        string ocupacionCod;
         string estado;
         string idFolio;
         DateTime dateInserted;
@@ -78,12 +79,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     dateFechaNac2.Enabled =
                     txtNoLic2.Enabled =
                     txtEdad2.Enabled =
+                    txtOcupacion2.Enabled =
                     txtEdoEm2.Enabled = false;
-                    break;
-                case 1:
+                    break;  
+                case 1:     
                     //dos conductores
                     txtNomCod2.Enabled =
                     dateFechaNac2.Enabled =
+                    txtOcupacion2.Enabled =
                     txtNoLic2.Enabled =
                     txtEdoEm2.Enabled = true;
                     break;
@@ -150,8 +153,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 cmdPoliza.Parameters.AddWithValue("@nombreCod2",txtNomCod2.Text);
                 cmdPoliza.Parameters.AddWithValue("@edadCod",txtEdad1.Text);
                 cmdPoliza.Parameters.AddWithValue("@edadCod2",txtEdad2.Text);
-                cmdPoliza.Parameters.AddWithValue("@ocupacionCod","NINGUNA");//war
-                cmdPoliza.Parameters.AddWithValue("@ocupacionCod2","NINGUNA");//war
+                cmdPoliza.Parameters.AddWithValue("@ocupacionCod",txtOcupacion1.Text);//war
+                cmdPoliza.Parameters.AddWithValue("@ocupacionCod2",txtOcupacion2.Text);//war
                 cmdPoliza.Parameters.AddWithValue("@noLicencia",txtNoLic1.Text);
                 cmdPoliza.Parameters.AddWithValue("@noLicencia2",txtNoLic2.Text);
                 cmdPoliza.Parameters.AddWithValue("@edoLicencia",txtEdoEm1.Text);
@@ -290,12 +293,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     txtNomCod1.Text = nombreCliente;
                     txtNoLic1.Text = clienteLicencia;
                     dateFechaNac1.Text = clienteNacimiento;
+                    txtOcupacion1.Text = ocupacionCod;
                     txtEdoEm1.Text = estado;
                     break;
                 case 1:
                     txtNomCod1.Text = string.Empty;
                     txtNoLic1.Text = string.Empty;
                     dateFechaNac1.Text =  string.Empty;
+                    txtOcupacion1.Text = string.Empty;
                     txtEstado.Text = string.Empty;
                     txtEdoEm1.Text = string.Empty;
                     break;
@@ -377,6 +382,61 @@ namespace Seguros_American.Forms.SegurosAmericanos
         }
 
         private void cmbNcod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEdad1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNomCod2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEdad2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtOcupacion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNoLic2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupPrimas_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateIncVig_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateHoraInc_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateFinVig_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEdoEm2_TextChanged(object sender, EventArgs e)
         {
 
         }
