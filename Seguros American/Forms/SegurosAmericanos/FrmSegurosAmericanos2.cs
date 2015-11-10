@@ -290,13 +290,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     txtNomCod1.Text = nombreCliente;
                     txtNoLic1.Text = clienteLicencia;
                     dateFechaNac1.Text = clienteNacimiento;
-                    txtEstado.Text = estado;
+                    txtEdoEm1.Text = estado;
                     break;
                 case 1:
                     txtNomCod1.Text = string.Empty;
                     txtNoLic1.Text = string.Empty;
                     dateFechaNac1.Text =  string.Empty;
                     txtEstado.Text = string.Empty;
+                    txtEdoEm1.Text = string.Empty;
                     break;
                 default:
                     break;
@@ -373,6 +374,11 @@ namespace Seguros_American.Forms.SegurosAmericanos
             vbl.Items.Add("Modelo: " + submarca);
             vbl.Items.Add("Placas: " + placas);
             vbl.Items.Add("Numero de Serie: " + numeroSerie);
+        }
+
+        private void cmbNcod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

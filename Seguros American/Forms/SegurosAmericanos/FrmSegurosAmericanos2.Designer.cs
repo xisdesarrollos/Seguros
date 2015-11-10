@@ -73,10 +73,6 @@
             this.comboSec = new Elegant.Ui.ComboBox();
             this.comboNoP = new Elegant.Ui.ComboBox();
             this.tabSegurosAmericanos = new Elegant.Ui.TabControl();
-            this.tabVehiculos = new Elegant.Ui.TabPage();
-            this.groupVehiculos = new Elegant.Ui.GroupBox();
-            this.vbl = new ComponentOwl.BetterListView.BetterListView();
-            this.btnVehiculo = new Elegant.Ui.Button();
             this.tabDatoscliente = new Elegant.Ui.TabPage();
             this.groupDatosCliente = new Elegant.Ui.GroupBox();
             this.txtEstado = new Elegant.Ui.TextBox();
@@ -100,6 +96,10 @@
             this.dateIncVig = new Elegant.Ui.DateTimePicker();
             this.dateHoraInc = new Elegant.Ui.DateTimePicker();
             this.dateFinVig = new Elegant.Ui.DateTimePicker();
+            this.tabVehiculos = new Elegant.Ui.TabPage();
+            this.groupVehiculos = new Elegant.Ui.GroupBox();
+            this.vbl = new ComponentOwl.BetterListView.BetterListView();
+            this.btnVehiculo = new Elegant.Ui.Button();
             this.tabConductores = new Elegant.Ui.TabPage();
             this.groupConductores = new Elegant.Ui.GroupBox();
             this.txtEdad2 = new Elegant.Ui.TextBox();
@@ -121,13 +121,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.betterListView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabSegurosAmericanos)).BeginInit();
-            this.tabVehiculos.SuspendLayout();
-            this.groupVehiculos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vbl)).BeginInit();
             this.tabDatoscliente.SuspendLayout();
             this.groupDatosCliente.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupPrimas.SuspendLayout();
+            this.tabVehiculos.SuspendLayout();
+            this.groupVehiculos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vbl)).BeginInit();
             this.tabConductores.SuspendLayout();
             this.groupConductores.SuspendLayout();
             this.SuspendLayout();
@@ -627,7 +627,7 @@
             // 
             this.tabSegurosAmericanos.Location = new System.Drawing.Point(21, 30);
             this.tabSegurosAmericanos.Name = "tabSegurosAmericanos";
-            this.tabSegurosAmericanos.SelectedTabPage = this.tabDatoscliente;
+            this.tabSegurosAmericanos.SelectedTabPage = this.tabConductores;
             this.tabSegurosAmericanos.Size = new System.Drawing.Size(651, 333);
             this.tabSegurosAmericanos.TabIndex = 29;
             this.tabSegurosAmericanos.TabPages.AddRange(new Elegant.Ui.TabPage[] {
@@ -635,45 +635,6 @@
             this.tabPage3,
             this.tabVehiculos,
             this.tabConductores});
-            // 
-            // tabVehiculos
-            // 
-            this.tabVehiculos.ActiveControl = null;
-            this.tabVehiculos.Controls.Add(this.groupVehiculos);
-            this.tabVehiculos.KeyTip = null;
-            this.tabVehiculos.Name = "tabVehiculos";
-            this.tabVehiculos.Size = new System.Drawing.Size(649, 312);
-            this.tabVehiculos.TabIndex = 3;
-            this.tabVehiculos.Text = "Vehiculos";
-            // 
-            // groupVehiculos
-            // 
-            this.groupVehiculos.Controls.Add(this.vbl);
-            this.groupVehiculos.Controls.Add(this.btnVehiculo);
-            this.groupVehiculos.Id = "ed9a1abd-3bb7-463c-aaa8-13db6b489b64";
-            this.groupVehiculos.Location = new System.Drawing.Point(32, 35);
-            this.groupVehiculos.Name = "groupVehiculos";
-            this.groupVehiculos.Size = new System.Drawing.Size(586, 264);
-            this.groupVehiculos.TabIndex = 13;
-            this.groupVehiculos.Text = " Datos Vehiculos";
-            // 
-            // vbl
-            // 
-            this.vbl.Location = new System.Drawing.Point(11, 29);
-            this.vbl.Name = "vbl";
-            this.vbl.Size = new System.Drawing.Size(562, 151);
-            this.vbl.TabIndex = 28;
-            this.vbl.SelectedIndexChanged += new System.EventHandler(this.vbl_SelectedIndexChanged);
-            // 
-            // btnVehiculo
-            // 
-            this.btnVehiculo.Id = "6f9ca374-ea6c-4834-92a6-b8a57ba0b4a5";
-            this.btnVehiculo.Location = new System.Drawing.Point(520, 198);
-            this.btnVehiculo.Name = "btnVehiculo";
-            this.btnVehiculo.Size = new System.Drawing.Size(57, 52);
-            this.btnVehiculo.TabIndex = 0;
-            this.btnVehiculo.Text = "Vehiculo";
-            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
             // tabDatoscliente
             // 
@@ -996,6 +957,45 @@
             this.dateFinVig.TextEditorWidth = 98;
             this.dateFinVig.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
             // 
+            // tabVehiculos
+            // 
+            this.tabVehiculos.ActiveControl = null;
+            this.tabVehiculos.Controls.Add(this.groupVehiculos);
+            this.tabVehiculos.KeyTip = null;
+            this.tabVehiculos.Name = "tabVehiculos";
+            this.tabVehiculos.Size = new System.Drawing.Size(649, 312);
+            this.tabVehiculos.TabIndex = 3;
+            this.tabVehiculos.Text = "Vehiculos";
+            // 
+            // groupVehiculos
+            // 
+            this.groupVehiculos.Controls.Add(this.vbl);
+            this.groupVehiculos.Controls.Add(this.btnVehiculo);
+            this.groupVehiculos.Id = "ed9a1abd-3bb7-463c-aaa8-13db6b489b64";
+            this.groupVehiculos.Location = new System.Drawing.Point(32, 35);
+            this.groupVehiculos.Name = "groupVehiculos";
+            this.groupVehiculos.Size = new System.Drawing.Size(586, 264);
+            this.groupVehiculos.TabIndex = 13;
+            this.groupVehiculos.Text = " Datos Vehiculos";
+            // 
+            // vbl
+            // 
+            this.vbl.Location = new System.Drawing.Point(11, 29);
+            this.vbl.Name = "vbl";
+            this.vbl.Size = new System.Drawing.Size(562, 151);
+            this.vbl.TabIndex = 28;
+            this.vbl.SelectedIndexChanged += new System.EventHandler(this.vbl_SelectedIndexChanged);
+            // 
+            // btnVehiculo
+            // 
+            this.btnVehiculo.Id = "6f9ca374-ea6c-4834-92a6-b8a57ba0b4a5";
+            this.btnVehiculo.Location = new System.Drawing.Point(520, 198);
+            this.btnVehiculo.Name = "btnVehiculo";
+            this.btnVehiculo.Size = new System.Drawing.Size(57, 52);
+            this.btnVehiculo.TabIndex = 0;
+            this.btnVehiculo.Text = "Vehiculo";
+            this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
+            // 
             // tabConductores
             // 
             this.tabConductores.ActiveControl = null;
@@ -1152,6 +1152,7 @@
             this.cmbNcod.Size = new System.Drawing.Size(202, 21);
             this.cmbNcod.TabIndex = 0;
             this.cmbNcod.TextEditorWidth = 23;
+            this.cmbNcod.SelectedIndexChanged += new System.EventHandler(this.cmbNcod_SelectedIndexChanged);
             this.cmbNcod.SelectedValueChanged += new System.EventHandler(this.cmbNcod_SelectedValueChanged);
             // 
             // cmbCondExtra
@@ -1174,7 +1175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 608);
+            this.ClientSize = new System.Drawing.Size(864, 616);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.IsMdiContainer = true;
@@ -1194,15 +1195,15 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabSegurosAmericanos)).EndInit();
-            this.tabVehiculos.ResumeLayout(false);
-            this.groupVehiculos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vbl)).EndInit();
             this.tabDatoscliente.ResumeLayout(false);
             this.groupDatosCliente.ResumeLayout(false);
             this.groupDatosCliente.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.groupPrimas.ResumeLayout(false);
             this.groupPrimas.PerformLayout();
+            this.tabVehiculos.ResumeLayout(false);
+            this.groupVehiculos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vbl)).EndInit();
             this.tabConductores.ResumeLayout(false);
             this.groupConductores.ResumeLayout(false);
             this.groupConductores.PerformLayout();
