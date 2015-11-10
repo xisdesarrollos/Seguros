@@ -394,6 +394,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         private void dateFechaE_ValueChanged_1(object sender, EventArgs e)
         {
             updateFechaInit();
+            updateFechaFin();
         }
   
     }
