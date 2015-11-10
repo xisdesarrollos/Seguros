@@ -109,6 +109,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             //DateTime.Parse(dateNacimiento.Value.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
             //cambiar edad automaticamente.
             //DateTime today = DateTime.Today;
+
             DateTime fechaEmision = DateTime.Parse(dateFechaE.Value.ToString());
             int dias = int.Parse(cmbDia.Text);
             DateTime fechaFin = fechaEmision.AddDays(dias);
@@ -244,6 +245,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void FrmSegurosAmericanos2_Load(object sender, EventArgs e)
         {
+            
             updateFechaFin();
             updateFechaInit();
             consultarTarifa(cmbDia.Text.ToString());
@@ -251,8 +253,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void dateFechaE_ValueChanged(object sender, EventArgs e)
         {
-            updateFechaInit();
             updateFechaFin();
+            updateFechaInit();
         }
         
         //CLICK GUARDAR
@@ -381,64 +383,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
             vbl.Items.Add("Numero de Serie: " + numeroSerie);
         }
 
-        private void cmbNcod_SelectedIndexChanged(object sender, EventArgs e)
+        private void dateFechaE_ValueChanged_1(object sender, EventArgs e)
         {
-
+            updateFechaInit();
         }
 
-        private void txtEdad1_TextChanged(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void txtNomCod2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEdad2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtOcupacion_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNoLic2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupPrimas_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateIncVig_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateHoraInc_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateFinVig_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEdoEm2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
+      
     }
 }
