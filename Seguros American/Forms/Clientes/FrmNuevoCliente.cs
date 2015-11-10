@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
+
 
 
 namespace Seguros_American.Forms.Clientes
@@ -16,6 +19,7 @@ namespace Seguros_American.Forms.Clientes
     {
         private string idCliente;
         private Basedatos bd = new Basedatos();
+        
 
         public FrmNuevoCliente()
         {
@@ -37,15 +41,18 @@ namespace Seguros_American.Forms.Clientes
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        //Validar Email
+        public static bool IsValidEmailId(string InputEmail)
         {
-
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(InputEmail);
+            if (match.Success)
+                return true;
+            else
+                return false;
         }
-       
-        private void txtCiudad_TextChanged(object sender, EventArgs e)
-        {
 
-        }
+               
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
@@ -69,17 +76,10 @@ namespace Seguros_American.Forms.Clientes
                     MessageBox.Show("Ocurrio un error al actualizar los datos. Verifique con su proveedor");
                 }
             }
+                    
         }
 
-        private void txtCorreo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateNacimiento_Click(object sender, EventArgs e)
-        {
-         
-        }
+        
         private bool guardaCliente()
         {
             //guardar
@@ -255,5 +255,30 @@ namespace Seguros_American.Forms.Clientes
             int edad = today.Year - nacimiento.Year;
             txtEdad.Text = edad.ToString();
         }
+
+
+        
+
+
+        private void txtCorreo_Validating(object sender, CancelEventArgs e)
+        {
+            string validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
+               + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
+               + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+            Regex reg =  new Regex(validEmailPattern);
+            if (!reg.IsMatch(this.txtCorreo.Text))
+            {
+                MessageBox.Show("El Formato del correo electronico es incorrecto.");
+                e.Cancel = true;
+
+            }
+
+
+        }
+
+    
+       
+     
+      
     }
 }

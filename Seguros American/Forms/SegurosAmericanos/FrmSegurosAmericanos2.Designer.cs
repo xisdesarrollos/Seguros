@@ -143,7 +143,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Id = "887dafe4-c5e7-4cda-b5fe-252eebc02a14";
-            this.btnGuardar.Location = new System.Drawing.Point(609, 382);
+            this.btnGuardar.Location = new System.Drawing.Point(611, 377);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(61, 59);
             this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -631,7 +631,7 @@
             // 
             this.tabSegurosAmericanos.Location = new System.Drawing.Point(21, 30);
             this.tabSegurosAmericanos.Name = "tabSegurosAmericanos";
-            this.tabSegurosAmericanos.SelectedTabPage = this.tabPage3;
+            this.tabSegurosAmericanos.SelectedTabPage = this.tabConductores;
             this.tabSegurosAmericanos.Size = new System.Drawing.Size(651, 333);
             this.tabSegurosAmericanos.TabIndex = 29;
             this.tabSegurosAmericanos.TabPages.AddRange(new Elegant.Ui.TabPage[] {
@@ -1043,7 +1043,7 @@
             this.groupConductores.Controls.Add(this.cmbNcod);
             this.groupConductores.Controls.Add(this.cmbCondExtra);
             this.groupConductores.Id = "64b1e868-bd34-45d7-a35c-73013ed02eb3";
-            this.groupConductores.Location = new System.Drawing.Point(29, 29);
+            this.groupConductores.Location = new System.Drawing.Point(31, 29);
             this.groupConductores.Name = "groupConductores";
             this.groupConductores.Size = new System.Drawing.Size(588, 253);
             this.groupConductores.TabIndex = 6;
@@ -1217,9 +1217,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 502);
+            this.ClientSize = new System.Drawing.Size(683, 443);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
+            this.MaximizeBox = false;
             this.Name = "FrmSegurosAmericanos2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seguros Americanos";

@@ -31,27 +31,27 @@
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.txtBoxObs = new Elegant.Ui.TextBox();
             this.groupBoxClientes = new Elegant.Ui.GroupBox();
+            this.txtBoxCel = new Elegant.Ui.MaskedTextBox();
+            this.txtTel = new Elegant.Ui.MaskedTextBox();
+            this.txtCp = new Elegant.Ui.MaskedTextBox();
+            this.txtNoI = new Elegant.Ui.MaskedTextBox();
             this.txtEdad = new Elegant.Ui.TextBox();
+            this.txtNoE = new Elegant.Ui.MaskedTextBox();
             this.txtOcupacion = new Elegant.Ui.TextBox();
             this.txtEstado = new Elegant.Ui.TextBox();
             this.txtRfc = new Elegant.Ui.TextBox();
             this.txtEdo = new Elegant.Ui.TextBox();
             this.txtLicencia = new Elegant.Ui.TextBox();
             this.cmbPais = new Elegant.Ui.ComboBox();
-            this.txtNoE = new Elegant.Ui.TextBox();
-            this.txtNoI = new Elegant.Ui.TextBox();
-            this.txtBoxCel = new Elegant.Ui.TextBox();
-            this.txtTel = new Elegant.Ui.TextBox();
             this.txtCiudad = new Elegant.Ui.TextBox();
             this.txtColonia = new Elegant.Ui.TextBox();
-            this.txtCp = new Elegant.Ui.TextBox();
             this.txtCalle = new Elegant.Ui.TextBox();
             this.dateNacimiento = new Elegant.Ui.DateTimePicker();
             this.cmbSexo = new Elegant.Ui.ComboBox();
-            this.txtCorreo = new Elegant.Ui.TextBox();
             this.txtNombre = new Elegant.Ui.TextBox();
             this.groupObsv = new Elegant.Ui.GroupBox();
             this.btnGuardar = new Elegant.Ui.Button();
+            this.txtCorreo = new Elegant.Ui.TextBox();
             this.groupBoxClientes.SuspendLayout();
             this.groupObsv.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,7 @@
             // 
             // txtBoxObs
             // 
+            this.txtBoxObs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBoxObs.Id = "52ccfc9a-16c5-464c-b175-7c40b4cf011a";
             this.txtBoxObs.Location = new System.Drawing.Point(22, 19);
             this.txtBoxObs.Multiline = true;
@@ -72,24 +73,24 @@
             // 
             // groupBoxClientes
             // 
+            this.groupBoxClientes.Controls.Add(this.txtCorreo);
+            this.groupBoxClientes.Controls.Add(this.txtBoxCel);
+            this.groupBoxClientes.Controls.Add(this.txtTel);
+            this.groupBoxClientes.Controls.Add(this.txtCp);
+            this.groupBoxClientes.Controls.Add(this.txtNoI);
             this.groupBoxClientes.Controls.Add(this.txtEdad);
+            this.groupBoxClientes.Controls.Add(this.txtNoE);
             this.groupBoxClientes.Controls.Add(this.txtOcupacion);
             this.groupBoxClientes.Controls.Add(this.txtEstado);
             this.groupBoxClientes.Controls.Add(this.txtRfc);
             this.groupBoxClientes.Controls.Add(this.txtEdo);
             this.groupBoxClientes.Controls.Add(this.txtLicencia);
             this.groupBoxClientes.Controls.Add(this.cmbPais);
-            this.groupBoxClientes.Controls.Add(this.txtNoE);
-            this.groupBoxClientes.Controls.Add(this.txtNoI);
-            this.groupBoxClientes.Controls.Add(this.txtBoxCel);
-            this.groupBoxClientes.Controls.Add(this.txtTel);
             this.groupBoxClientes.Controls.Add(this.txtCiudad);
             this.groupBoxClientes.Controls.Add(this.txtColonia);
-            this.groupBoxClientes.Controls.Add(this.txtCp);
             this.groupBoxClientes.Controls.Add(this.txtCalle);
             this.groupBoxClientes.Controls.Add(this.dateNacimiento);
             this.groupBoxClientes.Controls.Add(this.cmbSexo);
-            this.groupBoxClientes.Controls.Add(this.txtCorreo);
             this.groupBoxClientes.Controls.Add(this.txtNombre);
             this.groupBoxClientes.Id = "c802533e-3e9e-45f6-aa60-22806db59684";
             this.groupBoxClientes.Location = new System.Drawing.Point(21, 15);
@@ -98,9 +99,60 @@
             this.groupBoxClientes.TabIndex = 31;
             this.groupBoxClientes.Text = "Datos del cliente";
             // 
+            // txtBoxCel
+            // 
+            this.txtBoxCel.Id = "51c8bb75-2838-43f4-8f92-1866b21734cc";
+            this.txtBoxCel.LabelText = "Celular:";
+            this.txtBoxCel.Location = new System.Drawing.Point(262, 228);
+            this.txtBoxCel.Mask = "(999) 000-0000";
+            this.txtBoxCel.Name = "txtBoxCel";
+            this.txtBoxCel.Size = new System.Drawing.Size(162, 21);
+            this.txtBoxCel.TabIndex = 38;
+            this.txtBoxCel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBoxCel.TextEditorWidth = 118;
+            // 
+            // txtTel
+            // 
+            this.txtTel.Id = "8b8bb6be-920f-4e0d-a092-b898bc9de260";
+            this.txtTel.LabelText = "Telefono:";
+            this.txtTel.Location = new System.Drawing.Point(21, 228);
+            this.txtTel.Mask = "(999) 000-0000";
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(208, 21);
+            this.txtTel.TabIndex = 37;
+            this.txtTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTel.TextEditorWidth = 154;
+            // 
+            // txtCp
+            // 
+            this.txtCp.Id = "d2672074-73ad-409d-8a7f-581287d818a5";
+            this.txtCp.LabelText = "CódigoPostal:";
+            this.txtCp.Location = new System.Drawing.Point(262, 149);
+            this.txtCp.Mask = "00000";
+            this.txtCp.Name = "txtCp";
+            this.txtCp.Size = new System.Drawing.Size(162, 21);
+            this.txtCp.TabIndex = 36;
+            this.txtCp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCp.TextEditorWidth = 88;
+            this.txtCp.ValidatingType = typeof(int);
+            // 
+            // txtNoI
+            // 
+            this.txtNoI.Id = "fdcc0037-2739-4d11-871a-b833f292d831";
+            this.txtNoI.LabelText = "No. Exterior:";
+            this.txtNoI.Location = new System.Drawing.Point(578, 112);
+            this.txtNoI.Mask = "00000";
+            this.txtNoI.Name = "txtNoI";
+            this.txtNoI.Size = new System.Drawing.Size(109, 21);
+            this.txtNoI.TabIndex = 35;
+            this.txtNoI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNoI.TextEditorWidth = 42;
+            this.txtNoI.ValidatingType = typeof(int);
+            // 
             // txtEdad
             // 
             this.txtEdad.AcceptsReturn = true;
+            this.txtEdad.Enabled = false;
             this.txtEdad.Id = "184955c2-da3e-4b8e-9423-e41f3b973d4d";
             this.txtEdad.LabelText = "Edad:";
             this.txtEdad.Location = new System.Drawing.Point(336, 79);
@@ -109,8 +161,22 @@
             this.txtEdad.TabIndex = 4;
             this.txtEdad.TextEditorWidth = 51;
             // 
+            // txtNoE
+            // 
+            this.txtNoE.Id = "4c0a79d5-7fb4-48e2-baea-9dc6c220ed95";
+            this.txtNoE.LabelText = "No. Exterior:";
+            this.txtNoE.Location = new System.Drawing.Point(443, 112);
+            this.txtNoE.Mask = "00000";
+            this.txtNoE.Name = "txtNoE";
+            this.txtNoE.Size = new System.Drawing.Size(109, 21);
+            this.txtNoE.TabIndex = 34;
+            this.txtNoE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNoE.TextEditorWidth = 42;
+            this.txtNoE.ValidatingType = typeof(int);
+            // 
             // txtOcupacion
             // 
+            this.txtOcupacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtOcupacion.Id = "520c1e08-fbb9-460b-83c6-bc158532136b";
             this.txtOcupacion.LabelText = "Ocupación:";
             this.txtOcupacion.Location = new System.Drawing.Point(443, 274);
@@ -121,6 +187,7 @@
             // 
             // txtEstado
             // 
+            this.txtEstado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEstado.Id = "a645fdf3-b4b8-434b-92c0-5f86cd07f333";
             this.txtEstado.LabelText = "Estado:";
             this.txtEstado.Location = new System.Drawing.Point(262, 185);
@@ -131,6 +198,7 @@
             // 
             // txtRfc
             // 
+            this.txtRfc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtRfc.Id = "bc6220ac-c905-46ab-9dce-0929b090c928";
             this.txtRfc.LabelText = "RFC:";
             this.txtRfc.Location = new System.Drawing.Point(443, 79);
@@ -141,6 +209,7 @@
             // 
             // txtEdo
             // 
+            this.txtEdo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEdo.Id = "90c07084-24a8-483e-8fad-20de055c00a6";
             this.txtEdo.LabelText = "Estado de Emision:";
             this.txtEdo.Location = new System.Drawing.Point(233, 274);
@@ -174,48 +243,9 @@
             this.cmbPais.TabIndex = 2;
             this.cmbPais.TextEditorWidth = 113;
             // 
-            // txtNoE
-            // 
-            this.txtNoE.Id = "65367312-e383-4a4d-8508-893bdfd8bb97";
-            this.txtNoE.LabelText = "No. Exterior:";
-            this.txtNoE.Location = new System.Drawing.Point(435, 112);
-            this.txtNoE.Name = "txtNoE";
-            this.txtNoE.Size = new System.Drawing.Size(119, 21);
-            this.txtNoE.TabIndex = 7;
-            this.txtNoE.TextEditorWidth = 52;
-            // 
-            // txtNoI
-            // 
-            this.txtNoI.Id = "83075939-751b-48ad-bca0-d8d94b8d6a2e";
-            this.txtNoI.LabelText = "No. Interior:";
-            this.txtNoI.Location = new System.Drawing.Point(568, 112);
-            this.txtNoI.Name = "txtNoI";
-            this.txtNoI.Size = new System.Drawing.Size(119, 21);
-            this.txtNoI.TabIndex = 8;
-            this.txtNoI.TextEditorWidth = 55;
-            // 
-            // txtBoxCel
-            // 
-            this.txtBoxCel.Id = "e4e679a4-ee4e-46fe-af3f-8f766e5042b7";
-            this.txtBoxCel.LabelText = "Celular:";
-            this.txtBoxCel.Location = new System.Drawing.Point(262, 228);
-            this.txtBoxCel.Name = "txtBoxCel";
-            this.txtBoxCel.Size = new System.Drawing.Size(162, 21);
-            this.txtBoxCel.TabIndex = 14;
-            this.txtBoxCel.TextEditorWidth = 118;
-            // 
-            // txtTel
-            // 
-            this.txtTel.Id = "15a0ab28-926a-4fa4-b8df-6246cb844111";
-            this.txtTel.LabelText = "Telefono:";
-            this.txtTel.Location = new System.Drawing.Point(21, 228);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(208, 21);
-            this.txtTel.TabIndex = 13;
-            this.txtTel.TextEditorWidth = 154;
-            // 
             // txtCiudad
             // 
+            this.txtCiudad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCiudad.Id = "60696a12-a720-40aa-9716-7e9aa87a65b2";
             this.txtCiudad.LabelText = "Ciudad:";
             this.txtCiudad.Location = new System.Drawing.Point(21, 185);
@@ -223,10 +253,10 @@
             this.txtCiudad.Size = new System.Drawing.Size(208, 21);
             this.txtCiudad.TabIndex = 11;
             this.txtCiudad.TextEditorWidth = 163;
-            this.txtCiudad.TextChanged += new System.EventHandler(this.txtCiudad_TextChanged);
             // 
             // txtColonia
             // 
+            this.txtColonia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtColonia.Id = "6b7d0452-f4c3-485a-ba03-ea8a0ca76972";
             this.txtColonia.LabelText = "Colonia:";
             this.txtColonia.Location = new System.Drawing.Point(17, 149);
@@ -234,16 +264,6 @@
             this.txtColonia.Size = new System.Drawing.Size(212, 21);
             this.txtColonia.TabIndex = 9;
             this.txtColonia.TextEditorWidth = 165;
-            // 
-            // txtCp
-            // 
-            this.txtCp.Id = "eab3d6f8-4c16-42e4-a4ca-723c2fd61943";
-            this.txtCp.LabelText = "CódigoPostal:";
-            this.txtCp.Location = new System.Drawing.Point(262, 149);
-            this.txtCp.Name = "txtCp";
-            this.txtCp.Size = new System.Drawing.Size(162, 21);
-            this.txtCp.TabIndex = 10;
-            this.txtCp.TextEditorWidth = 88;
             // 
             // txtCalle
             // 
@@ -267,7 +287,6 @@
             this.dateNacimiento.TextEditorWidth = 121;
             this.dateNacimiento.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
             this.dateNacimiento.ValueChanged += new System.EventHandler(this.dateNacimiento_ValueChanged);
-            this.dateNacimiento.Click += new System.EventHandler(this.dateNacimiento_Click);
             // 
             // cmbSexo
             // 
@@ -284,19 +303,9 @@
             this.cmbSexo.TabIndex = 3;
             this.cmbSexo.TextEditorWidth = 71;
             // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Id = "59664c7d-a7eb-4aff-88cd-5712efd02b48";
-            this.txtCorreo.LabelText = "Correo Electónico:";
-            this.txtCorreo.Location = new System.Drawing.Point(443, 228);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(244, 21);
-            this.txtCorreo.TabIndex = 15;
-            this.txtCorreo.TextEditorWidth = 148;
-            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
-            // 
             // txtNombre
             // 
+            this.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNombre.Id = "75cca07a-d3b3-41ae-b2d8-bb2d49d29e39";
             this.txtNombre.LabelText = "Nombre:";
             this.txtNombre.Location = new System.Drawing.Point(21, 44);
@@ -326,11 +335,21 @@
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Id = "1565b44e-f105-4a53-a3be-2df1650f7536";
+            this.txtCorreo.LabelText = "Correo Electónico:";
+            this.txtCorreo.Location = new System.Drawing.Point(443, 228);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(244, 21);
+            this.txtCorreo.TabIndex = 40;
+            this.txtCorreo.TextEditorWidth = 180;
+            // 
             // FrmNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 542);
+            this.ClientSize = new System.Drawing.Size(739, 524);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObsv);
             this.Controls.Add(this.groupBoxClientes);
@@ -358,19 +377,19 @@
         private Elegant.Ui.TextBox txtLicencia;
         private Elegant.Ui.TextBox txtBoxObs;
         private Elegant.Ui.ComboBox cmbPais;
-        private Elegant.Ui.TextBox txtNoE;
-        private Elegant.Ui.TextBox txtNoI;
-        private Elegant.Ui.TextBox txtBoxCel;
-        private Elegant.Ui.TextBox txtTel;
         private Elegant.Ui.TextBox txtCiudad;
         private Elegant.Ui.TextBox txtColonia;
-        private Elegant.Ui.TextBox txtCp;
         private Elegant.Ui.TextBox txtCalle;
         private Elegant.Ui.DateTimePicker dateNacimiento;
         private Elegant.Ui.ComboBox cmbSexo;
-        private Elegant.Ui.TextBox txtCorreo;
         private Elegant.Ui.TextBox txtNombre;
         private Elegant.Ui.GroupBox groupObsv;
         private Elegant.Ui.Button btnGuardar;
+        private Elegant.Ui.MaskedTextBox txtNoI;
+        private Elegant.Ui.MaskedTextBox txtNoE;
+        private Elegant.Ui.MaskedTextBox txtBoxCel;
+        private Elegant.Ui.MaskedTextBox txtTel;
+        private Elegant.Ui.MaskedTextBox txtCp;
+        private Elegant.Ui.TextBox txtCorreo;
     }
 }
