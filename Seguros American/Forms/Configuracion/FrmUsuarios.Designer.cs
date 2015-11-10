@@ -60,14 +60,14 @@
             this.groupBox1.Id = "2c49db72-b391-4131-9cb3-969acf7e179e";
             this.groupBox1.Location = new System.Drawing.Point(-10, -1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1272, 71);
+            this.groupBox1.Size = new System.Drawing.Size(1280, 71);
             this.groupBox1.TabIndex = 1;
             // 
             // btnPermisos
             // 
             this.btnPermisos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPermisos.Id = "40cc59b6-9cb1-47c7-ad7a-935caaa72e35";
-            this.btnPermisos.Location = new System.Drawing.Point(1021, 17);
+            this.btnPermisos.Location = new System.Drawing.Point(1029, 17);
             this.btnPermisos.Name = "btnPermisos";
             this.btnPermisos.Size = new System.Drawing.Size(87, 41);
             this.btnPermisos.TabIndex = 4;
@@ -78,7 +78,7 @@
             // 
             this.btnNuevoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevoUsuario.Id = "1c22dac9-7980-471c-8679-ab44666a906d";
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(1123, 17);
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(1131, 17);
             this.btnNuevoUsuario.Name = "btnNuevoUsuario";
             this.btnNuevoUsuario.Size = new System.Drawing.Size(87, 41);
             this.btnNuevoUsuario.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.btnMostrarTodo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodo.Id = "e763c0c0-b595-4c94-bc00-8330cbd41698";
-            this.btnMostrarTodo.Location = new System.Drawing.Point(919, 17);
+            this.btnMostrarTodo.Location = new System.Drawing.Point(927, 17);
             this.btnMostrarTodo.Name = "btnMostrarTodo";
             this.btnMostrarTodo.Size = new System.Drawing.Size(87, 41);
             this.btnMostrarTodo.TabIndex = 2;
@@ -104,7 +104,7 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(350, 27);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(528, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(536, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 396;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged_1);
@@ -140,6 +140,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.contextMenuExtenderProvider1.SetContextPopupMenu(this.dgv, this.cm);
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,7 +154,7 @@
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1220, 655);
+            this.dgv.Size = new System.Drawing.Size(1228, 663);
             this.dgv.TabIndex = 3;
             // 
             // formFrameSkinner
@@ -167,7 +168,7 @@
             this.btnEliminar});
             this.cm.KeepPopupsWithOffsetPlacementWithinPlacementArea = false;
             this.cm.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom;
-            this.cm.PlacementOffset = new System.Drawing.Size(207, 106);
+            this.cm.PlacementOffset = new System.Drawing.Size(205, 106);
             this.cm.Size = new System.Drawing.Size(100, 100);
             // 
             // btnEditar
@@ -194,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 730);
+            this.ClientSize = new System.Drawing.Size(1261, 738);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(600, 300);
