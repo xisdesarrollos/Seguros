@@ -55,7 +55,7 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(943, 450);
+            this.btnOk.Location = new System.Drawing.Point(951, 458);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 48);
             this.btnOk.TabIndex = 16;
@@ -88,7 +88,7 @@
             this.dgvVehiculos.Name = "dgvVehiculos";
             this.dgvVehiculos.RowHeadersVisible = false;
             this.dgvVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehiculos.Size = new System.Drawing.Size(1019, 329);
+            this.dgvVehiculos.Size = new System.Drawing.Size(1027, 337);
             this.dgvVehiculos.TabIndex = 14;
             this.dgvVehiculos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehiculos_CellValueChanged);
             // 
@@ -104,7 +104,7 @@
             this.groupFiltro.Id = "c4d31b6a-286b-427b-aecd-87ee16dc8b03";
             this.groupFiltro.Location = new System.Drawing.Point(11, 5);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(1020, 115);
+            this.groupFiltro.Size = new System.Drawing.Size(1028, 123);
             this.groupFiltro.TabIndex = 15;
             // 
             // btnNuevo
@@ -112,7 +112,7 @@
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "0ded2b42-9c1f-4ca4-82ad-3d4aae35331e";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(888, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(896, 16);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(108, 45);
             this.btnNuevo.TabIndex = 3;
@@ -128,7 +128,7 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(419, 28);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(287, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(295, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 244;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
@@ -139,15 +139,11 @@
             this.cmbFiltro.FormattingEnabled = false;
             this.cmbFiltro.Id = "d80b703c-ee7a-491a-ade7-e3dd8f843872";
             this.cmbFiltro.Items.AddRange(new object[] {
-            "IDVEHICULO",
-            "IDCLIENTE",
-            "USUARIO",
             "TIPO",
             "MARCA",
             "SUBMARCA",
             "MODELO",
             "PLACAS",
-            "ESTADOPLACAS",
             "NUMEROSERIE"});
             this.cmbFiltro.LabelText = "Filtrar por:";
             this.cmbFiltro.Location = new System.Drawing.Point(31, 28);
@@ -161,7 +157,7 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "b7d2eae5-43e7-428d-8607-32ecb3f22c93";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(773, 20);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(781, 20);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(82, 38);
             this.btnMostrarTodos.TabIndex = 2;
@@ -202,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 510);
+            this.ClientSize = new System.Drawing.Size(1051, 518);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvVehiculos);
             this.Controls.Add(this.groupFiltro);
