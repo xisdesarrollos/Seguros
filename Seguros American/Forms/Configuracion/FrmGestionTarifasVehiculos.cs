@@ -22,6 +22,7 @@ namespace Seguros_American.Forms.Configuracion
 
         private void FrmTarifasAutos_Load(object sender, EventArgs e)
         {
+            
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.tarifasautos' Puede moverla o quitarla según sea necesario.
             try
             {
@@ -52,35 +53,62 @@ namespace Seguros_American.Forms.Configuracion
 
         private void dgvTarifa_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-          
+            int cmbindex = cmbTarifa.SelectedIndex;
             //calcular el valor total automaticamente          
             int rindex = e.RowIndex;
+            int total;
             //obtener los datos para la operacion
             int dias = int.Parse(dgvTarifa.Rows[rindex].Cells[0].Value.ToString());
             int pb = int.Parse(dgvTarifa.Rows[rindex].Cells[1].Value.ToString());
             int gm = int.Parse(dgvTarifa.Rows[rindex].Cells[2].Value.ToString());
             int dp = int.Parse(dgvTarifa.Rows[rindex].Cells[3].Value.ToString());
-            int total = pb + gm + dp;
             //editar en el grid con el resultado de la operacion
-            dgvTarifa.Rows[rindex].Cells[4].Value = total;
-            this.tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
+            switch (cmbindex)
+            {
+                case 0:
+                    total = pb + gm + dp;
+                    dgvTarifa.Rows[rindex].Cells[4].Value = total;
+                    this.tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
+                    break;
+                case 1:
+                    total = pb + gm * dp;
+                    dgvTarifa.Rows[rindex].Cells[4].Value = total;
+                    this.tarifasautos_2TableAdapter.Update(this.dataSet1.tarifasautos_2);
+                    break;
+                default:
+                    break;
+            }
+            
         }
-
-        
-
-      
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Validate();
             tarifasautosBindingSource.EndEdit();
-            tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
+            tarifasautos2BindingSource.EndEdit();
+            this.tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
+            this.tarifasautos_2TableAdapter.Update(this.dataSet1.tarifasautos_2);
             MessageBox.Show("Cambios realizados correctamente");
             this.Close();
         }
 
-        
+        private void cmbTarifa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int cmbindex = cmbTarifa.SelectedIndex;
 
+            switch(cmbindex){
+                case 0:
+                    this.dgvTarifa.DataSource = this.tarifasautosBindingSource1;
+                    this.tarifasautosTableAdapter.Fill(this.dataSet1.tarifasautos);
+                    break;
+                case 1:
+                    this.dgvTarifa.DataSource = this.tarifasautos2BindingSource;
+                    this.tarifasautos_2TableAdapter.Fill(this.dataSet1.tarifasautos_2);
+                    break;
+                default:
+                    break;
+            }
+        }
        
     }
 }
