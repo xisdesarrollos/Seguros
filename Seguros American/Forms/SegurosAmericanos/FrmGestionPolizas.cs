@@ -51,9 +51,20 @@ namespace Seguros_American.Forms.SegurosAmericanos
             int index = dgvPolizas.CurrentCell.RowIndex;
             DataGridViewRow selectedRow = dgvPolizas.Rows[index];
             string idFolio = selectedRow.Cells[0].Value.ToString();
-
+            MessageBox.Show(idFolio);
             FrmReporte reporte = new FrmReporte(idFolio);
             reporte.Show();
+        }
+
+        private void txtCriterio_TextChanged(object sender, EventArgs e)
+        {
+            string filter = cmbFiltro.Text.ToString();
+            string value = txtCriterio.Text.ToString();
+
+            string sqlCustomQuery = "SELECT * FROM polizas_americanas " +
+                                    " WHERE " + filter + " LIKE '%" + value + "%' ORDER BY " + filter + " ASC";
+
+            Globales.cargaGrid(sqlCustomQuery, dgvPolizas);
         }
     }
 }

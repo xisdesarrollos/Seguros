@@ -167,21 +167,28 @@ namespace Seguros_American
             return dt;
         }
 
-        public bool Existe(string tabla, string columns, string condicion)
+   
+        //Este metodo busca en la tabla la columna y verifica si existe al menos un registro
+        //con el valor datos
+        //@params tabla nombre de la tabla
+        //@params whereColumn el nombre de la columna a la que se va a buscar el valor
+        //@params whereValue el valor que se busca 
+        public bool Existe(string tabla, string wherecolumn, string wherevalue)
         {
-           DataTable dataTable = Consultar(columns, tabla,condicion);
            
-            if (dataTable.Rows.Count == 0)
-                return false;
-            
-            return true;
+            string sqlExists = "SELECT EXISTS(SELECT 1 FROM "+ tabla + " WHERE " + wherecolumn + " = '" + wherevalue + "')";
+            int response = ConsultaEscalar(sqlExists);
+            if (response == 1)
+                return true;
+
+            return false;
         }
 
         public bool Eliminar(string tabla, string condicion)
         {
             if (cn.State == ConnectionState.Open) cn.Close();
             cn.Open();
-            string sql = "DELETE FROM " + tabla + " WHERE " + condicion;
+            string sql = "DELETE FROM " + tabla + " WHERE " + condicion ;
             comando = new MySqlCommand(sql, cn);
             int i = comando.ExecuteNonQuery();
             cn.Close();

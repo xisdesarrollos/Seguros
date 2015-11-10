@@ -14,7 +14,7 @@ namespace Seguros_American.Forms.Configuracion
     {
         Basedatos bd;
         FrmPermisos frmP;
-        
+        string sqlSelectAll = "SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC";
         public FrmUsuarios()
         {
             InitializeComponent();
@@ -70,13 +70,6 @@ namespace Seguros_American.Forms.Configuracion
             txtCriterio.Select();
         }
 
-        
-
-        private void eliminaUsuario(String idusuario)
-        {
-            bd.Eliminar("usuarios", "idusuario = " + Globales.auxUsuario);
-        }
-
         private void FrmUsuarios_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
@@ -86,13 +79,14 @@ namespace Seguros_American.Forms.Configuracion
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
-            Globales.EsNuevoUsuario = false;
-            Globales.auxUsuario = dgv[0, dgv.CurrentRow.Index].Value.ToString();
-            FrmNuevoUsuario frmNu = new FrmNuevoUsuario();
-            frmNu.ShowDialog();
-            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC", dgv);
-            cmbFiltro.SelectedIndex = 0;
-            txtCriterio.Select();
+            //set id
+            int index = dgv.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dgv.Rows[index];
+            string usuarioId= selectedRow.Cells[0].Value.ToString();
+
+            FrmNuevoUsuario editarUsario = new FrmNuevoUsuario(usuarioId, false);
+            editarUsario.ShowDialog();
+            Globales.cargaGrid(sqlSelectAll, dgv);
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
@@ -100,11 +94,13 @@ namespace Seguros_American.Forms.Configuracion
             DialogResult r = MessageBox.Show("¿Seguro que desea eliminar al usuario seleccionado?", "Usuarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes)
             {
-                Globales.auxUsuario = dgv[0, dgv.CurrentRow.Index].Value.ToString();
-                eliminaUsuario(Globales.auxUsuario);
-                Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC", dgv);
-                cmbFiltro.SelectedIndex = 0;
-                txtCriterio.Select();
+                int index = dgv.CurrentCell.RowIndex;
+                DataGridViewRow selectedRow = dgv.Rows[index];
+                string usuarioId = selectedRow.Cells[0].Value.ToString();
+                string usuario = selectedRow.Cells[1].Value.ToString();
+                bd.Eliminar("usuarios", "idusuario = '" + usuarioId + "'");
+                bd.Eliminar("permisos", "usuario = '" + usuario + "'");
+                Globales.cargaGrid(sqlSelectAll, dgv);
             }
         }
 

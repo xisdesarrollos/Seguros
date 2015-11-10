@@ -17,11 +17,19 @@ namespace Seguros_American.Forms.Configuracion
     {
 
         Basedatos bd;
+        bool esNuevo = true;
+        string usuarioId;
 
         public FrmNuevoUsuario()
         {
             InitializeComponent();
            
+        }
+        public FrmNuevoUsuario(string usuarioId, bool esNuevo = true)
+        {
+            InitializeComponent();
+            this.esNuevo = esNuevo;
+            this.usuarioId = usuarioId;
         }
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
@@ -34,10 +42,9 @@ namespace Seguros_American.Forms.Configuracion
 
             bd = new Basedatos();
             cmbNivel.SelectedIndex = 0;
-            if (Globales.EsNuevoUsuario == false)
-            {
-                cargaUsuario(Globales.auxUsuario);
-            }
+            if (!esNuevo)
+            cargaUsuario();
+            
         }
 
         private void guardaUsuario()
@@ -50,64 +57,60 @@ namespace Seguros_American.Forms.Configuracion
             cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
             cmd.Parameters.AddWithValue("@nivel", cmbNivel.Text);
             cmd.CommandText = sql;
-            bd.Insertar(cmd);
-            insertaPermisos();
-            MessageBox.Show("Usuario registrado correctamente", "Alta de Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             // hacer una busqueda preguntando por los valores.
+            
+                bd.Insertar(cmd);
+                insertaPermisos();
+                MessageBox.Show("Usuario registrado correctamente");
+
         }
 
         private void actualizaUsuario()
         {
             MySqlCommand cmd = new MySqlCommand();
-            String sql;
-            sql = "UPDATE usuarios SET usuario=@usuario,contrasena=MD5(@contrasena),nombre=@nombre,nivel=@nivel WHERE id_usuario = " + Globales.auxUsuario;
-            cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
-            cmd.Parameters.AddWithValue("@contrasena", txtPassword.Text);
-            cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
-            cmd.Parameters.AddWithValue("@nivel", cmbNivel.Text);
-            cmd.CommandText = sql;
-            bd.Actualizar(cmd);
-            MessageBox.Show("Usuario actualizado correctamente", "Alta de Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                String sql;
+                sql = "UPDATE usuarios SET usuario=@usuario,contrasena=MD5(@contrasena),nombre=@nombre,nivel=@nivel WHERE idusuario = " + usuarioId;
+                cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                cmd.Parameters.AddWithValue("@contrasena", txtPassword.Text);
+                cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
+                cmd.Parameters.AddWithValue("@nivel", cmbNivel.Text);
+                cmd.CommandText = sql;
+                
+                bd.Actualizar(cmd);
+                insertaPermisos();
+                MessageBox.Show("Usuario registrado correctamente");
+               
+               
+            }
+            catch (MySqlException esql)
+            {
+                MessageBox.Show("Error en la db \n" + esql.Message);
+              
+            }
+
+            
+        
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text != "" && txtPassword.Text != "" && txtNombre.Text != "")
-            {
-                if (txtPassword.Text == txtPassword2.Text)
-                {
-                    if (Globales.EsNuevoUsuario == true)
-                        guardaUsuario();
-                    else
-                        actualizaUsuario();
-                    this.Dispose();
-                }
-                else
-                {
-                    MessageBox.Show("Las contraseñas no coinciden, verifique", "Alta de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtPassword.Select();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Complete todos los campos", "Alta de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtUsuario.Select();
-            }
+           
         }
 
         private void insertaPermisos()
         {
-            //bd.Insertar("INSERT INTO permisos VALUES('" + txtUsuario.Text + "',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)");
-
-            bd.Insertar("INSERT INTO permisos(usuario) VALUES ('" + txtUsuario.Text + "')");
-        
+          //preguntar si existe este tipo de usuarios en la tabla para no insertarlos.
+           
+                bd.Insertar("INSERT INTO permisos(usuario) VALUES ('" + txtUsuario.Text + "')");
+          
         }
 
-        private void cargaUsuario(String id)
+        private void cargaUsuario()
         {
-            DataTable dt = bd.Consultar("*", "usuarios", "idusuario = " + id);
+            DataTable dt = bd.Consultar("*", "usuarios", "idusuario = " + usuarioId);
             txtUsuario.Text = dt.Rows[0][1].ToString();
-            txtPassword.Text = dt.Rows[0][2].ToString();
-            txtPassword2.Text = dt.Rows[0][2].ToString();
             txtNombre.Text = dt.Rows[0][3].ToString();
             cmbNivel.Text = dt.Rows[0][5].ToString();
             txtUsuario.Select();
@@ -121,33 +124,49 @@ namespace Seguros_American.Forms.Configuracion
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
 
-            if (txtUsuario.Text != "" && txtPassword.Text != "" && txtNombre.Text != "")
+            if (validarCampos())
             {
-                if (txtPassword.Text == txtPassword2.Text)
+                if (validaDatos())
                 {
-                    if (Globales.EsNuevoUsuario == true)
+                    if (esNuevo)
                         guardaUsuario();
                     else
                         actualizaUsuario();
-                    this.Dispose();
-                }
-                else
-                {
-                    MessageBox.Show("Las contraseñas no coinciden, verifique", "Alta de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txtPassword.Select();
+
+                    this.Close();
                 }
             }
-            else
-            {
-                MessageBox.Show("Complete todos los campos", "Alta de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtUsuario.Select();
-             }
+               
         }
+        //valida datos localmente sin accesso a la basededatos
+        private bool validarCampos()
+        {
+          //hay campos vacios  
+          if(string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPassword.Text) || 
+                string.IsNullOrEmpty(txtPassword2.Text) || string.IsNullOrEmpty(txtUsuario.Text)){
+                    MessageBox.Show("Verifique campos vacios");
+                    return false;
+           }
 
+          if (txtPassword.Text != txtPassword2.Text) {
+              MessageBox.Show("Verifique que los password sean iguales");
+              return false;
+          }
+            //no se puede repetir usuario
 
-        
-      
-        
+         
+          return true;
+
+        }
+        //consulta a la base de datos por los datos
+        private bool validaDatos()
+        {
+            if (bd.Existe("permisos", "usuario", txtUsuario.Text)) {
+                MessageBox.Show("Error: el usuario ya se encuentra registrado en la base de datos");
+                return false;
+            }
+            return true;
+        }
 
     }
 }

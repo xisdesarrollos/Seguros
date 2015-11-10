@@ -40,8 +40,10 @@
             this.btnMostrarTodos = new Elegant.Ui.Button();
             this.btnGuardar = new Elegant.Ui.Button();
             this.contextMenu1 = new Elegant.Ui.ContextMenu(this.components);
-            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             this.btnImprimirPolizas = new Elegant.Ui.Button();
+            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
+            this.btnEditarPoliza = new Elegant.Ui.Button();
+            this.Eliminar = new Elegant.Ui.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPolizas)).BeginInit();
             this.groupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).BeginInit();
@@ -112,6 +114,7 @@
             this.txtCriterio.Size = new System.Drawing.Size(314, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 358;
+            this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
             // 
             // cmbFiltro
             // 
@@ -119,10 +122,8 @@
             this.cmbFiltro.FormattingEnabled = false;
             this.cmbFiltro.Id = "04089a29-1cbf-4e27-97cb-dea60632289f";
             this.cmbFiltro.Items.AddRange(new object[] {
-            "idCliente",
-            "nombre",
-            "ciudad",
-            "telefono"});
+            "FOLIO",
+            "FECHAEM"});
             this.cmbFiltro.LabelText = "Filtrar por:";
             this.cmbFiltro.Location = new System.Drawing.Point(32, 30);
             this.cmbFiltro.Name = "cmbFiltro";
@@ -155,10 +156,12 @@
             // contextMenu1
             // 
             this.contextMenu1.Items.AddRange(new System.Windows.Forms.Control[] {
-            this.btnImprimirPolizas});
+            this.btnImprimirPolizas,
+            this.btnEditarPoliza,
+            this.Eliminar});
             this.contextMenu1.KeepPopupsWithOffsetPlacementWithinPlacementArea = false;
             this.contextMenu1.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom;
-            this.contextMenu1.PlacementOffset = new System.Drawing.Size(219, 106);
+            this.contextMenu1.PlacementOffset = new System.Drawing.Size(205, 106);
             this.contextMenu1.Size = new System.Drawing.Size(100, 100);
             // 
             // btnImprimirPolizas
@@ -171,11 +174,29 @@
             this.btnImprimirPolizas.Text = "Imprimir";
             this.btnImprimirPolizas.Click += new System.EventHandler(this.btnImprimirPolizas_Click);
             // 
+            // btnEditarPoliza
+            // 
+            this.btnEditarPoliza.Id = "a54cebd9-fabb-4d31-a9b2-2ea47c58d318";
+            this.btnEditarPoliza.Location = new System.Drawing.Point(2, 25);
+            this.btnEditarPoliza.Name = "btnEditarPoliza";
+            this.btnEditarPoliza.Size = new System.Drawing.Size(138, 23);
+            this.btnEditarPoliza.TabIndex = 5;
+            this.btnEditarPoliza.Text = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.Id = "fe047c40-7b5e-4687-8467-61ef58428a3f";
+            this.Eliminar.Location = new System.Drawing.Point(2, 48);
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Size = new System.Drawing.Size(138, 23);
+            this.Eliminar.TabIndex = 6;
+            this.Eliminar.Text = "Eliminar";
+            // 
             // FrmGestionPolizas
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1197, 674);
+            this.ClientSize = new System.Drawing.Size(1205, 682);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgvPolizas);
             this.Controls.Add(this.groupFiltro);
@@ -206,5 +227,7 @@
         private Elegant.Ui.ContextMenu contextMenu1;
         private Elegant.Ui.Button btnImprimirPolizas;
         private Elegant.Ui.ContextMenuExtenderProvider contextMenuExtenderProvider1;
+        private Elegant.Ui.Button btnEditarPoliza;
+        private Elegant.Ui.Button Eliminar;
     }
 }
