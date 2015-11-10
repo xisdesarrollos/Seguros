@@ -36,7 +36,7 @@ namespace Seguros_American.Forms.Vehiculos
         private void btnNuevoVehiculo_Click(object sender, EventArgs e)
         {
             //enviar idCLIENTE
-            FrmNuevoVehiculo nuevovehiculo = new FrmNuevoVehiculo(idCliente,idVehiculo);
+            FrmNuevoVehiculo nuevovehiculo = new FrmNuevoVehiculo(this.idCliente);
             nuevovehiculo.Show();
         }
         public interface IAuxVehiculos

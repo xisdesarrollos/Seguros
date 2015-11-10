@@ -27,6 +27,8 @@ namespace Seguros_American.Forms.Vehiculos
         public FrmNuevoVehiculo(string idCliente)
         {
             InitializeComponent();
+            txtNoCliente.Enabled = false;
+            btnBuscarCliente.Enabled = false;
 
             try
             {
@@ -225,10 +227,12 @@ namespace Seguros_American.Forms.Vehiculos
             
             try
             {
+
                 DataTable dataTable = bd.Consultar(filtro, tabla, condicion);
                 //llenar el formulario con esa info.
                 txtNoCliente.Text = dataTable.Rows[0][1].ToString();
                 txtNoCliente.Enabled = false;
+                btnBuscarCliente.Enabled = false;
                 cmbTipo.Text = dataTable.Rows[0][3].ToString();
                 cmbTipo.Enabled = false;
                 cmbMarca.Text = dataTable.Rows[0][4].ToString();
