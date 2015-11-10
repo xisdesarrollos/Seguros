@@ -20,6 +20,7 @@ namespace Seguros_American.Forms.Configuracion
 
         private void FrmGestionVehiculos_Load(object sender, EventArgs e)
         {
+
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.tarifasautos_2' Puede moverla o quitarla según sea necesario.
             this.tarifasautos_2TableAdapter.Fill(this.dataSet1.tarifasautos_2);
             // TODO: esta línea de código carga datos en la tabla 'dataSet1.tarifasautos' Puede moverla o quitarla según sea necesario.
@@ -28,7 +29,7 @@ namespace Seguros_American.Forms.Configuracion
             try
             {
                 this.tarifasautosTableAdapter.Fill(this.dataSet1.tarifasautos);
-               
+
             }
             catch (MySqlException sqle)
             {

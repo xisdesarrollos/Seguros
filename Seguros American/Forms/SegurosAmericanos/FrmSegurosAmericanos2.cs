@@ -23,6 +23,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         string idVehiculo;
         string clienteLicencia;
         string clienteNacimiento;
+        string ocupacionCod;
         string estado;
         string idFolio;
         DateTime dateInserted;
@@ -78,12 +79,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     dateFechaNac2.Enabled =
                     txtNoLic2.Enabled =
                     txtEdad2.Enabled =
+                    txtOcupacion2.Enabled =
                     txtEdoEm2.Enabled = false;
-                    break;
-                case 1:
+                    break;  
+                case 1:     
                     //dos conductores
                     txtNomCod2.Enabled =
                     dateFechaNac2.Enabled =
+                    txtOcupacion2.Enabled =
                     txtNoLic2.Enabled =
                     txtEdoEm2.Enabled = true;
                     break;
@@ -106,6 +109,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             //DateTime.Parse(dateNacimiento.Value.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
             //cambiar edad automaticamente.
             //DateTime today = DateTime.Today;
+
             DateTime fechaEmision = DateTime.Parse(dateFechaE.Value.ToString());
             int dias = int.Parse(cmbDia.Text);
             DateTime fechaFin = fechaEmision.AddDays(dias);
@@ -150,8 +154,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 cmdPoliza.Parameters.AddWithValue("@nombreCod2",txtNomCod2.Text);
                 cmdPoliza.Parameters.AddWithValue("@edadCod",txtEdad1.Text);
                 cmdPoliza.Parameters.AddWithValue("@edadCod2",txtEdad2.Text);
-                cmdPoliza.Parameters.AddWithValue("@ocupacionCod","NINGUNA");//war
-                cmdPoliza.Parameters.AddWithValue("@ocupacionCod2","NINGUNA");//war
+                cmdPoliza.Parameters.AddWithValue("@ocupacionCod",txtOcupacion1.Text);//war
+                cmdPoliza.Parameters.AddWithValue("@ocupacionCod2",txtOcupacion2.Text);//war
                 cmdPoliza.Parameters.AddWithValue("@noLicencia",txtNoLic1.Text);
                 cmdPoliza.Parameters.AddWithValue("@noLicencia2",txtNoLic2.Text);
                 cmdPoliza.Parameters.AddWithValue("@edoLicencia",txtEdoEm1.Text);
@@ -241,6 +245,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void FrmSegurosAmericanos2_Load(object sender, EventArgs e)
         {
+            
             updateFechaFin();
             updateFechaInit();
             consultarTarifa(cmbDia.Text.ToString());
@@ -248,8 +253,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void dateFechaE_ValueChanged(object sender, EventArgs e)
         {
-            updateFechaInit();
             updateFechaFin();
+            updateFechaInit();
         }
         
         //CLICK GUARDAR
@@ -290,12 +295,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     txtNomCod1.Text = nombreCliente;
                     txtNoLic1.Text = clienteLicencia;
                     dateFechaNac1.Text = clienteNacimiento;
+                    txtOcupacion1.Text = ocupacionCod;
                     txtEdoEm1.Text = estado;
                     break;
                 case 1:
                     txtNomCod1.Text = string.Empty;
                     txtNoLic1.Text = string.Empty;
                     dateFechaNac1.Text =  string.Empty;
+                    txtOcupacion1.Text = string.Empty;
                     txtEstado.Text = string.Empty;
                     txtEdoEm1.Text = string.Empty;
                     break;
@@ -376,9 +383,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
             vbl.Items.Add("Numero de Serie: " + numeroSerie);
         }
 
-        private void cmbNcod_SelectedIndexChanged(object sender, EventArgs e)
+        private void dateFechaE_ValueChanged_1(object sender, EventArgs e)
         {
-
+            updateFechaInit();
         }
+
+       
+
+        
+      
     }
 }
