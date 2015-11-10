@@ -41,14 +41,17 @@
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new Seguros_American.DataSet1();
             this.btnTarifaGuardar = new Elegant.Ui.Button();
+            this.cmbTarifa = new Elegant.Ui.ComboBox();
             this.tarifasautosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tarifasautosTableAdapter = new Seguros_American.DataSet1TableAdapters.tarifasautosTableAdapter();
-            this.cmbTarifa = new Elegant.Ui.ComboBox();
+            this.tarifasautos2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tarifasautos_2TableAdapter = new Seguros_American.DataSet1TableAdapters.tarifasautos_2TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarifasautosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarifasautosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarifasautos2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +83,7 @@
             this.dgvTarifa.DataSource = this.tarifasautosBindingSource1;
             this.dgvTarifa.Location = new System.Drawing.Point(21, 134);
             this.dgvTarifa.Name = "dgvTarifa";
-            this.dgvTarifa.Size = new System.Drawing.Size(549, 751);
+            this.dgvTarifa.Size = new System.Drawing.Size(549, 775);
             this.dgvTarifa.TabIndex = 1;
             this.dgvTarifa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellEndEdit);
             this.dgvTarifa.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTarifa_DataError);
@@ -141,6 +144,21 @@
             this.btnTarifaGuardar.TabIndex = 6;
             this.btnTarifaGuardar.Click += new System.EventHandler(this.button2_Click);
             // 
+            // cmbTarifa
+            // 
+            this.cmbTarifa.FormattingEnabled = false;
+            this.cmbTarifa.Id = "50d0c333-eaa7-4f7a-ae86-cf6d9450ddfa";
+            this.cmbTarifa.Items.AddRange(new object[] {
+            "TARIFA 30/60/20",
+            "TARIFA ALTERNATIVA"});
+            this.cmbTarifa.LabelText = "Tarifa:";
+            this.cmbTarifa.Location = new System.Drawing.Point(21, 84);
+            this.cmbTarifa.Name = "cmbTarifa";
+            this.cmbTarifa.Size = new System.Drawing.Size(243, 21);
+            this.cmbTarifa.TabIndex = 7;
+            this.cmbTarifa.TextEditorWidth = 191;
+            this.cmbTarifa.SelectedIndexChanged += new System.EventHandler(this.cmbTarifa_SelectedIndexChanged);
+            // 
             // tarifasautosBindingSource
             // 
             this.tarifasautosBindingSource.DataMember = "tarifasautos";
@@ -150,24 +168,20 @@
             // 
             this.tarifasautosTableAdapter.ClearBeforeFill = true;
             // 
-            // cmbTarifa
+            // tarifasautos2BindingSource
             // 
-            this.cmbTarifa.FormattingEnabled = false;
-            this.cmbTarifa.Id = "50d0c333-eaa7-4f7a-ae86-cf6d9450ddfa";
-            this.cmbTarifa.Items.AddRange(new object[] {
-            "TARIFA 30/60/20"});
-            this.cmbTarifa.LabelText = "Tarifa:";
-            this.cmbTarifa.Location = new System.Drawing.Point(21, 84);
-            this.cmbTarifa.Name = "cmbTarifa";
-            this.cmbTarifa.Size = new System.Drawing.Size(243, 21);
-            this.cmbTarifa.TabIndex = 7;
-            this.cmbTarifa.TextEditorWidth = 191;
+            this.tarifasautos2BindingSource.DataMember = "tarifasautos_2";
+            this.tarifasautos2BindingSource.DataSource = this.dataSet1;
+            // 
+            // tarifasautos_2TableAdapter
+            // 
+            this.tarifasautos_2TableAdapter.ClearBeforeFill = true;
             // 
             // FrmGestionTarifasVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 959);
+            this.ClientSize = new System.Drawing.Size(637, 983);
             this.Controls.Add(this.cmbTarifa);
             this.Controls.Add(this.btnTarifaGuardar);
             this.Controls.Add(this.dgvTarifa);
@@ -182,6 +196,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarifasautosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarifasautos2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +219,8 @@
         private System.Windows.Forms.BindingSource tarifasautosBindingSource1;
         private System.Windows.Forms.BindingSource dataSet1BindingSource;
         private Elegant.Ui.ComboBox cmbTarifa;
+        private System.Windows.Forms.BindingSource tarifasautos2BindingSource;
+        private DataSet1TableAdapters.tarifasautos_2TableAdapter tarifasautos_2TableAdapter;
 
     }
 }
