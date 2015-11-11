@@ -37,28 +37,24 @@ namespace Seguros_American.Forms.Vehiculos
         private void estilizaGrid()
         {
             dgv .Columns[0].HeaderText = "No.";
-            dgv.Columns[1].Visible = false;
-            dgv.Columns[2].Visible = false;
-            dgv.Columns[3].HeaderText = "Tipo";
-            dgv.Columns[4].HeaderText = "Marca";
-            dgv.Columns[5].HeaderText = "Submarca";
-            dgv.Columns[6].HeaderText = "Modelo";
-            dgv.Columns[7].HeaderText = "Placas";
-            dgv.Columns[8].HeaderText = "Estado de placas";
-            dgv.Columns[9].HeaderText = "Numero de serie";
+            dgv.Columns[1].HeaderText = "Modelo";
+            dgv.Columns[2].HeaderText = "Marca";
+            dgv.Columns[3].HeaderText = "Submarca";
+            dgv.Columns[4].HeaderText = "Placas";
+            dgv.Columns[5].HeaderText = "Numero de serie";
+            dgv.Columns[6].HeaderText = "Estado de placas";
+          
 
 
 
-            dgv.Columns[0].Width = 96;
-            dgv.Columns[1].Width = 45;
-            dgv.Columns[2].Width = 45;
-            dgv.Columns[3].Width = 300;
-            dgv.Columns[4].Width = 300;
-            dgv.Columns[5].Width = 300;
-            dgv.Columns[6].Width = 300;
-            dgv.Columns[7].Width = 200;
-            dgv.Columns[8].Width = 200;
-            dgv.Columns[9].Width = 200;
+            dgv.Columns[0].Width = 35;
+            dgv.Columns[1].Width = 50;
+            dgv.Columns[2].Width = 180;
+            dgv.Columns[3].Width = 180;
+            dgv.Columns[4].Width = 100;
+            dgv.Columns[5].Width = 100;
+            dgv.Columns[6].Width = 108;
+           
         }
         
         
@@ -87,6 +83,7 @@ namespace Seguros_American.Forms.Vehiculos
             dgv.Columns[2].ReadOnly =
             dgv.Columns[3].ReadOnly =
             dgv.Columns[5].ReadOnly = true;
+            estilizaGrid();
         }
 
         private void dgv_DoubleClick(object sender, EventArgs e)
@@ -124,6 +121,7 @@ namespace Seguros_American.Forms.Vehiculos
             nuevocliente.ShowDialog();
 
             Globales.cargaGrid(sqlSelect, dgv);
+            estilizaGrid();
         }
     }
 }

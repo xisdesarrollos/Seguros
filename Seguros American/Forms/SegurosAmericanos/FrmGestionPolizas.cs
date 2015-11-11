@@ -18,6 +18,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         {
             InitializeComponent();
             Globales.cargaGrid(sqlSelect, dgvPolizas);
+            estilizaGrid();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -46,6 +47,72 @@ namespace Seguros_American.Forms.SegurosAmericanos
             void onGridPolizas(DataGridView dgv);
         }
 
+        private void estilizaGrid()
+        {
+            dgvPolizas.Columns[0].HeaderText = "No.";
+            dgvPolizas.Columns[1].HeaderText = "Folio";
+            dgvPolizas.Columns[2].HeaderText = " Tipo de Seguro";
+            dgvPolizas.Columns[3].Visible = false;
+            dgvPolizas.Columns[4].Visible = false;
+            dgvPolizas.Columns[5].Visible = false;
+            dgvPolizas.Columns[6].HeaderText = "Dias";
+            dgvPolizas.Columns[7].HeaderText = "Inicio de Vigencia";
+            dgvPolizas.Columns[8].HeaderText = "Fin de Vigencia";
+            dgvPolizas.Columns[9].HeaderText = "Fecha Alta";
+            dgvPolizas.Columns[10].HeaderText = "Fecha Emisión";
+            dgvPolizas.Columns[11].HeaderText = "Hora de inicio";
+            dgvPolizas.Columns[12].HeaderText = "Hora Fin";
+            dgvPolizas.Columns[13].HeaderText = "Prima de Bienes";
+            dgvPolizas.Columns[14].HeaderText = "Prima Gastos Medicos";
+            dgvPolizas.Columns[15].HeaderText = "Prima Derechos de Poliza";
+            dgvPolizas.Columns[16].HeaderText = "Total";
+            dgvPolizas.Columns[17].HeaderText = "Nombre Conductor";
+            dgvPolizas.Columns[18].HeaderText = "Nombre segundo Conductor ";
+            dgvPolizas.Columns[19].Visible = false;
+            dgvPolizas.Columns[20].Visible = false;
+            dgvPolizas.Columns[21].Visible = false;
+            dgvPolizas.Columns[22].Visible = false;
+            dgvPolizas.Columns[23].Visible = false;
+            dgvPolizas.Columns[24].Visible = false;
+            dgvPolizas.Columns[25].Visible = false;
+            dgvPolizas.Columns[26].Visible = false;
+            
+
+
+            dgvPolizas.Columns[0].Width = 35;
+            dgvPolizas.Columns[1].Width = 100;
+            dgvPolizas.Columns[2].Width = 150;
+            //dgvPolizas.Columns[3].Width = 300;
+            //dgvPolizas.Columns[4].Width = 300;
+            //dgvPolizas.Columns[5].Width = 300;
+            dgvPolizas.Columns[6].Width = 50;
+            dgvPolizas.Columns[7].Width = 120;
+            dgvPolizas.Columns[8].Width = 120;
+            dgvPolizas.Columns[9].Width = 120;
+            dgvPolizas.Columns[10].Width = 120;
+            dgvPolizas.Columns[11].Width = 95;
+            dgvPolizas.Columns[12].Width = 95;
+            dgvPolizas.Columns[13].Width = 100;
+            dgvPolizas.Columns[14].Width = 100;
+            dgvPolizas.Columns[15].Width = 130;
+            dgvPolizas.Columns[16].Width = 100;
+            dgvPolizas.Columns[17].Width = 235;
+            dgvPolizas.Columns[18].Width = 240;
+            //dgvPolizas.Columns[19].Width = 200;
+            //dgvPolizas.Columns[20].Width = 96;
+            //dgvPolizas.Columns[21].Width = 45;
+            //dgvPolizas.Columns[22].Width = 45;
+            //dgvPolizas.Columns[23].Width = 300;
+            //dgvPolizas.Columns[24].Width = 300;
+            //dgvPolizas.Columns[25].Width = 300;
+            //dgvPolizas.Columns[26].Width = 300;
+      
+           
+
+        }
+
+
+
         private void btnImprimirPolizas_Click(object sender, EventArgs e)
         {
             int index = dgvPolizas.CurrentCell.RowIndex;
@@ -64,6 +131,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                                     " WHERE " + filter + " LIKE '%" + value + "%' ORDER BY " + filter + " ASC";
 
             Globales.cargaGrid(sqlCustomQuery, dgvPolizas);
+            estilizaGrid();
         }
         
         //EDITAR
@@ -80,6 +148,9 @@ namespace Seguros_American.Forms.SegurosAmericanos
             nuevocliente.ShowDialog();
 
             Globales.cargaGrid(sqlSelect, dgvPolizas);
+            estilizaGrid();
+
+
         }
         //ELIMINAR
         private void Eliminar_Click(object sender, EventArgs e)
@@ -99,6 +170,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                  {
                      bd.Eliminar(nTabla, condicion);
                      Globales.cargaGrid(sqlSelect, dgvPolizas);
+                     estilizaGrid();
                      MessageBox.Show("Poliza eliminada exitosamente");
 
                  }
