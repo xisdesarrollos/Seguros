@@ -14,7 +14,7 @@ namespace Seguros_American
         //Flags
         public static Boolean EsNuevoUsuario;
         public static Boolean EsNuevoCliente;
-        
+        public static Boolean EsNuevoVehiculo;
 
         //Auxs
         public static String idUsuario;
