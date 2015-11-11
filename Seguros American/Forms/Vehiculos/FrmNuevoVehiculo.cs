@@ -131,7 +131,7 @@ namespace Seguros_American.Forms.Vehiculos
             if (string.IsNullOrEmpty(cmbMarca.Text) || string.IsNullOrEmpty(cmbModelo.Text) ||
                 string.IsNullOrEmpty(cmbTipo.Text) || string.IsNullOrEmpty(txtSub.Text) ||
                 string.IsNullOrEmpty(txtPlacas.Text) || string.IsNullOrEmpty(txtPestado.Text) ||
-                string.IsNullOrEmpty(txtNoS.Text)) {
+                string.IsNullOrEmpty(txtNoS.Text) || string.IsNullOrEmpty(txtNoCliente.Text)) {
 
                     MessageBox.Show("Verifique que todos los campos esten correctos");
                     return false;
@@ -153,7 +153,8 @@ namespace Seguros_American.Forms.Vehiculos
                 // guardar cada uno de los datos en su tabla correspondiente.
               
                 // hacer una busqueda preguntando por los valores.
-                if (!bd.Existe("marca_vehiculos", "marca", " marca = '" + cmbMarca.Text + "'"))
+                
+                if (!bd.Existe("marca_vehiculos", "marca",cmbMarca.Text))
                 {
                     MySqlCommand cmdMarca = new MySqlCommand();
                     cmdMarca.CommandText = "INSERT INTO marca_vehiculos(marca) VALUES (@marca)";
@@ -162,7 +163,7 @@ namespace Seguros_American.Forms.Vehiculos
             
                 }
                 // hacer una busqueda preguntando por los valores.
-                if (!bd.Existe("modelo_vehiculos", "modelo", " modelo = '" + cmbModelo.Text + "'"))
+                if (!bd.Existe("modelo_vehiculos", "modelo", cmbModelo.Text))
                 {
                     MySqlCommand cmdModelo = new MySqlCommand();
                     cmdModelo.CommandText = "INSERT INTO modelo_vehiculos(modelo) VALUES (@modelo)";
@@ -170,7 +171,7 @@ namespace Seguros_American.Forms.Vehiculos
                     bd.Insertar(cmdModelo);
                 }
                 // hacer una busqueda preguntando por los valores.
-                if (!bd.Existe("tipo_vehiculos", "tipo", " tipo = '" + cmbTipo.Text + "'"))
+                if (!bd.Existe("tipo_vehiculos", "tipo", cmbTipo.Text))
                 {
                     MySqlCommand cmdTipo = new MySqlCommand();
                     cmdTipo.CommandText = "INSERT INTO tipo_vehiculos(tipo) VALUES (@tipo)";
