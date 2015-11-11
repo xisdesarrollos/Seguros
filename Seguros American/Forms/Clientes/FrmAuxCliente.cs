@@ -14,7 +14,7 @@ namespace Seguros_American.Forms.Clientes
 {
     public partial class FrmAuxCliente : Form
     {
-        string sql = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fechaNacimiento,calle,colonia,noExterior,cp,noLicencia FROM clientes";
+        string sql = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fechaNacimiento,calle,colonia,noExterior,cp,noLicencia,ocupacion FROM clientes";
         Basedatos db = new Basedatos();
         DataTable dt = new DataTable();
         string id;
@@ -44,8 +44,7 @@ namespace Seguros_American.Forms.Clientes
             //buscar cliente por nombre.
             string value = txtCriterio.Text.ToString();
 
-            string sqlCustomQuery = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fechaNacimiento,calle,colonia,noExterior,cp,noLicencia FROM clientes " +
-                                    " WHERE nombre LIKE '%" + value + "%' ORDER BY nombre ASC";
+            string sqlCustomQuery = sql + " WHERE nombre LIKE '%" + value + "%' ORDER BY nombre ASC";
 
             Globales.cargaGrid(sqlCustomQuery, dgv);
         }

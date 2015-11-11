@@ -73,34 +73,6 @@
             this.comboSec = new Elegant.Ui.ComboBox();
             this.comboNoP = new Elegant.Ui.ComboBox();
             this.tabSegurosAmericanos = new Elegant.Ui.TabControl();
-            this.tabPage3 = new Elegant.Ui.TabPage();
-            this.groupPrimas = new Elegant.Ui.GroupBox();
-            this.dateFechaE = new Elegant.Ui.DateTimePicker();
-            this.txtFolio = new Elegant.Ui.MaskedTextBox();
-            this.groupBoxTotales = new Elegant.Ui.GroupBox();
-            this.txtTotalPoliza = new Elegant.Ui.TextBox();
-            this.txtDerchPoliza = new Elegant.Ui.TextBox();
-            this.txtGasto = new Elegant.Ui.TextBox();
-            this.txtBienes = new Elegant.Ui.TextBox();
-            this.cmbSeguro = new Elegant.Ui.ComboBox();
-            this.cmbSuma = new Elegant.Ui.ComboBox();
-            this.cmbDia = new Elegant.Ui.ComboBox();
-            this.dateIncVig = new Elegant.Ui.DateTimePicker();
-            this.dateHoraInc = new Elegant.Ui.DateTimePicker();
-            this.dateFinVig = new Elegant.Ui.DateTimePicker();
-            this.tabDatoscliente = new Elegant.Ui.TabPage();
-            this.groupDatosCliente = new Elegant.Ui.GroupBox();
-            this.txtEstado = new Elegant.Ui.TextBox();
-            this.cmbPais = new Elegant.Ui.ComboBox();
-            this.txtCiudad = new Elegant.Ui.TextBox();
-            this.txtDireccion = new Elegant.Ui.TextBox();
-            this.txtNombre = new Elegant.Ui.TextBox();
-            this.btnClientes = new Elegant.Ui.Button();
-            this.txtNoCliente = new Elegant.Ui.TextBox();
-            this.tabVehiculos = new Elegant.Ui.TabPage();
-            this.groupVehiculos = new Elegant.Ui.GroupBox();
-            this.vbl = new ComponentOwl.BetterListView.BetterListView();
-            this.btnVehiculo = new Elegant.Ui.Button();
             this.tabConductores = new Elegant.Ui.TabPage();
             this.groupConductores = new Elegant.Ui.GroupBox();
             this.txtOcupacion2 = new Elegant.Ui.TextBox();
@@ -117,6 +89,34 @@
             this.txtNomCod2 = new Elegant.Ui.TextBox();
             this.cmbNcod = new Elegant.Ui.ComboBox();
             this.cmbCondExtra = new Elegant.Ui.ComboBox();
+            this.tabDatoscliente = new Elegant.Ui.TabPage();
+            this.groupDatosCliente = new Elegant.Ui.GroupBox();
+            this.txtEstado = new Elegant.Ui.TextBox();
+            this.cmbPais = new Elegant.Ui.ComboBox();
+            this.txtCiudad = new Elegant.Ui.TextBox();
+            this.txtDireccion = new Elegant.Ui.TextBox();
+            this.txtNombre = new Elegant.Ui.TextBox();
+            this.btnClientes = new Elegant.Ui.Button();
+            this.txtNoCliente = new Elegant.Ui.TextBox();
+            this.tabPage3 = new Elegant.Ui.TabPage();
+            this.groupPrimas = new Elegant.Ui.GroupBox();
+            this.dateFechaE = new Elegant.Ui.DateTimePicker();
+            this.txtFolio = new Elegant.Ui.MaskedTextBox();
+            this.groupBoxTotales = new Elegant.Ui.GroupBox();
+            this.txtTotalPoliza = new Elegant.Ui.TextBox();
+            this.txtDerchPoliza = new Elegant.Ui.TextBox();
+            this.txtGasto = new Elegant.Ui.TextBox();
+            this.txtBienes = new Elegant.Ui.TextBox();
+            this.cmbSeguro = new Elegant.Ui.ComboBox();
+            this.cmbSuma = new Elegant.Ui.ComboBox();
+            this.cmbDia = new Elegant.Ui.ComboBox();
+            this.dateIncVig = new Elegant.Ui.DateTimePicker();
+            this.dateHoraInc = new Elegant.Ui.DateTimePicker();
+            this.dateFinVig = new Elegant.Ui.DateTimePicker();
+            this.tabVehiculos = new Elegant.Ui.TabPage();
+            this.groupVehiculos = new Elegant.Ui.GroupBox();
+            this.vbl = new ComponentOwl.BetterListView.BetterListView();
+            this.btnVehiculo = new Elegant.Ui.Button();
             this.groupPoliza.SuspendLayout();
             this.groupCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -124,16 +124,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.betterListView1)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabSegurosAmericanos)).BeginInit();
+            this.tabConductores.SuspendLayout();
+            this.groupConductores.SuspendLayout();
+            this.tabDatoscliente.SuspendLayout();
+            this.groupDatosCliente.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupPrimas.SuspendLayout();
             this.groupBoxTotales.SuspendLayout();
-            this.tabDatoscliente.SuspendLayout();
-            this.groupDatosCliente.SuspendLayout();
             this.tabVehiculos.SuspendLayout();
             this.groupVehiculos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vbl)).BeginInit();
-            this.tabConductores.SuspendLayout();
-            this.groupConductores.SuspendLayout();
             this.SuspendLayout();
             // 
             // formFrameSkinner
@@ -640,6 +640,311 @@
             this.tabVehiculos,
             this.tabConductores});
             // 
+            // tabConductores
+            // 
+            this.tabConductores.ActiveControl = null;
+            this.tabConductores.Controls.Add(this.groupConductores);
+            this.tabConductores.KeyTip = null;
+            this.tabConductores.Name = "tabConductores";
+            this.tabConductores.Size = new System.Drawing.Size(649, 312);
+            this.tabConductores.TabIndex = 4;
+            this.tabConductores.Text = "Conductores";
+            // 
+            // groupConductores
+            // 
+            this.groupConductores.Controls.Add(this.txtOcupacion2);
+            this.groupConductores.Controls.Add(this.txtOcupacion1);
+            this.groupConductores.Controls.Add(this.txtEdad2);
+            this.groupConductores.Controls.Add(this.txtEdad1);
+            this.groupConductores.Controls.Add(this.txtNoLic1);
+            this.groupConductores.Controls.Add(this.txtEdoEm1);
+            this.groupConductores.Controls.Add(this.dateFechaNac1);
+            this.groupConductores.Controls.Add(this.txtNomCod1);
+            this.groupConductores.Controls.Add(this.dateFechaNac2);
+            this.groupConductores.Controls.Add(this.txtEdoEm2);
+            this.groupConductores.Controls.Add(this.txtNoLic2);
+            this.groupConductores.Controls.Add(this.txtNomCod2);
+            this.groupConductores.Controls.Add(this.cmbNcod);
+            this.groupConductores.Controls.Add(this.cmbCondExtra);
+            this.groupConductores.Id = "64b1e868-bd34-45d7-a35c-73013ed02eb3";
+            this.groupConductores.Location = new System.Drawing.Point(31, 29);
+            this.groupConductores.Name = "groupConductores";
+            this.groupConductores.Size = new System.Drawing.Size(588, 253);
+            this.groupConductores.TabIndex = 6;
+            this.groupConductores.Text = "Conductores Registrados";
+            // 
+            // txtOcupacion2
+            // 
+            this.txtOcupacion2.Enabled = false;
+            this.txtOcupacion2.Id = "dd629b18-202c-4c1d-82ae-7b8d7db47a8a";
+            this.txtOcupacion2.LabelText = "Ocupación:";
+            this.txtOcupacion2.Location = new System.Drawing.Point(18, 219);
+            this.txtOcupacion2.Name = "txtOcupacion2";
+            this.txtOcupacion2.Size = new System.Drawing.Size(202, 21);
+            this.txtOcupacion2.TabIndex = 12;
+            this.txtOcupacion2.TextEditorWidth = 138;
+            // 
+            // txtOcupacion1
+            // 
+            this.txtOcupacion1.Id = "32103512-f00e-41e1-9e48-32839b3f7454";
+            this.txtOcupacion1.LabelText = "Ocupación:";
+            this.txtOcupacion1.Location = new System.Drawing.Point(18, 121);
+            this.txtOcupacion1.Name = "txtOcupacion1";
+            this.txtOcupacion1.Size = new System.Drawing.Size(202, 21);
+            this.txtOcupacion1.TabIndex = 5;
+            this.txtOcupacion1.TextEditorWidth = 138;
+            // 
+            // txtEdad2
+            // 
+            this.txtEdad2.Enabled = false;
+            this.txtEdad2.Id = "0648eb2f-e026-4bb2-a2f2-ea016eb146f2";
+            this.txtEdad2.LabelText = "Edad:";
+            this.txtEdad2.Location = new System.Drawing.Point(216, 192);
+            this.txtEdad2.Name = "txtEdad2";
+            this.txtEdad2.Size = new System.Drawing.Size(63, 21);
+            this.txtEdad2.TabIndex = 10;
+            this.txtEdad2.TextEditorWidth = 26;
+            // 
+            // txtEdad1
+            // 
+            this.txtEdad1.Enabled = false;
+            this.txtEdad1.Id = "212d40ec-b930-4c5e-8c0a-c5315524301e";
+            this.txtEdad1.LabelText = "Edad:";
+            this.txtEdad1.Location = new System.Drawing.Point(216, 93);
+            this.txtEdad1.Name = "txtEdad1";
+            this.txtEdad1.Size = new System.Drawing.Size(63, 21);
+            this.txtEdad1.TabIndex = 4;
+            this.txtEdad1.TextEditorWidth = 26;
+            // 
+            // txtNoLic1
+            // 
+            this.txtNoLic1.Id = "2121790f-270a-4926-a86e-9c4b43ecbbc4";
+            this.txtNoLic1.LabelText = "No. Licencia:";
+            this.txtNoLic1.Location = new System.Drawing.Point(296, 91);
+            this.txtNoLic1.Name = "txtNoLic1";
+            this.txtNoLic1.Size = new System.Drawing.Size(269, 21);
+            this.txtNoLic1.TabIndex = 6;
+            this.txtNoLic1.TextEditorWidth = 197;
+            // 
+            // txtEdoEm1
+            // 
+            this.txtEdoEm1.Id = "bdcc4bad-2e7d-40ba-b02e-b845245aa077";
+            this.txtEdoEm1.LabelText = "Estado de Emision:";
+            this.txtEdoEm1.Location = new System.Drawing.Point(296, 121);
+            this.txtEdoEm1.Name = "txtEdoEm1";
+            this.txtEdoEm1.Size = new System.Drawing.Size(269, 21);
+            this.txtEdoEm1.TabIndex = 7;
+            this.txtEdoEm1.TextEditorWidth = 170;
+            // 
+            // dateFechaNac1
+            // 
+            this.dateFechaNac1.Format = Elegant.Ui.DateTimePickerFormat.ShortDate;
+            this.dateFechaNac1.Id = "02df0f20-bff8-4599-a7db-e57949f07616";
+            this.dateFechaNac1.LabelText = "Fecha de Nacimiento";
+            this.dateFechaNac1.Location = new System.Drawing.Point(18, 93);
+            this.dateFechaNac1.Name = "dateFechaNac1";
+            this.dateFechaNac1.Size = new System.Drawing.Size(182, 21);
+            this.dateFechaNac1.TabIndex = 3;
+            this.dateFechaNac1.TextEditorWidth = 59;
+            this.dateFechaNac1.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
+            this.dateFechaNac1.ValueChanged += new System.EventHandler(this.dateFechaNac1_ValueChanged);
+            // 
+            // txtNomCod1
+            // 
+            this.txtNomCod1.Id = "54e722ee-d852-44c9-9516-251943ec386b";
+            this.txtNomCod1.LabelText = "Nombre Conductor 1:";
+            this.txtNomCod1.Location = new System.Drawing.Point(18, 57);
+            this.txtNomCod1.Name = "txtNomCod1";
+            this.txtNomCod1.Size = new System.Drawing.Size(547, 21);
+            this.txtNomCod1.TabIndex = 2;
+            this.txtNomCod1.TextEditorWidth = 437;
+            // 
+            // dateFechaNac2
+            // 
+            this.dateFechaNac2.Enabled = false;
+            this.dateFechaNac2.Format = Elegant.Ui.DateTimePickerFormat.ShortDate;
+            this.dateFechaNac2.Id = "19b37573-dd4e-474f-9d84-cafee8ace30d";
+            this.dateFechaNac2.LabelText = "Fecha de Nacimiento";
+            this.dateFechaNac2.Location = new System.Drawing.Point(18, 192);
+            this.dateFechaNac2.Name = "dateFechaNac2";
+            this.dateFechaNac2.Size = new System.Drawing.Size(182, 21);
+            this.dateFechaNac2.TabIndex = 9;
+            this.dateFechaNac2.TextEditorWidth = 59;
+            this.dateFechaNac2.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
+            // 
+            // txtEdoEm2
+            // 
+            this.txtEdoEm2.Enabled = false;
+            this.txtEdoEm2.Id = "6c2e51a6-0feb-48cc-9b90-357040156369";
+            this.txtEdoEm2.LabelText = "Estado de Emision:";
+            this.txtEdoEm2.Location = new System.Drawing.Point(296, 220);
+            this.txtEdoEm2.Name = "txtEdoEm2";
+            this.txtEdoEm2.Size = new System.Drawing.Size(269, 21);
+            this.txtEdoEm2.TabIndex = 13;
+            this.txtEdoEm2.TextEditorWidth = 170;
+            // 
+            // txtNoLic2
+            // 
+            this.txtNoLic2.Enabled = false;
+            this.txtNoLic2.Id = "ec2ccd46-23f3-43d1-b8fc-ad98c898c84f";
+            this.txtNoLic2.LabelText = "No. Licencia:";
+            this.txtNoLic2.Location = new System.Drawing.Point(296, 192);
+            this.txtNoLic2.Name = "txtNoLic2";
+            this.txtNoLic2.Size = new System.Drawing.Size(269, 21);
+            this.txtNoLic2.TabIndex = 10;
+            this.txtNoLic2.TextEditorWidth = 197;
+            // 
+            // txtNomCod2
+            // 
+            this.txtNomCod2.Enabled = false;
+            this.txtNomCod2.Id = "8b5a0aac-3e8c-41cc-b9a3-86f4675b50b5";
+            this.txtNomCod2.LabelText = "Nombre Conductor 2:";
+            this.txtNomCod2.Location = new System.Drawing.Point(18, 160);
+            this.txtNomCod2.Name = "txtNomCod2";
+            this.txtNomCod2.Size = new System.Drawing.Size(547, 21);
+            this.txtNomCod2.TabIndex = 8;
+            this.txtNomCod2.TextEditorWidth = 437;
+            // 
+            // cmbNcod
+            // 
+            this.cmbNcod.Editable = false;
+            this.cmbNcod.FormattingEnabled = false;
+            this.cmbNcod.Id = "0c1babb5-eecf-4d51-8731-9918be6c14be";
+            this.cmbNcod.Items.AddRange(new object[] {
+            "SI",
+            "NO"});
+            this.cmbNcod.LabelText = "¿El contratante es el conductor ?";
+            this.cmbNcod.Location = new System.Drawing.Point(18, 23);
+            this.cmbNcod.Name = "cmbNcod";
+            this.cmbNcod.Size = new System.Drawing.Size(202, 21);
+            this.cmbNcod.TabIndex = 0;
+            this.cmbNcod.TextEditorWidth = 23;
+            this.cmbNcod.SelectedValueChanged += new System.EventHandler(this.cmbNcod_SelectedValueChanged);
+            // 
+            // cmbCondExtra
+            // 
+            this.cmbCondExtra.Editable = false;
+            this.cmbCondExtra.FormattingEnabled = false;
+            this.cmbCondExtra.Id = "9abf6bf4-3f09-4c14-8c01-571afaa3a174";
+            this.cmbCondExtra.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.cmbCondExtra.LabelText = "Conductores ademas del contaratante :";
+            this.cmbCondExtra.Location = new System.Drawing.Point(330, 24);
+            this.cmbCondExtra.Name = "cmbCondExtra";
+            this.cmbCondExtra.Size = new System.Drawing.Size(235, 21);
+            this.cmbCondExtra.TabIndex = 1;
+            this.cmbCondExtra.TextEditorWidth = 27;
+            this.cmbCondExtra.SelectedIndexChanged += new System.EventHandler(this.cmbCondExtra_SelectedIndexChanged);
+            // 
+            // tabDatoscliente
+            // 
+            this.tabDatoscliente.ActiveControl = null;
+            this.tabDatoscliente.Controls.Add(this.groupDatosCliente);
+            this.tabDatoscliente.KeyTip = null;
+            this.tabDatoscliente.Name = "tabDatoscliente";
+            this.tabDatoscliente.Size = new System.Drawing.Size(649, 312);
+            this.tabDatoscliente.TabIndex = 1;
+            this.tabDatoscliente.Text = "Cliente";
+            // 
+            // groupDatosCliente
+            // 
+            this.groupDatosCliente.Controls.Add(this.txtEstado);
+            this.groupDatosCliente.Controls.Add(this.cmbPais);
+            this.groupDatosCliente.Controls.Add(this.txtCiudad);
+            this.groupDatosCliente.Controls.Add(this.txtDireccion);
+            this.groupDatosCliente.Controls.Add(this.txtNombre);
+            this.groupDatosCliente.Controls.Add(this.btnClientes);
+            this.groupDatosCliente.Controls.Add(this.txtNoCliente);
+            this.groupDatosCliente.Id = "7d90b642-fb0d-4d6a-87a6-8211e78c1536";
+            this.groupDatosCliente.Location = new System.Drawing.Point(37, 37);
+            this.groupDatosCliente.Name = "groupDatosCliente";
+            this.groupDatosCliente.Size = new System.Drawing.Size(578, 247);
+            this.groupDatosCliente.TabIndex = 8;
+            this.groupDatosCliente.Text = "Datos del Cliente";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Enabled = false;
+            this.txtEstado.Id = "1c76eca9-c90a-476a-bd92-c43e8b2bdb9b";
+            this.txtEstado.LabelText = "Estado:";
+            this.txtEstado.Location = new System.Drawing.Point(295, 180);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(247, 21);
+            this.txtEstado.TabIndex = 6;
+            this.txtEstado.TextEditorWidth = 202;
+            // 
+            // cmbPais
+            // 
+            this.cmbPais.Editable = false;
+            this.cmbPais.Enabled = false;
+            this.cmbPais.FormattingEnabled = false;
+            this.cmbPais.Id = "0192e059-b594-48d8-847c-c92f34c2af10";
+            this.cmbPais.Items.AddRange(new object[] {
+            "MÉXICO",
+            "USA"});
+            this.cmbPais.LabelText = "Pais:";
+            this.cmbPais.Location = new System.Drawing.Point(345, 52);
+            this.cmbPais.Name = "cmbPais";
+            this.cmbPais.Size = new System.Drawing.Size(197, 21);
+            this.cmbPais.TabIndex = 2;
+            this.cmbPais.TextEditorWidth = 152;
+            // 
+            // txtCiudad
+            // 
+            this.txtCiudad.Enabled = false;
+            this.txtCiudad.Id = "1636c877-fd7a-418e-95fa-f07dc65e23be";
+            this.txtCiudad.LabelText = "Ciudad:";
+            this.txtCiudad.Location = new System.Drawing.Point(37, 180);
+            this.txtCiudad.Name = "txtCiudad";
+            this.txtCiudad.Size = new System.Drawing.Size(246, 21);
+            this.txtCiudad.TabIndex = 5;
+            this.txtCiudad.TextEditorWidth = 201;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Enabled = false;
+            this.txtDireccion.Id = "a540bea3-6e16-4f8c-83f1-f9998544c8a7";
+            this.txtDireccion.LabelText = "Dirección:";
+            this.txtDireccion.Location = new System.Drawing.Point(37, 139);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(505, 21);
+            this.txtDireccion.TabIndex = 4;
+            this.txtDireccion.TextEditorWidth = 448;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Id = "fcd7eefd-cc45-4538-b81d-35be4cf3a285";
+            this.txtNombre.LabelText = "Nombre:";
+            this.txtNombre.Location = new System.Drawing.Point(37, 97);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(505, 21);
+            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TextEditorWidth = 456;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Id = "c388d68c-1a50-416c-869a-f4d00de5e52e";
+            this.btnClientes.Location = new System.Drawing.Point(284, 47);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(35, 35);
+            this.btnClientes.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._16search)});
+            this.btnClientes.TabIndex = 1;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // txtNoCliente
+            // 
+            this.txtNoCliente.Enabled = false;
+            this.txtNoCliente.Id = "1e321c45-ddf3-4b2f-8e0e-6c840cd13742";
+            this.txtNoCliente.LabelText = "Número de Cliente:";
+            this.txtNoCliente.Location = new System.Drawing.Point(37, 52);
+            this.txtNoCliente.Name = "txtNoCliente";
+            this.txtNoCliente.Size = new System.Drawing.Size(239, 21);
+            this.txtNoCliente.TabIndex = 0;
+            this.txtNoCliente.TextEditorWidth = 140;
+            // 
             // tabPage3
             // 
             this.tabPage3.ActiveControl = null;
@@ -866,114 +1171,6 @@
             this.dateFinVig.TextEditorWidth = 81;
             this.dateFinVig.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
             // 
-            // tabDatoscliente
-            // 
-            this.tabDatoscliente.ActiveControl = null;
-            this.tabDatoscliente.Controls.Add(this.groupDatosCliente);
-            this.tabDatoscliente.KeyTip = null;
-            this.tabDatoscliente.Name = "tabDatoscliente";
-            this.tabDatoscliente.Size = new System.Drawing.Size(649, 312);
-            this.tabDatoscliente.TabIndex = 1;
-            this.tabDatoscliente.Text = "Cliente";
-            // 
-            // groupDatosCliente
-            // 
-            this.groupDatosCliente.Controls.Add(this.txtEstado);
-            this.groupDatosCliente.Controls.Add(this.cmbPais);
-            this.groupDatosCliente.Controls.Add(this.txtCiudad);
-            this.groupDatosCliente.Controls.Add(this.txtDireccion);
-            this.groupDatosCliente.Controls.Add(this.txtNombre);
-            this.groupDatosCliente.Controls.Add(this.btnClientes);
-            this.groupDatosCliente.Controls.Add(this.txtNoCliente);
-            this.groupDatosCliente.Id = "7d90b642-fb0d-4d6a-87a6-8211e78c1536";
-            this.groupDatosCliente.Location = new System.Drawing.Point(37, 37);
-            this.groupDatosCliente.Name = "groupDatosCliente";
-            this.groupDatosCliente.Size = new System.Drawing.Size(578, 247);
-            this.groupDatosCliente.TabIndex = 8;
-            this.groupDatosCliente.Text = "Datos del Cliente";
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Enabled = false;
-            this.txtEstado.Id = "1c76eca9-c90a-476a-bd92-c43e8b2bdb9b";
-            this.txtEstado.LabelText = "Estado:";
-            this.txtEstado.Location = new System.Drawing.Point(295, 180);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(247, 21);
-            this.txtEstado.TabIndex = 6;
-            this.txtEstado.TextEditorWidth = 202;
-            // 
-            // cmbPais
-            // 
-            this.cmbPais.Editable = false;
-            this.cmbPais.Enabled = false;
-            this.cmbPais.FormattingEnabled = false;
-            this.cmbPais.Id = "0192e059-b594-48d8-847c-c92f34c2af10";
-            this.cmbPais.Items.AddRange(new object[] {
-            "MÉXICO",
-            "USA"});
-            this.cmbPais.LabelText = "Pais:";
-            this.cmbPais.Location = new System.Drawing.Point(345, 52);
-            this.cmbPais.Name = "cmbPais";
-            this.cmbPais.Size = new System.Drawing.Size(197, 21);
-            this.cmbPais.TabIndex = 2;
-            this.cmbPais.TextEditorWidth = 152;
-            // 
-            // txtCiudad
-            // 
-            this.txtCiudad.Enabled = false;
-            this.txtCiudad.Id = "1636c877-fd7a-418e-95fa-f07dc65e23be";
-            this.txtCiudad.LabelText = "Ciudad:";
-            this.txtCiudad.Location = new System.Drawing.Point(37, 180);
-            this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(246, 21);
-            this.txtCiudad.TabIndex = 5;
-            this.txtCiudad.TextEditorWidth = 201;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Enabled = false;
-            this.txtDireccion.Id = "a540bea3-6e16-4f8c-83f1-f9998544c8a7";
-            this.txtDireccion.LabelText = "Dirección:";
-            this.txtDireccion.Location = new System.Drawing.Point(37, 139);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(505, 21);
-            this.txtDireccion.TabIndex = 4;
-            this.txtDireccion.TextEditorWidth = 448;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Enabled = false;
-            this.txtNombre.Id = "fcd7eefd-cc45-4538-b81d-35be4cf3a285";
-            this.txtNombre.LabelText = "Nombre:";
-            this.txtNombre.Location = new System.Drawing.Point(37, 97);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(505, 21);
-            this.txtNombre.TabIndex = 3;
-            this.txtNombre.TextEditorWidth = 456;
-            // 
-            // btnClientes
-            // 
-            this.btnClientes.Id = "c388d68c-1a50-416c-869a-f4d00de5e52e";
-            this.btnClientes.Location = new System.Drawing.Point(284, 47);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(35, 35);
-            this.btnClientes.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
-            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._16search)});
-            this.btnClientes.TabIndex = 1;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
-            // txtNoCliente
-            // 
-            this.txtNoCliente.Enabled = false;
-            this.txtNoCliente.Id = "1e321c45-ddf3-4b2f-8e0e-6c840cd13742";
-            this.txtNoCliente.LabelText = "Número de Cliente:";
-            this.txtNoCliente.Location = new System.Drawing.Point(37, 52);
-            this.txtNoCliente.Name = "txtNoCliente";
-            this.txtNoCliente.Size = new System.Drawing.Size(239, 21);
-            this.txtNoCliente.TabIndex = 0;
-            this.txtNoCliente.TextEditorWidth = 140;
-            // 
             // tabVehiculos
             // 
             this.tabVehiculos.ActiveControl = null;
@@ -1016,208 +1213,11 @@
             this.btnVehiculo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
-            // tabConductores
-            // 
-            this.tabConductores.ActiveControl = null;
-            this.tabConductores.Controls.Add(this.groupConductores);
-            this.tabConductores.KeyTip = null;
-            this.tabConductores.Name = "tabConductores";
-            this.tabConductores.Size = new System.Drawing.Size(649, 312);
-            this.tabConductores.TabIndex = 4;
-            this.tabConductores.Text = "Conductores";
-            // 
-            // groupConductores
-            // 
-            this.groupConductores.Controls.Add(this.txtOcupacion2);
-            this.groupConductores.Controls.Add(this.txtOcupacion1);
-            this.groupConductores.Controls.Add(this.txtEdad2);
-            this.groupConductores.Controls.Add(this.txtEdad1);
-            this.groupConductores.Controls.Add(this.txtNoLic1);
-            this.groupConductores.Controls.Add(this.txtEdoEm1);
-            this.groupConductores.Controls.Add(this.dateFechaNac1);
-            this.groupConductores.Controls.Add(this.txtNomCod1);
-            this.groupConductores.Controls.Add(this.dateFechaNac2);
-            this.groupConductores.Controls.Add(this.txtEdoEm2);
-            this.groupConductores.Controls.Add(this.txtNoLic2);
-            this.groupConductores.Controls.Add(this.txtNomCod2);
-            this.groupConductores.Controls.Add(this.cmbNcod);
-            this.groupConductores.Controls.Add(this.cmbCondExtra);
-            this.groupConductores.Id = "64b1e868-bd34-45d7-a35c-73013ed02eb3";
-            this.groupConductores.Location = new System.Drawing.Point(31, 29);
-            this.groupConductores.Name = "groupConductores";
-            this.groupConductores.Size = new System.Drawing.Size(588, 253);
-            this.groupConductores.TabIndex = 6;
-            this.groupConductores.Text = "Conductores Registrados";
-            // 
-            // txtOcupacion2
-            // 
-            this.txtOcupacion2.Enabled = false;
-            this.txtOcupacion2.Id = "dd629b18-202c-4c1d-82ae-7b8d7db47a8a";
-            this.txtOcupacion2.LabelText = "Ocupación:";
-            this.txtOcupacion2.Location = new System.Drawing.Point(18, 219);
-            this.txtOcupacion2.Name = "txtOcupacion2";
-            this.txtOcupacion2.Size = new System.Drawing.Size(202, 21);
-            this.txtOcupacion2.TabIndex = 12;
-            this.txtOcupacion2.TextEditorWidth = 138;
-            // 
-            // txtOcupacion1
-            // 
-            this.txtOcupacion1.Id = "32103512-f00e-41e1-9e48-32839b3f7454";
-            this.txtOcupacion1.LabelText = "Ocupación:";
-            this.txtOcupacion1.Location = new System.Drawing.Point(18, 121);
-            this.txtOcupacion1.Name = "txtOcupacion1";
-            this.txtOcupacion1.Size = new System.Drawing.Size(202, 21);
-            this.txtOcupacion1.TabIndex = 5;
-            this.txtOcupacion1.TextEditorWidth = 138;
-            // 
-            // txtEdad2
-            // 
-            this.txtEdad2.Enabled = false;
-            this.txtEdad2.Id = "0648eb2f-e026-4bb2-a2f2-ea016eb146f2";
-            this.txtEdad2.LabelText = "Edad:";
-            this.txtEdad2.Location = new System.Drawing.Point(216, 192);
-            this.txtEdad2.Name = "txtEdad2";
-            this.txtEdad2.Size = new System.Drawing.Size(63, 21);
-            this.txtEdad2.TabIndex = 10;
-            this.txtEdad2.TextEditorWidth = 26;
-            // 
-            // txtEdad1
-            // 
-            this.txtEdad1.Enabled = false;
-            this.txtEdad1.Id = "212d40ec-b930-4c5e-8c0a-c5315524301e";
-            this.txtEdad1.LabelText = "Edad:";
-            this.txtEdad1.Location = new System.Drawing.Point(216, 93);
-            this.txtEdad1.Name = "txtEdad1";
-            this.txtEdad1.Size = new System.Drawing.Size(63, 21);
-            this.txtEdad1.TabIndex = 4;
-            this.txtEdad1.TextEditorWidth = 26;
-            // 
-            // txtNoLic1
-            // 
-            this.txtNoLic1.Id = "2121790f-270a-4926-a86e-9c4b43ecbbc4";
-            this.txtNoLic1.LabelText = "No. Licencia:";
-            this.txtNoLic1.Location = new System.Drawing.Point(296, 91);
-            this.txtNoLic1.Name = "txtNoLic1";
-            this.txtNoLic1.Size = new System.Drawing.Size(269, 21);
-            this.txtNoLic1.TabIndex = 6;
-            this.txtNoLic1.TextEditorWidth = 197;
-            // 
-            // txtEdoEm1
-            // 
-            this.txtEdoEm1.Id = "bdcc4bad-2e7d-40ba-b02e-b845245aa077";
-            this.txtEdoEm1.LabelText = "Estado de Emision:";
-            this.txtEdoEm1.Location = new System.Drawing.Point(296, 121);
-            this.txtEdoEm1.Name = "txtEdoEm1";
-            this.txtEdoEm1.Size = new System.Drawing.Size(269, 21);
-            this.txtEdoEm1.TabIndex = 7;
-            this.txtEdoEm1.TextEditorWidth = 170;
-            // 
-            // dateFechaNac1
-            // 
-            this.dateFechaNac1.Format = Elegant.Ui.DateTimePickerFormat.ShortDate;
-            this.dateFechaNac1.Id = "02df0f20-bff8-4599-a7db-e57949f07616";
-            this.dateFechaNac1.LabelText = "Fecha de Nacimiento";
-            this.dateFechaNac1.Location = new System.Drawing.Point(18, 93);
-            this.dateFechaNac1.Name = "dateFechaNac1";
-            this.dateFechaNac1.Size = new System.Drawing.Size(182, 21);
-            this.dateFechaNac1.TabIndex = 3;
-            this.dateFechaNac1.TextEditorWidth = 59;
-            this.dateFechaNac1.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
-            this.dateFechaNac1.ValueChanged += new System.EventHandler(this.dateFechaNac1_ValueChanged);
-            // 
-            // txtNomCod1
-            // 
-            this.txtNomCod1.Id = "54e722ee-d852-44c9-9516-251943ec386b";
-            this.txtNomCod1.LabelText = "Nombre Conductor 1:";
-            this.txtNomCod1.Location = new System.Drawing.Point(18, 57);
-            this.txtNomCod1.Name = "txtNomCod1";
-            this.txtNomCod1.Size = new System.Drawing.Size(547, 21);
-            this.txtNomCod1.TabIndex = 2;
-            this.txtNomCod1.TextEditorWidth = 437;
-            // 
-            // dateFechaNac2
-            // 
-            this.dateFechaNac2.Enabled = false;
-            this.dateFechaNac2.Format = Elegant.Ui.DateTimePickerFormat.ShortDate;
-            this.dateFechaNac2.Id = "19b37573-dd4e-474f-9d84-cafee8ace30d";
-            this.dateFechaNac2.LabelText = "Fecha de Nacimiento";
-            this.dateFechaNac2.Location = new System.Drawing.Point(18, 192);
-            this.dateFechaNac2.Name = "dateFechaNac2";
-            this.dateFechaNac2.Size = new System.Drawing.Size(182, 21);
-            this.dateFechaNac2.TabIndex = 9;
-            this.dateFechaNac2.TextEditorWidth = 59;
-            this.dateFechaNac2.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
-            // 
-            // txtEdoEm2
-            // 
-            this.txtEdoEm2.Enabled = false;
-            this.txtEdoEm2.Id = "6c2e51a6-0feb-48cc-9b90-357040156369";
-            this.txtEdoEm2.LabelText = "Estado de Emision:";
-            this.txtEdoEm2.Location = new System.Drawing.Point(296, 220);
-            this.txtEdoEm2.Name = "txtEdoEm2";
-            this.txtEdoEm2.Size = new System.Drawing.Size(269, 21);
-            this.txtEdoEm2.TabIndex = 13;
-            this.txtEdoEm2.TextEditorWidth = 170;
-            // 
-            // txtNoLic2
-            // 
-            this.txtNoLic2.Enabled = false;
-            this.txtNoLic2.Id = "ec2ccd46-23f3-43d1-b8fc-ad98c898c84f";
-            this.txtNoLic2.LabelText = "No. Licencia:";
-            this.txtNoLic2.Location = new System.Drawing.Point(296, 192);
-            this.txtNoLic2.Name = "txtNoLic2";
-            this.txtNoLic2.Size = new System.Drawing.Size(269, 21);
-            this.txtNoLic2.TabIndex = 10;
-            this.txtNoLic2.TextEditorWidth = 197;
-            // 
-            // txtNomCod2
-            // 
-            this.txtNomCod2.Enabled = false;
-            this.txtNomCod2.Id = "8b5a0aac-3e8c-41cc-b9a3-86f4675b50b5";
-            this.txtNomCod2.LabelText = "Nombre Conductor 2:";
-            this.txtNomCod2.Location = new System.Drawing.Point(18, 160);
-            this.txtNomCod2.Name = "txtNomCod2";
-            this.txtNomCod2.Size = new System.Drawing.Size(547, 21);
-            this.txtNomCod2.TabIndex = 8;
-            this.txtNomCod2.TextEditorWidth = 437;
-            // 
-            // cmbNcod
-            // 
-            this.cmbNcod.Editable = false;
-            this.cmbNcod.FormattingEnabled = false;
-            this.cmbNcod.Id = "0c1babb5-eecf-4d51-8731-9918be6c14be";
-            this.cmbNcod.Items.AddRange(new object[] {
-            "SI",
-            "NO"});
-            this.cmbNcod.LabelText = "¿El contratante es el conductor ?";
-            this.cmbNcod.Location = new System.Drawing.Point(18, 23);
-            this.cmbNcod.Name = "cmbNcod";
-            this.cmbNcod.Size = new System.Drawing.Size(202, 21);
-            this.cmbNcod.TabIndex = 0;
-            this.cmbNcod.TextEditorWidth = 23;
-            this.cmbNcod.SelectedValueChanged += new System.EventHandler(this.cmbNcod_SelectedValueChanged);
-            // 
-            // cmbCondExtra
-            // 
-            this.cmbCondExtra.Editable = false;
-            this.cmbCondExtra.FormattingEnabled = false;
-            this.cmbCondExtra.Id = "9abf6bf4-3f09-4c14-8c01-571afaa3a174";
-            this.cmbCondExtra.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.cmbCondExtra.LabelText = "Conductores ademas del contaratante :";
-            this.cmbCondExtra.Location = new System.Drawing.Point(330, 24);
-            this.cmbCondExtra.Name = "cmbCondExtra";
-            this.cmbCondExtra.Size = new System.Drawing.Size(235, 21);
-            this.cmbCondExtra.TabIndex = 1;
-            this.cmbCondExtra.TextEditorWidth = 27;
-            this.cmbCondExtra.SelectedIndexChanged += new System.EventHandler(this.cmbCondExtra_SelectedIndexChanged);
-            // 
             // FrmSegurosAmericanos2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 467);
+            this.ClientSize = new System.Drawing.Size(715, 475);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.MaximizeBox = false;
@@ -1237,20 +1237,20 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabSegurosAmericanos)).EndInit();
+            this.tabConductores.ResumeLayout(false);
+            this.groupConductores.ResumeLayout(false);
+            this.groupConductores.PerformLayout();
+            this.tabDatoscliente.ResumeLayout(false);
+            this.groupDatosCliente.ResumeLayout(false);
+            this.groupDatosCliente.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.groupPrimas.ResumeLayout(false);
             this.groupPrimas.PerformLayout();
             this.groupBoxTotales.ResumeLayout(false);
             this.groupBoxTotales.PerformLayout();
-            this.tabDatoscliente.ResumeLayout(false);
-            this.groupDatosCliente.ResumeLayout(false);
-            this.groupDatosCliente.PerformLayout();
             this.tabVehiculos.ResumeLayout(false);
             this.groupVehiculos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vbl)).EndInit();
-            this.tabConductores.ResumeLayout(false);
-            this.groupConductores.ResumeLayout(false);
-            this.groupConductores.PerformLayout();
             this.ResumeLayout(false);
 
         }
