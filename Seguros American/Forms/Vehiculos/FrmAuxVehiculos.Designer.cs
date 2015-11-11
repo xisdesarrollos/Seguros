@@ -33,8 +33,8 @@
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.btnNuevoVehiculo = new Elegant.Ui.Button();
             this.contextMenu1 = new Elegant.Ui.ContextMenu(this.components);
-            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             this.btnEditarAuxVehiculo = new Elegant.Ui.Button();
+            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(757, 147);
+            this.dgv.Size = new System.Drawing.Size(757, 208);
             this.dgv.TabIndex = 0;
             this.dgv.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellEndEdit);
             this.dgv.DoubleClick += new System.EventHandler(this.dgv_DoubleClick);
@@ -61,7 +61,7 @@
             // btnNuevoVehiculo
             // 
             this.btnNuevoVehiculo.Id = "69336b0e-cecf-4116-b8d9-5c19fbab5c3c";
-            this.btnNuevoVehiculo.Location = new System.Drawing.Point(680, 166);
+            this.btnNuevoVehiculo.Location = new System.Drawing.Point(680, 227);
             this.btnNuevoVehiculo.Name = "btnNuevoVehiculo";
             this.btnNuevoVehiculo.Size = new System.Drawing.Size(91, 81);
             this.btnNuevoVehiculo.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 280);
+            this.ClientSize = new System.Drawing.Size(780, 317);
             this.Controls.Add(this.btnNuevoVehiculo);
             this.Controls.Add(this.dgv);
             this.Name = "FrmAuxVehiculos";

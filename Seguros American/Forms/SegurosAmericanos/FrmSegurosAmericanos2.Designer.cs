@@ -148,7 +148,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(61, 59);
             this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._48guardar)});
-            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // textPvehiculo
@@ -631,9 +631,9 @@
             // 
             this.tabSegurosAmericanos.Location = new System.Drawing.Point(21, 30);
             this.tabSegurosAmericanos.Name = "tabSegurosAmericanos";
-            this.tabSegurosAmericanos.SelectedTabPage = this.tabConductores;
+            this.tabSegurosAmericanos.SelectedTabPage = this.tabPage3;
             this.tabSegurosAmericanos.Size = new System.Drawing.Size(651, 333);
-            this.tabSegurosAmericanos.TabIndex = 29;
+            this.tabSegurosAmericanos.TabIndex = 15;
             this.tabSegurosAmericanos.TabPages.AddRange(new Elegant.Ui.TabPage[] {
             this.tabDatoscliente,
             this.tabPage3,
@@ -647,7 +647,7 @@
             this.tabPage3.KeyTip = null;
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(649, 312);
-            this.tabPage3.TabIndex = 2;
+            this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Primas";
             // 
             // groupPrimas
@@ -665,7 +665,7 @@
             this.groupPrimas.Location = new System.Drawing.Point(32, 13);
             this.groupPrimas.Name = "groupPrimas";
             this.groupPrimas.Size = new System.Drawing.Size(586, 283);
-            this.groupPrimas.TabIndex = 13;
+            this.groupPrimas.TabIndex = 0;
             this.groupPrimas.Text = "Primas";
             // 
             // dateFechaE
@@ -676,7 +676,7 @@
             this.dateFechaE.Location = new System.Drawing.Point(41, 116);
             this.dateFechaE.Name = "dateFechaE";
             this.dateFechaE.Size = new System.Drawing.Size(190, 21);
-            this.dateFechaE.TabIndex = 30;
+            this.dateFechaE.TabIndex = 5;
             this.dateFechaE.TextEditorWidth = 78;
             this.dateFechaE.ValueChanged += new System.EventHandler(this.dateFechaE_ValueChanged_1);
             // 
@@ -688,7 +688,7 @@
             this.txtFolio.Mask = "0000000";
             this.txtFolio.Name = "txtFolio";
             this.txtFolio.Size = new System.Drawing.Size(155, 21);
-            this.txtFolio.TabIndex = 0;
+            this.txtFolio.TabIndex = 1;
             this.txtFolio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtFolio.TextEditorWidth = 66;
             // 
@@ -702,7 +702,7 @@
             this.groupBoxTotales.Location = new System.Drawing.Point(294, 105);
             this.groupBoxTotales.Name = "groupBoxTotales";
             this.groupBoxTotales.Size = new System.Drawing.Size(252, 160);
-            this.groupBoxTotales.TabIndex = 15;
+            this.groupBoxTotales.TabIndex = 9;
             // 
             // txtTotalPoliza
             // 
@@ -712,7 +712,7 @@
             this.txtTotalPoliza.Location = new System.Drawing.Point(33, 124);
             this.txtTotalPoliza.Name = "txtTotalPoliza";
             this.txtTotalPoliza.Size = new System.Drawing.Size(173, 21);
-            this.txtTotalPoliza.TabIndex = 14;
+            this.txtTotalPoliza.TabIndex = 13;
             this.txtTotalPoliza.TextEditorWidth = 137;
             // 
             // txtDerchPoliza
@@ -723,7 +723,7 @@
             this.txtDerchPoliza.Location = new System.Drawing.Point(33, 85);
             this.txtDerchPoliza.Name = "txtDerchPoliza";
             this.txtDerchPoliza.Size = new System.Drawing.Size(173, 21);
-            this.txtDerchPoliza.TabIndex = 13;
+            this.txtDerchPoliza.TabIndex = 12;
             this.txtDerchPoliza.TextEditorWidth = 89;
             // 
             // txtGasto
@@ -745,7 +745,7 @@
             this.txtBienes.Location = new System.Drawing.Point(33, 11);
             this.txtBienes.Name = "txtBienes";
             this.txtBienes.Size = new System.Drawing.Size(173, 21);
-            this.txtBienes.TabIndex = 12;
+            this.txtBienes.TabIndex = 10;
             this.txtBienes.TextEditorWidth = 129;
             // 
             // cmbSeguro
@@ -760,7 +760,7 @@
             this.cmbSeguro.Location = new System.Drawing.Point(289, 31);
             this.cmbSeguro.Name = "cmbSeguro";
             this.cmbSeguro.Size = new System.Drawing.Size(257, 21);
-            this.cmbSeguro.TabIndex = 1;
+            this.cmbSeguro.TabIndex = 2;
             this.cmbSeguro.Text = "SEGUROS AMERICANOS";
             this.cmbSeguro.TextEditorWidth = 159;
             // 
@@ -776,7 +776,7 @@
             this.cmbSuma.Location = new System.Drawing.Point(289, 67);
             this.cmbSuma.Name = "cmbSuma";
             this.cmbSuma.Size = new System.Drawing.Size(257, 21);
-            this.cmbSuma.TabIndex = 2;
+            this.cmbSuma.TabIndex = 3;
             this.cmbSuma.Text = "TARIFA AUTOS 30/60/25";
             this.cmbSuma.TextEditorWidth = 151;
             // 
@@ -824,8 +824,8 @@
             this.cmbDia.Location = new System.Drawing.Point(44, 67);
             this.cmbDia.Name = "cmbDia";
             this.cmbDia.Size = new System.Drawing.Size(73, 21);
-            this.cmbDia.TabIndex = 3;
-            this.cmbDia.Text = "1";
+            this.cmbDia.TabIndex = 4;
+            this.cmbDia.Text = "4";
             this.cmbDia.TextEditorWidth = 24;
             this.cmbDia.SelectedIndexChanged += new System.EventHandler(this.cmbDia_SelectedIndexChanged);
             // 
@@ -838,7 +838,7 @@
             this.dateIncVig.Location = new System.Drawing.Point(44, 188);
             this.dateIncVig.Name = "dateIncVig";
             this.dateIncVig.Size = new System.Drawing.Size(190, 21);
-            this.dateIncVig.TabIndex = 5;
+            this.dateIncVig.TabIndex = 7;
             this.dateIncVig.TextEditorWidth = 78;
             // 
             // dateHoraInc
@@ -849,7 +849,7 @@
             this.dateHoraInc.Location = new System.Drawing.Point(44, 152);
             this.dateHoraInc.Name = "dateHoraInc";
             this.dateHoraInc.Size = new System.Drawing.Size(190, 21);
-            this.dateHoraInc.TabIndex = 5;
+            this.dateHoraInc.TabIndex = 6;
             this.dateHoraInc.TextEditorWidth = 114;
             this.dateHoraInc.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
             // 
@@ -862,7 +862,7 @@
             this.dateFinVig.Location = new System.Drawing.Point(44, 227);
             this.dateFinVig.Name = "dateFinVig";
             this.dateFinVig.Size = new System.Drawing.Size(190, 21);
-            this.dateFinVig.TabIndex = 6;
+            this.dateFinVig.TabIndex = 8;
             this.dateFinVig.TextEditorWidth = 81;
             this.dateFinVig.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
             // 
@@ -981,7 +981,7 @@
             this.tabVehiculos.KeyTip = null;
             this.tabVehiculos.Name = "tabVehiculos";
             this.tabVehiculos.Size = new System.Drawing.Size(649, 312);
-            this.tabVehiculos.TabIndex = 3;
+            this.tabVehiculos.TabIndex = 0;
             this.tabVehiculos.Text = "Vehiculos";
             // 
             // groupVehiculos
@@ -1217,11 +1217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(739, 510);
-=======
-            this.ClientSize = new System.Drawing.Size(683, 443);
->>>>>>> 13fff9196178a86f41db418891e84898b542eb4d
+            this.ClientSize = new System.Drawing.Size(699, 459);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.MaximizeBox = false;

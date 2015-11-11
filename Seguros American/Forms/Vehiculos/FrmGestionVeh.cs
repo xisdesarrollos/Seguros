@@ -71,15 +71,7 @@ namespace Seguros_American.Forms.Vehiculos
             }
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            if (iGestionVehiculos != null)
-            {
-                iGestionVehiculos.onDataGridVehiculos(dgvVehiculos);
-            }
-            this.Close();
-        }
-
+       
        
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
@@ -142,6 +134,17 @@ namespace Seguros_American.Forms.Vehiculos
 
             Globales.cargaGrid(sqlSelect, dgvVehiculos);
         }
+
+        private void btnOk1_Click(object sender, EventArgs e)
+        {
+            if (iGestionVehiculos != null)
+            {
+                iGestionVehiculos.onDataGridVehiculos(dgvVehiculos);
+            }
+            this.Close();
+        }
+
+        
 
     }
 }
