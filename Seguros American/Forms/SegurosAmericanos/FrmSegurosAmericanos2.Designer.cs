@@ -81,9 +81,7 @@
             this.txtEdad1 = new Elegant.Ui.TextBox();
             this.txtNoLic1 = new Elegant.Ui.TextBox();
             this.txtEdoEm1 = new Elegant.Ui.TextBox();
-            this.dateFechaNac1 = new Elegant.Ui.DateTimePicker();
             this.txtNomCod1 = new Elegant.Ui.TextBox();
-            this.dateFechaNac2 = new Elegant.Ui.DateTimePicker();
             this.txtEdoEm2 = new Elegant.Ui.TextBox();
             this.txtNoLic2 = new Elegant.Ui.TextBox();
             this.txtNomCod2 = new Elegant.Ui.TextBox();
@@ -117,6 +115,8 @@
             this.groupVehiculos = new Elegant.Ui.GroupBox();
             this.vbl = new ComponentOwl.BetterListView.BetterListView();
             this.btnVehiculo = new Elegant.Ui.Button();
+            this.dateFechaNac1 = new Elegant.Ui.MaskedTextBox();
+            this.dateFechaNac2 = new Elegant.Ui.MaskedTextBox();
             this.groupPoliza.SuspendLayout();
             this.groupCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -652,15 +652,15 @@
             // 
             // groupConductores
             // 
+            this.groupConductores.Controls.Add(this.dateFechaNac2);
+            this.groupConductores.Controls.Add(this.dateFechaNac1);
             this.groupConductores.Controls.Add(this.txtOcupacion2);
             this.groupConductores.Controls.Add(this.txtOcupacion1);
             this.groupConductores.Controls.Add(this.txtEdad2);
             this.groupConductores.Controls.Add(this.txtEdad1);
             this.groupConductores.Controls.Add(this.txtNoLic1);
             this.groupConductores.Controls.Add(this.txtEdoEm1);
-            this.groupConductores.Controls.Add(this.dateFechaNac1);
             this.groupConductores.Controls.Add(this.txtNomCod1);
-            this.groupConductores.Controls.Add(this.dateFechaNac2);
             this.groupConductores.Controls.Add(this.txtEdoEm2);
             this.groupConductores.Controls.Add(this.txtNoLic2);
             this.groupConductores.Controls.Add(this.txtNomCod2);
@@ -707,7 +707,6 @@
             // 
             // txtEdad1
             // 
-            this.txtEdad1.Enabled = false;
             this.txtEdad1.Id = "212d40ec-b930-4c5e-8c0a-c5315524301e";
             this.txtEdad1.LabelText = "Edad:";
             this.txtEdad1.Location = new System.Drawing.Point(216, 93);
@@ -736,19 +735,6 @@
             this.txtEdoEm1.TabIndex = 7;
             this.txtEdoEm1.TextEditorWidth = 170;
             // 
-            // dateFechaNac1
-            // 
-            this.dateFechaNac1.Format = Elegant.Ui.DateTimePickerFormat.ShortDate;
-            this.dateFechaNac1.Id = "02df0f20-bff8-4599-a7db-e57949f07616";
-            this.dateFechaNac1.LabelText = "Fecha de Nacimiento";
-            this.dateFechaNac1.Location = new System.Drawing.Point(18, 93);
-            this.dateFechaNac1.Name = "dateFechaNac1";
-            this.dateFechaNac1.Size = new System.Drawing.Size(182, 21);
-            this.dateFechaNac1.TabIndex = 3;
-            this.dateFechaNac1.TextEditorWidth = 59;
-            this.dateFechaNac1.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
-            this.dateFechaNac1.ValueChanged += new System.EventHandler(this.dateFechaNac1_ValueChanged);
-            // 
             // txtNomCod1
             // 
             this.txtNomCod1.Id = "54e722ee-d852-44c9-9516-251943ec386b";
@@ -758,19 +744,6 @@
             this.txtNomCod1.Size = new System.Drawing.Size(547, 21);
             this.txtNomCod1.TabIndex = 2;
             this.txtNomCod1.TextEditorWidth = 437;
-            // 
-            // dateFechaNac2
-            // 
-            this.dateFechaNac2.Enabled = false;
-            this.dateFechaNac2.Format = Elegant.Ui.DateTimePickerFormat.ShortDate;
-            this.dateFechaNac2.Id = "19b37573-dd4e-474f-9d84-cafee8ace30d";
-            this.dateFechaNac2.LabelText = "Fecha de Nacimiento";
-            this.dateFechaNac2.Location = new System.Drawing.Point(18, 192);
-            this.dateFechaNac2.Name = "dateFechaNac2";
-            this.dateFechaNac2.Size = new System.Drawing.Size(182, 21);
-            this.dateFechaNac2.TabIndex = 9;
-            this.dateFechaNac2.TextEditorWidth = 59;
-            this.dateFechaNac2.Value = new System.DateTime(2015, 10, 27, 0, 0, 0, 0);
             // 
             // txtEdoEm2
             // 
@@ -1213,11 +1186,39 @@
             this.btnVehiculo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
+            // dateFechaNac1
+            // 
+            this.dateFechaNac1.Id = "cbd8a944-4615-444f-8409-e77af8571781";
+            this.dateFechaNac1.LabelText = "Fecha de Nacimiento:";
+            this.dateFechaNac1.Location = new System.Drawing.Point(18, 93);
+            this.dateFechaNac1.Mask = "00/00/0000";
+            this.dateFechaNac1.Name = "dateFechaNac1";
+            this.dateFechaNac1.Size = new System.Drawing.Size(172, 21);
+            this.dateFechaNac1.TabIndex = 16;
+            this.dateFechaNac1.TextEditorWidth = 59;
+            this.dateFechaNac1.ValidatingType = typeof(System.DateTime);
+            this.dateFechaNac1.Visible = false;
+            this.dateFechaNac1.Leave += new System.EventHandler(this.dateFechaNac1_Leave);
+            // 
+            // dateFechaNac2
+            // 
+            this.dateFechaNac2.Enabled = false;
+            this.dateFechaNac2.Id = "7c303684-68c1-4db7-b1de-ead10985ff6b";
+            this.dateFechaNac2.LabelText = "Fecha de Nacimiento:";
+            this.dateFechaNac2.Location = new System.Drawing.Point(18, 192);
+            this.dateFechaNac2.Mask = "00/00/0000";
+            this.dateFechaNac2.Name = "dateFechaNac2";
+            this.dateFechaNac2.Size = new System.Drawing.Size(172, 21);
+            this.dateFechaNac2.TabIndex = 17;
+            this.dateFechaNac2.TextEditorWidth = 59;
+            this.dateFechaNac2.ValidatingType = typeof(System.DateTime);
+            this.dateFechaNac2.Visible = false;
+            // 
             // FrmSegurosAmericanos2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 475);
+            this.ClientSize = new System.Drawing.Size(723, 483);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.MaximizeBox = false;
@@ -1332,9 +1333,7 @@
         private Elegant.Ui.TextBox txtEdad1;
         private Elegant.Ui.TextBox txtNoLic1;
         private Elegant.Ui.TextBox txtEdoEm1;
-        private Elegant.Ui.DateTimePicker dateFechaNac1;
         private Elegant.Ui.TextBox txtNomCod1;
-        private Elegant.Ui.DateTimePicker dateFechaNac2;
         private Elegant.Ui.TextBox txtEdoEm2;
         private Elegant.Ui.TextBox txtNoLic2;
         private Elegant.Ui.TextBox txtNomCod2;
@@ -1346,5 +1345,7 @@
         private Elegant.Ui.GroupBox groupBoxTotales;
         private Elegant.Ui.MaskedTextBox txtFolio;
         private Elegant.Ui.DateTimePicker dateFechaE;
+        private Elegant.Ui.MaskedTextBox dateFechaNac2;
+        private Elegant.Ui.MaskedTextBox dateFechaNac1;
     }
 }
