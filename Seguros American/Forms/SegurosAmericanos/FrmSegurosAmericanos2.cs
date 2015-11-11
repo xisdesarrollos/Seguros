@@ -20,14 +20,22 @@ namespace Seguros_American.Forms.SegurosAmericanos
     {
         bool esNuevo = true;
 
+        //cliente
         string idCliente;
         string nombreCliente;
         string idVehiculo;
         string clienteLicencia;
         string clienteNacimiento;
-        string ocupacionCod;
+        string ocupacion;
         string estado;
         string idFolio;
+        //vehiculo
+        string modelo;
+        string marca;
+        string submarca;
+        string placas;
+        string numeroSerie;
+        string estadoPlacas;
         
         DateTime dateInserted;
 
@@ -261,7 +269,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void cmbDia_SelectedIndexChanged(object sender, EventArgs e)
         {
-              //calcular el valor y el total dependiendo de los dias y el tipo de tarifa.
+           //calcular el valor y el total dependiendo de los dias y el tipo de tarifa.
            //#seleccionar gastos,bienes, derecho_poliza de tarifas donde dias = al valor introducido.
             updateFechaFin();
             consultarTarifa(cmbDia.Text.ToString());
@@ -269,6 +277,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void FrmSegurosAmericanos2_Load(object sender, EventArgs e)
         {
+            cmbNcod.SelectedIndex = 0;
             if (esNuevo)
             {
                 updateFechaFin();
@@ -277,6 +286,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             }
             else
             {
+                btnClientes.Enabled = false;
                 cargarDatos(idFolio);
             }
         }
@@ -345,7 +355,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     txtNomCod1.Text = nombreCliente;
                     txtNoLic1.Text = clienteLicencia;
                     dateFechaNac1.Text = clienteNacimiento;
-                    txtOcupacion1.Text = ocupacionCod;
+                    txtOcupacion1.Text = ocupacion;
                     txtEdoEm1.Text = estado;
                     break;
                 case 1:
@@ -353,7 +363,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     txtNoLic1.Text = string.Empty;
                     dateFechaNac1.Text =  string.Empty;
                     txtOcupacion1.Text = string.Empty;
-                    txtEstado.Text = string.Empty;
                     txtEdoEm1.Text = string.Empty;
                     break;
                 default:
@@ -390,7 +399,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             string noE = selectedRow.Cells[11].Value.ToString();
             string cp = selectedRow.Cells[12].Value.ToString();
             clienteLicencia = selectedRow.Cells[13].Value.ToString();
-
+            ocupacion = selectedRow.Cells[14].Value.ToString();
             string direccion = calle + " #" + noE + "," + colonia;
 
 
@@ -402,6 +411,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
             txtCiudad.Text = cuidad;
             txtEstado.Text = txtEdoEm1.Text = estado;
             dateFechaNac1.Value = DateTime.Parse(clienteNacimiento);
+            txtOcupacion1.Text = ocupacion;
+            
         }
 
         public void onDataGridAuxVehiculos(DataGridView dgv)
@@ -412,12 +423,12 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
             // Mostrarlos en los campos de nuevo vehiculo.
             idVehiculo = selectedRow.Cells[0].Value.ToString();
-            string modelo = selectedRow.Cells[1].Value.ToString();
-            string marca = selectedRow.Cells[2].Value.ToString();
-            string submarca = selectedRow.Cells[3].Value.ToString();
-            string placas = selectedRow.Cells[4].Value.ToString();
-            string numeroSerie = selectedRow.Cells[5].Value.ToString();
-            string estado = selectedRow.Cells[6].Value.ToString();
+            modelo = selectedRow.Cells[1].Value.ToString();
+            marca = selectedRow.Cells[2].Value.ToString();
+            submarca = selectedRow.Cells[3].Value.ToString();
+            placas = selectedRow.Cells[4].Value.ToString();
+            numeroSerie = selectedRow.Cells[5].Value.ToString();
+            estadoPlacas = selectedRow.Cells[6].Value.ToString();
 
             //al principio esta vacio
             if (vbl.Items.Any())
@@ -451,13 +462,43 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 DataRow selectedRow = dataTable.Rows[0];
                 txtFolio.Text = selectedRow[1].ToString();
                 cmbSeguro.Text = selectedRow[2].ToString();
-                txtNoCliente.Text =selectedRow[3].ToString();
+                //CARGA DATOS CLIENTES
+                idCliente = selectedRow[3].ToString();
+                txtNoCliente.Text = idCliente;
+                    //obteber datos de cliente con el id
+                    string filtroCliente = "pais, nombre, calle, colonia, noExterior, ciudad, estado, noLicencia, fechaNacimiento, ocupacion";
+                    string condicionCliente = "idCliente = " + idCliente;
+                    string tablaClientes = "clientes";
+                    DataTable dataTableCliente = bd.Consultar(filtroCliente, tablaClientes, condicionCliente);
+                    DataRow selectedRowCliente = dataTableCliente.Rows[0];
+                    cmbPais.Text = selectedRowCliente[0].ToString();
+                    txtNombre.Text = nombreCliente = selectedRowCliente[1].ToString();
+                    txtDireccion.Text = selectedRowCliente[2].ToString() + " col. "+selectedRowCliente[3].ToString() + "#"+selectedRowCliente[4].ToString();
+                    txtCiudad.Text = selectedRowCliente[5].ToString();
+                    txtEstado.Text = selectedRowCliente[6].ToString();
+                    estado = selectedRowCliente[6].ToString();
+                    clienteLicencia = selectedRowCliente[7].ToString();
+                    clienteNacimiento = selectedRowCliente[8].ToString();
+                    ocupacion = selectedRowCliente[9].ToString();
                 //Globales.nombreUsuario) =selectedRow[].ToString();
-                //al principio esta vacio
-                if (vbl.Items.Any())
-                    vbl.Clear();
-                vbl.Items.Add("Id Vehiculo: " + selectedRow[5].ToString());
-                idVehiculo = selectedRow[5].ToString(); 
+                //CARGA DATOS VEHICULOS 
+                    idVehiculo = selectedRow[5].ToString();
+                    //obteber datos de cliente con el id
+                    string filtroVehiculo = "modelo, marca, submarca,placas, numeroSerie";
+                    string condicionVehiculo = "idCliente = " + idCliente;
+                    string tablaVehiculo = "vehiculos_cliente";
+                    DataTable dataTableVehiculo= bd.Consultar(filtroVehiculo, tablaVehiculo, condicionVehiculo);
+                    DataRow selectedRowVehiculo = dataTableVehiculo.Rows[0];
+
+                    if (vbl.Items.Any())
+                        vbl.Clear();
+
+                    vbl.Items.Add("Año: " + selectedRowVehiculo[0].ToString());
+                    vbl.Items.Add("Marca: " + selectedRowVehiculo[1].ToString());
+                    vbl.Items.Add("Modelo: " + selectedRowVehiculo[2].ToString());
+                    vbl.Items.Add("Placas: " + selectedRowVehiculo[3].ToString());
+                    vbl.Items.Add("Numero de Serie: " + selectedRowVehiculo[4].ToString());
+                    
                 cmbDia.Text = selectedRow[6].ToString();
                 dateIncVig.Text = selectedRow[7].ToString();
                 dateFinVig.Text = selectedRow[8].ToString();
@@ -482,6 +523,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 txtNoLic2.Text = selectedRow[24].ToString();
                 txtEdoEm1.Text = selectedRow[25].ToString();
                 txtEdoEm2.Text = selectedRow[26].ToString();
+                
             }
             catch(MySqlException e)
             {
