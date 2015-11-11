@@ -41,9 +41,9 @@
             this.btnGuardar = new Elegant.Ui.Button();
             this.contextMenu1 = new Elegant.Ui.ContextMenu(this.components);
             this.btnImprimirPolizas = new Elegant.Ui.Button();
-            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             this.btnEditarPoliza = new Elegant.Ui.Button();
             this.Eliminar = new Elegant.Ui.Button();
+            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPolizas)).BeginInit();
             this.groupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).BeginInit();
@@ -161,7 +161,7 @@
             this.Eliminar});
             this.contextMenu1.KeepPopupsWithOffsetPlacementWithinPlacementArea = false;
             this.contextMenu1.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom;
-            this.contextMenu1.PlacementOffset = new System.Drawing.Size(205, 106);
+            this.contextMenu1.PlacementOffset = new System.Drawing.Size(114, 106);
             this.contextMenu1.Size = new System.Drawing.Size(100, 100);
             // 
             // btnImprimirPolizas
@@ -182,6 +182,7 @@
             this.btnEditarPoliza.Size = new System.Drawing.Size(138, 23);
             this.btnEditarPoliza.TabIndex = 5;
             this.btnEditarPoliza.Text = "Editar";
+            this.btnEditarPoliza.Click += new System.EventHandler(this.btnEditarPoliza_Click);
             // 
             // Eliminar
             // 
@@ -191,12 +192,13 @@
             this.Eliminar.Size = new System.Drawing.Size(138, 23);
             this.Eliminar.TabIndex = 6;
             this.Eliminar.Text = "Eliminar";
+            this.Eliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // FrmGestionPolizas
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1205, 682);
+            this.ClientSize = new System.Drawing.Size(1213, 690);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgvPolizas);
             this.Controls.Add(this.groupFiltro);

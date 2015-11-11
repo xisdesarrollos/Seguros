@@ -18,6 +18,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
                                                  FrmAuxCliente.IAuxClientes,
                                                  FrmAuxVehiculos.IAuxVehiculos
     {
+        bool esNuevo = true;
+
         string idCliente;
         string nombreCliente;
         string idVehiculo;
@@ -26,6 +28,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         string ocupacionCod;
         string estado;
         string idFolio;
+        
         DateTime dateInserted;
 
         Basedatos bd = new Basedatos();
@@ -35,6 +38,12 @@ namespace Seguros_American.Forms.SegurosAmericanos
             InitializeComponent();
         }
 
+        public FrmSegurosAmericanos2(string idPoliza, bool esNuevo = true)
+        {
+            InitializeComponent();
+            this.esNuevo = esNuevo;
+            this.idFolio = idPoliza;
+        }
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
@@ -156,8 +165,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     cmdPoliza.Parameters.AddWithValue("@nombreCod2", txtNomCod2.Text);
                     cmdPoliza.Parameters.AddWithValue("@edadCod", txtEdad1.Text);
                     cmdPoliza.Parameters.AddWithValue("@edadCod2", txtEdad2.Text);
-                    cmdPoliza.Parameters.AddWithValue("@ocupacionCod", txtOcupacion1.Text);//war
-                    cmdPoliza.Parameters.AddWithValue("@ocupacionCod2", txtOcupacion2.Text);//war
+                    cmdPoliza.Parameters.AddWithValue("@ocupacionCod", txtOcupacion1.Text);//tieme que ser la ocupacion del que se registra
+                    cmdPoliza.Parameters.AddWithValue("@ocupacionCod2", txtOcupacion2.Text);
                     cmdPoliza.Parameters.AddWithValue("@noLicencia", txtNoLic1.Text);
                     cmdPoliza.Parameters.AddWithValue("@noLicencia2", txtNoLic2.Text);
                     cmdPoliza.Parameters.AddWithValue("@edoLicencia", txtEdoEm1.Text);
@@ -216,9 +225,13 @@ namespace Seguros_American.Forms.SegurosAmericanos
         }
         private bool verificaDatos()
         {
-            if(bd.Existe("polizas_americanas", "folio", txtFolio.Text )){
-                MessageBox.Show("El numero de folio ya existe en la Base de Datos");
-                return false;
+            if (esNuevo)
+            {
+                if (bd.Existe("polizas_americanas", "folio", txtFolio.Text))
+                {
+                    MessageBox.Show("El numero de folio ya existe en la Base de Datos");
+                    return false;
+                }
             }
             return true;
         }
@@ -256,10 +269,16 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void FrmSegurosAmericanos2_Load(object sender, EventArgs e)
         {
-            
-            updateFechaFin();
-            updateFechaInit();
-            consultarTarifa(cmbDia.Text.ToString());
+            if (esNuevo)
+            {
+                updateFechaFin();
+                updateFechaInit();
+                consultarTarifa(cmbDia.Text.ToString());
+            }
+            else
+            {
+                cargarDatos(idFolio);
+            }
         }
 
         private void dateFechaE_ValueChanged(object sender, EventArgs e)
@@ -271,26 +290,46 @@ namespace Seguros_American.Forms.SegurosAmericanos
         //CLICK GUARDAR
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (guardaPoliza()) {
-                DialogResult response =  MessageBox.Show("Desea imprimir poliza? ","Datos guardados correctamente", MessageBoxButtons.YesNo);
-                //mandar al visor.
-                if (response == DialogResult.Yes) {
-                    //mostrar visor
-                    //select this poliza.
-                    string sqlGetFolio = "SELECT idFolio FROM polizas_americanas"+
-                        " WHERE  idCliente = " + idCliente + " AND " + "fechaAlta = '" + dateInserted.ToString("yyyy-MM-dd HH:mm:ss") + "';";
-                    
-                    idFolio = bd.ConsultaEscalarString(sqlGetFolio);
-                    
-                    FrmReporte reporte = new FrmReporte(idFolio);
-                    reporte.Show();
-                } 
+            if (esNuevo)
+            {
+                if (guardaPoliza())
+                {
+                    DialogResult response = MessageBox.Show("Desea imprimir poliza? ", "Datos guardados correctamente", MessageBoxButtons.YesNo);
+                    //mandar al visor.
+                    if (response == DialogResult.Yes)
+                    {
+                        //mostrar visor
+                        //select this poliza.
+                        string sqlGetFolio = "SELECT idFolio FROM polizas_americanas" +
+                            " WHERE  idCliente = " + idCliente + " AND " + "fechaAlta = '" + dateInserted.ToString("yyyy-MM-dd HH:mm:ss") + "';";
 
-                this.Close();
+                        idFolio = bd.ConsultaEscalarString(sqlGetFolio);
+
+                        FrmReporte reporte = new FrmReporte(idFolio);
+                        reporte.Show();
+                    }
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo completar la transaccion");
+                }
             }
             else
             {
-                MessageBox.Show("No se pudo completar la transaccion");
+                //actualizar datos
+                if (actualizaPoliza())
+                {
+                    MessageBox.Show("Poliza actualizada correctemente");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error en la actualizacion de la Poliza");
+                }
+                
+
             }
         }
 
@@ -396,6 +435,128 @@ namespace Seguros_American.Forms.SegurosAmericanos
             updateFechaInit();
             updateFechaFin();
         }
-  
+
+
+        //cargar datos mediante onGrid para no hacer una consulta a la base de datos.
+        private void cargarDatos(string id)
+        {
+            string filtro = "*";
+            string condicion = "idFolio = " + id;
+            string tabla = "polizas_americanas";
+
+            try
+            {
+               
+                DataTable dataTable = bd.Consultar(filtro, tabla, condicion);
+                DataRow selectedRow = dataTable.Rows[0];
+                txtFolio.Text = selectedRow[1].ToString();
+                cmbSeguro.Text = selectedRow[2].ToString();
+                txtNoCliente.Text =selectedRow[3].ToString();
+                //Globales.nombreUsuario) =selectedRow[].ToString();
+                //al principio esta vacio
+                if (vbl.Items.Any())
+                    vbl.Clear();
+                vbl.Items.Add("Id Vehiculo: " + selectedRow[5].ToString());
+                idVehiculo = selectedRow[5].ToString(); 
+                cmbDia.Text = selectedRow[6].ToString();
+                dateIncVig.Text = selectedRow[7].ToString();
+                dateFinVig.Text = selectedRow[8].ToString();
+                //dateInserted = DateTime.Now;
+                //dateInserted.ToString("yyyy-MM-dd HH:mm:ss"))
+                dateFechaE.Text = selectedRow[10].ToString();
+                dateHoraInc.Text = selectedRow[11].ToString();
+                //dateHoraInc.Text = selectedRow[12].ToString();
+                //tarifas
+                txtBienes.Text = selectedRow[13].ToString();
+                txtGasto.Text = selectedRow[14].ToString();
+                //txtDerchPoliza.Text
+                //txtTotalPoliza.Text
+                //conductores
+                txtNomCod1.Text = selectedRow[17].ToString();
+                txtNomCod2.Text = selectedRow[18].ToString();
+                txtEdad1.Text = selectedRow[19].ToString();
+                txtEdad2.Text = selectedRow[20].ToString();
+                txtOcupacion1.Text = selectedRow[21].ToString();//tiene que ser la ocupacion del que se registra
+                txtOcupacion2.Text = selectedRow[22].ToString();
+                txtNoLic1.Text = selectedRow[23].ToString();
+                txtNoLic2.Text = selectedRow[24].ToString();
+                txtEdoEm1.Text = selectedRow[25].ToString();
+                txtEdoEm2.Text = selectedRow[26].ToString();
+            }
+            catch(MySqlException e)
+            {
+
+            }
+        }
+
+        private bool actualizaPoliza()
+        {
+            if (verificaCampos())
+            {
+                if (verificaDatos())
+                {
+                    //recoletar todos los datos para crear la consulta a la tabla
+                    MySqlCommand cmdPoliza = new MySqlCommand();
+
+
+                    cmdPoliza.CommandText = "UPDATE polizas_americanas SET folio=@folio, tipo=@tipo, idCliente=@idCliente, usuario=@usuario," +
+                        " idVehiculo=@idVehiculo, dias=@dias,inVig= @inVig, finVig=@finVig, fechaAlta=@fechaAlta, fechaEm=@fechaEm, " +
+                        " horaDesd=@horaDesd, horaHast=@horaHast, primaBienes=@primaBienes, primaGm=@primaGm, primaDerPol=@primaDerPol," +
+                        " total=@total, nombreCod=@nombreCod, nombreCod2=@nombreCod2, edadCod=@edadCod, edadCod2=@edadCod2, " +
+                        " ocupacionCod=@ocupacionCod, ocupacionCod2=@ocupacionCod2,noLicencia=@noLicencia," +
+                        " noLicencia2=@noLicencia2, edoLicencia=@edoLicencia, edoLicencia2=@edoLicencia2" +
+                        " WHERE idFolio= @idFolio";
+
+
+                    cmdPoliza.Parameters.AddWithValue("@folio", txtFolio.Text);
+                    cmdPoliza.Parameters.AddWithValue("@tipo", cmbSeguro.Text);
+                    cmdPoliza.Parameters.AddWithValue("@idCliente", txtNoCliente.Text);
+                    cmdPoliza.Parameters.AddWithValue("@usuario", Globales.nombreUsuario);
+                    cmdPoliza.Parameters.AddWithValue("@idVehiculo", idVehiculo);//obtener cuando se llama a gestion vehiculos.
+                    cmdPoliza.Parameters.AddWithValue("@dias", cmbDia.Text);
+                    cmdPoliza.Parameters.AddWithValue("@inVig", DateTime.Parse(dateIncVig.Value.ToString()).ToString("yyyy-MM-dd"));
+                    cmdPoliza.Parameters.AddWithValue("@finVig", DateTime.Parse(dateFinVig.Value.ToString()).ToString("yyyy-MM-dd"));
+                    dateInserted = DateTime.Now;
+                    cmdPoliza.Parameters.AddWithValue("@fechaAlta", dateInserted.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmdPoliza.Parameters.AddWithValue("@fechaEm", DateTime.Parse(dateFechaE.Value.ToString()).ToString("yyyy-MM-dd"));
+                    cmdPoliza.Parameters.AddWithValue("@horaDesd", DateTime.Parse(dateHoraInc.Value.ToString()).ToString("HH:mm:ss"));//WAR
+                    cmdPoliza.Parameters.AddWithValue("@horaHast", DateTime.Parse(dateHoraInc.Value.ToString()).ToString("HH:mm:ss"));//WAR
+                    //tarifas
+                    cmdPoliza.Parameters.AddWithValue("@primaBienes", txtBienes.Text);
+                    cmdPoliza.Parameters.AddWithValue("@primaGm", txtGasto.Text);
+                    cmdPoliza.Parameters.AddWithValue("@primaDerPol", txtDerchPoliza.Text);
+                    cmdPoliza.Parameters.AddWithValue("@total", txtTotalPoliza.Text);
+                    //conductores
+                    cmdPoliza.Parameters.AddWithValue("@nombreCod", txtNomCod1.Text);
+                    cmdPoliza.Parameters.AddWithValue("@nombreCod2", txtNomCod2.Text);
+                    cmdPoliza.Parameters.AddWithValue("@edadCod", txtEdad1.Text);
+                    cmdPoliza.Parameters.AddWithValue("@edadCod2", txtEdad2.Text);
+                    cmdPoliza.Parameters.AddWithValue("@ocupacionCod", txtOcupacion1.Text);//tieme que ser la ocupacion del que se registra
+                    cmdPoliza.Parameters.AddWithValue("@ocupacionCod2", txtOcupacion2.Text);
+                    cmdPoliza.Parameters.AddWithValue("@noLicencia", txtNoLic1.Text);
+                    cmdPoliza.Parameters.AddWithValue("@noLicencia2", txtNoLic2.Text);
+                    cmdPoliza.Parameters.AddWithValue("@edoLicencia", txtEdoEm1.Text);
+                    cmdPoliza.Parameters.AddWithValue("@edoLicencia2", txtEdoEm2.Text);
+                    //where
+                    cmdPoliza.Parameters.AddWithValue("@idFolio", idFolio);
+
+                    try
+                    {
+                        bd.Actualizar(cmdPoliza);
+                        return true;
+
+                    }
+                    catch (MySqlException sqlex)
+                    {
+                        Console.WriteLine(sqlex);
+                        return false;
+                    }
+
+                }
+               
+            }
+            return false;
+        }
+
     }
 }

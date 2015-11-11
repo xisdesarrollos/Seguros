@@ -66,5 +66,28 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
             Globales.cargaGrid(sqlCustomQuery, dgvPolizas);
         }
+        
+        //EDITAR
+        private void btnEditarPoliza_Click(object sender, EventArgs e)
+        {
+            //get id
+            int index = dgvPolizas.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dgvPolizas.Rows[index];
+            string idPoliza = selectedRow.Cells[0].Value.ToString();
+           
+
+            //enviar id 
+            FrmSegurosAmericanos2 nuevocliente = new FrmSegurosAmericanos2(idPoliza,false);
+            nuevocliente.ShowDialog();
+
+            Globales.cargaGrid(sqlSelect, dgvPolizas);
+        }
+        //ELIMINAR
+        private void Eliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
