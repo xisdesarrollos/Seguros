@@ -541,8 +541,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     MySqlCommand cmdPoliza = new MySqlCommand();
 
 
-                    cmdPoliza.CommandText = "UPDATE polizas_americanas SET folio=@folio, tipo=@tipo, idCliente=@idCliente, usuario=@usuario," +
-                        " idVehiculo=@idVehiculo, dias=@dias,inVig= @inVig, finVig=@finVig, fechaAlta=@fechaAlta, fechaEm=@fechaEm, " +
+                    cmdPoliza.CommandText = "UPDATE polizas_americanas SET folio=@folio, tipo=@tipo, usuario=@usuario," +
+                        " dias=@dias,inVig= @inVig, finVig=@finVig, fechaAlta=@fechaAlta, fechaEm=@fechaEm, " +
                         " horaDesd=@horaDesd, horaHast=@horaHast, primaBienes=@primaBienes, primaGm=@primaGm, primaDerPol=@primaDerPol," +
                         " total=@total, nombreCod=@nombreCod, nombreCod2=@nombreCod2, edadCod=@edadCod, edadCod2=@edadCod2, " +
                         " ocupacionCod=@ocupacionCod, ocupacionCod2=@ocupacionCod2,noLicencia=@noLicencia," +

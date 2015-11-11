@@ -51,7 +51,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
             int index = dgvPolizas.CurrentCell.RowIndex;
             DataGridViewRow selectedRow = dgvPolizas.Rows[index];
             string idFolio = selectedRow.Cells[0].Value.ToString();
-            MessageBox.Show(idFolio);
             FrmReporte reporte = new FrmReporte(idFolio);
             reporte.Show();
         }
