@@ -56,7 +56,7 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "7d6d16c6-7730-4a31-9037-f4b468099530";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(902, 18);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(918, 18);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(83, 41);
             this.btnMostrarTodos.TabIndex = 2;
@@ -71,7 +71,7 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(370, 28);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(476, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(492, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 262;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
@@ -99,7 +99,7 @@
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "504c2201-c57b-49d8-9ab3-aab6f73b6a0a";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(1004, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(1020, 16);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(120, 45);
             this.btnNuevo.TabIndex = 3;
@@ -119,7 +119,7 @@
             this.groupFiltro.Id = "c0a9dae8-1b03-4cb4-84ea-645d02d27465";
             this.groupFiltro.Location = new System.Drawing.Point(5, -1);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(1226, 91);
+            this.groupFiltro.Size = new System.Drawing.Size(1242, 91);
             this.groupFiltro.TabIndex = 12;
             // 
             // dgvClientes
@@ -148,7 +148,7 @@
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1214, 613);
+            this.dgvClientes.Size = new System.Drawing.Size(1230, 629);
             this.dgvClientes.TabIndex = 4;
             // 
             // menuOpcionesClientes
@@ -186,7 +186,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1231, 718);
+            this.ClientSize = new System.Drawing.Size(1247, 734);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);
             this.MinimumSize = new System.Drawing.Size(600, 300);

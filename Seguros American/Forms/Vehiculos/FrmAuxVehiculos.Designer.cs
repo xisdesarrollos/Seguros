@@ -43,6 +43,7 @@
             // 
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
+            this.dgv.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contextMenuExtenderProvider1.SetContextPopupMenu(this.dgv, this.contextMenu1);
             this.dgv.Location = new System.Drawing.Point(14, 12);
@@ -94,12 +95,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 317);
+            this.ClientSize = new System.Drawing.Size(788, 325);
             this.Controls.Add(this.btnNuevoVehiculo);
             this.Controls.Add(this.dgv);
             this.Name = "FrmAuxVehiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Vehiculos";
             this.Load += new System.EventHandler(this.FrmAuxVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).EndInit();

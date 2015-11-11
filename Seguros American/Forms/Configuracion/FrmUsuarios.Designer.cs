@@ -60,14 +60,14 @@
             this.groupBox1.Id = "2c49db72-b391-4131-9cb3-969acf7e179e";
             this.groupBox1.Location = new System.Drawing.Point(-10, -1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1288, 71);
+            this.groupBox1.Size = new System.Drawing.Size(1296, 71);
             this.groupBox1.TabIndex = 1;
             // 
             // btnPermisos
             // 
             this.btnPermisos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPermisos.Id = "40cc59b6-9cb1-47c7-ad7a-935caaa72e35";
-            this.btnPermisos.Location = new System.Drawing.Point(1037, 17);
+            this.btnPermisos.Location = new System.Drawing.Point(1045, 17);
             this.btnPermisos.Name = "btnPermisos";
             this.btnPermisos.Size = new System.Drawing.Size(87, 41);
             this.btnPermisos.TabIndex = 4;
@@ -78,7 +78,7 @@
             // 
             this.btnNuevoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevoUsuario.Id = "1c22dac9-7980-471c-8679-ab44666a906d";
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(1139, 17);
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(1147, 17);
             this.btnNuevoUsuario.Name = "btnNuevoUsuario";
             this.btnNuevoUsuario.Size = new System.Drawing.Size(87, 41);
             this.btnNuevoUsuario.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.btnMostrarTodo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodo.Id = "e763c0c0-b595-4c94-bc00-8330cbd41698";
-            this.btnMostrarTodo.Location = new System.Drawing.Point(935, 17);
+            this.btnMostrarTodo.Location = new System.Drawing.Point(943, 17);
             this.btnMostrarTodo.Name = "btnMostrarTodo";
             this.btnMostrarTodo.Size = new System.Drawing.Size(87, 41);
             this.btnMostrarTodo.TabIndex = 2;
@@ -104,7 +104,7 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(350, 27);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(544, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(552, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 396;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged_1);
@@ -139,6 +139,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contextMenuExtenderProvider1.SetContextPopupMenu(this.dgv, this.cm);
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -154,7 +155,7 @@
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1236, 671);
+            this.dgv.Size = new System.Drawing.Size(1244, 679);
             this.dgv.TabIndex = 3;
             // 
             // formFrameSkinner
@@ -195,7 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1269, 746);
+            this.ClientSize = new System.Drawing.Size(1277, 754);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(600, 300);

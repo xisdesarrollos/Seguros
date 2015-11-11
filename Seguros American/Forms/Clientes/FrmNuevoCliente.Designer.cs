@@ -31,6 +31,8 @@
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.txtBoxObs = new Elegant.Ui.TextBox();
             this.groupBoxClientes = new Elegant.Ui.GroupBox();
+            this.dateNacimiento = new Elegant.Ui.MaskedTextBox();
+            this.txtCorreo = new Elegant.Ui.TextBox();
             this.txtBoxCel = new Elegant.Ui.MaskedTextBox();
             this.txtTel = new Elegant.Ui.MaskedTextBox();
             this.txtCp = new Elegant.Ui.MaskedTextBox();
@@ -50,8 +52,6 @@
             this.txtNombre = new Elegant.Ui.TextBox();
             this.groupObsv = new Elegant.Ui.GroupBox();
             this.btnGuardar = new Elegant.Ui.Button();
-            this.txtCorreo = new Elegant.Ui.TextBox();
-            this.dateNacimiento = new Elegant.Ui.MaskedTextBox();
             this.groupBoxClientes.SuspendLayout();
             this.groupObsv.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +99,29 @@
             this.groupBoxClientes.TabIndex = 0;
             this.groupBoxClientes.Text = "Datos del cliente";
             // 
+            // dateNacimiento
+            // 
+            this.dateNacimiento.Id = "d1ec93af-3c78-45cf-94a2-802ccd54f5ad";
+            this.dateNacimiento.LabelText = "Fecha de Nacimiento:";
+            this.dateNacimiento.Location = new System.Drawing.Point(500, 44);
+            this.dateNacimiento.Mask = "00/00/0000";
+            this.dateNacimiento.Name = "dateNacimiento";
+            this.dateNacimiento.Size = new System.Drawing.Size(172, 21);
+            this.dateNacimiento.TabIndex = 2;
+            this.dateNacimiento.TextEditorWidth = 59;
+            this.dateNacimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Id = "1565b44e-f105-4a53-a3be-2df1650f7536";
+            this.txtCorreo.LabelText = "Correo Electónico:";
+            this.txtCorreo.Location = new System.Drawing.Point(459, 265);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(213, 21);
+            this.txtCorreo.TabIndex = 15;
+            this.txtCorreo.TextEditorWidth = 117;
+            this.txtCorreo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCorreo_Validating);
+            // 
             // txtBoxCel
             // 
             this.txtBoxCel.Id = "51c8bb75-2838-43f4-8f92-1866b21734cc";
@@ -136,7 +159,7 @@
             // txtNoI
             // 
             this.txtNoI.Id = "fdcc0037-2739-4d11-871a-b833f292d831";
-            this.txtNoI.LabelText = "No. Exterior:";
+            this.txtNoI.LabelText = "No. Interior:";
             this.txtNoI.Location = new System.Drawing.Point(459, 130);
             this.txtNoI.Mask = "00000";
             this.txtNoI.Name = "txtNoI";
@@ -318,34 +341,11 @@
             this.btnGuardar.TabIndex = 18;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Id = "1565b44e-f105-4a53-a3be-2df1650f7536";
-            this.txtCorreo.LabelText = "Correo Electónico:";
-            this.txtCorreo.Location = new System.Drawing.Point(459, 265);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(213, 21);
-            this.txtCorreo.TabIndex = 15;
-            this.txtCorreo.TextEditorWidth = 117;
-            this.txtCorreo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCorreo_Validating);
-            // 
-            // dateNacimiento
-            // 
-            this.dateNacimiento.Id = "d1ec93af-3c78-45cf-94a2-802ccd54f5ad";
-            this.dateNacimiento.LabelText = "Fecha de Nacimiento:";
-            this.dateNacimiento.Location = new System.Drawing.Point(500, 44);
-            this.dateNacimiento.Mask = "00/00/0000";
-            this.dateNacimiento.Name = "dateNacimiento";
-            this.dateNacimiento.Size = new System.Drawing.Size(172, 21);
-            this.dateNacimiento.TabIndex = 2;
-            this.dateNacimiento.TextEditorWidth = 59;
-            this.dateNacimiento.ValidatingType = typeof(System.DateTime);
-            // 
             // FrmNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 524);
+            this.ClientSize = new System.Drawing.Size(747, 532);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObsv);
             this.Controls.Add(this.groupBoxClientes);

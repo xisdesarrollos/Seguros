@@ -32,6 +32,11 @@
             this.label1 = new Elegant.Ui.Label();
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.dgvTarifa = new System.Windows.Forms.DataGridView();
+            this.diasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pbDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tarifasautosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new Seguros_American.DataSet1();
@@ -41,11 +46,6 @@
             this.tarifasautosTableAdapter = new Seguros_American.DataSet1TableAdapters.tarifasautosTableAdapter();
             this.tarifasautos2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tarifasautos_2TableAdapter = new Seguros_American.DataSet1TableAdapters.tarifasautos_2TableAdapter();
-            this.diasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pbDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarifasautosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
@@ -73,6 +73,7 @@
             this.dgvTarifa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTarifa.AutoGenerateColumns = false;
+            this.dgvTarifa.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvTarifa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.diasDataGridViewTextBoxColumn,
             this.pbDataGridViewTextBoxColumn,
@@ -80,12 +81,42 @@
             this.dpDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn});
             this.dgvTarifa.DataSource = this.tarifasautosBindingSource1;
-            this.dgvTarifa.Location = new System.Drawing.Point(29, 86);
+            this.dgvTarifa.Location = new System.Drawing.Point(29, 94);
             this.dgvTarifa.Name = "dgvTarifa";
-            this.dgvTarifa.Size = new System.Drawing.Size(536, 751);
+            this.dgvTarifa.Size = new System.Drawing.Size(544, 751);
             this.dgvTarifa.TabIndex = 1;
             this.dgvTarifa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellEndEdit);
             this.dgvTarifa.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTarifa_DataError);
+            // 
+            // diasDataGridViewTextBoxColumn
+            // 
+            this.diasDataGridViewTextBoxColumn.DataPropertyName = "dias";
+            this.diasDataGridViewTextBoxColumn.HeaderText = "DIAS";
+            this.diasDataGridViewTextBoxColumn.Name = "diasDataGridViewTextBoxColumn";
+            // 
+            // pbDataGridViewTextBoxColumn
+            // 
+            this.pbDataGridViewTextBoxColumn.DataPropertyName = "pb";
+            this.pbDataGridViewTextBoxColumn.HeaderText = "PB";
+            this.pbDataGridViewTextBoxColumn.Name = "pbDataGridViewTextBoxColumn";
+            // 
+            // gmDataGridViewTextBoxColumn
+            // 
+            this.gmDataGridViewTextBoxColumn.DataPropertyName = "gm";
+            this.gmDataGridViewTextBoxColumn.HeaderText = "GM";
+            this.gmDataGridViewTextBoxColumn.Name = "gmDataGridViewTextBoxColumn";
+            // 
+            // dpDataGridViewTextBoxColumn
+            // 
+            this.dpDataGridViewTextBoxColumn.DataPropertyName = "dp";
+            this.dpDataGridViewTextBoxColumn.HeaderText = "DP";
+            this.dpDataGridViewTextBoxColumn.Name = "dpDataGridViewTextBoxColumn";
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "TOTAL";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             // 
             // tarifasautosBindingSource1
             // 
@@ -106,7 +137,7 @@
             // 
             this.btnTarifaGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTarifaGuardar.Id = "eb7a0091-c9f9-42b6-9222-e0183ff7d5e4";
-            this.btnTarifaGuardar.Location = new System.Drawing.Point(505, 846);
+            this.btnTarifaGuardar.Location = new System.Drawing.Point(513, 854);
             this.btnTarifaGuardar.Name = "btnTarifaGuardar";
             this.btnTarifaGuardar.Size = new System.Drawing.Size(65, 59);
             this.btnTarifaGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -150,41 +181,11 @@
             // 
             this.tarifasautos_2TableAdapter.ClearBeforeFill = true;
             // 
-            // diasDataGridViewTextBoxColumn
-            // 
-            this.diasDataGridViewTextBoxColumn.DataPropertyName = "dias";
-            this.diasDataGridViewTextBoxColumn.HeaderText = "DIAS";
-            this.diasDataGridViewTextBoxColumn.Name = "diasDataGridViewTextBoxColumn";
-            // 
-            // pbDataGridViewTextBoxColumn
-            // 
-            this.pbDataGridViewTextBoxColumn.DataPropertyName = "pb";
-            this.pbDataGridViewTextBoxColumn.HeaderText = "PB";
-            this.pbDataGridViewTextBoxColumn.Name = "pbDataGridViewTextBoxColumn";
-            // 
-            // gmDataGridViewTextBoxColumn
-            // 
-            this.gmDataGridViewTextBoxColumn.DataPropertyName = "gm";
-            this.gmDataGridViewTextBoxColumn.HeaderText = "GM";
-            this.gmDataGridViewTextBoxColumn.Name = "gmDataGridViewTextBoxColumn";
-            // 
-            // dpDataGridViewTextBoxColumn
-            // 
-            this.dpDataGridViewTextBoxColumn.DataPropertyName = "dp";
-            this.dpDataGridViewTextBoxColumn.HeaderText = "DP";
-            this.dpDataGridViewTextBoxColumn.Name = "dpDataGridViewTextBoxColumn";
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "TOTAL";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            // 
             // FrmGestionTarifasVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 910);
+            this.ClientSize = new System.Drawing.Size(606, 918);
             this.Controls.Add(this.cmbTarifa);
             this.Controls.Add(this.btnTarifaGuardar);
             this.Controls.Add(this.dgvTarifa);
