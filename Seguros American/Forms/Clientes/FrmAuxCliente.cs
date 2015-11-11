@@ -14,7 +14,8 @@ namespace Seguros_American.Forms.Clientes
 {
     public partial class FrmAuxCliente : Form
     {
-        string sql = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fechaNacimiento,calle,colonia,noExterior,cp,noLicencia,ocupacion FROM clientes";
+string sql = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fechaNacimiento,calle,colonia,noExterior,cp,noLicencia,ocupacion FROM clientes";
+        
         Basedatos db = new Basedatos();
         DataTable dt = new DataTable();
         string id;
@@ -37,6 +38,8 @@ namespace Seguros_American.Forms.Clientes
             FrmNuevoCliente nuevoclientes = new FrmNuevoCliente();
             nuevoclientes.ShowDialog();
             Globales.cargaGrid(sql, dgv);
+            estilizaGrid();
+
         }
 
         private void txtCriterio_TextChanged(object sender, EventArgs e)
@@ -47,7 +50,10 @@ namespace Seguros_American.Forms.Clientes
             string sqlCustomQuery = sql + " WHERE nombre LIKE '%" + value + "%' ORDER BY nombre ASC";
 
             Globales.cargaGrid(sqlCustomQuery, dgv);
+            estilizaGrid();
+
         }
+
         public void cargaGrid()
         {
          
@@ -70,24 +76,23 @@ namespace Seguros_American.Forms.Clientes
         {
             dgv.Columns[0].HeaderText = "No.";
             dgv.Columns[1].HeaderText = "Nombre";
-           
-            dgv.Columns[0].Width = 30;
-            dgv.Columns[1].Width = 392;
-
-            //desaparecer todas excepto 0 y 1
-
-            dgv.Columns[2].Visible =
-            dgv.Columns[3].Visible =
-            dgv.Columns[4].Visible =
-            dgv.Columns[5].Visible =
-            dgv.Columns[6].Visible =
-            dgv.Columns[7].Visible =
-            dgv.Columns[8].Visible =
-            dgv.Columns[9].Visible =
-            dgv.Columns[10].Visible =
-            dgv.Columns[11].Visible =
-            dgv.Columns[12].Visible =
+          
+            dgv.Columns[0].Width = 50;
+            dgv.Columns[1].Width = 372;
+           //desaparecer todas excepto 0 y 1
+            dgv.Columns[2].Visible = false;
+            dgv.Columns[3].Visible = false;
+            dgv.Columns[4].Visible = false;
+            dgv.Columns[5].Visible = false;
+            dgv.Columns[6].Visible = false;
+            dgv.Columns[7].Visible = false;
+            dgv.Columns[8].Visible = false;
+            dgv.Columns[9].Visible = false;
+            dgv.Columns[10].Visible = false;
+            dgv.Columns[11].Visible = false;
+            dgv.Columns[12].Visible = false;
             dgv.Columns[13].Visible = false;
+            dgv.Columns[14].Visible = false;
             
         }
 
@@ -98,6 +103,7 @@ namespace Seguros_American.Forms.Clientes
         private void FrmAuxCliente_Load(object sender, EventArgs e)
         {
             cargaGrid();
+            estilizaGrid();
             SendKeys.Send("{TAB}");
             SendKeys.Send("{TAB}");
             

@@ -38,7 +38,6 @@
             this.txtCriterio = new Elegant.Ui.TextBox();
             this.cmbFiltro = new Elegant.Ui.ComboBox();
             this.btnMostrarTodos = new Elegant.Ui.Button();
-            this.btnGuardar = new Elegant.Ui.Button();
             this.contextMenu1 = new Elegant.Ui.ContextMenu(this.components);
             this.btnImprimirPolizas = new Elegant.Ui.Button();
             this.btnEditarPoliza = new Elegant.Ui.Button();
@@ -61,6 +60,10 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Azure;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvPolizas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPolizas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPolizas.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvPolizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contextMenuExtenderProvider1.SetContextPopupMenu(this.dgvPolizas, this.contextMenu1);
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -71,24 +74,26 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPolizas.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPolizas.Location = new System.Drawing.Point(34, 124);
+            this.dgvPolizas.Location = new System.Drawing.Point(5, 104);
             this.dgvPolizas.Name = "dgvPolizas";
             this.dgvPolizas.ReadOnly = true;
             this.dgvPolizas.RowHeadersVisible = false;
             this.dgvPolizas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPolizas.Size = new System.Drawing.Size(1115, 440);
+            this.dgvPolizas.Size = new System.Drawing.Size(1214, 578);
             this.dgvPolizas.TabIndex = 14;
             // 
             // groupFiltro
             // 
+            this.groupFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupFiltro.Controls.Add(this.btnNuevo);
             this.groupFiltro.Controls.Add(this.txtCriterio);
             this.groupFiltro.Controls.Add(this.cmbFiltro);
             this.groupFiltro.Controls.Add(this.btnMostrarTodos);
             this.groupFiltro.Id = "be3ad8a8-9d23-43c9-84a9-891dab51f90d";
-            this.groupFiltro.Location = new System.Drawing.Point(34, 17);
+            this.groupFiltro.Location = new System.Drawing.Point(5, 6);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(1115, 91);
+            this.groupFiltro.Size = new System.Drawing.Size(1214, 91);
             this.groupFiltro.TabIndex = 15;
             // 
             // btnNuevo
@@ -96,7 +101,7 @@
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "68053424-9390-45fa-896b-cacf762629b1";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(969, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(1068, 16);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(94, 45);
             this.btnNuevo.TabIndex = 3;
@@ -111,7 +116,7 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(421, 30);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(314, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(413, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 358;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
@@ -122,8 +127,8 @@
             this.cmbFiltro.FormattingEnabled = false;
             this.cmbFiltro.Id = "04089a29-1cbf-4e27-97cb-dea60632289f";
             this.cmbFiltro.Items.AddRange(new object[] {
-            "FOLIO",
-            "FECHAEM"});
+            "Folio",
+            "Fechaem"});
             this.cmbFiltro.LabelText = "Filtrar por:";
             this.cmbFiltro.Location = new System.Drawing.Point(32, 30);
             this.cmbFiltro.Name = "cmbFiltro";
@@ -136,22 +141,11 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "0d03ce75-8fdf-4ee8-8a02-fbc41646e47b";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(849, 20);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(948, 20);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(83, 41);
             this.btnMostrarTodos.TabIndex = 2;
             this.btnMostrarTodos.Text = "Mostrar Todos";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Id = "7a0921e0-7d2f-479c-939b-c3f463976531";
-            this.btnGuardar.Location = new System.Drawing.Point(1074, 584);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 65);
-            this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
-            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.ok)});
-            this.btnGuardar.TabIndex = 16;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // contextMenu1
             // 
@@ -198,8 +192,7 @@
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1213, 690);
-            this.Controls.Add(this.btnGuardar);
+            this.ClientSize = new System.Drawing.Size(1221, 698);
             this.Controls.Add(this.dgvPolizas);
             this.Controls.Add(this.groupFiltro);
             this.MinimumSize = new System.Drawing.Size(600, 300);
@@ -225,7 +218,6 @@
         private Elegant.Ui.TextBox txtCriterio;
         private Elegant.Ui.ComboBox cmbFiltro;
         private Elegant.Ui.Button btnMostrarTodos;
-        private Elegant.Ui.Button btnGuardar;
         private Elegant.Ui.ContextMenu contextMenu1;
         private Elegant.Ui.Button btnImprimirPolizas;
         private Elegant.Ui.ContextMenuExtenderProvider contextMenuExtenderProvider1;
