@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
 
 namespace Seguros_American.Forms.SegurosAmericanos
 {
@@ -85,7 +85,30 @@ namespace Seguros_American.Forms.SegurosAmericanos
         //ELIMINAR
         private void Eliminar_Click(object sender, EventArgs e)
         {
+            int index = dgvPolizas.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dgvPolizas.Rows[index];
+            string idFolio = selectedRow.Cells[0].Value.ToString();
 
+            Basedatos bd = new Basedatos();
+            string nTabla = "polizas_americanas";
+
+            string condicion = "idFolio = " + idFolio;
+             DialogResult r = MessageBox.Show("¿Seguro que desea eliminar esta poliza seleccionado?", "Poliza", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+             if (r == DialogResult.Yes)
+             {
+                 try
+                 {
+                     bd.Eliminar(nTabla, condicion);
+                     Globales.cargaGrid(sqlSelect, dgvPolizas);
+                     MessageBox.Show("Poliza eliminada exitosamente");
+
+                 }
+                 catch (MySqlException exsql)
+                 {
+                     MessageBox.Show("No se pudo eliminar el campo ");
+
+                 }
+             }
         }
 
 
