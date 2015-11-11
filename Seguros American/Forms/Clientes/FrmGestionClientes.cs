@@ -39,15 +39,15 @@ namespace Seguros_American.Forms.Clientes
             dgvClientes.Columns[8].HeaderText = "Obs";
             
 
-            dgvClientes.Columns[0].Width = 30;
-            dgvClientes.Columns[1].Width = 120;
-            dgvClientes.Columns[2].Width = 100;
-            dgvClientes.Columns[3].Width = 80;
-            dgvClientes.Columns[4].Width = 80;
-            dgvClientes.Columns[5].Width = 90;
-            dgvClientes.Columns[6].Width = 90;
-            dgvClientes.Columns[7].Width = 90;
-            dgvClientes.Columns[8].Width = 150;
+            dgvClientes.Columns[0].Width = 100;
+            dgvClientes.Columns[1].Width = 420;
+            dgvClientes.Columns[2].Width = 180;
+            dgvClientes.Columns[3].Width = 180;
+            dgvClientes.Columns[4].Width = 230;
+            dgvClientes.Columns[5].Width = 180;
+            dgvClientes.Columns[6].Width = 180;
+            dgvClientes.Columns[7].Width = 180;
+            dgvClientes.Columns[8].Width = 250;
         }
 
         public void Eliminar(string id)
@@ -100,14 +100,11 @@ namespace Seguros_American.Forms.Clientes
 
         private void txtCriterio_TextChanged(object sender, EventArgs e)
         {
-            string filter = cmbFiltro.Text.ToString();
-            string value = txtCriterio.Text.ToString();
-
-            string sqlCustomQuery = "SELECT * FROM clientes " +
-                                    " WHERE " + filter + " LIKE '%" + value + "%' ORDER BY " + filter + " ASC";
-
-            Globales.cargaGrid(sqlCustomQuery, dgvClientes);
            
+
+            Globales.cargaGrid("SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs  FROM clientes WHERE " + cmbFiltro.Text + " LIKE '%" + txtCriterio.Text + "%' ORDER BY idcliente ASC", dgvClientes);
+
+
         }
 
         private void frmClientes_MouseEnter(object sender, EventArgs e)
@@ -171,6 +168,11 @@ namespace Seguros_American.Forms.Clientes
                 iGestionClientes.onDataGridClientes(dgvClientes);
             }
             this.Close();
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

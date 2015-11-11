@@ -54,12 +54,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv.Location = new System.Drawing.Point(10, 42);
+            this.dgv.Location = new System.Drawing.Point(17, 41);
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(383, 201);
+            this.dgv.Size = new System.Drawing.Size(426, 255);
             this.dgv.TabIndex = 2;
             this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
             // 
@@ -67,7 +67,7 @@
             // 
             this.txtCriterio.Id = "f9d18a81-456b-4d47-879d-914cdf68eaad";
             this.txtCriterio.LabelText = "Cliente:";
-            this.txtCriterio.Location = new System.Drawing.Point(10, 9);
+            this.txtCriterio.Location = new System.Drawing.Point(17, 12);
             this.txtCriterio.Name = "txtCriterio";
             this.txtCriterio.Size = new System.Drawing.Size(346, 21);
             this.txtCriterio.TabIndex = 0;
@@ -81,7 +81,7 @@
             // btnNuevoCliente
             // 
             this.btnNuevoCliente.Id = "7cc2758c-c76b-4ba3-83b2-83763aec05f7";
-            this.btnNuevoCliente.Location = new System.Drawing.Point(362, 8);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(413, 9);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(30, 24);
             this.btnNuevoCliente.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 301);
+            this.ClientSize = new System.Drawing.Size(460, 309);
             this.Controls.Add(this.btnNuevoCliente);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.txtCriterio);

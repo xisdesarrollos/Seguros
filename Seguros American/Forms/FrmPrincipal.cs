@@ -69,6 +69,7 @@ namespace Seguros_American.Forms
         private void btnGestionVehiculos_Click(object sender, EventArgs e)
         {
             FrmGestionVeh frmgestionveh = new FrmGestionVeh();
+            frmgestionveh.MdiParent = this;
             frmgestionveh.Show();
         }
 

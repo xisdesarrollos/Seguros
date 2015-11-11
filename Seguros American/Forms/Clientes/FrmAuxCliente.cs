@@ -73,7 +73,7 @@ namespace Seguros_American.Forms.Clientes
             dgv.Columns[1].HeaderText = "Nombre";
            
             dgv.Columns[0].Width = 30;
-            dgv.Columns[1].Width = 400;
+            dgv.Columns[1].Width = 392;
 
             //desaparecer todas excepto 0 y 1
 
