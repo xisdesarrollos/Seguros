@@ -35,6 +35,10 @@ namespace Seguros_American.Forms.Clientes
 
         private void FrmNuevoC_Load(object sender, EventArgs e)
         {
+            dateNacimiento.Mask = "99/99/9999";
+            dateNacimiento.ValidatingType = typeof(System.DateTime);
+            
+
             //here 
             if (!Globales.EsNuevoCliente) {
                 cargarDatos(idCliente);
@@ -192,14 +196,18 @@ namespace Seguros_American.Forms.Clientes
                 string.IsNullOrEmpty(txtColonia.Text) || string.IsNullOrEmpty(txtEstado.Text) ||
                 string.IsNullOrEmpty(txtCiudad.Text) || string.IsNullOrEmpty(txtCp.Text) ||
                 string.IsNullOrEmpty(cmbPais.Text) || string.IsNullOrEmpty(txtTel.Text) ||
-                string.IsNullOrEmpty(txtBoxCel.Text) || string.IsNullOrEmpty(txtCorreo.Text) ||
-                string.IsNullOrEmpty(txtOcupacion.Text))
+                string.IsNullOrEmpty(txtBoxCel.Text) || string.IsNullOrEmpty(txtCorreo.Text)
+               )
             {
                 MessageBox.Show("Verifique campos vacios");
                 value = false;
             }
             //verificar edad.
-            //verificar 
+            //verificar correo
+            if (!verificarCorreo())
+            {
+                value = false;
+            }
             return value;
         }
 
@@ -262,8 +270,8 @@ namespace Seguros_American.Forms.Clientes
 
         }
 
-        private void txtCorreo_Validating(object sender, CancelEventArgs e)
-        {
+
+        private bool verificarCorreo(){
             string validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
                + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
                + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
@@ -271,19 +279,45 @@ namespace Seguros_American.Forms.Clientes
             if (!reg.IsMatch(this.txtCorreo.Text))
             {
                 MessageBox.Show("El Formato del correo electronico es incorrecto.");
-                e.Cancel = true;
+                return false;
 
             }
-
+            return true;
         }
 
-
-        
-
-
-        
     
-       
+
+        private void dateNacimiento_Leave(object sender, EventArgs e)
+        {
+            
+            //usar un slip para que no sea nullo
+            if (validarFecha(dateNacimiento.Text) )
+            {
+                ////cambiar edad automaticamente.
+                DateTime today = DateTime.Today;
+                DateTime nacimiento = DateTime.Parse(dateNacimiento.Text);
+                int edad = today.Year - nacimiento.Year;
+                txtEdad.Text = edad.ToString();      
+            }
+        }
+
+    
+
+        private bool validarFecha(string fecha)
+        {
+            string[] splitFecha;
+            char[] delimitador = {'/'};
+            splitFecha = fecha.Split(delimitador);
+            splitFecha = fecha.Split(delimitador);
+            splitFecha = fecha.Split(delimitador);
+
+            if(string.IsNullOrEmpty(splitFecha[0]) || string.IsNullOrEmpty(splitFecha[1]) || string.IsNullOrEmpty(splitFecha[2])){
+                return false;
+            }
+            return true;
+        }
+
+   
      
       
     }
