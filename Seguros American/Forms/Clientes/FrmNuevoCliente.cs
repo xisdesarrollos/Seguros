@@ -94,7 +94,7 @@ namespace Seguros_American.Forms.Clientes
                     cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@rfcCliente", txtRfc.Text);
                     cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text);
-                    cmd.Parameters.AddWithValue("@fechaNacimiento", DateTime.Parse(dateNacimiento.Value.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
+                    cmd.Parameters.AddWithValue("@fechaNacimiento", DateTime.Parse(dateNacimiento.Text.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
                     cmd.Parameters.AddWithValue("@calle", txtCalle.Text);
                     cmd.Parameters.AddWithValue("@noExterior", txtNoE.Text);
                     cmd.Parameters.AddWithValue("@noInterior", txtNoI.Text);
@@ -145,7 +145,7 @@ namespace Seguros_American.Forms.Clientes
                     cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
                     cmd.Parameters.AddWithValue("@rfcCliente", txtRfc.Text);
                     cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text);
-                    cmd.Parameters.AddWithValue("@fechaNacimiento", DateTime.Parse(dateNacimiento.Value.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
+                    cmd.Parameters.AddWithValue("@fechaNacimiento", DateTime.Parse(dateNacimiento.Text.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
                     cmd.Parameters.AddWithValue("@calle", txtCalle.Text);
                     cmd.Parameters.AddWithValue("@noExterior", txtNoE.Text);
                     cmd.Parameters.AddWithValue("@noInterior", txtNoI.Text);
@@ -251,21 +251,23 @@ namespace Seguros_American.Forms.Clientes
         {
             //cambiar edad automaticamente.
             DateTime today = DateTime.Today;
-            DateTime nacimiento = DateTime.Parse(dateNacimiento.Value.ToString());
+            DateTime nacimiento = DateTime.Parse(dateNacimiento.Text);
             int edad = today.Year - nacimiento.Year;
             txtEdad.Text = edad.ToString();
+           
+          
+
+
+
+
         }
-
-
-        
-
 
         private void txtCorreo_Validating(object sender, CancelEventArgs e)
         {
             string validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
                + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
                + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
-            Regex reg =  new Regex(validEmailPattern);
+            Regex reg = new Regex(validEmailPattern);
             if (!reg.IsMatch(this.txtCorreo.Text))
             {
                 MessageBox.Show("El Formato del correo electronico es incorrecto.");
@@ -273,9 +275,13 @@ namespace Seguros_American.Forms.Clientes
 
             }
 
-
         }
 
+
+        
+
+
+        
     
        
      
