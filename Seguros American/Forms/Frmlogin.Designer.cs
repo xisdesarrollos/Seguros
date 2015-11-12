@@ -79,6 +79,7 @@
             // btnCancela
             // 
             this.btnCancela.BackColor = System.Drawing.Color.Thistle;
+            this.btnCancela.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancela.Id = "b04fe299-4928-426d-af25-042b2b75aae7";
             this.btnCancela.Location = new System.Drawing.Point(244, 141);
             this.btnCancela.Name = "btnCancela";
@@ -133,10 +134,12 @@
             // 
             // frmLoging
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(464, 214);
+            this.CancelButton = this.btnCancela;
+            this.ClientSize = new System.Drawing.Size(472, 222);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
