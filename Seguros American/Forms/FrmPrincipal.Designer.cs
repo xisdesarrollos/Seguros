@@ -34,27 +34,27 @@
             this.ribbon1 = new Elegant.Ui.Ribbon();
             this.TabConfiguracion = new Elegant.Ui.RibbonTabPage();
             this.ribbonGroup3 = new Elegant.Ui.RibbonGroup();
-            this.ribbonGroup5 = new Elegant.Ui.RibbonGroup();
-            this.TabCatalogo = new Elegant.Ui.RibbonTabPage();
-            this.ribbonGroup12 = new Elegant.Ui.RibbonGroup();
-            this.ribbonGroup8 = new Elegant.Ui.RibbonGroup();
-            this.ribbonVehiculos = new Elegant.Ui.RibbonGroup();
-            this.TabOperaciones = new Elegant.Ui.RibbonTabPage();
-            this.ribbonGroup4 = new Elegant.Ui.RibbonGroup();
-            this.TabReportes = new Elegant.Ui.RibbonTabPage();
-            this.ribbonGroup1 = new Elegant.Ui.RibbonGroup();
             this.btnNuevoUsuario = new Elegant.Ui.Button();
             this.btnGestionUsuarios = new Elegant.Ui.Button();
+            this.ribbonGroup5 = new Elegant.Ui.RibbonGroup();
             this.btnBase = new Elegant.Ui.Button();
             this.btnimpresora = new Elegant.Ui.Button();
+            this.TabCatalogo = new Elegant.Ui.RibbonTabPage();
+            this.ribbonGroup12 = new Elegant.Ui.RibbonGroup();
             this.btnConceptosClientes = new Elegant.Ui.Button();
             this.btnGestiónClientes = new Elegant.Ui.Button();
+            this.ribbonGroup8 = new Elegant.Ui.RibbonGroup();
             this.btnTarifas = new Elegant.Ui.Button();
             this.btnGestonTarifas = new Elegant.Ui.Button();
+            this.ribbonVehiculos = new Elegant.Ui.RibbonGroup();
             this.btnVehiculos = new Elegant.Ui.Button();
             this.btnGestionVehiculos = new Elegant.Ui.Button();
+            this.TabOperaciones = new Elegant.Ui.RibbonTabPage();
+            this.ribbonGroup4 = new Elegant.Ui.RibbonGroup();
             this.btnNuevaPoliza = new Elegant.Ui.Button();
             this.btnGestionPoliza = new Elegant.Ui.Button();
+            this.TabReportes = new Elegant.Ui.RibbonTabPage();
+            this.ribbonGroup1 = new Elegant.Ui.RibbonGroup();
             this.btnReportes = new Elegant.Ui.Button();
             themeSelector = new Elegant.Ui.ThemeSelector(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon1)).BeginInit();
@@ -89,12 +89,12 @@
             // ribbon1
             // 
             this.ribbon1.BackColor = System.Drawing.SystemColors.Menu;
-            this.ribbon1.CurrentTabPage = this.TabConfiguracion;
+            this.ribbon1.CurrentTabPage = this.TabCatalogo;
             this.ribbon1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbon1.Id = "80d5119b-9a8c-4698-a56b-e01c1a6ded9f";
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.Name = "ribbon1";
-            this.ribbon1.Size = new System.Drawing.Size(1295, 153);
+            this.ribbon1.Size = new System.Drawing.Size(1303, 153);
             this.ribbon1.TabIndex = 2;
             this.ribbon1.TabPages.AddRange(new Elegant.Ui.RibbonTabPage[] {
             this.TabCatalogo,
@@ -110,7 +110,7 @@
             this.TabConfiguracion.KeyTip = null;
             this.TabConfiguracion.Location = new System.Drawing.Point(0, 0);
             this.TabConfiguracion.Name = "TabConfiguracion";
-            this.TabConfiguracion.Size = new System.Drawing.Size(1295, 99);
+            this.TabConfiguracion.Size = new System.Drawing.Size(1303, 99);
             this.TabConfiguracion.TabIndex = 0;
             this.TabConfiguracion.Text = "CONFIGURACIÓN";
             // 
@@ -123,99 +123,6 @@
             this.ribbonGroup3.Size = new System.Drawing.Size(114, 89);
             this.ribbonGroup3.TabIndex = 3;
             this.ribbonGroup3.Text = "USUARIOS";
-            // 
-            // ribbonGroup5
-            // 
-            this.ribbonGroup5.Controls.Add(this.btnBase);
-            this.ribbonGroup5.Controls.Add(this.btnimpresora);
-            this.ribbonGroup5.Location = new System.Drawing.Point(119, 5);
-            this.ribbonGroup5.Name = "ribbonGroup5";
-            this.ribbonGroup5.Size = new System.Drawing.Size(117, 89);
-            this.ribbonGroup5.TabIndex = 4;
-            this.ribbonGroup5.Text = "GENERAL";
-            // 
-            // TabCatalogo
-            // 
-            this.TabCatalogo.Controls.Add(this.ribbonGroup12);
-            this.TabCatalogo.Controls.Add(this.ribbonGroup8);
-            this.TabCatalogo.Controls.Add(this.ribbonVehiculos);
-            this.TabCatalogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabCatalogo.KeyTip = null;
-            this.TabCatalogo.Location = new System.Drawing.Point(0, 0);
-            this.TabCatalogo.Name = "TabCatalogo";
-            this.TabCatalogo.Size = new System.Drawing.Size(1295, 99);
-            this.TabCatalogo.TabIndex = 0;
-            this.TabCatalogo.Text = "CATALOGO";
-            // 
-            // ribbonGroup12
-            // 
-            this.ribbonGroup12.Controls.Add(this.btnConceptosClientes);
-            this.ribbonGroup12.Controls.Add(this.btnGestiónClientes);
-            this.ribbonGroup12.Location = new System.Drawing.Point(5, 5);
-            this.ribbonGroup12.Name = "ribbonGroup12";
-            this.ribbonGroup12.Size = new System.Drawing.Size(99, 89);
-            this.ribbonGroup12.TabIndex = 11;
-            this.ribbonGroup12.Text = "CLIENTES";
-            // 
-            // ribbonGroup8
-            // 
-            this.ribbonGroup8.Controls.Add(this.btnTarifas);
-            this.ribbonGroup8.Controls.Add(this.btnGestonTarifas);
-            this.ribbonGroup8.Location = new System.Drawing.Point(104, 5);
-            this.ribbonGroup8.Name = "ribbonGroup8";
-            this.ribbonGroup8.Size = new System.Drawing.Size(100, 89);
-            this.ribbonGroup8.TabIndex = 6;
-            this.ribbonGroup8.Text = "TARIFAS";
-            // 
-            // ribbonVehiculos
-            // 
-            this.ribbonVehiculos.Controls.Add(this.btnVehiculos);
-            this.ribbonVehiculos.Controls.Add(this.btnGestionVehiculos);
-            this.ribbonVehiculos.Location = new System.Drawing.Point(204, 5);
-            this.ribbonVehiculos.Name = "ribbonVehiculos";
-            this.ribbonVehiculos.Size = new System.Drawing.Size(119, 89);
-            this.ribbonVehiculos.TabIndex = 12;
-            this.ribbonVehiculos.Text = "VEHICULOS";
-            // 
-            // TabOperaciones
-            // 
-            this.TabOperaciones.Controls.Add(this.ribbonGroup4);
-            this.TabOperaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabOperaciones.KeyTip = null;
-            this.TabOperaciones.Location = new System.Drawing.Point(0, 0);
-            this.TabOperaciones.Name = "TabOperaciones";
-            this.TabOperaciones.Size = new System.Drawing.Size(1295, 99);
-            this.TabOperaciones.TabIndex = 0;
-            this.TabOperaciones.Text = "OPERACIONES";
-            // 
-            // ribbonGroup4
-            // 
-            this.ribbonGroup4.Controls.Add(this.btnNuevaPoliza);
-            this.ribbonGroup4.Controls.Add(this.btnGestionPoliza);
-            this.ribbonGroup4.Location = new System.Drawing.Point(5, 5);
-            this.ribbonGroup4.Name = "ribbonGroup4";
-            this.ribbonGroup4.Size = new System.Drawing.Size(109, 89);
-            this.ribbonGroup4.TabIndex = 10;
-            this.ribbonGroup4.Text = "POLIZAS";
-            // 
-            // TabReportes
-            // 
-            this.TabReportes.Controls.Add(this.ribbonGroup1);
-            this.TabReportes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabReportes.KeyTip = null;
-            this.TabReportes.Location = new System.Drawing.Point(0, 0);
-            this.TabReportes.Name = "TabReportes";
-            this.TabReportes.Size = new System.Drawing.Size(1279, 99);
-            this.TabReportes.TabIndex = 0;
-            this.TabReportes.Text = "REPORTES";
-            // 
-            // ribbonGroup1
-            // 
-            this.ribbonGroup1.Controls.Add(this.btnReportes);
-            this.ribbonGroup1.Location = new System.Drawing.Point(5, 5);
-            this.ribbonGroup1.Name = "ribbonGroup1";
-            this.ribbonGroup1.Size = new System.Drawing.Size(59, 0);
-            this.ribbonGroup1.TabIndex = 0;
             // 
             // btnNuevoUsuario
             // 
@@ -241,6 +148,16 @@
             this.btnGestionUsuarios.Text = "Gestión de usuarios";
             this.btnGestionUsuarios.Click += new System.EventHandler(this.btnGestionUsuarios_Click);
             // 
+            // ribbonGroup5
+            // 
+            this.ribbonGroup5.Controls.Add(this.btnBase);
+            this.ribbonGroup5.Controls.Add(this.btnimpresora);
+            this.ribbonGroup5.Location = new System.Drawing.Point(119, 5);
+            this.ribbonGroup5.Name = "ribbonGroup5";
+            this.ribbonGroup5.Size = new System.Drawing.Size(117, 89);
+            this.ribbonGroup5.TabIndex = 4;
+            this.ribbonGroup5.Text = "GENERAL";
+            // 
             // btnBase
             // 
             this.btnBase.Id = "61203426-8d2e-4288-a15b-dd82fc72c6a3";
@@ -264,6 +181,29 @@
             this.btnimpresora.TabIndex = 4;
             this.btnimpresora.Text = "Impresoras";
             this.btnimpresora.Click += new System.EventHandler(this.btnimpresora_Click);
+            // 
+            // TabCatalogo
+            // 
+            this.TabCatalogo.Controls.Add(this.ribbonGroup12);
+            this.TabCatalogo.Controls.Add(this.ribbonGroup8);
+            this.TabCatalogo.Controls.Add(this.ribbonVehiculos);
+            this.TabCatalogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabCatalogo.KeyTip = null;
+            this.TabCatalogo.Location = new System.Drawing.Point(0, 0);
+            this.TabCatalogo.Name = "TabCatalogo";
+            this.TabCatalogo.Size = new System.Drawing.Size(1303, 99);
+            this.TabCatalogo.TabIndex = 0;
+            this.TabCatalogo.Text = "CATALOGO";
+            // 
+            // ribbonGroup12
+            // 
+            this.ribbonGroup12.Controls.Add(this.btnConceptosClientes);
+            this.ribbonGroup12.Controls.Add(this.btnGestiónClientes);
+            this.ribbonGroup12.Location = new System.Drawing.Point(5, 5);
+            this.ribbonGroup12.Name = "ribbonGroup12";
+            this.ribbonGroup12.Size = new System.Drawing.Size(99, 89);
+            this.ribbonGroup12.TabIndex = 11;
+            this.ribbonGroup12.Text = "CLIENTES";
             // 
             // btnConceptosClientes
             // 
@@ -289,6 +229,16 @@
             this.btnGestiónClientes.Text = "Gestión Clientes";
             this.btnGestiónClientes.Click += new System.EventHandler(this.btnGestiónClientes_Click);
             // 
+            // ribbonGroup8
+            // 
+            this.ribbonGroup8.Controls.Add(this.btnTarifas);
+            this.ribbonGroup8.Controls.Add(this.btnGestonTarifas);
+            this.ribbonGroup8.Location = new System.Drawing.Point(104, 5);
+            this.ribbonGroup8.Name = "ribbonGroup8";
+            this.ribbonGroup8.Size = new System.Drawing.Size(100, 89);
+            this.ribbonGroup8.TabIndex = 6;
+            this.ribbonGroup8.Text = "TARIFAS";
+            // 
             // btnTarifas
             // 
             this.btnTarifas.Id = "424ae792-0bcd-4794-bdf7-7343ddbd017c";
@@ -312,6 +262,16 @@
             this.btnGestonTarifas.TabIndex = 5;
             this.btnGestonTarifas.Text = "Gestión Tarifas ";
             this.btnGestonTarifas.Click += new System.EventHandler(this.btnGestonTarifas_Click);
+            // 
+            // ribbonVehiculos
+            // 
+            this.ribbonVehiculos.Controls.Add(this.btnVehiculos);
+            this.ribbonVehiculos.Controls.Add(this.btnGestionVehiculos);
+            this.ribbonVehiculos.Location = new System.Drawing.Point(204, 5);
+            this.ribbonVehiculos.Name = "ribbonVehiculos";
+            this.ribbonVehiculos.Size = new System.Drawing.Size(119, 89);
+            this.ribbonVehiculos.TabIndex = 12;
+            this.ribbonVehiculos.Text = "VEHICULOS";
             // 
             // btnVehiculos
             // 
@@ -337,14 +297,35 @@
             this.btnGestionVehiculos.Text = "Gestion Vehiculos";
             this.btnGestionVehiculos.Click += new System.EventHandler(this.btnGestionVehiculos_Click);
             // 
+            // TabOperaciones
+            // 
+            this.TabOperaciones.Controls.Add(this.ribbonGroup4);
+            this.TabOperaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabOperaciones.KeyTip = null;
+            this.TabOperaciones.Location = new System.Drawing.Point(0, 0);
+            this.TabOperaciones.Name = "TabOperaciones";
+            this.TabOperaciones.Size = new System.Drawing.Size(1295, 99);
+            this.TabOperaciones.TabIndex = 0;
+            this.TabOperaciones.Text = "OPERACIONES";
+            // 
+            // ribbonGroup4
+            // 
+            this.ribbonGroup4.Controls.Add(this.btnNuevaPoliza);
+            this.ribbonGroup4.Controls.Add(this.btnGestionPoliza);
+            this.ribbonGroup4.Location = new System.Drawing.Point(5, 5);
+            this.ribbonGroup4.Name = "ribbonGroup4";
+            this.ribbonGroup4.Size = new System.Drawing.Size(109, 89);
+            this.ribbonGroup4.TabIndex = 10;
+            this.ribbonGroup4.Text = "POLIZAS";
+            // 
             // btnNuevaPoliza
             // 
             this.btnNuevaPoliza.Id = "eef41777-4c5a-41b8-abc2-1636e636535e";
             this.btnNuevaPoliza.LargeImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.sales48)});
-            this.btnNuevaPoliza.Location = new System.Drawing.Point(4, 0);
+            this.btnNuevaPoliza.Location = new System.Drawing.Point(6, 0);
             this.btnNuevaPoliza.Name = "btnNuevaPoliza";
-            this.btnNuevaPoliza.Size = new System.Drawing.Size(42, 72);
+            this.btnNuevaPoliza.Size = new System.Drawing.Size(72, 0);
             this.btnNuevaPoliza.TabIndex = 1;
             this.btnNuevaPoliza.Text = "Nueva Poliza";
             this.btnNuevaPoliza.Click += new System.EventHandler(this.btnNuevaPoliza_Click);
@@ -354,12 +335,31 @@
             this.btnGestionPoliza.Id = "d37d4a4c-4c93-47bd-bc3f-8b2040af579a";
             this.btnGestionPoliza.LargeImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.Folder_321)});
-            this.btnGestionPoliza.Location = new System.Drawing.Point(48, 0);
+            this.btnGestionPoliza.Location = new System.Drawing.Point(6, 0);
             this.btnGestionPoliza.Name = "btnGestionPoliza";
-            this.btnGestionPoliza.Size = new System.Drawing.Size(56, 72);
+            this.btnGestionPoliza.Size = new System.Drawing.Size(96, 0);
             this.btnGestionPoliza.TabIndex = 2;
             this.btnGestionPoliza.Text = "Gestión de Polizas";
             this.btnGestionPoliza.Click += new System.EventHandler(this.btnGestionPoliza_Click);
+            // 
+            // TabReportes
+            // 
+            this.TabReportes.Controls.Add(this.ribbonGroup1);
+            this.TabReportes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabReportes.KeyTip = null;
+            this.TabReportes.Location = new System.Drawing.Point(0, 0);
+            this.TabReportes.Name = "TabReportes";
+            this.TabReportes.Size = new System.Drawing.Size(1279, 99);
+            this.TabReportes.TabIndex = 0;
+            this.TabReportes.Text = "REPORTES";
+            // 
+            // ribbonGroup1
+            // 
+            this.ribbonGroup1.Controls.Add(this.btnReportes);
+            this.ribbonGroup1.Location = new System.Drawing.Point(5, 5);
+            this.ribbonGroup1.Name = "ribbonGroup1";
+            this.ribbonGroup1.Size = new System.Drawing.Size(59, 0);
+            this.ribbonGroup1.TabIndex = 0;
             // 
             // btnReportes
             // 
@@ -376,7 +376,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1295, 738);
+            this.ClientSize = new System.Drawing.Size(1303, 738);
             this.Controls.Add(this.ribbon1);
             this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";

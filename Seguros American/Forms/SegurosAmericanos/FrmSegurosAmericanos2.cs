@@ -649,5 +649,10 @@ namespace Seguros_American.Forms.SegurosAmericanos
          
             return nacimientoYear.ToString();
         }
+
+        private void txtNoCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
