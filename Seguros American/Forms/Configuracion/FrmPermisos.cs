@@ -59,12 +59,12 @@ namespace Seguros_American.Forms.Configuracion
 
         private void carga()
         {
-            DataTable dt = bd.Consultar("*", "permisos", "usuario = '" + cmbUsuario.Text + "'");
-            int i = 0;
+            DataTable dt = bd.Consultar("*", "permisos", "usuario = '" + cmbUsuario.SelectedValue + "'");
+            int i = 1;
 
             foreach (Elegant.Ui.CheckBox checkbox in GetAll(this, typeof(Elegant.Ui.CheckBox)))
             {
-                checkbox.Checked = Convert.ToBoolean(dt.Rows[0][1]);
+                checkbox.Checked = Convert.ToBoolean(dt.Rows[0][i]);
                 i++;
             } 
 
@@ -136,14 +136,14 @@ namespace Seguros_American.Forms.Configuracion
         private void guardaPermisos()
         {
             int indice = 0;
-            int[] i = new int[40];
+            int[] i = new int[13];
             foreach (Elegant.Ui.CheckBox chk in GetAll(this, typeof(Elegant.Ui.CheckBox)))
             {
                 i[indice] = Convert.ToInt32(chk.Checked);
                 indice++;
             }
             MySqlCommand cmd = new MySqlCommand();
-            String sql = "UPDATE permisos SET a=@a,b=@b,c=@c,d=@d,e=@e,f=@f,g=@g,h=@h,i=@i,j=@j,k=@k,l=@l WHERE usuario = @usuario";
+            String sql = "UPDATE permisos SET a=@a,b=@b,c=@c,d=@d,e=@e,f=@f,g=@g,h=@h,i=@i,j=@j,k=@k,l=@l,m=@m WHERE usuario = @usuario";
             cmd.CommandText = sql;
             cmd.Parameters.AddWithValue("@a", i[0]);
             cmd.Parameters.AddWithValue("@b", i[1]);
@@ -157,6 +157,7 @@ namespace Seguros_American.Forms.Configuracion
             cmd.Parameters.AddWithValue("@j", i[9]);
             cmd.Parameters.AddWithValue("@k", i[10]);
             cmd.Parameters.AddWithValue("@l", i[11]);
+            cmd.Parameters.AddWithValue("@m", i[12]);
             cmd.Parameters.AddWithValue("@usuario", cmbUsuario.SelectedValue);
             bd.Actualizar(cmd);
         }
@@ -172,8 +173,5 @@ namespace Seguros_American.Forms.Configuracion
             carga();
         }
 
-        
-
-        
     }
 }

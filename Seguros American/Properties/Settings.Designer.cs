@@ -102,5 +102,17 @@ namespace Seguros_American.Properties {
                 return ((string)(this["seguros_americanosConnectionPoliza"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string impresora {
+            get {
+                return ((string)(this["impresora"]));
+            }
+            set {
+                this["impresora"] = value;
+            }
+        }
     }
 }

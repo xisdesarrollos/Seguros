@@ -14,7 +14,7 @@ namespace Seguros_American.Forms.Configuracion
     {
         Basedatos bd;
         FrmPermisos frmP;
-        string sqlSelectAll = "SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC";
+        string sqlSelectAll = "SELECT idusuario, usuario, nombre, fechaAlta, nivel, noagente FROM usuarios ORDER BY idusuario ASC";
         public FrmUsuarios()
         {
             InitializeComponent();
@@ -32,7 +32,8 @@ namespace Seguros_American.Forms.Configuracion
                 }
 
                 bd = new Basedatos();
-                Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC", dgv);
+                Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel ,noagente FROM usuarios ORDER BY idusuario ASC", dgv);
+                estilizaGrid();
                 cmbFiltro.SelectedIndex = 0;
                 txtCriterio.Select();
             }
@@ -40,7 +41,8 @@ namespace Seguros_American.Forms.Configuracion
 
         private void txtCriterio_TextChanged_1(object sender, EventArgs e)
         {
-            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios WHERE " + cmbFiltro.Text + " LIKE '%" + txtCriterio.Text + "%' ORDER BY idusuario ASC", dgv);
+            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel,noagente FROM usuarios WHERE " + cmbFiltro.Text + " LIKE '%" + txtCriterio.Text + "%' ORDER BY idusuario ASC", dgv);
+            estilizaGrid();
         }
 
         
@@ -49,7 +51,8 @@ namespace Seguros_American.Forms.Configuracion
             Globales.EsNuevoUsuario = true;
             FrmNuevoUsuario frmNU = new FrmNuevoUsuario();
             frmNU.ShowDialog();
-            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC", dgv);
+            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel, noagente FROM usuarios ORDER BY idusuario ASC", dgv);
+            estilizaGrid();
             cmbFiltro.SelectedIndex = 0;
             txtCriterio.Select();
 
@@ -64,10 +67,32 @@ namespace Seguros_American.Forms.Configuracion
 
         private void btnMostrarTodo_Click(object sender, EventArgs e)
         {
-            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel FROM usuarios ORDER BY idusuario ASC", dgv);
+            Globales.cargaGrid("SELECT idusuario, usuario, nombre, fechaAlta, nivel, noagente FROM usuarios ORDER BY idusuario ASC", dgv);
+            estilizaGrid();
             cmbFiltro.SelectedIndex = 0;
+           
             txtCriterio.Text = "";
             txtCriterio.Select();
+        }
+
+        private void estilizaGrid()
+        {
+           dgv.Columns[0].HeaderText = "Id";
+           dgv.Columns[1].HeaderText = "Usuario";
+           dgv.Columns[2].HeaderText = "Nombre";
+           dgv.Columns[3].HeaderText = "Fecha Alta";
+           dgv.Columns[4].HeaderText = "Nivel";
+           dgv.Columns[5].HeaderText = "Numero Agente";
+
+
+
+           dgv.Columns[0].Visible = false;
+           dgv.Columns[1].Width = 80;
+           dgv.Columns[2].Width = 280;
+           dgv.Columns[3].Width = 80;
+           dgv.Columns[4].Width = 80;
+           dgv.Columns[5].Width = 280;
+          
         }
 
         private void FrmUsuarios_FormClosed(object sender, FormClosedEventArgs e)
@@ -87,20 +112,28 @@ namespace Seguros_American.Forms.Configuracion
             FrmNuevoUsuario editarUsario = new FrmNuevoUsuario(usuarioId, false);
             editarUsario.ShowDialog();
             Globales.cargaGrid(sqlSelectAll, dgv);
+            estilizaGrid();
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
+            int index = dgv.CurrentCell.RowIndex;
+                DataGridViewRow selectedRow = dgv.Rows[index];
+            if(dgv[4,dgv.CurrentRow.Index].Value.ToString() =="ADMINISTRADOR")
+            {
+                MessageBox.Show("No se puede eliminar ADMINISTRADOR","USUARIO",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                return;
+            }           
             DialogResult r = MessageBox.Show("¿Seguro que desea eliminar al usuario seleccionado?", "Usuarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes)
             {
-                int index = dgv.CurrentCell.RowIndex;
-                DataGridViewRow selectedRow = dgv.Rows[index];
+                
                 string usuarioId = selectedRow.Cells[0].Value.ToString();
                 string usuario = selectedRow.Cells[1].Value.ToString();
                 bd.Eliminar("usuarios", "idusuario = '" + usuarioId + "'");
                 bd.Eliminar("permisos", "usuario = '" + usuario + "'");
                 Globales.cargaGrid(sqlSelectAll, dgv);
+                estilizaGrid();
             }
         }
 

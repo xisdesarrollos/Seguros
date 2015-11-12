@@ -73,17 +73,21 @@ FROM            tarifasautos</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="polizas_americanasTableAdapter" GeneratorDataComponentClassName="polizas_americanasTableAdapter" Name="polizas_americanas" UserDataComponentName="polizas_americanasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="seguros_americanosConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="seguros_americanosConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        polizas_americanas.idFolio, polizas_americanas.folio, polizas_americanas.idCliente AS Expr2, polizas_americanas.usuario AS Expr3, polizas_americanas.idVehiculo AS Expr4, polizas_americanas.dias, 
                          polizas_americanas.inVig, polizas_americanas.finVig, polizas_americanas.fechaAlta AS Expr1, polizas_americanas.fechaEm, polizas_americanas.horaDesd, polizas_americanas.horaHast, 
                          polizas_americanas.primaBienes, polizas_americanas.primaGm, polizas_americanas.primaDerPol, polizas_americanas.total, polizas_americanas.nombreCod, polizas_americanas.nombreCod2, 
                          polizas_americanas.edadCod, polizas_americanas.edadCod2, polizas_americanas.ocupacionCod, polizas_americanas.ocupacionCod2, polizas_americanas.noLicencia AS Expr5, 
-                         polizas_americanas.noLicencia2, polizas_americanas.edoLicencia, polizas_americanas.edoLicencia2, vehiculos_cliente.*, clientes.*
+                         polizas_americanas.noLicencia2, polizas_americanas.edoLicencia, polizas_americanas.edoLicencia2, vehiculos_cliente.idVehiculo, vehiculos_cliente.idCliente, vehiculos_cliente.usuario, vehiculos_cliente.tipo, 
+                         vehiculos_cliente.marca, vehiculos_cliente.subMarca, vehiculos_cliente.modelo, vehiculos_cliente.placas, vehiculos_cliente.estadoPlacas, vehiculos_cliente.numeroSerie, clientes.idCliente AS Expr6, 
+                         clientes.nombre, clientes.rfcCliente, clientes.sexo, clientes.fechaNacimiento, clientes.calle, clientes.noExterior, clientes.noInterior, clientes.colonia, clientes.estado, clientes.ciudad, clientes.cp, clientes.pais, 
+                         clientes.telefono, clientes.cel, clientes.email, clientes.fechaAlta, clientes.ocupacion, clientes.obs, clientes.noLicencia, clientes.estadoEmision, usuarios.noagente
 FROM            polizas_americanas INNER JOIN
                          clientes ON polizas_americanas.idCliente = clientes.idCliente INNER JOIN
-                         vehiculos_cliente ON polizas_americanas.idVehiculo = vehiculos_cliente.idVehiculo</CommandText>
+                         vehiculos_cliente ON polizas_americanas.idVehiculo = vehiculos_cliente.idVehiculo INNER JOIN
+                         usuarios ON polizas_americanas.usuario = usuarios.usuario</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -127,7 +131,6 @@ FROM            polizas_americanas INNER JOIN
               <Mapping SourceColumn="placas" DataSetColumn="placas" />
               <Mapping SourceColumn="estadoPlacas" DataSetColumn="estadoPlacas" />
               <Mapping SourceColumn="numeroSerie" DataSetColumn="numeroSerie" />
-              <Mapping SourceColumn="idCliente1" DataSetColumn="idCliente1" />
               <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
               <Mapping SourceColumn="rfcCliente" DataSetColumn="rfcCliente" />
               <Mapping SourceColumn="sexo" DataSetColumn="sexo" />
@@ -147,6 +150,8 @@ FROM            polizas_americanas INNER JOIN
               <Mapping SourceColumn="obs" DataSetColumn="obs" />
               <Mapping SourceColumn="noLicencia" DataSetColumn="noLicencia" />
               <Mapping SourceColumn="estadoEmision" DataSetColumn="estadoEmision" />
+              <Mapping SourceColumn="Expr6" DataSetColumn="Expr6" />
+              <Mapping SourceColumn="noagente" DataSetColumn="noagente" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -220,7 +225,7 @@ FROM            tarifasautos_2</CommandText>
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tarifasautos" msprop:Generator_TableClassName="tarifasautosDataTable" msprop:Generator_TableVarName="tabletarifasautos" msprop:Generator_TablePropName="tarifasautos" msprop:Generator_RowDeletingName="tarifasautosRowDeleting" msprop:Generator_RowChangingName="tarifasautosRowChanging" msprop:Generator_RowEvHandlerName="tarifasautosRowChangeEventHandler" msprop:Generator_RowDeletedName="tarifasautosRowDeleted" msprop:Generator_UserTableName="tarifasautos" msprop:Generator_RowChangedName="tarifasautosRowChanged" msprop:Generator_RowEvArgName="tarifasautosRowChangeEvent" msprop:Generator_RowClassName="tarifasautosRow">
+        <xs:element name="tarifasautos" msprop:Generator_TableClassName="tarifasautosDataTable" msprop:Generator_TableVarName="tabletarifasautos" msprop:Generator_RowChangedName="tarifasautosRowChanged" msprop:Generator_TablePropName="tarifasautos" msprop:Generator_RowDeletingName="tarifasautosRowDeleting" msprop:Generator_RowChangingName="tarifasautosRowChanging" msprop:Generator_RowEvHandlerName="tarifasautosRowChangeEventHandler" msprop:Generator_RowDeletedName="tarifasautosRowDeleted" msprop:Generator_RowClassName="tarifasautosRow" msprop:Generator_UserTableName="tarifasautos" msprop:Generator_RowEvArgName="tarifasautosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="dias" msprop:Generator_ColumnVarNameInTable="columndias" msprop:Generator_ColumnPropNameInRow="dias" msprop:Generator_ColumnPropNameInTable="diasColumn" msprop:Generator_UserColumnName="dias" type="xs:int" />
@@ -231,7 +236,7 @@ FROM            tarifasautos_2</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="polizas_americanas" msprop:Generator_TableClassName="polizas_americanasDataTable" msprop:Generator_TableVarName="tablepolizas_americanas" msprop:Generator_RowChangedName="polizas_americanasRowChanged" msprop:Generator_TablePropName="polizas_americanas" msprop:Generator_RowDeletingName="polizas_americanasRowDeleting" msprop:Generator_RowChangingName="polizas_americanasRowChanging" msprop:Generator_RowEvHandlerName="polizas_americanasRowChangeEventHandler" msprop:Generator_RowDeletedName="polizas_americanasRowDeleted" msprop:Generator_RowClassName="polizas_americanasRow" msprop:Generator_UserTableName="polizas_americanas" msprop:Generator_RowEvArgName="polizas_americanasRowChangeEvent">
+        <xs:element name="polizas_americanas" msprop:Generator_TableClassName="polizas_americanasDataTable" msprop:Generator_TableVarName="tablepolizas_americanas" msprop:Generator_TablePropName="polizas_americanas" msprop:Generator_RowDeletingName="polizas_americanasRowDeleting" msprop:Generator_RowChangingName="polizas_americanasRowChanging" msprop:Generator_RowEvHandlerName="polizas_americanasRowChangeEventHandler" msprop:Generator_RowDeletedName="polizas_americanasRowDeleted" msprop:Generator_UserTableName="polizas_americanas" msprop:Generator_RowChangedName="polizas_americanasRowChanged" msprop:Generator_RowEvArgName="polizas_americanasRowChangeEvent" msprop:Generator_RowClassName="polizas_americanasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFolio" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidFolio" msprop:Generator_ColumnPropNameInRow="idFolio" msprop:Generator_ColumnPropNameInTable="idFolioColumn" msprop:Generator_UserColumnName="idFolio" type="xs:int" />
@@ -278,7 +283,7 @@ FROM            tarifasautos_2</CommandText>
               </xs:element>
               <xs:element name="edadCod" msprop:Generator_ColumnVarNameInTable="columnedadCod" msprop:Generator_ColumnPropNameInRow="edadCod" msprop:Generator_ColumnPropNameInTable="edadCodColumn" msprop:Generator_UserColumnName="edadCod" type="xs:int" />
               <xs:element name="edadCod2" msprop:Generator_ColumnVarNameInTable="columnedadCod2" msprop:Generator_ColumnPropNameInRow="edadCod2" msprop:Generator_ColumnPropNameInTable="edadCod2Column" msprop:Generator_UserColumnName="edadCod2" type="xs:int" minOccurs="0" />
-              <xs:element name="ocupacionCod" msprop:Generator_ColumnVarNameInTable="columnocupacionCod" msprop:Generator_ColumnPropNameInRow="ocupacionCod" msprop:Generator_ColumnPropNameInTable="ocupacionCodColumn" msprop:Generator_UserColumnName="ocupacionCod" minOccurs="0">
+              <xs:element name="ocupacionCod" msprop:Generator_ColumnVarNameInTable="columnocupacionCod" msprop:Generator_ColumnPropNameInRow="ocupacionCod" msprop:Generator_ColumnPropNameInTable="ocupacionCodColumn" msprop:Generator_UserColumnName="ocupacionCod">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -361,7 +366,6 @@ FROM            tarifasautos_2</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="idCliente1" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCliente1" msprop:Generator_ColumnPropNameInRow="idCliente1" msprop:Generator_ColumnPropNameInTable="idCliente1Column" msprop:Generator_UserColumnName="idCliente1" type="xs:int" />
               <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -489,10 +493,18 @@ FROM            tarifasautos_2</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Expr6" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr6" msprop:Generator_ColumnPropNameInRow="Expr6" msprop:Generator_ColumnPropNameInTable="Expr6Column" msprop:Generator_UserColumnName="Expr6" type="xs:int" />
+              <xs:element name="noagente" msprop:Generator_ColumnVarNameInTable="columnnoagente" msprop:Generator_ColumnPropNameInRow="noagente" msprop:Generator_ColumnPropNameInTable="noagenteColumn" msprop:Generator_UserColumnName="noagente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tarifasautos_2" msprop:Generator_TableClassName="tarifasautos_2DataTable" msprop:Generator_TableVarName="tabletarifasautos_2" msprop:Generator_TablePropName="tarifasautos_2" msprop:Generator_RowDeletingName="tarifasautos_2RowDeleting" msprop:Generator_RowChangingName="tarifasautos_2RowChanging" msprop:Generator_RowEvHandlerName="tarifasautos_2RowChangeEventHandler" msprop:Generator_RowDeletedName="tarifasautos_2RowDeleted" msprop:Generator_UserTableName="tarifasautos_2" msprop:Generator_RowChangedName="tarifasautos_2RowChanged" msprop:Generator_RowEvArgName="tarifasautos_2RowChangeEvent" msprop:Generator_RowClassName="tarifasautos_2Row">
+        <xs:element name="tarifasautos_2" msprop:Generator_TableClassName="tarifasautos_2DataTable" msprop:Generator_TableVarName="tabletarifasautos_2" msprop:Generator_RowChangedName="tarifasautos_2RowChanged" msprop:Generator_TablePropName="tarifasautos_2" msprop:Generator_RowDeletingName="tarifasautos_2RowDeleting" msprop:Generator_RowChangingName="tarifasautos_2RowChanging" msprop:Generator_RowEvHandlerName="tarifasautos_2RowChangeEventHandler" msprop:Generator_RowDeletedName="tarifasautos_2RowDeleted" msprop:Generator_RowClassName="tarifasautos_2Row" msprop:Generator_UserTableName="tarifasautos_2" msprop:Generator_RowEvArgName="tarifasautos_2RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="dias" msprop:Generator_ColumnVarNameInTable="columndias" msprop:Generator_ColumnPropNameInRow="dias" msprop:Generator_ColumnPropNameInTable="diasColumn" msprop:Generator_UserColumnName="dias" type="xs:int" />

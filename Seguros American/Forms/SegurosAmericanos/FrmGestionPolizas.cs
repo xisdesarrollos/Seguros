@@ -13,7 +13,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 {
     public partial class FrmGestionPolizas : Form
     {
-        private String sqlSelect = "SELECT * FROM polizas_americanas ORDER BY idFolio ASC";
+        private String sqlSelect = "SELECT * FROM polizas_americanas ORDER BY idFolio DESC";
         public FrmGestionPolizas()
         {
             InitializeComponent();
@@ -128,7 +128,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             string value = txtCriterio.Text.ToString();
 
             string sqlCustomQuery = "SELECT * FROM polizas_americanas " +
-                                    " WHERE " + filter + " LIKE '%" + value + "%' ORDER BY " + filter + " ASC";
+                                    " WHERE " + filter + " LIKE '%" + value + "%' ORDER BY " + filter + " DESC";
 
             Globales.cargaGrid(sqlCustomQuery, dgvPolizas);
             estilizaGrid();
