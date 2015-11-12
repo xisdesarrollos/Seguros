@@ -98,11 +98,18 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     txtEdad2.Enabled =
                     txtOcupacion2.Enabled =
                     txtEdoEm2.Enabled = false;
+                    //clear conductor dos
+                    txtNomCod2.Text =
+                    dateFechaNac2.Text =
+                    txtOcupacion2.Text =
+                    txtNoLic2.Text =
+                    txtEdad2.Text = 
+                    dateFechaNac2.Text = string.Empty;
                     break;  
                 case 1:     
                     //dos conductores
                     txtNomCod2.Enabled =
-                    dateFechaNac2.Enabled =
+                    txtEdad2.Enabled =
                     txtOcupacion2.Enabled =
                     txtNoLic2.Enabled =
                     txtEdoEm2.Enabled = true;
@@ -194,6 +201,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
             return false; 
         }
+       
         private bool verificaCampos() { 
             //verifica tal clientes.
             if (string.IsNullOrEmpty(txtNoCliente.Text) || string.IsNullOrEmpty(cmbPais.Text) ||
@@ -228,6 +236,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 
                 return false;
             }
+
             return true; 
         
         }
@@ -274,7 +283,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             updateFechaFin();
             consultarTarifa(cmbDia.Text.ToString());
         }
-
+        ///LOAD
         private void FrmSegurosAmericanos2_Load(object sender, EventArgs e)
         {
             cmbNcod.SelectedIndex = 0;
@@ -343,7 +352,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             }
         }
 
-
+        //EL CONTRATENTE ES EL CONDUCTOR
         private void cmbNcod_SelectedValueChanged(object sender, EventArgs e)
         {
             //
@@ -357,6 +366,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     dateFechaNac1.Text = clienteNacimiento;
                     txtOcupacion1.Text = ocupacion;
                     txtEdoEm1.Text = estado;
+                    txtEdad1.Text = edadPorFecha(dateFechaNac1.Text);
                     break;
                 case 1:
                     txtNomCod1.Text = string.Empty;
@@ -364,20 +374,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     dateFechaNac1.Text =  string.Empty;
                     txtOcupacion1.Text = string.Empty;
                     txtEdoEm1.Text = string.Empty;
+                    txtEdad1.Text = string.Empty;
                     break;
                 default:
                     break;
             }
         }
 
-        private void dateFechaNac1_ValueChanged(object sender, EventArgs e)
-        {
-            //cambiar edad automaticamente.
-            DateTime today = DateTime.Today;
-            DateTime nacimiento = DateTime.Parse(dateFechaNac1.Value.ToString());
-            int edad = today.Year - nacimiento.Year;
-            txtEdad1.Text = edad.ToString();
-        }
+       
 
         public void onDataGridAuxClientes(DataGridView dgv)
         {
@@ -410,7 +414,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
             txtDireccion.Text = direccion;
             txtCiudad.Text = cuidad;
             txtEstado.Text = txtEdoEm1.Text = estado;
-            dateFechaNac1.Value = DateTime.Parse(clienteNacimiento);
+            dateFechaNac1.Text = clienteNacimiento;
+            txtEdad1.Text = edadPorFecha(dateFechaNac1.Text);
             txtOcupacion1.Text = ocupacion;
             
         }
@@ -513,6 +518,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 //txtDerchPoliza.Text
                 //txtTotalPoliza.Text
                 //conductores
+                
                 txtNomCod1.Text = selectedRow[17].ToString();
                 txtNomCod2.Text = selectedRow[18].ToString();
                 txtEdad1.Text = selectedRow[19].ToString();
@@ -600,5 +606,48 @@ namespace Seguros_American.Forms.SegurosAmericanos
             return false;
         }
 
+        private bool validarFecha(string fecha)
+        {
+            string[] splitFecha;
+            char[] delimitador = { '/' };
+            splitFecha = fecha.Split(delimitador);
+            splitFecha = fecha.Split(delimitador);
+            splitFecha = fecha.Split(delimitador);
+
+            if (string.IsNullOrEmpty(splitFecha[0]) || string.IsNullOrEmpty(splitFecha[1]) || string.IsNullOrEmpty(splitFecha[2]))
+            {
+                return false;
+            }
+            return true;
+        }
+
+
+        private void dateFechaNac1_Leave(object sender, EventArgs e)
+        {
+            //cambiar edad automaticamente.
+            txtEdad1.Text = edadPorFecha(dateFechaNac1.Text);
+        }
+
+        private string edadPorFecha(string fechaConFormato){
+            //cambiar edad automaticamente.
+            if (validarFecha(fechaConFormato))
+            {
+                DateTime today = DateTime.Today;
+                DateTime nacimiento = DateTime.Parse(fechaConFormato);
+                int edad = today.Year - nacimiento.Year;
+                return  edad.ToString();
+                
+            }
+            return null;
+        }
+
+        private string nacimientoPorEdad(string edad)
+        {
+            int edadInt = int.Parse(edad);
+            int currentYear = DateTime.Today.Year;
+            int nacimientoYear = currentYear - edadInt;
+         
+            return nacimientoYear.ToString();
+        }
     }
 }
