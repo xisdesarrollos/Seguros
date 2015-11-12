@@ -63,7 +63,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             if (!string.IsNullOrEmpty(idCliente))
             {
                 FrmAuxVehiculos auxvehiculos = new FrmAuxVehiculos(this, idCliente);
-                auxvehiculos.Show();
+                auxvehiculos.ShowDialog();
             }
             else
             {
@@ -75,7 +75,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         private void btnClientes_Click(object sender, EventArgs e)
         {
             FrmAuxCliente auxclientes = new FrmAuxCliente(this);
-            auxclientes.Show();
+            auxclientes.ShowDialog();
 
         }
 

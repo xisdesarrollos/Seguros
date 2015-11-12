@@ -14,7 +14,7 @@ namespace Seguros_American.Forms.Vehiculos
     public partial class FrmAuxVehiculos : Form
     {
 
-        private String sqlSelect = "SELECT * FROM vehiculos_cliente ORDER BY idVehiculo ASC";
+        private String sqlSelect = "SELECT idVehiculo,modelo, marca, submarca,placas,numeroSerie,estadoPlacas FROM vehiculos_cliente ";
         private String idCliente;
         private String idVehiculo;
         IAuxVehiculos iAuxVehiculos;
@@ -29,7 +29,7 @@ namespace Seguros_American.Forms.Vehiculos
             iAuxVehiculos = interfaz;
             this.idCliente = idCliente;
 
-            sqlSelect = "SELECT idVehiculo,modelo, marca, submarca,placas,numeroSerie,estadoPlacas FROM vehiculos_cliente " + 
+            sqlSelect = sqlSelect + 
                 " WHERE idCliente = " + this.idCliente + " ORDER BY idVehiculo ASC";
       
         }
@@ -68,7 +68,8 @@ namespace Seguros_American.Forms.Vehiculos
         {
             //enviar idCLIENTE
             FrmNuevoVehiculo nuevovehiculo = new FrmNuevoVehiculo(this.idCliente);
-            nuevovehiculo.Show();
+            nuevovehiculo.ShowDialog();
+            Globales.cargaGrid(sqlSelect,dgv);
         }
         public interface IAuxVehiculos
         {

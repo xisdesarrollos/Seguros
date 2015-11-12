@@ -75,6 +75,8 @@
             this.tabSegurosAmericanos = new Elegant.Ui.TabControl();
             this.tabConductores = new Elegant.Ui.TabPage();
             this.groupConductores = new Elegant.Ui.GroupBox();
+            this.dateFechaNac2 = new Elegant.Ui.MaskedTextBox();
+            this.dateFechaNac1 = new Elegant.Ui.MaskedTextBox();
             this.txtOcupacion2 = new Elegant.Ui.TextBox();
             this.txtOcupacion1 = new Elegant.Ui.TextBox();
             this.txtEdad2 = new Elegant.Ui.TextBox();
@@ -115,8 +117,6 @@
             this.groupVehiculos = new Elegant.Ui.GroupBox();
             this.vbl = new ComponentOwl.BetterListView.BetterListView();
             this.btnVehiculo = new Elegant.Ui.Button();
-            this.dateFechaNac1 = new Elegant.Ui.MaskedTextBox();
-            this.dateFechaNac2 = new Elegant.Ui.MaskedTextBox();
             this.groupPoliza.SuspendLayout();
             this.groupCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -631,7 +631,7 @@
             // 
             this.tabSegurosAmericanos.Location = new System.Drawing.Point(21, 30);
             this.tabSegurosAmericanos.Name = "tabSegurosAmericanos";
-            this.tabSegurosAmericanos.SelectedTabPage = this.tabConductores;
+            this.tabSegurosAmericanos.SelectedTabPage = this.tabVehiculos;
             this.tabSegurosAmericanos.Size = new System.Drawing.Size(651, 333);
             this.tabSegurosAmericanos.TabIndex = 15;
             this.tabSegurosAmericanos.TabPages.AddRange(new Elegant.Ui.TabPage[] {
@@ -672,6 +672,34 @@
             this.groupConductores.Size = new System.Drawing.Size(588, 253);
             this.groupConductores.TabIndex = 6;
             this.groupConductores.Text = "Conductores Registrados";
+            // 
+            // dateFechaNac2
+            // 
+            this.dateFechaNac2.Enabled = false;
+            this.dateFechaNac2.Id = "7c303684-68c1-4db7-b1de-ead10985ff6b";
+            this.dateFechaNac2.LabelText = "Fecha de Nacimiento:";
+            this.dateFechaNac2.Location = new System.Drawing.Point(18, 192);
+            this.dateFechaNac2.Mask = "00/00/0000";
+            this.dateFechaNac2.Name = "dateFechaNac2";
+            this.dateFechaNac2.Size = new System.Drawing.Size(172, 21);
+            this.dateFechaNac2.TabIndex = 17;
+            this.dateFechaNac2.TextEditorWidth = 59;
+            this.dateFechaNac2.ValidatingType = typeof(System.DateTime);
+            this.dateFechaNac2.Visible = false;
+            // 
+            // dateFechaNac1
+            // 
+            this.dateFechaNac1.Id = "cbd8a944-4615-444f-8409-e77af8571781";
+            this.dateFechaNac1.LabelText = "Fecha de Nacimiento:";
+            this.dateFechaNac1.Location = new System.Drawing.Point(18, 93);
+            this.dateFechaNac1.Mask = "00/00/0000";
+            this.dateFechaNac1.Name = "dateFechaNac1";
+            this.dateFechaNac1.Size = new System.Drawing.Size(172, 21);
+            this.dateFechaNac1.TabIndex = 16;
+            this.dateFechaNac1.TextEditorWidth = 59;
+            this.dateFechaNac1.ValidatingType = typeof(System.DateTime);
+            this.dateFechaNac1.Visible = false;
+            this.dateFechaNac1.Leave += new System.EventHandler(this.dateFechaNac1_Leave);
             // 
             // txtOcupacion2
             // 
@@ -1103,7 +1131,7 @@
             this.cmbDia.Name = "cmbDia";
             this.cmbDia.Size = new System.Drawing.Size(73, 21);
             this.cmbDia.TabIndex = 4;
-            this.cmbDia.Text = "4";
+            this.cmbDia.Text = "1";
             this.cmbDia.TextEditorWidth = 24;
             this.cmbDia.SelectedIndexChanged += new System.EventHandler(this.cmbDia_SelectedIndexChanged);
             // 
@@ -1186,39 +1214,11 @@
             this.btnVehiculo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnVehiculo.Click += new System.EventHandler(this.btnVehiculo_Click);
             // 
-            // dateFechaNac1
-            // 
-            this.dateFechaNac1.Id = "cbd8a944-4615-444f-8409-e77af8571781";
-            this.dateFechaNac1.LabelText = "Fecha de Nacimiento:";
-            this.dateFechaNac1.Location = new System.Drawing.Point(18, 93);
-            this.dateFechaNac1.Mask = "00/00/0000";
-            this.dateFechaNac1.Name = "dateFechaNac1";
-            this.dateFechaNac1.Size = new System.Drawing.Size(172, 21);
-            this.dateFechaNac1.TabIndex = 16;
-            this.dateFechaNac1.TextEditorWidth = 59;
-            this.dateFechaNac1.ValidatingType = typeof(System.DateTime);
-            this.dateFechaNac1.Visible = false;
-            this.dateFechaNac1.Leave += new System.EventHandler(this.dateFechaNac1_Leave);
-            // 
-            // dateFechaNac2
-            // 
-            this.dateFechaNac2.Enabled = false;
-            this.dateFechaNac2.Id = "7c303684-68c1-4db7-b1de-ead10985ff6b";
-            this.dateFechaNac2.LabelText = "Fecha de Nacimiento:";
-            this.dateFechaNac2.Location = new System.Drawing.Point(18, 192);
-            this.dateFechaNac2.Mask = "00/00/0000";
-            this.dateFechaNac2.Name = "dateFechaNac2";
-            this.dateFechaNac2.Size = new System.Drawing.Size(172, 21);
-            this.dateFechaNac2.TabIndex = 17;
-            this.dateFechaNac2.TextEditorWidth = 59;
-            this.dateFechaNac2.ValidatingType = typeof(System.DateTime);
-            this.dateFechaNac2.Visible = false;
-            // 
             // FrmSegurosAmericanos2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 483);
+            this.ClientSize = new System.Drawing.Size(731, 491);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.MaximizeBox = false;
