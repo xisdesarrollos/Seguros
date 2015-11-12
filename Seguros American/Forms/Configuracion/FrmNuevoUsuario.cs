@@ -51,11 +51,12 @@ namespace Seguros_American.Forms.Configuracion
         {
             MySqlCommand cmd = new MySqlCommand();
             String sql;
-            sql = "INSERT INTO usuarios(usuario,contrasena,nombre,fechaAlta,nivel) VALUES(@usuario,MD5(@contrasena),@nombre,CURDATE(),@nivel)";
+            sql = "INSERT INTO usuarios(usuario,contrasena,nombre,fechaAlta,nivel,noagente) VALUES(@usuario,MD5(@contrasena),@nombre,CURDATE(),@nivel,@noagente)";
             cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
             cmd.Parameters.AddWithValue("@contrasena", txtPassword.Text);
             cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
             cmd.Parameters.AddWithValue("@nivel", cmbNivel.Text);
+            cmd.Parameters.AddWithValue("@noagente", txtNoagente.Text);
             cmd.CommandText = sql;
              // hacer una busqueda preguntando por los valores.
             
@@ -71,16 +72,14 @@ namespace Seguros_American.Forms.Configuracion
             try
             {
                 String sql;
-                sql = "UPDATE usuarios SET usuario=@usuario,contrasena=MD5(@contrasena),nombre=@nombre,nivel=@nivel WHERE idusuario = " + usuarioId;
-                cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                sql = "UPDATE usuarios SET contrasena=MD5(@contrasena),nombre=@nombre, noagente=@noagente WHERE idusuario = " + usuarioId;
                 cmd.Parameters.AddWithValue("@contrasena", txtPassword.Text);
                 cmd.Parameters.AddWithValue("@nombre", txtNombre.Text);
-                cmd.Parameters.AddWithValue("@nivel", cmbNivel.Text);
+                cmd.Parameters.AddWithValue("@noagente", txtNoagente.Text);
                 cmd.CommandText = sql;
                 
                 bd.Actualizar(cmd);
-                insertaPermisos();
-                MessageBox.Show("Usuario registrado correctamente");
+                MessageBox.Show("Usuario actualizado correctamente");
                
                
             }
@@ -113,7 +112,12 @@ namespace Seguros_American.Forms.Configuracion
             txtUsuario.Text = dt.Rows[0][1].ToString();
             txtNombre.Text = dt.Rows[0][3].ToString();
             cmbNivel.Text = dt.Rows[0][5].ToString();
+            txtNoagente.Text = dt.Rows[0][6].ToString();
             txtUsuario.Select();
+            txtUsuario.Enabled = false;
+            cmbNivel.Enabled = false;
+           
+
         }
 
         private void FrmNuevoUsuario_FormClosed(object sender, FormClosedEventArgs e)
@@ -126,17 +130,21 @@ namespace Seguros_American.Forms.Configuracion
 
             if (validarCampos())
             {
-                if (validaDatos())
+                if (esNuevo)
                 {
-                    if (esNuevo)
+                    if (validaDatos())
                         guardaUsuario();
-                    else
-                        actualizaUsuario();
-
                     this.Close();
+                    
                 }
+                else
+                {
+                    actualizaUsuario();
+                } 
+
             }
-               
+
+            Dispose();
         }
         //valida datos localmente sin accesso a la basededatos
         private bool validarCampos()

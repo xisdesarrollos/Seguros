@@ -121,6 +121,9 @@
   <data name="16Add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\16Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="report48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\report48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="24Add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\24Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,9 +139,6 @@
   <data name="database48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\database48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="test24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\test24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="16search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\16search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,8 +151,14 @@
   <data name="clients48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\clients48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="report48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Recursos\report48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="print48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\print48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="test24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\test24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ok48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\ok48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="24Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\24Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,7 +190,7 @@
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ok48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ok481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Recursos\ok48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

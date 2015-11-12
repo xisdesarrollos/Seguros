@@ -38,5 +38,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">server=192.168.0.200;user id=root;database=seguros_americanos</Value>
     </Setting>
+    <Setting Name="impresora" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

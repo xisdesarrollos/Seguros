@@ -105,6 +105,12 @@
     <Compile Include="Forms\Clientes\FrmGestionClientes.Designer.cs">
       <DependentUpon>FrmGestionClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Configuracion\FrmConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Configuracion\FrmConfiguracion.Designer.cs">
+      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Configuracion\FrmTarifasVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configuracion\FrmBaseDatos.resx">
       <DependentUpon>FrmBaseDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Configuracion\FrmConfiguracion.resx">
+      <DependentUpon>FrmConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configuracion\FrmTarifasVehiculos.resx">
       <DependentUpon>FrmTarifasVehiculos.cs</DependentUpon>

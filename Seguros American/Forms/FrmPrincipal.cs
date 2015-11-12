@@ -112,12 +112,14 @@ namespace Seguros_American.Forms
             basedatos.Show();
         }
 
-
-        private void btnReportes_Click(object sender, EventArgs e)
+        private void btnimpresora_Click(object sender, EventArgs e)
         {
-
+            FrmConfiguracion configuracion = new FrmConfiguracion();
+            configuracion.ShowDialog();
         }
 
+
+       
         private void verificaPermisos()
         {
             DataTable dt = db.Consultar("*", "permisos", "usuario = '" + Globales.idUsuario + "'");
@@ -159,6 +161,7 @@ namespace Seguros_American.Forms
                                       .Where(c => c.GetType() == type);
         }
 
+        
        
 
         
