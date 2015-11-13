@@ -38,7 +38,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         string estadoPlacas;
         
         DateTime dateInserted;
-
+        DateTime fechaDeEmision;
         Basedatos bd = new Basedatos();
 
         public FrmSegurosAmericanos2()
@@ -287,6 +287,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         private void FrmSegurosAmericanos2_Load(object sender, EventArgs e)
         {
             cmbNcod.SelectedIndex = 0;
+            cmbCondExtra.SelectedIndex = 0;
             if (esNuevo)
             {
                 updateFechaFin();
@@ -448,8 +449,28 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         private void dateFechaE_ValueChanged_1(object sender, EventArgs e)
         {
-            updateFechaInit();
-            updateFechaFin();
+            if (esNuevo)    {
+                //validar que no se permita poner una fecha anterior.
+                DateTime now = DateTime.Now;
+                //la fecha de emision no sea menor a la fecha actual
+                if (now.CompareTo(dateFechaE.Value) <= 0) {
+                    updateFechaInit();
+                    updateFechaFin();
+                } else {
+                    dateFechaE.Value = DateTime.Now;
+                }
+            } else {
+                //entonces que tome el codigo de arriba pero con la fecha de emision.
+                if(fechaDeEmision.CompareTo(dateFechaE.Value) <= 0){
+                    updateFechaInit();
+                    updateFechaFin();
+                }
+                else
+                {
+                   
+                    dateFechaE.Value = fechaDeEmision;
+                }
+            }
         }
 
 
@@ -459,42 +480,118 @@ namespace Seguros_American.Forms.SegurosAmericanos
             string filtro = "*";
             string condicion = "idFolio = " + id;
             string tabla = "polizas_americanas";
+           
+                DataTable dataTable = null;
+                DataRow selectedRow = null;
+                try
+                {
+                    dataTable = bd.Consultar(filtro, tabla, condicion);
+                    selectedRow = dataTable.Rows[0];
+                    txtFolio.Text = selectedRow[1].ToString();
+                    cmbSeguro.Text = selectedRow[2].ToString();
+                    idCliente = selectedRow[3].ToString();
+                    cmbDia.Text = selectedRow[6].ToString();
+                    idVehiculo = selectedRow[5].ToString();
+                    dateIncVig.Text = selectedRow[7].ToString();
+                    dateFinVig.Text = selectedRow[8].ToString();
+                    //dateInserted = DateTime.Now;
+                    //dateInserted.ToString("yyyy-MM-dd HH:mm:ss"))
+                    fechaDeEmision = DateTime.Parse(selectedRow[7].ToString());
+                    dateFechaE.Value = fechaDeEmision;
+                    dateHoraInc.Text = selectedRow[11].ToString();
+                    //dateHoraInc.Text = selectedRow[12].ToString();
+                    //tarifas
+                    txtBienes.Text = selectedRow[13].ToString();
+                    txtGasto.Text = selectedRow[14].ToString();
+                    txtDerchPoliza.Text = selectedRow[15].ToString();
+                    txtTotalPoliza.Text = selectedRow[16].ToString();
+                    
+                    //conductores
+                    txtNomCod1.Text = selectedRow[17].ToString();
+                    txtNomCod2.Text = selectedRow[18].ToString();
+                    txtEdad1.Text = selectedRow[19].ToString();
+                    txtEdad2.Text = selectedRow[20].ToString();
+                    txtOcupacion1.Text = selectedRow[21].ToString();//tiene que ser la ocupacion del que se registra
+                    txtOcupacion2.Text = selectedRow[22].ToString();
+                    txtNoLic1.Text = selectedRow[23].ToString();
+                    txtNoLic2.Text = selectedRow[24].ToString();
+                    txtEdoEm1.Text = selectedRow[25].ToString();
+                    txtEdoEm2.Text = selectedRow[26].ToString();
 
-            try
-            {
-               
-                DataTable dataTable = bd.Consultar(filtro, tabla, condicion);
-                DataRow selectedRow = dataTable.Rows[0];
-                txtFolio.Text = selectedRow[1].ToString();
-                cmbSeguro.Text = selectedRow[2].ToString();
-                //CARGA DATOS CLIENTES
-                idCliente = selectedRow[3].ToString();
-                txtNoCliente.Text = idCliente;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("OCURRIO UN ERROR EN POLIZAS" + ex.Message);
+                    return;
+                }
+                catch (IndexOutOfRangeException ex1)
+                {
+                    MessageBox.Show("EL ELEMENTO POLIZAS NO SE PUDO RECOGER DE LA BASE DE DSTOS " + ex1.Message);
+                    return;
+                }
+                catch (NullReferenceException ex2)
+                {
+                    MessageBox.Show("1" + ex2.Message);
+                    return;
+                }
+                
+                DataTable dataTableCliente = null;
+                DataRow selectedRowCliente = null; 
+                try
+                {
+                    //CARGA DATOS CLIENTES
+                    txtNoCliente.Text = idCliente;
+
                     //obteber datos de cliente con el id
                     string filtroCliente = "pais, nombre, calle, colonia, noExterior, ciudad, estado, noLicencia, fechaNacimiento, ocupacion";
                     string condicionCliente = "idCliente = " + idCliente;
                     string tablaClientes = "clientes";
-                    DataTable dataTableCliente = bd.Consultar(filtroCliente, tablaClientes, condicionCliente);
-                    DataRow selectedRowCliente = dataTableCliente.Rows[0];
+                    dataTableCliente = bd.Consultar(filtroCliente, tablaClientes, condicionCliente);
+
+                    selectedRowCliente = dataTableCliente.Rows[0];
                     cmbPais.Text = selectedRowCliente[0].ToString();
                     txtNombre.Text = nombreCliente = selectedRowCliente[1].ToString();
-                    txtDireccion.Text = selectedRowCliente[2].ToString() + " col. "+selectedRowCliente[3].ToString() + "#"+selectedRowCliente[4].ToString();
+                    txtDireccion.Text = selectedRowCliente[2].ToString() + " col. " + selectedRowCliente[3].ToString() + "#" + selectedRowCliente[4].ToString();
                     txtCiudad.Text = selectedRowCliente[5].ToString();
                     txtEstado.Text = selectedRowCliente[6].ToString();
                     estado = selectedRowCliente[6].ToString();
                     clienteLicencia = selectedRowCliente[7].ToString();
                     clienteNacimiento = selectedRowCliente[8].ToString();
                     ocupacion = selectedRowCliente[9].ToString();
-                //Globales.nombreUsuario) =selectedRow[].ToString();
+                    //Globales.nombreUsuario) =selectedRow[].ToString();
+
+                    
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("OCURRIO UN ERROR EN CLIENTES, PARECER EL CLIENTE ASIGNADO A ESTA POLIZA NO ESTA EN LA BASE DE DATOS" + ex.Message);
+                    return;
+                }
+                catch (IndexOutOfRangeException ex1)
+                {
+                    MessageBox.Show("LOS DATOS DEL CLIENTE NO SE PUDIERON RECOGER DE LA BASE DE DATOS " + ex1.Message);
+                    return;
+                }
+                catch (NullReferenceException ex2)
+                {
+                    MessageBox.Show("2" + idCliente + ex2.Message);
+                    return;
+                }
+               
                 //CARGA DATOS VEHICULOS 
-                    idVehiculo = selectedRow[5].ToString();
+
+                DataTable dataTableVehiculo = null;
+                DataRow selectedRowVehiculo = null;
+                try
+                {
+                    
                     //obteber datos de cliente con el id
                     string filtroVehiculo = "modelo, marca, submarca,placas, numeroSerie";
                     string condicionVehiculo = "idCliente = " + idCliente;
                     string tablaVehiculo = "vehiculos_cliente";
-                    DataTable dataTableVehiculo= bd.Consultar(filtroVehiculo, tablaVehiculo, condicionVehiculo);
-                    DataRow selectedRowVehiculo = dataTableVehiculo.Rows[0];
+                    dataTableVehiculo = bd.Consultar(filtroVehiculo, tablaVehiculo, condicionVehiculo);
 
+                   selectedRowVehiculo = dataTableVehiculo.Rows[0];
                     if (vbl.Items.Any())
                         vbl.Clear();
 
@@ -503,38 +600,24 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     vbl.Items.Add("Modelo: " + selectedRowVehiculo[2].ToString());
                     vbl.Items.Add("Placas: " + selectedRowVehiculo[3].ToString());
                     vbl.Items.Add("Numero de Serie: " + selectedRowVehiculo[4].ToString());
-                    
-                cmbDia.Text = selectedRow[6].ToString();
-                dateIncVig.Text = selectedRow[7].ToString();
-                dateFinVig.Text = selectedRow[8].ToString();
-                //dateInserted = DateTime.Now;
-                //dateInserted.ToString("yyyy-MM-dd HH:mm:ss"))
-                dateFechaE.Text = selectedRow[10].ToString();
-                dateHoraInc.Text = selectedRow[11].ToString();
-                //dateHoraInc.Text = selectedRow[12].ToString();
-                //tarifas
-                txtBienes.Text = selectedRow[13].ToString();
-                txtGasto.Text = selectedRow[14].ToString();
-                //txtDerchPoliza.Text
-                //txtTotalPoliza.Text
-                //conductores
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("OCURRIO UN ERROR EN VEHICULOS" + ex.Message);
+                    return;
+                }
+                catch (IndexOutOfRangeException ex1)
+                {
+                    MessageBox.Show("LOS DATOS DEL VEHICULOS NO SE PUDIERON RECOGER DE LA BASE DE DATOS " + ex1.Message);
+                    return;
+                }
+                catch (NullReferenceException ex2)
+                {
+                    MessageBox.Show("2 " + idCliente  + ex2.Message);
+                    return;
+                }
                 
-                txtNomCod1.Text = selectedRow[17].ToString();
-                txtNomCod2.Text = selectedRow[18].ToString();
-                txtEdad1.Text = selectedRow[19].ToString();
-                txtEdad2.Text = selectedRow[20].ToString();
-                txtOcupacion1.Text = selectedRow[21].ToString();//tiene que ser la ocupacion del que se registra
-                txtOcupacion2.Text = selectedRow[22].ToString();
-                txtNoLic1.Text = selectedRow[23].ToString();
-                txtNoLic2.Text = selectedRow[24].ToString();
-                txtEdoEm1.Text = selectedRow[25].ToString();
-                txtEdoEm2.Text = selectedRow[26].ToString();
-                
-            }
-            catch(MySqlException e)
-            {
-
-            }
+   
         }
 
         private bool actualizaPoliza()
@@ -659,5 +742,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
          
             return nacimientoYear.ToString();
         }
+
     }
 }

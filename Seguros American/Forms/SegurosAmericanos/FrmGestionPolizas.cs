@@ -141,8 +141,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
             int index = dgvPolizas.CurrentCell.RowIndex;
             DataGridViewRow selectedRow = dgvPolizas.Rows[index];
             string idPoliza = selectedRow.Cells[0].Value.ToString();
-           
 
+            
             //enviar id 
             FrmSegurosAmericanos2 nuevocliente = new FrmSegurosAmericanos2(idPoliza,false);
             nuevocliente.ShowDialog();
