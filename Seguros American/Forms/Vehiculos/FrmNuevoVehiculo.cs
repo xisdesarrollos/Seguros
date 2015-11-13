@@ -108,16 +108,16 @@ namespace Seguros_American.Forms.Vehiculos
             {
                 if (guardaVehiculo())
                 {
-                    MessageBox.Show("Datos guardados correctamente");
-                    this.Close();
+                    MessageBox.Show("DATOS GUARDADOS CORRECTAMENTE");
+                    this.Dispose();
                 }
             }
             else
             {
                 if (actualizaVehiculo())
                 {
-                    MessageBox.Show("Datos actualizados correctamente");
-                    this.Close();
+                    MessageBox.Show("DATOS ACTUALIZADOS CORRECTAMENTE");
+                    this.Dispose();
                 }
             }
             
@@ -133,12 +133,12 @@ namespace Seguros_American.Forms.Vehiculos
                 string.IsNullOrEmpty(txtPlacas.Text) || string.IsNullOrEmpty(txtPestado.Text) ||
                 string.IsNullOrEmpty(txtNoS.Text) || string.IsNullOrEmpty(txtNoCliente.Text)) {
 
-                    MessageBox.Show("Verifique que todos los campos esten correctos");
+                    MessageBox.Show("VERIFIQUE QUE TODOS LOS CAMPOS ESTEN CORRECTOS");
                     return false;
             }
             //verificar que no se repita el numero de serie en la base de datos
             if(verificarNumeroSerie()){
-                MessageBox.Show("El numero de serie se duplico en la tabla, verifique");
+                MessageBox.Show("ESTE NUMERO DE SERIE YA SE ENCUENTRA REGISTRADO");
                 return false;
             }
             return true;
@@ -159,7 +159,14 @@ namespace Seguros_American.Forms.Vehiculos
                     MySqlCommand cmdMarca = new MySqlCommand();
                     cmdMarca.CommandText = "INSERT INTO marca_vehiculos(marca) VALUES (@marca)";
                     cmdMarca.Parameters.AddWithValue("@marca", cmbMarca.Text);
-                    bd.Insertar(cmdMarca);
+                    try
+                    {
+                        bd.Insertar(cmdMarca);
+                    }
+                    catch (MySqlException e)
+                    {
+                        Console.WriteLine(e);
+                    }
             
                 }
                 // hacer una busqueda preguntando por los valores.
@@ -168,7 +175,14 @@ namespace Seguros_American.Forms.Vehiculos
                     MySqlCommand cmdModelo = new MySqlCommand();
                     cmdModelo.CommandText = "INSERT INTO modelo_vehiculos(modelo) VALUES (@modelo)";
                     cmdModelo.Parameters.AddWithValue("@modelo", cmbModelo.Text);
-                    bd.Insertar(cmdModelo);
+                    try
+                    {
+                        bd.Insertar(cmdModelo);
+                    }
+                    catch (MySqlException e)
+                    {
+                        Console.WriteLine(e);
+                    }
                 }
                 // hacer una busqueda preguntando por los valores.
                 if (!bd.Existe("tipo_vehiculos", "tipo", cmbTipo.Text))
@@ -176,7 +190,15 @@ namespace Seguros_American.Forms.Vehiculos
                     MySqlCommand cmdTipo = new MySqlCommand();
                     cmdTipo.CommandText = "INSERT INTO tipo_vehiculos(tipo) VALUES (@tipo)";
                     cmdTipo.Parameters.AddWithValue("@tipo", cmbTipo.Text);
-                    bd.Insertar(cmdTipo);
+                    try
+                    {
+                        bd.Insertar(cmdTipo);
+                    }
+                    catch(MySqlException e)
+                    {
+                        Console.WriteLine(e);
+                        
+                    }
                 }
                 // si existe en la tabla marca, modelo, tipo no guardar esa tabla.
 
@@ -192,16 +214,16 @@ namespace Seguros_American.Forms.Vehiculos
                 cmd.Parameters.AddWithValue("@modelo",cmbModelo.Text);
                 cmd.Parameters.AddWithValue("@placas",txtPlacas.Text);
                 cmd.Parameters.AddWithValue("@estadoPlacas",txtPestado.Text);
+                cmd.Parameters.AddWithValue("@numeroSerie", txtNoS.Text);
                 try
                 {
-                    cmd.Parameters.AddWithValue("@numeroSerie", txtNoS.Text);
+                    return bd.Insertar(cmd);
                 }
                 catch(Exception e){
-                    MessageBox.Show("Numero de Serie no valido");
+                    Console.WriteLine(e);
+                    MessageBox.Show("OCURRIO UN ERROR INESPERADO.");
                 }
-                return bd.Insertar(cmd);
-
-               
+            
             }
             return false;
         }

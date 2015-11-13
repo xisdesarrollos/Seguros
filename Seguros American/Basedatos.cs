@@ -54,9 +54,9 @@ namespace Seguros_American
                 cn.Close();
                 return i;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //System.Windows.Forms.MessageBox.Show(ee.Message);
+                Console.WriteLine(e);
                 cn.Close();
                 return 0;
             }
