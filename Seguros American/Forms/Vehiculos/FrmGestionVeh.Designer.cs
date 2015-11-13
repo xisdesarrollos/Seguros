@@ -78,7 +78,7 @@
             this.dgvVehiculos.Name = "dgvVehiculos";
             this.dgvVehiculos.RowHeadersVisible = false;
             this.dgvVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehiculos.Size = new System.Drawing.Size(1219, 449);
+            this.dgvVehiculos.Size = new System.Drawing.Size(1227, 457);
             this.dgvVehiculos.TabIndex = 14;
             this.dgvVehiculos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehiculos_CellValueChanged);
             // 
@@ -93,7 +93,7 @@
             this.groupFiltro.Id = "c4d31b6a-286b-427b-aecd-87ee16dc8b03";
             this.groupFiltro.Location = new System.Drawing.Point(4, 2);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(1228, 100);
+            this.groupFiltro.Size = new System.Drawing.Size(1236, 100);
             this.groupFiltro.TabIndex = 15;
             // 
             // btnNuevo
@@ -101,7 +101,7 @@
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "0ded2b42-9c1f-4ca4-82ad-3d4aae35331e";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(1096, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(1104, 16);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(108, 45);
             this.btnNuevo.TabIndex = 3;
@@ -117,7 +117,7 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(419, 28);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(495, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(503, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 244;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
@@ -128,12 +128,13 @@
             this.cmbFiltro.FormattingEnabled = false;
             this.cmbFiltro.Id = "d80b703c-ee7a-491a-ade7-e3dd8f843872";
             this.cmbFiltro.Items.AddRange(new object[] {
-            "Tipo",
-            "Marca",
-            "Submarca",
-            "Modelo",
-            "Placas",
-            "NumeroSerie"});
+            "NOMBRE",
+            "TIPO",
+            "MARCA",
+            "SUBMARCA",
+            "MODELO",
+            "PLACAS",
+            "NUMEROSERIE"});
             this.cmbFiltro.LabelText = "Filtrar por:";
             this.cmbFiltro.Location = new System.Drawing.Point(31, 28);
             this.cmbFiltro.Name = "cmbFiltro";
@@ -146,7 +147,7 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "b7d2eae5-43e7-428d-8607-32ecb3f22c93";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(981, 20);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(989, 20);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(82, 38);
             this.btnMostrarTodos.TabIndex = 2;
@@ -187,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 564);
+            this.ClientSize = new System.Drawing.Size(1249, 572);
             this.Controls.Add(this.dgvVehiculos);
             this.Controls.Add(this.groupFiltro);
             this.MinimumSize = new System.Drawing.Size(600, 300);

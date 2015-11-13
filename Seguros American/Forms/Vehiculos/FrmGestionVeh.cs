@@ -13,8 +13,8 @@ namespace Seguros_American.Forms.Vehiculos
     public partial class FrmGestionVeh : Form
     {
      
-        private String sqlSelect = "SELECT * FROM vehiculos_cliente ORDER BY idVehiculo ASC";
-        
+        private String sqlSelect = "SELECT vehiculos_cliente.*, clientes.nombre, clientes.idCliente FROM vehiculos_cliente INNER JOIN clientes ON vehiculos_cliente.idCliente = clientes.idCliente";
+
         private String idCliente;
         private String idVehiculo;
         Basedatos db = new Basedatos();
@@ -45,7 +45,8 @@ namespace Seguros_American.Forms.Vehiculos
             dgvVehiculos.Columns[7].HeaderText = "Placas";
             dgvVehiculos.Columns[8].HeaderText = "Estado de placas";
             dgvVehiculos.Columns[9].HeaderText = "Numero de serie";
-           
+            dgvVehiculos.Columns[10].HeaderText = "Nombre Cliente";
+            dgvVehiculos.Columns[11].HeaderText = "id Cliente";
 
 
             dgvVehiculos.Columns[0].Width = 96;
@@ -58,6 +59,10 @@ namespace Seguros_American.Forms.Vehiculos
             dgvVehiculos.Columns[7].Width = 200;
             dgvVehiculos.Columns[8].Width = 200;
             dgvVehiculos.Columns[9].Width = 200;
+            dgvVehiculos.Columns[10].Width = 200;
+            dgvVehiculos.Columns[11].Width = 200;
+
+
         }
 
 
@@ -87,7 +92,7 @@ namespace Seguros_American.Forms.Vehiculos
             iGestionVehiculos = interfaz;
             this.idCliente = idCliente;
 
-            String sqlSelectVehiculoCliente = "SELECT *FROM vehiculos_cliente " + 
+            String sqlSelectVehiculoCliente = sqlSelect + 
                 " WHERE idCliente = " + this.idCliente + " ORDER BY idVehiculo ASC";
 
             Globales.cargaGrid(sqlSelectVehiculoCliente, dgvVehiculos);
@@ -150,7 +155,7 @@ namespace Seguros_American.Forms.Vehiculos
             string filter = cmbFiltro.Text.ToString();
             string value = txtCriterio.Text.ToString();
 
-            string sqlCustomQuery = "SELECT * FROM vehiculos_cliente WHERE " + filter +
+            string sqlCustomQuery = sqlSelect + " WHERE " + filter +
                                     " LIKE '%" + value + "%' ORDER BY " + filter + " ASC";
 
             Globales.cargaGrid(sqlCustomQuery, dgvVehiculos);
