@@ -155,6 +155,7 @@
             this.txtNoCliente.Size = new System.Drawing.Size(137, 21);
             this.txtNoCliente.TabIndex = 0;
             this.txtNoCliente.TextEditorWidth = 73;
+            this.txtNoCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNoCliente_KeyDown);
             // 
             // groupCliente
             // 
@@ -222,7 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 536);
+            this.ClientSize = new System.Drawing.Size(539, 552);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObs);
             this.Controls.Add(this.groupCliente);

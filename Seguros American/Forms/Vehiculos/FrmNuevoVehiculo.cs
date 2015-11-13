@@ -316,5 +316,41 @@ namespace Seguros_American.Forms.Vehiculos
             txtNoCliente.Text = idCliente;
             lblNombreCliente.Text = nombreCliente;
         }
+
+        private void txtNoCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                int pivot;
+                string idCliente = txtNoCliente.Text;
+
+                if(int.TryParse(idCliente, out pivot)){
+                    string sqlCliente = "SELECT nombre FROM clientes WHERE idCliente = " +idCliente ;
+                    DataTable table = null;
+                    try
+                    {
+                        table = bd.ConsultarAlterno(sqlCliente);
+                        lblNombreCliente.Text = table.Rows[0][0].ToString();
+                    }
+                    catch (MySqlException errConsultaCliente)
+                    {
+                        MessageBox.Show("SUCEDIO UN ERROR AL CONTECTAR A LA BASE DATOS ","INFO", MessageBoxButtons.OK , MessageBoxIcon.Warning);
+                        return;
+                    } catch(IndexOutOfRangeException errIndex) 
+                    {
+                        MessageBox.Show("NO SE ENCONTRO EL NUMERO DE CLIENTE, UTILICE LA HERRAMIENTA DE BUSQUEDA ","INFO", MessageBoxButtons.OK , MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                } else {
+                    //caracteres incorrectos.
+                    MessageBox.Show("VERIFIQUE LOS VALORES EN EL CAMPO ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+            }
+        }
+
+       
     }
 }
