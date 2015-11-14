@@ -30,9 +30,9 @@
         {
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.groupAuto = new Elegant.Ui.GroupBox();
+            this.cmbEstado = new Elegant.Ui.ComboBox();
             this.cmbModelo = new Elegant.Ui.ComboBox();
             this.cmbTipo = new Elegant.Ui.ComboBox();
-            this.txtPestado = new Elegant.Ui.TextBox();
             this.txtPlacas = new Elegant.Ui.TextBox();
             this.txtNoS = new Elegant.Ui.TextBox();
             this.cmbMarca = new Elegant.Ui.ComboBox();
@@ -55,9 +55,9 @@
             // 
             // groupAuto
             // 
+            this.groupAuto.Controls.Add(this.cmbEstado);
             this.groupAuto.Controls.Add(this.cmbModelo);
             this.groupAuto.Controls.Add(this.cmbTipo);
-            this.groupAuto.Controls.Add(this.txtPestado);
             this.groupAuto.Controls.Add(this.txtPlacas);
             this.groupAuto.Controls.Add(this.txtNoS);
             this.groupAuto.Controls.Add(this.cmbMarca);
@@ -68,6 +68,52 @@
             this.groupAuto.Size = new System.Drawing.Size(469, 234);
             this.groupAuto.TabIndex = 3;
             this.groupAuto.Text = "Informacón del automovil";
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbEstado.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbEstado.FormattingEnabled = false;
+            this.cmbEstado.Id = "d4f4748f-5a7f-45b8-84dc-3e97f7c5ca19";
+            this.cmbEstado.Items.AddRange(new object[] {
+            "TAMAULIPAS",
+            "AGUASCALIENTES",
+            "BAJA CALIFORNIA",
+            "BAJA CALIFORNIA SUR",
+            "CAMPECHE",
+            "CHIAPAS",
+            "CHIHUAHUA",
+            "COAHUILA",
+            "COLIMA",
+            "DISTRITO FEDERAL",
+            "DURANGO",
+            "ESTADO DE MÉXICO",
+            "GUANAJUATO",
+            "GUERRERO",
+            "HIDALGO",
+            "JALISCO",
+            "MICHOACÁN",
+            "MORELOS",
+            "NAYARIT",
+            "NUEVO LEÓN",
+            "OAXACA",
+            "PUEBLA",
+            "QUERÉTARO",
+            "QUINTANA ROO",
+            "SAN LUIS POTOSÍ",
+            "SINALOA",
+            "SONORA",
+            "TABASCO",
+            "TLAXCALA",
+            "VERACRUZ",
+            "YUCATÁN",
+            "ZACATECAS"});
+            this.cmbEstado.LabelText = "Estado de las Placas:";
+            this.cmbEstado.Location = new System.Drawing.Point(237, 133);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(212, 21);
+            this.cmbEstado.TabIndex = 8;
+            this.cmbEstado.TextEditorWidth = 88;
             // 
             // cmbModelo
             // 
@@ -93,18 +139,9 @@
             this.cmbTipo.TabIndex = 3;
             this.cmbTipo.TextEditorWidth = 96;
             // 
-            // txtPestado
-            // 
-            this.txtPestado.Id = "ee355a49-79be-43f8-a2aa-e0b45707b577";
-            this.txtPestado.LabelText = "Estado de las placas:";
-            this.txtPestado.Location = new System.Drawing.Point(237, 133);
-            this.txtPestado.Name = "txtPestado";
-            this.txtPestado.Size = new System.Drawing.Size(212, 21);
-            this.txtPestado.TabIndex = 8;
-            this.txtPestado.TextEditorWidth = 102;
-            // 
             // txtPlacas
             // 
+            this.txtPlacas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPlacas.Id = "8b2043c5-42c8-4a86-8077-16d279f73885";
             this.txtPlacas.LabelText = "Placas:";
             this.txtPlacas.Location = new System.Drawing.Point(21, 133);
@@ -115,6 +152,7 @@
             // 
             // txtNoS
             // 
+            this.txtNoS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNoS.Id = "f8b3eb43-154a-475a-adc3-6c0a850088b5";
             this.txtNoS.LabelText = "Número de Serie:";
             this.txtNoS.Location = new System.Drawing.Point(116, 177);
@@ -138,6 +176,7 @@
             // 
             // txtSub
             // 
+            this.txtSub.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSub.Id = "28dd927f-7ec3-400f-aa00-59791bf1c0b0";
             this.txtSub.LabelText = "Submarca:";
             this.txtSub.Location = new System.Drawing.Point(235, 89);
@@ -223,7 +262,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 524);
+            this.ClientSize = new System.Drawing.Size(514, 534);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObs);
             this.Controls.Add(this.groupCliente);
@@ -251,7 +290,6 @@
         private Elegant.Ui.GroupBox groupAuto;
         private Elegant.Ui.ComboBox cmbModelo;
         private Elegant.Ui.ComboBox cmbTipo;
-        private Elegant.Ui.TextBox txtPestado;
         private Elegant.Ui.TextBox txtPlacas;
         private Elegant.Ui.TextBox txtNoS;
         private Elegant.Ui.ComboBox cmbMarca;
@@ -261,5 +299,6 @@
         private Elegant.Ui.Button btnGuardar;
         private Elegant.Ui.Button btnBuscarCliente;
         private Elegant.Ui.Label lblNombreCliente;
+        private Elegant.Ui.ComboBox cmbEstado;
     }
 }

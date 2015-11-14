@@ -97,7 +97,7 @@
             this.groupBoxClientes.Id = "c802533e-3e9e-45f6-aa60-22806db59684";
             this.groupBoxClientes.Location = new System.Drawing.Point(13, 9);
             this.groupBoxClientes.Name = "groupBoxClientes";
-            this.groupBoxClientes.Size = new System.Drawing.Size(755, 299);
+            this.groupBoxClientes.Size = new System.Drawing.Size(765, 299);
             this.groupBoxClientes.TabIndex = 0;
             this.groupBoxClientes.Text = "Datos del cliente";
             // 
@@ -373,7 +373,7 @@
             this.groupObsv.Id = "deb294fe-0363-463b-b3df-2e87b9d32f52";
             this.groupObsv.Location = new System.Drawing.Point(13, 321);
             this.groupObsv.Name = "groupObsv";
-            this.groupObsv.Size = new System.Drawing.Size(755, 97);
+            this.groupObsv.Size = new System.Drawing.Size(765, 97);
             this.groupObsv.TabIndex = 19;
             this.groupObsv.Text = "Observaciones:";
             // 
@@ -381,7 +381,7 @@
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.Id = "6269f893-12ea-43ce-a99e-25f3389ed6d7";
-            this.btnGuardar.Location = new System.Drawing.Point(693, 441);
+            this.btnGuardar.Location = new System.Drawing.Point(703, 451);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
             this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -393,7 +393,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 506);
+            this.ClientSize = new System.Drawing.Size(792, 516);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObsv);
             this.Controls.Add(this.groupBoxClientes);

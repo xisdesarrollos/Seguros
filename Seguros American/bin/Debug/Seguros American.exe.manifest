@@ -499,14 +499,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Seguros American.exe" size="534528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Seguros American.exe" size="537616">
       <assemblyIdentity name="Seguros American" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gxvLbfsIVbipGYmtgysthptHmJgKNbg2RIW71PCG2/8=</dsig:DigestValue>
+        <dsig:DigestValue>5QXjvjZsT3/H+WT075MveJiys3Mz5yilWcRBlPtQSTY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -130,7 +130,7 @@ namespace Seguros_American.Forms.Vehiculos
             //verificar que no esten vacios, tipo, etc..
             if (string.IsNullOrEmpty(cmbMarca.Text) || string.IsNullOrEmpty(cmbModelo.Text) ||
                 string.IsNullOrEmpty(cmbTipo.Text) || string.IsNullOrEmpty(txtSub.Text) ||
-                string.IsNullOrEmpty(txtPlacas.Text) || string.IsNullOrEmpty(txtPestado.Text) ||
+                string.IsNullOrEmpty(txtPlacas.Text) || string.IsNullOrEmpty(cmbEstado.Text) ||
                 string.IsNullOrEmpty(txtNoS.Text) || string.IsNullOrEmpty(txtNoCliente.Text)) {
 
                     MessageBox.Show("VERIFIQUE QUE TODOS LOS CAMPOS ESTÉN CORRECTOS");
@@ -215,7 +215,7 @@ namespace Seguros_American.Forms.Vehiculos
                 cmd.Parameters.AddWithValue("@subMarca",txtSub.Text);
                 cmd.Parameters.AddWithValue("@modelo",cmbModelo.Text);
                 cmd.Parameters.AddWithValue("@placas",txtPlacas.Text);
-                cmd.Parameters.AddWithValue("@estadoPlacas",txtPestado.Text);
+                cmd.Parameters.AddWithValue("@estadoPlacas", cmbEstado.Text);
                 cmd.Parameters.AddWithValue("@numeroSerie", txtNoS.Text);
                 try
                 {
@@ -254,7 +254,7 @@ namespace Seguros_American.Forms.Vehiculos
                 cmbModelo.Text = dataTable.Rows[0][6].ToString();
                 cmbModelo.Enabled = false;
                 txtPlacas.Text = dataTable.Rows[0][7].ToString();
-                txtPestado.Text = dataTable.Rows[0][8].ToString();
+                cmbEstado.Text = dataTable.Rows[0][8].ToString();
                 txtNoS.Text = dataTable.Rows[0][9].ToString();
                 txtNoS.Enabled = false;
             }
@@ -277,7 +277,7 @@ namespace Seguros_American.Forms.Vehiculos
 
                     cmd.Parameters.AddWithValue("@idVehiculo", this.idVehiculo);
                     cmd.Parameters.AddWithValue("@placas", txtPlacas.Text.ToString());
-                    cmd.Parameters.AddWithValue("@estadoPlacas", txtPestado.Text.ToString());
+                    cmd.Parameters.AddWithValue("@estadoPlacas", cmbEstado.Text.ToString());
                     bd.Actualizar(cmd);
 
                 }
