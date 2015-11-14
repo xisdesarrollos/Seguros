@@ -187,7 +187,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     cmdPoliza.Parameters.AddWithValue("@noLicencia2", txtNoLic2.Text);
                     cmdPoliza.Parameters.AddWithValue("@edoLicencia", txtEdoEm1.Text);
                     cmdPoliza.Parameters.AddWithValue("@edoLicencia2", txtEdoEm2.Text);
-                    cmdPoliza.Parameters.AddWithValue("@edoLicencia2", txtEdoEm2.Text);
                     cmdPoliza.Parameters.AddWithValue("@idVehiculo2",idVehiculo2);
 
 
@@ -393,22 +392,22 @@ namespace Seguros_American.Forms.SegurosAmericanos
             // Obtener los datos del cliente seleccionado.
             int index = dgv.CurrentCell.RowIndex; //no existe en el contexto actual. 
             DataGridViewRow selectedRow = dgv.Rows[index];
-            // Mostrarlos en los campos de nuevo vehiculo.
+            // Mostrarlos en los campos de nuevo vehiculo.(verificar todos los campos que se asignan).
             idCliente = selectedRow.Cells[0].Value.ToString();
             nombreCliente = selectedRow.Cells[1].Value.ToString();
             string telefono = selectedRow.Cells[2].Value.ToString();
             string cel = selectedRow.Cells[3].Value.ToString();
             string email = selectedRow.Cells[4].Value.ToString();
-            string pais = selectedRow.Cells[5].Value.ToString();
-            string cuidad = selectedRow.Cells[6].Value.ToString();
-            estado = selectedRow.Cells[7].Value.ToString();
-            clienteNacimiento = selectedRow.Cells[8].Value.ToString();
+            string pais = selectedRow.Cells[12].Value.ToString();
+            string cuidad = selectedRow.Cells[10].Value.ToString();
+            estado = selectedRow.Cells[9].Value.ToString();
+            clienteNacimiento = selectedRow.Cells[4].Value.ToString();
             string calle = selectedRow.Cells[9].Value.ToString();
             string colonia = selectedRow.Cells[10].Value.ToString();
             string noE = selectedRow.Cells[11].Value.ToString();
             string cp = selectedRow.Cells[12].Value.ToString();
-            clienteLicencia = selectedRow.Cells[13].Value.ToString();
-            ocupacion = selectedRow.Cells[14].Value.ToString();
+            clienteLicencia = selectedRow.Cells[19].Value.ToString();
+            ocupacion = selectedRow.Cells[17].Value.ToString();
             string direccion = calle + " #" + noE + "," + colonia;
 
 
@@ -731,8 +730,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
          
             return nacimientoYear.ToString();
         }
-
-<<<<<<< HEAD
         private void cmbSeguro_SelectedIndexChanged(object sender, EventArgs e)
         {
             int seguroIndex = cmbSeguro.SelectedIndex;
@@ -818,11 +815,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 default:
                     break;
             }
-=======
-        private void txtNoCliente_TextChanged(object sender, EventArgs e)
-        {
 
->>>>>>> 09beb53e322b7d9df39cf68e2d8d890e5dfa9598
         }
     }
 }

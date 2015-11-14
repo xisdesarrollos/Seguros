@@ -747,7 +747,6 @@
             this.txtNoCliente.Size = new System.Drawing.Size(239, 21);
             this.txtNoCliente.TabIndex = 1;
             this.txtNoCliente.TextEditorWidth = 140;
-            this.txtNoCliente.TextChanged += new System.EventHandler(this.txtNoCliente_TextChanged);
             // 
             // tabPage3
             // 
