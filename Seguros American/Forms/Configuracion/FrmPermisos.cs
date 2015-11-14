@@ -32,7 +32,7 @@ namespace Seguros_American.Forms.Configuracion
 
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("No hay usuarios registrados de nivel diferente a ADMINISTRADOR, registre al menos uno para poder asignar los permisos", "Permisos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("NO HAY USUARIOS REGISTRADOS DE NIVEL DIFERENTE A ADMINISTRADOR, REGISTRE AL MENOS UNO PARA PODER ASIGNAR LOS PERMISOS", "PERMISOS", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Dispose();
             }
 

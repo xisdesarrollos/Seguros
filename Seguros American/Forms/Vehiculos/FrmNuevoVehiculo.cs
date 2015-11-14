@@ -133,12 +133,20 @@ namespace Seguros_American.Forms.Vehiculos
                 string.IsNullOrEmpty(txtPlacas.Text) || string.IsNullOrEmpty(txtPestado.Text) ||
                 string.IsNullOrEmpty(txtNoS.Text) || string.IsNullOrEmpty(txtNoCliente.Text)) {
 
+<<<<<<< HEAD
                     MessageBox.Show("VERIFIQUE QUE TODOS LOS CAMPOS ESTEN CORRECTOS");
+=======
+                    MessageBox.Show("VERIFIQUE QUE TODOS LOS CAMPOS ESTÉN CORRECTOS");
+>>>>>>> 09beb53e322b7d9df39cf68e2d8d890e5dfa9598
                     return false;
             }
             //verificar que no se repita el numero de serie en la base de datos
             if(verificarNumeroSerie()){
+<<<<<<< HEAD
                 MessageBox.Show("ESTE NUMERO DE SERIE YA SE ENCUENTRA REGISTRADO");
+=======
+                MessageBox.Show("EL NÚMERO DE SERIE SE DUPLICO EN LA TABLA, VERIFIQUE");
+>>>>>>> 09beb53e322b7d9df39cf68e2d8d890e5dfa9598
                 return false;
             }
             return true;

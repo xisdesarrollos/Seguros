@@ -35,7 +35,6 @@
             this.btnCancela = new Elegant.Ui.Button();
             this.btnLogin = new Elegant.Ui.Button();
             this.pictureBox1 = new Elegant.Ui.PictureBox();
-            this.label2 = new Elegant.Ui.Label();
             this.label1 = new Elegant.Ui.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +48,7 @@
             this.groupBox1.Controls.Add(this.txtPass);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Id = "03d2638d-e95c-4e78-a233-d77ffcdbb4e3";
-            this.groupBox1.Location = new System.Drawing.Point(176, 43);
+            this.groupBox1.Location = new System.Drawing.Point(156, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(241, 81);
             this.groupBox1.TabIndex = 6;
@@ -81,7 +80,7 @@
             this.btnCancela.BackColor = System.Drawing.Color.Thistle;
             this.btnCancela.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancela.Id = "b04fe299-4928-426d-af25-042b2b75aae7";
-            this.btnCancela.Location = new System.Drawing.Point(244, 141);
+            this.btnCancela.Location = new System.Drawing.Point(224, 129);
             this.btnCancela.Name = "btnCancela";
             this.btnCancela.Size = new System.Drawing.Size(75, 23);
             this.btnCancela.TabIndex = 7;
@@ -92,7 +91,7 @@
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLogin.Id = "786cf9dd-7bdf-488e-93a1-c41c29d2db72";
-            this.btnLogin.Location = new System.Drawing.Point(342, 141);
+            this.btnLogin.Location = new System.Drawing.Point(322, 129);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 8;
@@ -103,7 +102,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Seguros_American.Properties.Resources.login;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 20);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 102);
             this.pictureBox1.TabIndex = 9;
@@ -111,25 +110,14 @@
             this.pictureBox1.Text = "pictureBox1";
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(26, 151);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Autoactualizable";
-            this.label2.UseVisualThemeForForeground = false;
-            // 
             // label1
             // 
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 138);
+            this.label1.Location = new System.Drawing.Point(29, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Versión 1.0.0.1.0";
+            this.label1.Text = "Versión 1.0.0.0.0";
             this.label1.UseVisualThemeForForeground = false;
             // 
             // frmLoging
@@ -137,15 +125,15 @@
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.CancelButton = this.btnCancela;
-            this.ClientSize = new System.Drawing.Size(472, 222);
+            this.ClientSize = new System.Drawing.Size(427, 188);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnCancela);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLoging";
@@ -165,7 +153,6 @@
         private Elegant.Ui.Button btnCancela;
         private Elegant.Ui.GroupBox groupBox1;
         private Elegant.Ui.Label label1;
-        private Elegant.Ui.Label label2;
         private Elegant.Ui.PictureBox pictureBox1;
         private Elegant.Ui.Button btnLogin;
         private Elegant.Ui.TextBox txtPass;

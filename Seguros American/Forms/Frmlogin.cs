@@ -34,7 +34,7 @@ namespace Seguros_American
             }
             else
             {
-                MessageBox.Show("Datos incorrectos, intente de nuevo", "Login", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("DATOS INCORRECTOS, INTENTE DE NUEVO", "LOGIN", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txtUsuario.Select();
             }
             

@@ -70,8 +70,7 @@
             // 
             // dgvTarifa
             // 
-            this.dgvTarifa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTarifa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvTarifa.AutoGenerateColumns = false;
             this.dgvTarifa.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvTarifa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -81,9 +80,9 @@
             this.dpDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn});
             this.dgvTarifa.DataSource = this.tarifasautosBindingSource1;
-            this.dgvTarifa.Location = new System.Drawing.Point(29, 94);
+            this.dgvTarifa.Location = new System.Drawing.Point(42, 135);
             this.dgvTarifa.Name = "dgvTarifa";
-            this.dgvTarifa.Size = new System.Drawing.Size(544, 751);
+            this.dgvTarifa.Size = new System.Drawing.Size(544, 704);
             this.dgvTarifa.TabIndex = 1;
             this.dgvTarifa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellEndEdit);
             this.dgvTarifa.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTarifa_DataError);
@@ -135,9 +134,9 @@
             // 
             // btnTarifaGuardar
             // 
-            this.btnTarifaGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTarifaGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnTarifaGuardar.Id = "eb7a0091-c9f9-42b6-9222-e0183ff7d5e4";
-            this.btnTarifaGuardar.Location = new System.Drawing.Point(513, 854);
+            this.btnTarifaGuardar.Location = new System.Drawing.Point(521, 859);
             this.btnTarifaGuardar.Name = "btnTarifaGuardar";
             this.btnTarifaGuardar.Size = new System.Drawing.Size(65, 59);
             this.btnTarifaGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -185,11 +184,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 918);
+            this.ClientSize = new System.Drawing.Size(632, 923);
             this.Controls.Add(this.cmbTarifa);
             this.Controls.Add(this.btnTarifaGuardar);
             this.Controls.Add(this.dgvTarifa);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmGestionTarifasVehiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión Tarifas Vehiculos";

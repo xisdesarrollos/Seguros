@@ -62,7 +62,7 @@ namespace Seguros_American.Forms.Configuracion
             
                 bd.Insertar(cmd);
                 insertaPermisos();
-                MessageBox.Show("Usuario registrado correctamente");
+                MessageBox.Show("USUARIO REGISTRADO CORRECTAMENTE");
 
         }
 
@@ -79,13 +79,13 @@ namespace Seguros_American.Forms.Configuracion
                 cmd.CommandText = sql;
                 
                 bd.Actualizar(cmd);
-                MessageBox.Show("Usuario actualizado correctamente");
+                MessageBox.Show("USUARIO ACTUALIZADO CORRECTAMENTE");
                
                
             }
             catch (MySqlException esql)
             {
-                MessageBox.Show("Error en la db \n" + esql.Message);
+                MessageBox.Show("ERROR EN LA DB \n" + esql.Message);
               
             }
 
@@ -152,12 +152,12 @@ namespace Seguros_American.Forms.Configuracion
           //hay campos vacios  
           if(string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPassword.Text) || 
                 string.IsNullOrEmpty(txtPassword2.Text) || string.IsNullOrEmpty(txtUsuario.Text)){
-                    MessageBox.Show("Verifique campos vacios");
+                    MessageBox.Show("VERIFIQUE CAMPOS VACIOS");
                     return false;
            }
 
           if (txtPassword.Text != txtPassword2.Text) {
-              MessageBox.Show("Verifique que los password sean iguales");
+              MessageBox.Show("VERIFIQUE QUE LAS CONTRASEÑAS SEAN IGUALES");
               return false;
           }
             //no se puede repetir usuario
@@ -170,7 +170,7 @@ namespace Seguros_American.Forms.Configuracion
         private bool validaDatos()
         {
             if (bd.Existe("permisos", "usuario", txtUsuario.Text)) {
-                MessageBox.Show("Error: el usuario ya se encuentra registrado en la base de datos");
+                MessageBox.Show("ERROR: EL USUARIO YA SE ENCUENTRA REGISTRADO EN LA BASE DE DATOS");
                 return false;
             }
             return true;

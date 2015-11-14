@@ -34,7 +34,7 @@ namespace Seguros_American.Forms
         {
             Globales.EsNuevoCliente = true;
             FrmNuevoCliente nuevocliente = new FrmNuevoCliente();
-            nuevocliente.Show();
+            nuevocliente.ShowDialog();
 
         }
 
@@ -49,20 +49,15 @@ namespace Seguros_American.Forms
         private void btnTarifas_Click(object sender, EventArgs e)
         {
             FrmTarifasVehiculos gestiontarifas = new FrmTarifasVehiculos();
-            gestiontarifas.Show();
+            gestiontarifas.ShowDialog();
         }
 
-        private void btnGestonTarifas_Click(object sender, EventArgs e)
-        {
-            FrmGestionTarifasVehiculos tarifa = new FrmGestionTarifasVehiculos();
-            tarifa.Show();
-        }
-
+        
 
         private void btnVehiculos_Click(object sender, EventArgs e)
         {
           FrmNuevoVehiculo catalogovehiculos = new FrmNuevoVehiculo();
-            catalogovehiculos.Show();
+            catalogovehiculos.ShowDialog();
 
         }
 
@@ -77,7 +72,7 @@ namespace Seguros_American.Forms
         private void btnNuevaPoliza_Click(object sender, EventArgs e)
         {
             FrmSegurosAmericanos2 seguros2 = new FrmSegurosAmericanos2();
-            seguros2.Show();
+            seguros2.ShowDialog();
         }
 
 
@@ -109,7 +104,7 @@ namespace Seguros_American.Forms
         private void btnBase_Click(object sender, EventArgs e)
         {
             FrmBaseDatos basedatos = new FrmBaseDatos();
-            basedatos.Show();
+            basedatos.ShowDialog();
         }
 
         private void btnimpresora_Click(object sender, EventArgs e)
@@ -118,8 +113,19 @@ namespace Seguros_American.Forms
             configuracion.ShowDialog();
         }
 
+        private void btnTarifas_Click_1(object sender, EventArgs e)
+        {
+            FrmTarifasVehiculos tarifasveh = new FrmTarifasVehiculos();
+            tarifasveh.ShowDialog();
+        }
 
-       
+        private void btnGestonTarifas_Click(object sender, EventArgs e)
+        {
+            FrmGestionVeh gestioVehiculos = new FrmGestionVeh();
+            gestioVehiculos.MdiParent = this;
+            gestioVehiculos.Show();
+        }
+
         private void verificaPermisos()
         {
             DataTable dt = db.Consultar("*", "permisos", "usuario = '" + Globales.idUsuario + "'");
@@ -161,6 +167,8 @@ namespace Seguros_American.Forms
                                       .Where(c => c.GetType() == type);
         }
 
+      
+        
         
        
 

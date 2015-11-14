@@ -66,7 +66,7 @@
             this.dpDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn});
             this.dgvTarifa.DataSource = this.tarifasautosBindingSource;
-            this.dgvTarifa.Location = new System.Drawing.Point(32, 108);
+            this.dgvTarifa.Location = new System.Drawing.Point(12, 98);
             this.dgvTarifa.Name = "dgvTarifa";
             this.dgvTarifa.ReadOnly = true;
             this.dgvTarifa.Size = new System.Drawing.Size(544, 754);
@@ -163,10 +163,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 905);
+            this.ClientSize = new System.Drawing.Size(567, 869);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbTarifa);
             this.Controls.Add(this.dgvTarifa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmTarifasVehiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tarifas Vehiculos";

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new Elegant.Ui.GroupBox();
+            this.txtNoagente = new Elegant.Ui.MaskedTextBox();
             this.cmbNivel = new Elegant.Ui.ComboBox();
             this.txtNombre = new Elegant.Ui.TextBox();
             this.txtPassword2 = new Elegant.Ui.TextBox();
@@ -37,7 +38,6 @@
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.btnGuardar = new Elegant.Ui.Button();
             this.virtualGridControl1 = new Elegant.Ui.Grid.VirtualGridControl();
-            this.txtNoagente = new Elegant.Ui.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.virtualGridControl1)).BeginInit();
             this.SuspendLayout();
@@ -54,16 +54,30 @@
             this.groupBox1.Location = new System.Drawing.Point(9, 13);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(519, 141);
-            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabIndex = 0;
+            // 
+            // txtNoagente
+            // 
+            this.txtNoagente.Id = "c96bd13f-4ce5-4547-a8dd-01c6356391d3";
+            this.txtNoagente.LabelText = "Número Agente:";
+            this.txtNoagente.Location = new System.Drawing.Point(15, 26);
+            this.txtNoagente.Mask = "00000";
+            this.txtNoagente.Name = "txtNoagente";
+            this.txtNoagente.Size = new System.Drawing.Size(124, 21);
+            this.txtNoagente.TabIndex = 0;
+            this.txtNoagente.TextEditorWidth = 38;
+            this.txtNoagente.ValidatingType = typeof(int);
             // 
             // cmbNivel
             // 
+            this.cmbNivel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbNivel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbNivel.Editable = false;
             this.cmbNivel.FormattingEnabled = false;
             this.cmbNivel.Id = "3f553ded-615b-4f54-8a0e-d67403786ff1";
             this.cmbNivel.Items.AddRange(new object[] {
+            "AGENTE",
             "CAPTURISTA",
-            "SUPERVISOR",
             "ADMINISTRADOR"});
             this.cmbNivel.LabelText = "Nivel:";
             this.cmbNivel.Location = new System.Drawing.Point(350, 26);
@@ -121,7 +135,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Id = "81358128-bbfd-4f70-8b26-733cfa17764f";
-            this.btnGuardar.Location = new System.Drawing.Point(453, 170);
+            this.btnGuardar.Location = new System.Drawing.Point(453, 161);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
             this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -143,25 +157,14 @@
             this.virtualGridControl1.VerticalScrollBarEnabled = true;
             this.virtualGridControl1.VerticalScrollBarVisible = true;
             // 
-            // txtNoagente
-            // 
-            this.txtNoagente.Id = "c96bd13f-4ce5-4547-a8dd-01c6356391d3";
-            this.txtNoagente.LabelText = "Número Agente:";
-            this.txtNoagente.Location = new System.Drawing.Point(15, 26);
-            this.txtNoagente.Mask = "00000";
-            this.txtNoagente.Name = "txtNoagente";
-            this.txtNoagente.Size = new System.Drawing.Size(124, 21);
-            this.txtNoagente.TabIndex = 0;
-            this.txtNoagente.TextEditorWidth = 38;
-            this.txtNoagente.ValidatingType = typeof(int);
-            // 
             // FrmNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(537, 236);
+            this.ClientSize = new System.Drawing.Size(544, 222);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmNuevoUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Usuario";

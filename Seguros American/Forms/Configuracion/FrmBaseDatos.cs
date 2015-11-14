@@ -24,7 +24,7 @@ namespace Seguros_American.Forms.Configuracion
             Properties.Settings.Default.password = txtPassword.Text;
             Properties.Settings.Default.db = txtBase.Text;
             Properties.Settings.Default.Save();
-            MessageBox.Show("Configuración guardada correctamente", "Mysql", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("CONFIGURACIÓN GUARDADA CORRECTAMENTE", "Mysql", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Dispose();
         }
 

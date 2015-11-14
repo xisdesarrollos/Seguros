@@ -18,6 +18,7 @@ namespace Seguros_American.Forms.Clientes
         DataTable dt = new DataTable();
         String sqlSelect ="SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs FROM clientes ORDER BY idcliente DESC";
         IGestionClientes iGestionClientes;
+        
         public void cargaGrid()
         {
 
@@ -25,6 +26,7 @@ namespace Seguros_American.Forms.Clientes
             dgvClientes.DataSource = dt;
             estilizaGrid();
         }
+
 
         private void estilizaGrid()
         {
@@ -50,45 +52,51 @@ namespace Seguros_American.Forms.Clientes
             dgvClientes.Columns[8].Width = 250;
         }
 
+        
         public void Eliminar(string id)
         {
-            try
-            {
-                db.Eliminar("clientes", "idcliente = " + id);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message, "Error al eliminar cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+             try
+             { 
+                 db.Eliminar("clientes", "idCliente = " + id);
+             }
+             catch (Exception e)
+             {
+                 MessageBox.Show(e.Message, "ERROR AL ELIMINAR CLIENTE ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+
         }
+
+
 
         public FrmGestionClientes(IGestionClientes iGestionClientes)
         {
             InitializeComponent();
             this.iGestionClientes = iGestionClientes;
             Globales.cargaGrid(sqlSelect, dgvClientes);
+            estilizaGrid();
         }
         public FrmGestionClientes()
         {
             InitializeComponent();
+            cargaGrid();
+            estilizaGrid();
         }
 
         private void FrmGestionClientes_Load(object sender, EventArgs e)
         {
-            SendKeys.Send("{TAB}");
-            SendKeys.Send("{TAB}");
             cargaGrid();
+            estilizaGrid();
+            SendKeys.Send("{TAB}");
+            SendKeys.Send("{TAB}");
             cmbFiltro.SelectedIndex = 0;
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            
-        }
+    
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             cargaGrid();
+            estilizaGrid();
         }
 
     
@@ -96,6 +104,7 @@ namespace Seguros_American.Forms.Clientes
         private void dgv_MouseEnter(object sender, EventArgs e)
         {
             cargaGrid();
+            estilizaGrid();
         }
 
         private void txtCriterio_TextChanged(object sender, EventArgs e)
@@ -103,28 +112,27 @@ namespace Seguros_American.Forms.Clientes
            
 
             Globales.cargaGrid("SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,obs  FROM clientes WHERE " + cmbFiltro.Text + " LIKE '%" + txtCriterio.Text + "%' ORDER BY idcliente ASC", dgvClientes);
-
+            estilizaGrid();
 
         }
 
         private void frmClientes_MouseEnter(object sender, EventArgs e)
         {
             cargaGrid();
+            estilizaGrid();
         }
 
         private void btnEliminarCli_Click(object sender, EventArgs e)
         {
-           int index = dgvClientes.CurrentCell.RowIndex;
-            DataGridViewRow selectedRow = dgvClientes.Rows[index];
-            string idCliente = selectedRow.Cells[0].Value.ToString();
+            Globales.auxCliente = dgvClientes[0, dgvClientes.CurrentRow.Index].Value.ToString();
+            DialogResult dr = MessageBox.Show("¿ SEGURO DE  QUE DESEA ELIMINAR AL CLIENTE SELECCIONADO?", "ELIMINAR CLIENTE", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult .Yes)
+            {
+                Eliminar(Globales.auxCliente);
+                cargaGrid();
+                estilizaGrid();
 
-            Basedatos bd = new Basedatos();
-            string nTabla = "clientes";
-            
-            string condicion =  "idCliente = " + idCliente; 
-            bd.Eliminar(nTabla, condicion);
-
-            Globales.cargaGrid(sqlSelect,dgvClientes);
+            }
         }
 
         private void btnEditarCli_Click(object sender, EventArgs e)
@@ -137,10 +145,11 @@ namespace Seguros_American.Forms.Clientes
 
             //enviar id 
             FrmNuevoCliente nuevocliente = new FrmNuevoCliente(idCliente);
-            nuevocliente.Show();
+            nuevocliente.ShowDialog();
+
 
             cargaGrid();
-
+            estilizaGrid();
 
 
 
@@ -157,8 +166,9 @@ namespace Seguros_American.Forms.Clientes
 
             Globales.EsNuevoCliente = true;
             FrmNuevoCliente nuevocliente = new FrmNuevoCliente();
-            nuevocliente.Show();
+            nuevocliente.ShowDialog();
             cargaGrid();
+            estilizaGrid();
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -170,10 +180,7 @@ namespace Seguros_American.Forms.Clientes
             this.Close();
         }
 
-        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
     }
 }

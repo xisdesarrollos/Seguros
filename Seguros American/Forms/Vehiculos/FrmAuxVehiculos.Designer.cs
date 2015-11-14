@@ -62,9 +62,9 @@
             // btnNuevoVehiculo
             // 
             this.btnNuevoVehiculo.Id = "69336b0e-cecf-4116-b8d9-5c19fbab5c3c";
-            this.btnNuevoVehiculo.Location = new System.Drawing.Point(680, 227);
+            this.btnNuevoVehiculo.Location = new System.Drawing.Point(688, 228);
             this.btnNuevoVehiculo.Name = "btnNuevoVehiculo";
-            this.btnNuevoVehiculo.Size = new System.Drawing.Size(91, 81);
+            this.btnNuevoVehiculo.Size = new System.Drawing.Size(83, 75);
             this.btnNuevoVehiculo.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
             new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.newVerde48)});
             this.btnNuevoVehiculo.TabIndex = 1;
@@ -95,9 +95,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 325);
+            this.ClientSize = new System.Drawing.Size(791, 313);
             this.Controls.Add(this.btnNuevoVehiculo);
             this.Controls.Add(this.dgv);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmAuxVehiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FrmAuxVehiculos_Load);

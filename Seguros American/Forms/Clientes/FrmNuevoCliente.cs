@@ -37,7 +37,8 @@ namespace Seguros_American.Forms.Clientes
         {
             dateNacimiento.Mask = "99/99/9999";
             dateNacimiento.ValidatingType = typeof(System.DateTime);
-            
+            updateEdo();
+            updateEdoemision();
 
             //here 
             if (!Globales.EsNuevoCliente) {
@@ -63,21 +64,22 @@ namespace Seguros_American.Forms.Clientes
             //CLIENTE NUEVO
             if (Globales.EsNuevoCliente) {
                 if (guardaCliente()) {
-                    MessageBox.Show("Se guardaron correctamente los datos del cliente");
-                    this.Close();
+                    MessageBox.Show("SE GUARDARON CORRECTAMENTE LOS DATOS DEL CLIENTE");
+                    Dispose();
+
                 }
                 else {
-                    MessageBox.Show("Ocurrio un error al guardar los datos. Verifique con su proveedor");
+                    MessageBox.Show("OCURRIO UN ERROR AL GUARDAR LOS DATOS. VERIFIQUE CON SU PROVEEDOR");
                 }
             }
             //ACTUALIZAR CLIENTE
             else {
                 if (actualizaCliente()) {
-                    MessageBox.Show("Se actualizaron correctamente los datos del cliente");
-                    this.Close();
+                    MessageBox.Show("SE ACTUALIZARON CORRECTAMENTE LOS DATOS DEL CLIENTE");
+                    Dispose();
                 }
                 else {
-                    MessageBox.Show("Ocurrio un error al actualizar los datos. Verifique con su proveedor");
+                    MessageBox.Show("OCURRIÓ UN ERROR AL ACTUALIZAR LOS DATOS. VERIFIQUE CON SU PROVEEDOR");
                 }
             }
                     
@@ -103,7 +105,7 @@ namespace Seguros_American.Forms.Clientes
                     cmd.Parameters.AddWithValue("@noExterior", txtNoE.Text);
                     cmd.Parameters.AddWithValue("@noInterior", txtNoI.Text);
                     cmd.Parameters.AddWithValue("@colonia", txtColonia.Text);
-                    cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
+                    cmd.Parameters.AddWithValue("@estado", cmbEstado.Text);
                     cmd.Parameters.AddWithValue("@ciudad", txtCiudad.Text);
                     cmd.Parameters.AddWithValue("@cp", txtCp.Text);
                     cmd.Parameters.AddWithValue("@pais", cmbPais.Text);
@@ -115,7 +117,7 @@ namespace Seguros_American.Forms.Clientes
                     cmd.Parameters.AddWithValue("@ocupacion", txtOcupacion.Text);
                     cmd.Parameters.AddWithValue("@obs", txtBoxObs.Text);
                     cmd.Parameters.AddWithValue("@noLicencia", txtLicencia.Text);
-                    cmd.Parameters.AddWithValue("@estadoEmision", txtEstado.Text);
+                    cmd.Parameters.AddWithValue("@estadoEmision", cmbEstado.Text);
                     bd.Insertar(cmd);
                     
                 } 
@@ -133,9 +135,11 @@ namespace Seguros_American.Forms.Clientes
        
         private bool actualizaCliente()
         {
+         
             try {
                 if (verificarValores())
                 {
+                  
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.CommandText = "UPDATE clientes " +
                         "SET nombre=@nombre, rfcCliente=@rfcCliente, sexo=@sexo, fechaNacimiento=@fechaNacimiento, " +
@@ -150,11 +154,12 @@ namespace Seguros_American.Forms.Clientes
                     cmd.Parameters.AddWithValue("@rfcCliente", txtRfc.Text);
                     cmd.Parameters.AddWithValue("@sexo", cmbSexo.Text);
                     cmd.Parameters.AddWithValue("@fechaNacimiento", DateTime.Parse(dateNacimiento.Text.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
+
                     cmd.Parameters.AddWithValue("@calle", txtCalle.Text);
                     cmd.Parameters.AddWithValue("@noExterior", txtNoE.Text);
                     cmd.Parameters.AddWithValue("@noInterior", txtNoI.Text);
                     cmd.Parameters.AddWithValue("@colonia", txtColonia.Text);
-                    cmd.Parameters.AddWithValue("@estado", txtEstado.Text);
+                    cmd.Parameters.AddWithValue("@estado", cmbEstado.Text);
                     cmd.Parameters.AddWithValue("@ciudad", txtCiudad.Text);
                     cmd.Parameters.AddWithValue("@cp", txtCp.Text);
                     cmd.Parameters.AddWithValue("@pais", cmbPais.Text);
@@ -168,11 +173,11 @@ namespace Seguros_American.Forms.Clientes
                     cmd.Parameters.AddWithValue("@noLicencia", txtLicencia.Text);
                     cmd.Parameters.AddWithValue("@estadoEmision", txtEdo.Text);
                     bd.Actualizar(cmd);
-
+                  
                 }
                 else
                 {
-                    MessageBox.Show("Verifique campos vacios");
+                    MessageBox.Show("VERIFIQUE CAMPOS VACÍOS");
                     return false;
                 }
             }
@@ -188,26 +193,22 @@ namespace Seguros_American.Forms.Clientes
         {
             bool value = true;
             //verificar campos del form...
-            //nombre,rfcCliente,sexo, edad, calle, noExterior, noInterior, colonia, estado, 
-            //cuidad, cp, pais, telefono, cel, email, fechaAlta, ocupacion, obs
-            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtRfc.Text) ||
+            //nombre,sexo, edad, calle, noExterior, noInterior, colonia, estado, 
+            //cuidad, cp, pais, telefono, cel,  fechaAlta, ocupacion, obs
+            if (string.IsNullOrEmpty(txtNombre.Text) || 
                 string.IsNullOrEmpty(cmbSexo.Text) || string.IsNullOrEmpty(txtEdad.Text) ||
                 string.IsNullOrEmpty(txtCalle.Text) || string.IsNullOrEmpty(txtNoE.Text) ||
-                string.IsNullOrEmpty(txtColonia.Text) || string.IsNullOrEmpty(txtEstado.Text) ||
+                string.IsNullOrEmpty(txtColonia.Text) || string.IsNullOrEmpty(cmbEstado.Text) ||
                 string.IsNullOrEmpty(txtCiudad.Text) || string.IsNullOrEmpty(txtCp.Text) ||
                 string.IsNullOrEmpty(cmbPais.Text) || string.IsNullOrEmpty(txtTel.Text) ||
-                string.IsNullOrEmpty(txtBoxCel.Text) || string.IsNullOrEmpty(txtCorreo.Text)
+                string.IsNullOrEmpty(txtBoxCel.Text)  
                )
             {
-                MessageBox.Show("Verifique campos vacios");
+                MessageBox.Show("VERIFIQUE CAMPOS VACÍOS");
                 value = false;
             }
             //verificar edad.
-            //verificar correo
-            if (!verificarCorreo())
-            {
-                value = false;
-            }
+        
             return value;
         }
 
@@ -227,11 +228,19 @@ namespace Seguros_American.Forms.Clientes
                 cmbSexo.Text        = dataTable.Rows[0][3].ToString();
                 //DateTime.Parse(dateNacimiento.Value.ToString()).ToString("yyyy-MM-dd"));//fecha de nacimiento genera edad actual.
                 dateNacimiento.Text = dataTable.Rows[0][4].ToString();
+ if (validarFecha(dateNacimiento.Text) )
+            {
+                ////cambiar edad automaticamente.
+                DateTime today = DateTime.Today;
+                DateTime nacimiento = DateTime.Parse(dateNacimiento.Text);
+                int edad = today.Year - nacimiento.Year;
+                txtEdad.Text = edad.ToString();      
+            }
                 txtCalle.Text       = dataTable.Rows[0][5].ToString(); 
                 txtNoE.Text         = dataTable.Rows[0][6].ToString(); 
                 txtNoI.Text         = dataTable.Rows[0][7].ToString(); 
                 txtColonia.Text     = dataTable.Rows[0][8].ToString();
-                txtEstado.Text      = dataTable.Rows[0][9].ToString(); 
+                cmbEstado.Text = dataTable.Rows[0][9].ToString(); 
                 txtCiudad.Text      = dataTable.Rows[0][10].ToString(); 
                 txtCp.Text          = dataTable.Rows[0][11].ToString(); 
                 cmbPais.Text        = dataTable.Rows[0][12].ToString(); 
@@ -251,6 +260,9 @@ namespace Seguros_American.Forms.Clientes
             }
         }
         
+
+
+
         private bool actualizarCliente()
         {
             return false;
@@ -262,30 +274,18 @@ namespace Seguros_American.Forms.Clientes
             DateTime nacimiento = DateTime.Parse(dateNacimiento.Text);
             int edad = today.Year - nacimiento.Year;
             txtEdad.Text = edad.ToString();
-           
-          
+         }
 
-
-
-
+        
+        private void updateEdo()
+        {
+            txtEdo.Text = cmbEstado.Text;
         }
 
-
-        private bool verificarCorreo(){
-            string validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
-               + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
-               + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
-            Regex reg = new Regex(validEmailPattern);
-            if (!reg.IsMatch(this.txtCorreo.Text))
-            {
-                MessageBox.Show("El Formato del correo electronico es incorrecto.");
-                return false;
-
-            }
-            return true;
+        private void updateEdoemision()
+        {
+            cmbEstado.Text = txtEdo.Text;
         }
-
-    
 
         private void dateNacimiento_Leave(object sender, EventArgs e)
         {
@@ -324,8 +324,25 @@ namespace Seguros_American.Forms.Clientes
             if(string.IsNullOrEmpty(splitFecha[0]) || string.IsNullOrEmpty(splitFecha[1]) || string.IsNullOrEmpty(splitFecha[2])){
                 return false;
             }
+            
             return true;
         }
+            
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateEdo();
+            updateEdoemision();
+
+        }
+
+        
+        
+       
+
+
+
+      
 
    
      
