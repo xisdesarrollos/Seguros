@@ -35,7 +35,7 @@ namespace Seguros_American.Forms
 
             try {
                 conn = new MySqlConnection();
-                conn.ConnectionString = constr;
+                conn.ConnectionString = constr;//conexion settings
                 conn.Open();
 
                 string sql = "SELECT  polizas_americanas.idFolio, polizas_americanas.folio, polizas_americanas.idCliente AS Expr2, "+ 

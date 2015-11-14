@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Seguros_American.Forms.Clientes;
 using Seguros_American.Forms.Vehiculos;
-
 using MySql.Data.MySqlClient;
 
 namespace Seguros_American.Forms.SegurosAmericanos
@@ -162,7 +161,9 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     cmdPoliza.Parameters.AddWithValue("@tipo", cmbSeguro.Text);
                     cmdPoliza.Parameters.AddWithValue("@idCliente", txtNoCliente.Text);
                     cmdPoliza.Parameters.AddWithValue("@usuario", Globales.nombreUsuario);
+                    //es transmigrante o seguros?
                     cmdPoliza.Parameters.AddWithValue("@idVehiculo", idVehiculo);//obtener cuando se llama a gestion vehiculos.
+                    cmdPoliza.Parameters.AddWithValue("@idVehiculo2", idVehiculo2);//se guarda null seguros.
                     cmdPoliza.Parameters.AddWithValue("@dias", cmbDia.Text);
                     cmdPoliza.Parameters.AddWithValue("@inVig", DateTime.Parse(dateIncVig.Value.ToString()).ToString("yyyy-MM-dd"));
                     cmdPoliza.Parameters.AddWithValue("@finVig", DateTime.Parse(dateFinVig.Value.ToString()).ToString("yyyy-MM-dd"));
@@ -187,7 +188,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     cmdPoliza.Parameters.AddWithValue("@noLicencia2", txtNoLic2.Text);
                     cmdPoliza.Parameters.AddWithValue("@edoLicencia", txtEdoEm1.Text);
                     cmdPoliza.Parameters.AddWithValue("@edoLicencia2", txtEdoEm2.Text);
-                    cmdPoliza.Parameters.AddWithValue("@idVehiculo2",idVehiculo2);
+                    
 
 
                     try
@@ -327,12 +328,13 @@ namespace Seguros_American.Forms.SegurosAmericanos
                             " WHERE  idCliente = " + idCliente + " AND " + "fechaAlta = '" + dateInserted.ToString("yyyy-MM-dd HH:mm:ss") + "';";
 
                         idFolio = bd.ConsultaEscalarString(sqlGetFolio);
-
+                        //polizas americanas.
                         FrmReporte reporte = new FrmReporte(idFolio);
                         reporte.Show();
+                        //transmigrante.
                     }
 
-                    this.Close();
+                    this.Dispose();
                 }
                 else
                 {
@@ -345,7 +347,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 if (actualizaPoliza())
                 {
                     MessageBox.Show("PÓLIZA ACTUALIZADA CORRECTAMENTE");
-                    this.Close();
+                    this.Dispose();
                 }
                 else
                 {
@@ -384,8 +386,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     break;
             }
         }
-
-       
 
         public void onDataGridAuxClientes(DataGridView dgv)
         {
@@ -565,29 +565,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 }
                
                 //CARGA DATOS VEHICULOS 
-
-                DataTable dataTableVehiculo = null;
-                DataRow selectedRowVehiculo = null;
+             
                 try
                 {
+                    consultarVehiculos(idVehiculo);
+                 
+                     if (selectedRow[2].ToString() == "TRANSMIGRANTE")
+                         consultarVehiculos(idVehiculo2);
                     
-                    //obteber datos de cliente con el id
-                    string filtroVehiculo = "modelo, marca, submarca,placas, numeroSerie";
-                    string condicionVehiculo = "idCliente = " + idCliente;
-                    string tablaVehiculo = "vehiculos_cliente";
-                    dataTableVehiculo = bd.Consultar(filtroVehiculo, tablaVehiculo, condicionVehiculo);
-
-                    //cargar auto uno y auto dos
-                   selectedRowVehiculo = dataTableVehiculo.Rows[0];
-                  
-                    if (vbl.Items.Any())
-                        vbl.Clear();
-
-                    vbl.Items.Add("Año: " + selectedRowVehiculo[0].ToString());
-                    vbl.Items.Add("Marca: " + selectedRowVehiculo[1].ToString());
-                    vbl.Items.Add("Modelo: " + selectedRowVehiculo[2].ToString());
-                    vbl.Items.Add("Placas: " + selectedRowVehiculo[3].ToString());
-                    vbl.Items.Add("Numero de Serie: " + selectedRowVehiculo[4].ToString());
                 }
                 catch (MySqlException ex)
                 {
@@ -748,20 +733,34 @@ namespace Seguros_American.Forms.SegurosAmericanos
         }
         public void cargarAutos(DataGridViewRow selectedRow)
         {
-            //al principio esta vacio
-  
+          
             switch (cmbSeguro.SelectedIndex) { 
                 case 0:
-                    MessageBox.Show("Seguros");
                     cargaAutosAmericanos(selectedRow);
                     break;
                 case 1:
-                    MessageBox.Show("Transmigrantes");
                     cargaAutosTransmigrantes(selectedRow);
                     break;
                 default:
                     break;
             }
+        }
+        public void cargarAutos(DataRow selectedRow) {
+            // Mostrarlos en los campos de nuevo vehiculo.
+            idVehiculo = selectedRow[0].ToString();
+            modelo = selectedRow[1].ToString();
+            marca = selectedRow[2].ToString();
+            submarca = selectedRow[3].ToString();
+            placas = selectedRow[4].ToString();
+            numeroSerie = selectedRow[5].ToString();
+            estadoPlacas = selectedRow[6].ToString();
+
+            //al principio esta vacio
+            if (vbl.Items.Any())
+                vbl.Clear();
+
+
+            vbl.Items.Add("Año: " + modelo + ", Marca: " + marca + ", Modelo: " + submarca + ", Placas: " + placas + ", Numero de Serie: " + numeroSerie);
         }
         public void cargaAutosAmericanos(DataGridViewRow selectedRow)
         {
@@ -785,37 +784,56 @@ namespace Seguros_American.Forms.SegurosAmericanos
         public void cargaAutosTransmigrantes(DataGridViewRow selectedRow)
         {
             // Mostrarlos en los campos de nuevo vehiculo.
-            idVehiculo = selectedRow.Cells[0].Value.ToString();
-            modelo = selectedRow.Cells[1].Value.ToString();
-            marca = selectedRow.Cells[2].Value.ToString();
-            submarca = selectedRow.Cells[3].Value.ToString();
-            placas = selectedRow.Cells[4].Value.ToString();
-            numeroSerie = selectedRow.Cells[5].Value.ToString();
-            estadoPlacas = selectedRow.Cells[6].Value.ToString();
-
-            if (vbl.Items.Count < 2 )
+            if (vbl.Items.Count < 2)
             {
+                modelo = selectedRow.Cells[1].Value.ToString();
+                marca = selectedRow.Cells[2].Value.ToString();
+                submarca = selectedRow.Cells[3].Value.ToString();
+                placas = selectedRow.Cells[4].Value.ToString();
+                numeroSerie = selectedRow.Cells[5].Value.ToString();
+                estadoPlacas = selectedRow.Cells[6].Value.ToString();
+
+                switch(vbl.Items.Count) {
+                    case 0:
+                        idVehiculo = selectedRow.Cells[0].Value.ToString();
+                        break;
+                    case 1:
+                        idVehiculo2 = selectedRow.Cells[0].Value.ToString();
+                        break;
+                    default:
+                        break;
+                }
+              
+  
                 vbl.Items.Add("Año: " + modelo + ", Marca: " + marca + ", Modelo: " + submarca + ", Placas: " + placas + ", Numero de Serie: " + numeroSerie);
             }
         }
-        public void guardarAutos(int idAuto)
-        {
-            //al principio esta vacio
 
-            switch (cmbSeguro.SelectedIndex)
+     
+
+        public void consultarVehiculos(string idVehiculo){
+            //es transmigrante o seguros.(hacer dos veces la misma consulta).
+            //obtener datos de cliente con el id.
+            if (vbl.Items.Count < 2)
             {
-                case 0:
-                    MessageBox.Show("Seguros");
-                    
-                    break;
-                case 1:
-                    MessageBox.Show("Transmigrantes");
-                    
-                    break;
-                default:
-                    break;
-            }
+                string filtroVehiculo = "modelo, marca, submarca,placas, numeroSerie";
+                string condicionVehiculo = "idVehiculo = " + idVehiculo;
+                string tablaVehiculo = "vehiculos_cliente";
+                DataTable table = bd.Consultar(filtroVehiculo, tablaVehiculo, condicionVehiculo);
+                
+                if (table.Rows.Count > 0){
+                    DataRow row = table.Rows[0];
 
+                    string modelo = row[0].ToString();
+                    string marca = row[1].ToString();
+                    string submarca = row[2].ToString();
+                    string placas = row[3].ToString();
+                    string numeroSerie = row[4].ToString();
+
+                    vbl.Items.Add("Año: " + modelo + ", Marca: " + marca + ", Modelo: " + submarca + ", Placas: " + placas + ", Numero de Serie: " + numeroSerie);
+            
+                }
+            }
         }
     }
 }
