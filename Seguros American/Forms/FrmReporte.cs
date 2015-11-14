@@ -29,8 +29,8 @@ namespace Seguros_American.Forms
         private DataSet1 getData()
         {
             DataSet1 poliza = new DataSet1();
-            poliza.EnforceConstraints = false;
-            string constr = "server=192.168.0.200;uid=root;" + "pwd=9753186400;database=seguros_americanos;";
+        
+            string constr = Properties.Settings.Default.seguros_americanosConnectionString1;
             MySqlConnection conn;
 
             try {
