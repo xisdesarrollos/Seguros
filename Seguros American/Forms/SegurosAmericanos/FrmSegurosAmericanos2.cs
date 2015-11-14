@@ -759,7 +759,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
             if (vbl.Items.Any())
                 vbl.Clear();
 
-
             vbl.Items.Add("Año: " + modelo + ", Marca: " + marca + ", Modelo: " + submarca + ", Placas: " + placas + ", Numero de Serie: " + numeroSerie);
         }
         public void cargaAutosAmericanos(DataGridViewRow selectedRow)
@@ -833,6 +832,83 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     vbl.Items.Add("Año: " + modelo + ", Marca: " + marca + ", Modelo: " + submarca + ", Placas: " + placas + ", Numero de Serie: " + numeroSerie);
             
                 }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (vbl.Items.Any())
+                vbl.Clear();
+
+        }
+
+        private void txtNoCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                int pivot;
+                string idClient = txtNoCliente.Text;
+
+                if (int.TryParse(idClient, out pivot))
+                {
+                    string sqlCliente = "SELECT idCliente,nombre,telefono,cel,email, pais, ciudad, estado, fechaNacimiento, " + 
+                        "calle, colonia,noExterior, cp, noLicencia, ocupacion  FROM clientes WHERE idCliente = " + idClient;
+                    DataTable table = null;
+                    try
+                    {
+                        table = bd.ConsultarAlterno(sqlCliente);
+
+                        DataRow selectedRow = table.Rows[0];
+                        
+                        // Mostrarlos en los campos de nuevo vehiculo.(verificar todos los campos que se asignan).
+                        idCliente = selectedRow[0].ToString();
+                        nombreCliente = selectedRow[1].ToString();
+                        string telefono = selectedRow[2].ToString();
+                        string cel = selectedRow[3].ToString();
+                        string email = selectedRow[4].ToString();
+                        string pais = selectedRow[5].ToString();
+                        string cuidad = selectedRow[6].ToString();
+                        estado = selectedRow[7].ToString();
+                        clienteNacimiento = selectedRow[8].ToString();
+                        string calle = selectedRow[9].ToString();
+                        string colonia =selectedRow[10].ToString();
+                        string noE = selectedRow[11].ToString();
+                        string cp = selectedRow[12].ToString();
+                        clienteLicencia =selectedRow[13].ToString();
+                        ocupacion = selectedRow[14].ToString();
+                        string direccion = calle + " #" + noE + "," + colonia;
+
+
+                        txtNoCliente.Text = idCliente;
+                        txtNoLic1.Text = clienteLicencia;
+                        txtNombre.Text = txtNomCod1.Text = nombreCliente;
+                        cmbPais.Text = pais;
+                        txtDireccion.Text = direccion;
+                        txtCiudad.Text = cuidad;
+                        txtEstado.Text = txtEdoEm1.Text = estado;
+                        dateFechaNac1.Text = clienteNacimiento;
+                        txtEdad1.Text = edadPorFecha(dateFechaNac1.Text);
+                        txtOcupacion1.Text = ocupacion;
+                    }
+                    catch (MySqlException errConsultaCliente)
+                    {
+                        MessageBox.Show("SUCEDIO UN ERROR AL CONTECTAR A LA BASE DATOS ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    catch (IndexOutOfRangeException errIndex)
+                    {
+                        MessageBox.Show("NO SE ENCONTRO EL NUMERO DE CLIENTE, UTILICE LA HERRAMIENTA DE BUSQUEDA ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                }
+                else
+                {
+                    //caracteres incorrectos.
+                    MessageBox.Show("VERIFIQUE LOS VALORES EN EL CAMPO ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
             }
         }
     }
