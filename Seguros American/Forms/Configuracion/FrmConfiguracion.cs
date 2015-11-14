@@ -32,7 +32,7 @@ namespace Seguros_American.Forms.Configuracion
         {
             Properties.Settings.Default.impresora = cmbimpresora.Text;
             Properties.Settings.Default.Save();
-            MessageBox.Show("La impresora se configuró correctamente","IMPRESORAS",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("LA IMPRESORA SE CONFIGURÓ CORRECTAMENTE", "IMPRESORAS", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Dispose();
         }
     }

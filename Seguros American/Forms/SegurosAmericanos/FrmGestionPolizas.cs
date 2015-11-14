@@ -163,7 +163,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             string nTabla = "polizas_americanas";
 
             string condicion = "idFolio = " + idFolio;
-             DialogResult r = MessageBox.Show("¿Seguro que desea eliminar esta poliza seleccionado?", "Poliza", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult r = MessageBox.Show("¿SEGURO QUE DESEA ELIMINAR ESTA PÓLIZA SELECCIONADO?", "Poliza", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
              if (r == DialogResult.Yes)
              {
                  try
@@ -171,12 +171,12 @@ namespace Seguros_American.Forms.SegurosAmericanos
                      bd.Eliminar(nTabla, condicion);
                      Globales.cargaGrid(sqlSelect, dgvPolizas);
                      estilizaGrid();
-                     MessageBox.Show("Poliza eliminada exitosamente");
+                     MessageBox.Show("PÓLIZA ELIMINADA EXITOSAMENTE");
 
                  }
                  catch (MySqlException exsql)
                  {
-                     MessageBox.Show("No se pudo eliminar el campo ");
+                     MessageBox.Show("NO SE PUDO ELIMINAR EL CAMPO ");
 
                  }
              }

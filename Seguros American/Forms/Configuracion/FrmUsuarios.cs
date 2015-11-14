@@ -121,10 +121,10 @@ namespace Seguros_American.Forms.Configuracion
                 DataGridViewRow selectedRow = dgv.Rows[index];
             if(dgv[4,dgv.CurrentRow.Index].Value.ToString() =="ADMINISTRADOR")
             {
-                MessageBox.Show("No se puede eliminar ADMINISTRADOR","USUARIO",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                MessageBox.Show("NO SE PUEDE ELIMINAR ADMINISTRADOR", "USUARIO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
-            }           
-            DialogResult r = MessageBox.Show("¿Seguro que desea eliminar al usuario seleccionado?", "Usuarios", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+            DialogResult r = MessageBox.Show("¿SEGURO QUE DESEA ELIMINAR AL USUARIO SELECCIONADO?", "USUARIO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes)
             {
                 

@@ -14,8 +14,10 @@ namespace Seguros_American.Forms.Clientes
 {
     public partial class FrmAuxCliente : Form
     {
-string sql = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fechaNacimiento,calle,colonia,noExterior,cp,noLicencia,ocupacion FROM clientes";
-        
+string sql = "SELECT * FROM clientes";
+
+//idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fechaNacimiento,calle,colonia,noExterior,cp,noLicencia,ocupacion
+
         Basedatos db = new Basedatos();
         DataTable dt = new DataTable();
         string id;
@@ -29,6 +31,8 @@ string sql = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fech
         {
             InitializeComponent();
             iGestionClientes = aux;
+            cargaGrid();
+            estilizaGrid();
         }
 
        
@@ -76,13 +80,16 @@ string sql = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fech
         {
             dgv.Columns[0].HeaderText = "No.";
             dgv.Columns[1].HeaderText = "Nombre";
+            dgv.Columns[4].HeaderText = "Fecha Nacimiento";
+
+
           
             dgv.Columns[0].Width = 50;
-            dgv.Columns[1].Width = 372;
+            dgv.Columns[1].Width = 270;
            //desaparecer todas excepto 0 y 1
             dgv.Columns[2].Visible = false;
             dgv.Columns[3].Visible = false;
-            dgv.Columns[4].Visible = false;
+            dgv.Columns[4].Width = 120;
             dgv.Columns[5].Visible = false;
             dgv.Columns[6].Visible = false;
             dgv.Columns[7].Visible = false;
@@ -93,7 +100,13 @@ string sql = "SELECT idcliente,nombre,telefono,cel,email,pais,ciudad,estado,fech
             dgv.Columns[12].Visible = false;
             dgv.Columns[13].Visible = false;
             dgv.Columns[14].Visible = false;
-            
+            dgv.Columns[15].Visible = false;
+            dgv.Columns[16].Visible = false;
+            dgv.Columns[17].Visible = false;
+            dgv.Columns[18].Visible = false;
+            dgv.Columns[19].Visible = false;
+            dgv.Columns[20].Visible = false;
+      
         }
 
         public interface IAuxClientes {

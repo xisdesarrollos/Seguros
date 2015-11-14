@@ -108,6 +108,7 @@
             this.ClientSize = new System.Drawing.Size(339, 217);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnGuardar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmBaseDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuración MySQL";

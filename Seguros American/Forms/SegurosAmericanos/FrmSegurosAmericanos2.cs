@@ -67,7 +67,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             }
             else
             {
-                MessageBox.Show("Por favor seleccione primero un Cliente");
+                MessageBox.Show("POR FAVOR SELECCIONE PRIMERO UN CLIENTE");
             }
 
         }
@@ -208,7 +208,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtDireccion.Text) ||
                 string.IsNullOrEmpty(txtCiudad.Text) || string.IsNullOrEmpty(txtEstado.Text) ) {
 
-                    MessageBox.Show("Algunos campos en la informacion Cliente estan vacios");
+                    MessageBox.Show("ALGUNOS CAMPOS EN LA INFORMACIÓN CLIENTE ESTÁN VACÍOS");
 
                     return false;
             }
@@ -216,14 +216,14 @@ namespace Seguros_American.Forms.SegurosAmericanos
             if(string.IsNullOrEmpty(txtFolio.Text) || string.IsNullOrEmpty(cmbSeguro.Text) ||
                 string.IsNullOrEmpty(cmbSuma.Text) || string.IsNullOrEmpty(cmbDia.Text) ) {
 
-                    MessageBox.Show("Verifique que los campos en la seccion Primas esten correctos");
+                    MessageBox.Show("VERIFIQUE QUE LOS CAMPOS EN LA SECCIÓN PRIMAS ESTÉN CORRECTOS");
                     
                 return false;
             }
             
             //verifica que haya al menos un vehiculo
             if(!vbl.Items.Any()){
-                MessageBox.Show("Debe seleccionar al menos un Vehiculo para poder generar la poliza");
+                MessageBox.Show("DEBE SELECCIONAR AL MENOS UN VEHÍCULO PARA PODER GENERAR LA PÓLIZA");
                 return false;
             }
 
@@ -232,7 +232,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 string.IsNullOrEmpty(txtNomCod1.Text) || string.IsNullOrEmpty(txtNoLic1.Text) ||
                 string.IsNullOrEmpty(txtEdad1.Text) || string.IsNullOrEmpty(txtEdoEm1.Text) ) {
 
-                MessageBox.Show("Verifique que los campos en la seccion Conductores sean correctos");
+                    MessageBox.Show("VERIFIQUE QUE LOS CAMPOS EN LA SECCIÓN CONDUCTORES SEAN CORRECTOS");
                 
                 return false;
             }
@@ -246,7 +246,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             {
                 if (bd.Existe("polizas_americanas", "folio", txtFolio.Text))
                 {
-                    MessageBox.Show("El numero de folio ya existe en la Base de Datos");
+                    MessageBox.Show("EL NÚMERO DE FOLIO YA EXISTE EN LA BASE DE DATOS");
                     return false;
                 }
             }
@@ -313,7 +313,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
             {
                 if (guardaPoliza())
                 {
-                    DialogResult response = MessageBox.Show("Desea imprimir poliza? ", "Datos guardados correctamente", MessageBoxButtons.YesNo);
+                    DialogResult response = MessageBox.Show("¿DESEA IMPRIMIR PÓLIZA? ", "DATOS GUARDADOS CORRECTAMENTE", MessageBoxButtons.YesNo);
                     //mandar al visor.
                     if (response == DialogResult.Yes)
                     {
@@ -332,7 +332,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo completar la transaccion");
+                    MessageBox.Show("NO SE PUDO COMPLETAR LA TRANSACCIÓN");
                 }
             }
             else
@@ -340,12 +340,12 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 //actualizar datos
                 if (actualizaPoliza())
                 {
-                    MessageBox.Show("Poliza actualizada correctemente");
+                    MessageBox.Show("PÓLIZA ACTUALIZADA CORRECTAMENTE");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Error en la actualizacion de la Poliza");
+                    MessageBox.Show("ERROR EN LA ACTUALIZACIÓN DE LA PÓLIZA");
                 }
                 
 

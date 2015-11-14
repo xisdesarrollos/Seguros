@@ -47,7 +47,7 @@ namespace Seguros_American.Forms.Configuracion
 
         private void dgvTarifa_DataError(object sender, DataGridViewDataErrorEventArgs anError)
         {
-            MessageBox.Show("Error al validar " + anError.Context.ToString());
+            MessageBox.Show("ERROR AL VALIDAR" + anError.Context.ToString());
             
         }
 
@@ -88,7 +88,7 @@ namespace Seguros_American.Forms.Configuracion
             tarifasautos2BindingSource.EndEdit();
             this.tarifasautosTableAdapter.Update(this.dataSet1.tarifasautos);
             this.tarifasautos_2TableAdapter.Update(this.dataSet1.tarifasautos_2);
-            MessageBox.Show("Cambios realizados correctamente");
+            MessageBox.Show("CAMBIOS REALIZADOS CORRECTAMENTE");
             this.Close();
         }
 
@@ -109,6 +109,8 @@ namespace Seguros_American.Forms.Configuracion
                     break;
             }
         }
+
+       
        
     }
 }

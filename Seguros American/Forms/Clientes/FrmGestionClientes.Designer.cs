@@ -39,8 +39,8 @@
             this.groupFiltro = new Elegant.Ui.GroupBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.menuOpcionesClientes = new Elegant.Ui.ContextMenu(this.components);
-            this.btnEliminarCli = new Elegant.Ui.Button();
             this.btnEditarCli = new Elegant.Ui.Button();
+            this.btnEliminarCli = new Elegant.Ui.Button();
             this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             this.groupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -56,7 +56,7 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "7d6d16c6-7730-4a31-9037-f4b468099530";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(934, 18);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(990, 18);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(83, 41);
             this.btnMostrarTodos.TabIndex = 2;
@@ -71,7 +71,7 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(370, 28);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(508, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(564, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 262;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
@@ -92,14 +92,13 @@
             this.cmbFiltro.Size = new System.Drawing.Size(286, 21);
             this.cmbFiltro.TabIndex = 0;
             this.cmbFiltro.TextEditorWidth = 218;
-            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbFiltro_SelectedIndexChanged);
             // 
             // btnNuevo
             // 
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "504c2201-c57b-49d8-9ab3-aab6f73b6a0a";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(1036, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(1092, 16);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(120, 45);
             this.btnNuevo.TabIndex = 3;
@@ -119,7 +118,7 @@
             this.groupFiltro.Id = "c0a9dae8-1b03-4cb4-84ea-645d02d27465";
             this.groupFiltro.Location = new System.Drawing.Point(5, -1);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(1258, 91);
+            this.groupFiltro.Size = new System.Drawing.Size(1314, 91);
             this.groupFiltro.TabIndex = 12;
             // 
             // dgvClientes
@@ -148,45 +147,46 @@
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersVisible = false;
             this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvClientes.Size = new System.Drawing.Size(1246, 645);
+            this.dgvClientes.Size = new System.Drawing.Size(1302, 701);
             this.dgvClientes.TabIndex = 4;
             // 
             // menuOpcionesClientes
             // 
             this.menuOpcionesClientes.Items.AddRange(new System.Windows.Forms.Control[] {
-            this.btnEliminarCli,
-            this.btnEditarCli});
+            this.btnEditarCli,
+            this.btnEliminarCli});
             this.menuOpcionesClientes.KeepPopupsWithOffsetPlacementWithinPlacementArea = false;
             this.menuOpcionesClientes.PlacementMode = Elegant.Ui.PopupPlacementMode.Bottom;
             this.menuOpcionesClientes.PlacementOffset = new System.Drawing.Size(207, 106);
             this.menuOpcionesClientes.Size = new System.Drawing.Size(100, 100);
             // 
-            // btnEliminarCli
-            // 
-            this.btnEliminarCli.Id = "8f06857b-1a02-4390-b0c9-7628109f1d62";
-            this.btnEliminarCli.Location = new System.Drawing.Point(2, 2);
-            this.btnEliminarCli.Name = "btnEliminarCli";
-            this.btnEliminarCli.Size = new System.Drawing.Size(138, 23);
-            this.btnEliminarCli.TabIndex = 3;
-            this.btnEliminarCli.Text = "Eliminar";
-            this.btnEliminarCli.Click += new System.EventHandler(this.btnEliminarCli_Click);
-            // 
             // btnEditarCli
             // 
             this.btnEditarCli.Id = "7c62275f-a764-4547-ac6b-a5739a532dab";
-            this.btnEditarCli.Location = new System.Drawing.Point(2, 25);
+            this.btnEditarCli.Location = new System.Drawing.Point(2, 2);
             this.btnEditarCli.Name = "btnEditarCli";
             this.btnEditarCli.Size = new System.Drawing.Size(138, 23);
             this.btnEditarCli.TabIndex = 4;
             this.btnEditarCli.Text = "Editar";
             this.btnEditarCli.Click += new System.EventHandler(this.btnEditarCli_Click);
             // 
+            // btnEliminarCli
+            // 
+            this.btnEliminarCli.Id = "8f06857b-1a02-4390-b0c9-7628109f1d62";
+            this.btnEliminarCli.Location = new System.Drawing.Point(2, 25);
+            this.btnEliminarCli.Name = "btnEliminarCli";
+            this.btnEliminarCli.Size = new System.Drawing.Size(138, 23);
+            this.btnEliminarCli.TabIndex = 3;
+            this.btnEliminarCli.Text = "Eliminar";
+            this.btnEliminarCli.Click += new System.EventHandler(this.btnEliminarCli_Click);
+            // 
             // FrmGestionClientes
             // 
+            this.AcceptButton = this.btnMostrarTodos;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1263, 750);
+            this.ClientSize = new System.Drawing.Size(1319, 806);
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.groupFiltro);
             this.MinimumSize = new System.Drawing.Size(600, 300);
