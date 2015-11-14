@@ -50,12 +50,12 @@
             this.ribbonGroup5 = new Elegant.Ui.RibbonGroup();
             this.btnBase = new Elegant.Ui.Button();
             this.btnimpresora = new Elegant.Ui.Button();
-            this.TabReportes = new Elegant.Ui.RibbonTabPage();
-            this.ribbonGroup1 = new Elegant.Ui.RibbonGroup();
-            this.btnReportes = new Elegant.Ui.Button();
             this.ribbonGroup8 = new Elegant.Ui.RibbonGroup();
             this.btnTarifas = new Elegant.Ui.Button();
             this.btnGestonTarifas = new Elegant.Ui.Button();
+            this.TabReportes = new Elegant.Ui.RibbonTabPage();
+            this.ribbonGroup1 = new Elegant.Ui.RibbonGroup();
+            this.btnReportes = new Elegant.Ui.Button();
             themeSelector = new Elegant.Ui.ThemeSelector(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabCatalogo)).BeginInit();
@@ -74,12 +74,12 @@
             this.ribbonGroup3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonGroup5)).BeginInit();
             this.ribbonGroup5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonGroup8)).BeginInit();
+            this.ribbonGroup8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabReportes)).BeginInit();
             this.TabReportes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonGroup1)).BeginInit();
             this.ribbonGroup1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonGroup8)).BeginInit();
-            this.ribbonGroup8.SuspendLayout();
             this.SuspendLayout();
             // 
             // formFrameSkinner
@@ -89,12 +89,12 @@
             // ribbon1
             // 
             this.ribbon1.BackColor = System.Drawing.SystemColors.Menu;
-            this.ribbon1.CurrentTabPage = this.TabCatalogo;
+            this.ribbon1.CurrentTabPage = this.TabReportes;
             this.ribbon1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbon1.Id = "80d5119b-9a8c-4698-a56b-e01c1a6ded9f";
             this.ribbon1.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.Name = "ribbon1";
-            this.ribbon1.Size = new System.Drawing.Size(1311, 153);
+            this.ribbon1.Size = new System.Drawing.Size(1319, 153);
             this.ribbon1.TabIndex = 2;
             this.ribbon1.TabPages.AddRange(new Elegant.Ui.RibbonTabPage[] {
             this.TabCatalogo,
@@ -110,7 +110,7 @@
             this.TabCatalogo.KeyTip = null;
             this.TabCatalogo.Location = new System.Drawing.Point(0, 0);
             this.TabCatalogo.Name = "TabCatalogo";
-            this.TabCatalogo.Size = new System.Drawing.Size(1311, 99);
+            this.TabCatalogo.Size = new System.Drawing.Size(1319, 99);
             this.TabCatalogo.TabIndex = 0;
             this.TabCatalogo.Text = "CATALOGO";
             // 
@@ -236,7 +236,7 @@
             this.TabConfiguracion.KeyTip = null;
             this.TabConfiguracion.Location = new System.Drawing.Point(0, 0);
             this.TabConfiguracion.Name = "TabConfiguracion";
-            this.TabConfiguracion.Size = new System.Drawing.Size(1311, 99);
+            this.TabConfiguracion.Size = new System.Drawing.Size(1319, 99);
             this.TabConfiguracion.TabIndex = 0;
             this.TabConfiguracion.Text = "CONFIGURACIÓN";
             // 
@@ -308,36 +308,6 @@
             this.btnimpresora.Text = "Impresoras";
             this.btnimpresora.Click += new System.EventHandler(this.btnimpresora_Click);
             // 
-            // TabReportes
-            // 
-            this.TabReportes.Controls.Add(this.ribbonGroup1);
-            this.TabReportes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabReportes.KeyTip = null;
-            this.TabReportes.Location = new System.Drawing.Point(0, 0);
-            this.TabReportes.Name = "TabReportes";
-            this.TabReportes.Size = new System.Drawing.Size(1279, 99);
-            this.TabReportes.TabIndex = 0;
-            this.TabReportes.Text = "REPORTES";
-            // 
-            // ribbonGroup1
-            // 
-            this.ribbonGroup1.Controls.Add(this.btnReportes);
-            this.ribbonGroup1.Location = new System.Drawing.Point(5, 5);
-            this.ribbonGroup1.Name = "ribbonGroup1";
-            this.ribbonGroup1.Size = new System.Drawing.Size(59, 0);
-            this.ribbonGroup1.TabIndex = 0;
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Id = "e227dc0d-dcd5-45bc-94e2-566e85405d58";
-            this.btnReportes.LargeImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
-            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.report48)});
-            this.btnReportes.Location = new System.Drawing.Point(4, 0);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(52, 0);
-            this.btnReportes.TabIndex = 4;
-            this.btnReportes.Text = "Reportes";
-            // 
             // ribbonGroup8
             // 
             this.ribbonGroup8.Controls.Add(this.btnTarifas);
@@ -372,11 +342,41 @@
             this.btnGestonTarifas.Text = "Gestión Tarifas ";
             this.btnGestonTarifas.Click += new System.EventHandler(this.btnGestonTarifas_Click);
             // 
+            // TabReportes
+            // 
+            this.TabReportes.Controls.Add(this.ribbonGroup1);
+            this.TabReportes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabReportes.KeyTip = null;
+            this.TabReportes.Location = new System.Drawing.Point(0, 0);
+            this.TabReportes.Name = "TabReportes";
+            this.TabReportes.Size = new System.Drawing.Size(1319, 99);
+            this.TabReportes.TabIndex = 0;
+            this.TabReportes.Text = "REPORTES";
+            // 
+            // ribbonGroup1
+            // 
+            this.ribbonGroup1.Controls.Add(this.btnReportes);
+            this.ribbonGroup1.Location = new System.Drawing.Point(5, 5);
+            this.ribbonGroup1.Name = "ribbonGroup1";
+            this.ribbonGroup1.Size = new System.Drawing.Size(59, 89);
+            this.ribbonGroup1.TabIndex = 0;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.Id = "e227dc0d-dcd5-45bc-94e2-566e85405d58";
+            this.btnReportes.LargeImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.report48)});
+            this.btnReportes.Location = new System.Drawing.Point(4, 0);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(50, 72);
+            this.btnReportes.TabIndex = 4;
+            this.btnReportes.Text = "Reportes";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 738);
+            this.ClientSize = new System.Drawing.Size(1319, 738);
             this.Controls.Add(this.ribbon1);
             this.IsMdiContainer = true;
             this.Name = "FrmPrincipal";
@@ -408,15 +408,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonGroup5)).EndInit();
             this.ribbonGroup5.ResumeLayout(false);
             this.ribbonGroup5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonGroup8)).EndInit();
+            this.ribbonGroup8.ResumeLayout(false);
+            this.ribbonGroup8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabReportes)).EndInit();
             this.TabReportes.ResumeLayout(false);
             this.TabReportes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonGroup1)).EndInit();
             this.ribbonGroup1.ResumeLayout(false);
             this.ribbonGroup1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ribbonGroup8)).EndInit();
-            this.ribbonGroup8.ResumeLayout(false);
-            this.ribbonGroup8.PerformLayout();
             this.ResumeLayout(false);
 
         }
