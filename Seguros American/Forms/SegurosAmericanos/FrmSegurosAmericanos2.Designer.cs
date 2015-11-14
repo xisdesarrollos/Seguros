@@ -754,8 +754,7 @@
             this.cmbSeguro.FormattingEnabled = false;
             this.cmbSeguro.Id = "fb015a6e-754a-4629-b0ae-f50b790ceeac";
             this.cmbSeguro.Items.AddRange(new object[] {
-            "SEGUROS AMERICANOS",
-            "TRANSMIGRANTE "});
+            "SEGUROS AMERICANOS"});
             this.cmbSeguro.LabelText = "Tipo de Seguro:";
             this.cmbSeguro.Location = new System.Drawing.Point(289, 31);
             this.cmbSeguro.Name = "cmbSeguro";
@@ -763,6 +762,7 @@
             this.cmbSeguro.TabIndex = 2;
             this.cmbSeguro.Text = "SEGUROS AMERICANOS";
             this.cmbSeguro.TextEditorWidth = 159;
+            this.cmbSeguro.SelectedIndexChanged += new System.EventHandler(this.cmbSeguro_SelectedIndexChanged);
             // 
             // cmbSuma
             // 
@@ -1218,7 +1218,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 456);
+            this.ClientSize = new System.Drawing.Size(701, 464);
             this.Controls.Add(this.tabSegurosAmericanos);
             this.Controls.Add(this.btnGuardar);
             this.MaximizeBox = false;

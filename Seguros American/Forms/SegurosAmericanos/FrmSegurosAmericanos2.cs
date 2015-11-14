@@ -24,6 +24,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
         string idCliente;
         string nombreCliente;
         string idVehiculo;
+        string idVehiculo2;
         string clienteLicencia;
         string clienteNacimiento;
         string ocupacion;
@@ -154,8 +155,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     //recoletar todos los datos para crear la consulta a la tabla
                     MySqlCommand cmdPoliza = new MySqlCommand();
 
-                    cmdPoliza.CommandText = "INSERT INTO polizas_americanas(folio, tipo, idCliente, usuario, idVehiculo, dias,inVig, finVig, fechaAlta, fechaEm, horaDesd, horaHast, primaBienes, primaGm, primaDerPol, total, nombreCod, nombreCod2, edadCod, edadCod2, ocupacionCod, ocupacionCod2,noLicencia,noLicencia2, edoLicencia, edoLicencia2)" +
-                        "VALUES(@folio, @tipo, @idCliente, @usuario, @idVehiculo, @dias,@inVig, @finVig, @fechaAlta, @fechaEm, @horaDesd, @horaHast, @primaBienes, @primaGm, @primaDerPol, @total, @nombreCod, @nombreCod2, @edadCod, @edadCod2, @ocupacionCod, @ocupacionCod2, @noLicencia, @noLicencia2, @edoLicencia, @edoLicencia2)";
+                    cmdPoliza.CommandText = "INSERT INTO polizas_americanas(folio, tipo, idCliente, usuario, idVehiculo, dias,inVig, finVig, fechaAlta, fechaEm, horaDesd, horaHast, primaBienes, primaGm, primaDerPol, total, nombreCod, nombreCod2, edadCod, edadCod2, ocupacionCod, ocupacionCod2,noLicencia,noLicencia2, edoLicencia, edoLicencia2,idVehiculo2)" +
+                        "VALUES(@folio, @tipo, @idCliente, @usuario, @idVehiculo, @dias,@inVig, @finVig, @fechaAlta, @fechaEm, @horaDesd, @horaHast, @primaBienes, @primaGm, @primaDerPol, @total, @nombreCod, @nombreCod2, @edadCod, @edadCod2, @ocupacionCod, @ocupacionCod2, @noLicencia, @noLicencia2, @edoLicencia, @edoLicencia2, @idVehiculo2)";
 
                     cmdPoliza.Parameters.AddWithValue("@folio", txtFolio.Text);
                     cmdPoliza.Parameters.AddWithValue("@tipo", cmbSeguro.Text);
@@ -186,6 +187,9 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     cmdPoliza.Parameters.AddWithValue("@noLicencia2", txtNoLic2.Text);
                     cmdPoliza.Parameters.AddWithValue("@edoLicencia", txtEdoEm1.Text);
                     cmdPoliza.Parameters.AddWithValue("@edoLicencia2", txtEdoEm2.Text);
+                    cmdPoliza.Parameters.AddWithValue("@edoLicencia2", txtEdoEm2.Text);
+                    cmdPoliza.Parameters.AddWithValue("@idVehiculo2",idVehiculo2);
+
 
                     try
                     {
@@ -426,25 +430,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
             // Obtener los datos del cliente seleccionado.
             int index = dgv.CurrentCell.RowIndex; //no existe en el contexto actual. 
             DataGridViewRow selectedRow = dgv.Rows[index];
-
-            // Mostrarlos en los campos de nuevo vehiculo.
-            idVehiculo = selectedRow.Cells[0].Value.ToString();
-            modelo = selectedRow.Cells[1].Value.ToString();
-            marca = selectedRow.Cells[2].Value.ToString();
-            submarca = selectedRow.Cells[3].Value.ToString();
-            placas = selectedRow.Cells[4].Value.ToString();
-            numeroSerie = selectedRow.Cells[5].Value.ToString();
-            estadoPlacas = selectedRow.Cells[6].Value.ToString();
-
-            //al principio esta vacio
-            if (vbl.Items.Any())
-                vbl.Clear();
-
-            vbl.Items.Add("Año: " + modelo);
-            vbl.Items.Add("Marca: " + marca);
-            vbl.Items.Add("Modelo: " + submarca);
-            vbl.Items.Add("Placas: " + placas);
-            vbl.Items.Add("Numero de Serie: " + numeroSerie);
+            cargarAutos(selectedRow);
+            
         }
 
         private void dateFechaE_ValueChanged_1(object sender, EventArgs e)
@@ -517,7 +504,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     txtNoLic2.Text = selectedRow[24].ToString();
                     txtEdoEm1.Text = selectedRow[25].ToString();
                     txtEdoEm2.Text = selectedRow[26].ToString();
-
+                    idVehiculo2 = selectedRow[27].ToString();
                 }
                 catch (MySqlException ex)
                 {
@@ -591,7 +578,9 @@ namespace Seguros_American.Forms.SegurosAmericanos
                     string tablaVehiculo = "vehiculos_cliente";
                     dataTableVehiculo = bd.Consultar(filtroVehiculo, tablaVehiculo, condicionVehiculo);
 
+                    //cargar auto uno y auto dos
                    selectedRowVehiculo = dataTableVehiculo.Rows[0];
+                  
                     if (vbl.Items.Any())
                         vbl.Clear();
 
@@ -743,5 +732,91 @@ namespace Seguros_American.Forms.SegurosAmericanos
             return nacimientoYear.ToString();
         }
 
+        private void cmbSeguro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int seguroIndex = cmbSeguro.SelectedIndex;
+
+            switch (seguroIndex)
+            {
+                case 0:
+                    //americanos. un vehiculos y flag de reporte.
+                    break;
+                case 1:
+                   //transmigrante. dos vehiculos y flag de reporte.
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void cargarAutos(DataGridViewRow selectedRow)
+        {
+            //al principio esta vacio
+  
+            switch (cmbSeguro.SelectedIndex) { 
+                case 0:
+                    MessageBox.Show("Seguros");
+                    cargaAutosAmericanos(selectedRow);
+                    break;
+                case 1:
+                    MessageBox.Show("Transmigrantes");
+                    cargaAutosTransmigrantes(selectedRow);
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void cargaAutosAmericanos(DataGridViewRow selectedRow)
+        {
+            // Mostrarlos en los campos de nuevo vehiculo.
+            idVehiculo = selectedRow.Cells[0].Value.ToString();
+            modelo = selectedRow.Cells[1].Value.ToString();
+            marca = selectedRow.Cells[2].Value.ToString();
+            submarca = selectedRow.Cells[3].Value.ToString();
+            placas = selectedRow.Cells[4].Value.ToString();
+            numeroSerie = selectedRow.Cells[5].Value.ToString();
+            estadoPlacas = selectedRow.Cells[6].Value.ToString();
+
+            //al principio esta vacio
+            if (vbl.Items.Any())
+                vbl.Clear();
+
+
+            vbl.Items.Add("Año: " + modelo + ", Marca: " + marca + ", Modelo: " + submarca + ", Placas: " + placas + ", Numero de Serie: " + numeroSerie);
+  
+        }
+        public void cargaAutosTransmigrantes(DataGridViewRow selectedRow)
+        {
+            // Mostrarlos en los campos de nuevo vehiculo.
+            idVehiculo = selectedRow.Cells[0].Value.ToString();
+            modelo = selectedRow.Cells[1].Value.ToString();
+            marca = selectedRow.Cells[2].Value.ToString();
+            submarca = selectedRow.Cells[3].Value.ToString();
+            placas = selectedRow.Cells[4].Value.ToString();
+            numeroSerie = selectedRow.Cells[5].Value.ToString();
+            estadoPlacas = selectedRow.Cells[6].Value.ToString();
+
+            if (vbl.Items.Count < 2 )
+            {
+                vbl.Items.Add("Año: " + modelo + ", Marca: " + marca + ", Modelo: " + submarca + ", Placas: " + placas + ", Numero de Serie: " + numeroSerie);
+            }
+        }
+        public void guardarAutos(int idAuto)
+        {
+            //al principio esta vacio
+
+            switch (cmbSeguro.SelectedIndex)
+            {
+                case 0:
+                    MessageBox.Show("Seguros");
+                    
+                    break;
+                case 1:
+                    MessageBox.Show("Transmigrantes");
+                    
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
