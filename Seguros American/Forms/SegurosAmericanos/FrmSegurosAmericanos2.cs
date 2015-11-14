@@ -634,7 +634,17 @@ namespace Seguros_American.Forms.SegurosAmericanos
             {
                 DateTime today = DateTime.Today;
                 DateTime nacimiento = DateTime.Parse(fechaConFormato);
-                int edad = today.Year - nacimiento.Year;
+                int diaNac = nacimiento.Day;
+                int mesNac = nacimiento.Month;
+                int anioNac = nacimiento.Year;
+
+                int edad = today.Year - anioNac;
+
+                if (today.Month < mesNac)
+                    edad = edad - 1;
+                if (today.Month == mesNac && today.Day < diaNac)
+                    edad = edad - 1;
+
                 return  edad.ToString();
                 
             }
