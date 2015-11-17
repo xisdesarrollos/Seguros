@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Seguros American.exe.manifest" size="46296">
+    <dependentAssembly dependencyType="install" codebase="Seguros American.exe.manifest" size="48576">
       <assemblyIdentity name="Seguros American.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fn3E8flVqWMR7V6zHdoB8L5IUkkdHO3gyBPoChapMVA=</dsig:DigestValue>
+        <dsig:DigestValue>zVwqqknmo2+vE6oHX+JGnyY3f/GjbCMKE2/bV1kuZrs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
