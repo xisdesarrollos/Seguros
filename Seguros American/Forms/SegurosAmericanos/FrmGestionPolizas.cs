@@ -121,7 +121,8 @@ namespace Seguros_American.Forms.SegurosAmericanos
             int index = dgvPolizas.CurrentCell.RowIndex;
             DataGridViewRow selectedRow = dgvPolizas.Rows[index];
             string idFolio = selectedRow.Cells[0].Value.ToString();
-            FrmReporte reporte = new FrmReporte(idFolio);
+            string seguro = selectedRow.Cells[2].Value.ToString();
+            Form reporte = seleccionReporte(seguro, idFolio);
             reporte.Show();
         }
 
@@ -185,6 +186,23 @@ namespace Seguros_American.Forms.SegurosAmericanos
              }
         }
 
+        private Form seleccionReporte(string seguro , string pIdFolio)
+        {
+            Form reporteResult = null;
+            if (seguro.Equals("TRANSMIGRANTE"))
+            {
+                MessageBox.Show("Reporte Transimgrante");
+                reporteResult = new FrmReporte2(pIdFolio);
+            }
+            else
+            {
+                reporteResult = new FrmReporte(pIdFolio);
+                MessageBox.Show("Reporte Seguros Americanos");
+
+            }
+
+            return reporteResult;
+        }
 
     }
 }

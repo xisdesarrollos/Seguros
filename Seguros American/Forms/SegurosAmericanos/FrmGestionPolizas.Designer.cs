@@ -39,11 +39,11 @@
             this.cmbFiltro = new Elegant.Ui.ComboBox();
             this.btnMostrarTodos = new Elegant.Ui.Button();
             this.contextMenu1 = new Elegant.Ui.ContextMenu(this.components);
-            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             this.btnImprimirPolizas = new Elegant.Ui.Button();
             this.btnStatus = new Elegant.Ui.Button();
             this.btnEditarPoliza = new Elegant.Ui.Button();
             this.Eliminar = new Elegant.Ui.Button();
+            this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPolizas)).BeginInit();
             this.groupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).BeginInit();
@@ -80,7 +80,7 @@
             this.dgvPolizas.ReadOnly = true;
             this.dgvPolizas.RowHeadersVisible = false;
             this.dgvPolizas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPolizas.Size = new System.Drawing.Size(1280, 644);
+            this.dgvPolizas.Size = new System.Drawing.Size(1279, 654);
             this.dgvPolizas.TabIndex = 14;
             // 
             // groupFiltro
@@ -94,7 +94,7 @@
             this.groupFiltro.Id = "be3ad8a8-9d23-43c9-84a9-891dab51f90d";
             this.groupFiltro.Location = new System.Drawing.Point(5, 6);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(1280, 91);
+            this.groupFiltro.Size = new System.Drawing.Size(1279, 91);
             this.groupFiltro.TabIndex = 15;
             // 
             // btnNuevo
@@ -102,7 +102,7 @@
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "68053424-9390-45fa-896b-cacf762629b1";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(1134, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(1133, 16);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(94, 45);
             this.btnNuevo.TabIndex = 3;
@@ -117,7 +117,7 @@
             this.txtCriterio.LabelText = "Criterio:";
             this.txtCriterio.Location = new System.Drawing.Point(421, 30);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(479, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(478, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 358;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
@@ -142,7 +142,7 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "0d03ce75-8fdf-4ee8-8a02-fbc41646e47b";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(1014, 20);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(1013, 20);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(83, 41);
             this.btnMostrarTodos.TabIndex = 2;
@@ -211,7 +211,7 @@
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1287, 764);
+            this.ClientSize = new System.Drawing.Size(1286, 774);
             this.Controls.Add(this.dgvPolizas);
             this.Controls.Add(this.groupFiltro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

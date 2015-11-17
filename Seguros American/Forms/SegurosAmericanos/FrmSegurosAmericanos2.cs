@@ -329,9 +329,15 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
                         idFolio = bd.ConsultaEscalarString(sqlGetFolio);
                         //polizas americanas.
-                        FrmReporte reporte = new FrmReporte(idFolio);
-                        reporte.Show();
-                        //transmigrante.
+                        try
+                        {
+                            Form reporte = seleccionReporte(cmbSeguro.Text, idFolio);
+                            reporte.Show();
+                        }
+                        catch (NullReferenceException nre)
+                        {
+                            MessageBox.Show(nre.Message, "ERROR EN EL REPORTE #12", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
 
                     this.Dispose();
@@ -910,6 +916,21 @@ namespace Seguros_American.Forms.SegurosAmericanos
                 }
 
             }
+        }
+
+        private Form seleccionReporte(string seguro , string pIdFolio)
+        {
+            Form reporteResult = null;
+            if (seguro.Equals("TRANSMIGRANTE")) {
+                MessageBox.Show("Reporte Transimgrante");
+                reporteResult = new FrmReporte2(pIdFolio);
+            } else {
+                reporteResult = new FrmReporte(pIdFolio);
+                MessageBox.Show("Reporte Seguros Americanos");
+
+            }
+
+            return reporteResult;
         }
     }
 }
