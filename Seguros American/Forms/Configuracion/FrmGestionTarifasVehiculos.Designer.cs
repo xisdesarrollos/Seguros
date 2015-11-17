@@ -80,9 +80,9 @@
             this.dpDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn});
             this.dgvTarifa.DataSource = this.tarifasautosBindingSource1;
-            this.dgvTarifa.Location = new System.Drawing.Point(42, 135);
+            this.dgvTarifa.Location = new System.Drawing.Point(26, 96);
             this.dgvTarifa.Name = "dgvTarifa";
-            this.dgvTarifa.Size = new System.Drawing.Size(544, 704);
+            this.dgvTarifa.Size = new System.Drawing.Size(544, 631);
             this.dgvTarifa.TabIndex = 1;
             this.dgvTarifa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellEndEdit);
             this.dgvTarifa.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTarifa_DataError);
@@ -136,7 +136,7 @@
             // 
             this.btnTarifaGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnTarifaGuardar.Id = "eb7a0091-c9f9-42b6-9222-e0183ff7d5e4";
-            this.btnTarifaGuardar.Location = new System.Drawing.Point(521, 859);
+            this.btnTarifaGuardar.Location = new System.Drawing.Point(505, 742);
             this.btnTarifaGuardar.Name = "btnTarifaGuardar";
             this.btnTarifaGuardar.Size = new System.Drawing.Size(65, 59);
             this.btnTarifaGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -184,7 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 923);
+            this.ClientSize = new System.Drawing.Size(600, 810);
             this.Controls.Add(this.cmbTarifa);
             this.Controls.Add(this.btnTarifaGuardar);
             this.Controls.Add(this.dgvTarifa);

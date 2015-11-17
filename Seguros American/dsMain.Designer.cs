@@ -783,6 +783,12 @@ namespace Seguros_American {
             
             private global::System.Data.DataColumn columnnoagente;
             
+            private global::System.Data.DataColumn columnstatus;
+            
+            private global::System.Data.DataColumn columnExpr7;
+            
+            private global::System.Data.DataColumn columnidVehiculo2;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public polizas_americanasDataTable() {
@@ -1282,6 +1288,30 @@ namespace Seguros_American {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Expr7Column {
+                get {
+                    return this.columnExpr7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idVehiculo2Column {
+                get {
+                    return this.columnidVehiculo2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1373,7 +1403,10 @@ namespace Seguros_American {
                         string obs, 
                         string noLicencia, 
                         string estadoEmision, 
-                        string noagente) {
+                        string noagente, 
+                        string status, 
+                        string Expr7, 
+                        int idVehiculo2) {
                 polizas_americanasRow rowpolizas_americanasRow = ((polizas_americanasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1433,7 +1466,10 @@ namespace Seguros_American {
                         noLicencia,
                         estadoEmision,
                         null,
-                        noagente};
+                        noagente,
+                        status,
+                        Expr7,
+                        idVehiculo2};
                 rowpolizas_americanasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowpolizas_americanasRow);
                 return rowpolizas_americanasRow;
@@ -1521,6 +1557,9 @@ namespace Seguros_American {
                 this.columnestadoEmision = base.Columns["estadoEmision"];
                 this.columnExpr6 = base.Columns["Expr6"];
                 this.columnnoagente = base.Columns["noagente"];
+                this.columnstatus = base.Columns["status"];
+                this.columnExpr7 = base.Columns["Expr7"];
+                this.columnidVehiculo2 = base.Columns["idVehiculo2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1642,6 +1681,12 @@ namespace Seguros_American {
                 base.Columns.Add(this.columnExpr6);
                 this.columnnoagente = new global::System.Data.DataColumn("noagente", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnoagente);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
+                this.columnExpr7 = new global::System.Data.DataColumn("Expr7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr7);
+                this.columnidVehiculo2 = new global::System.Data.DataColumn("idVehiculo2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidVehiculo2);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnidFolio}, true));
                 this.columnidFolio.AutoIncrement = true;
@@ -1735,6 +1780,10 @@ namespace Seguros_American {
                 this.columnExpr6.AllowDBNull = false;
                 this.columnnoagente.AllowDBNull = false;
                 this.columnnoagente.MaxLength = 16;
+                this.columnstatus.AllowDBNull = false;
+                this.columnstatus.MaxLength = 150;
+                this.columnExpr7.AllowDBNull = false;
+                this.columnExpr7.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2945,6 +2994,44 @@ namespace Seguros_American {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string status {
+                get {
+                    return ((string)(this[this.tablepolizas_americanas.statusColumn]));
+                }
+                set {
+                    this[this.tablepolizas_americanas.statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Expr7 {
+                get {
+                    return ((string)(this[this.tablepolizas_americanas.Expr7Column]));
+                }
+                set {
+                    this[this.tablepolizas_americanas.Expr7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idVehiculo2 {
+                get {
+                    try {
+                        return ((int)(this[this.tablepolizas_americanas.idVehiculo2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idVehiculo2\' de la tabla \'polizas_americanas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepolizas_americanas.idVehiculo2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsusuarioNull() {
                 return this.IsNull(this.tablepolizas_americanas.usuarioColumn);
             }
@@ -3037,6 +3124,18 @@ namespace Seguros_American {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetedoLicencia2Null() {
                 this[this.tablepolizas_americanas.edoLicencia2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidVehiculo2Null() {
+                return this.IsNull(this.tablepolizas_americanas.idVehiculo2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidVehiculo2Null() {
+                this[this.tablepolizas_americanas.idVehiculo2Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -3852,6 +3951,9 @@ namespace Seguros_American.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("estadoEmision", "estadoEmision");
             tableMapping.ColumnMappings.Add("Expr6", "Expr6");
             tableMapping.ColumnMappings.Add("noagente", "noagente");
+            tableMapping.ColumnMappings.Add("status", "status");
+            tableMapping.ColumnMappings.Add("Expr7", "Expr7");
+            tableMapping.ColumnMappings.Add("idVehiculo2", "idVehiculo2");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -3889,11 +3991,13 @@ namespace Seguros_American.DataSet1TableAdapters {
                 ".colonia, clientes.estado, clientes.ciudad, clientes.cp, clientes.pais, \r\n      " +
                 "                   clientes.telefono, clientes.cel, clientes.email, clientes.fec" +
                 "haAlta, clientes.ocupacion, clientes.obs, clientes.noLicencia, clientes.estadoEm" +
-                "ision, usuarios.noagente\r\nFROM            polizas_americanas INNER JOIN\r\n       " +
-                "                  clientes ON polizas_americanas.idCliente = clientes.idCliente " +
-                "INNER JOIN\r\n                         vehiculos_cliente ON polizas_americanas.idV" +
-                "ehiculo = vehiculos_cliente.idVehiculo INNER JOIN\r\n                         usua" +
-                "rios ON polizas_americanas.usuario = usuarios.usuario";
+                "ision, usuarios.noagente, polizas_americanas.status, \r\n                         " +
+                "polizas_americanas.tipo AS Expr7, polizas_americanas.idVehiculo2\r\nFROM          " +
+                "  polizas_americanas INNER JOIN\r\n                         clientes ON polizas_am" +
+                "ericanas.idCliente = clientes.idCliente INNER JOIN\r\n                         veh" +
+                "iculos_cliente ON polizas_americanas.idVehiculo = vehiculos_cliente.idVehiculo I" +
+                "NNER JOIN\r\n                         usuarios ON polizas_americanas.usuario = usu" +
+                "arios.usuario";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

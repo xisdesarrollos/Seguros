@@ -62,7 +62,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>bandera_nafta_sso_icon.ico</ApplicationIcon>
+    <ApplicationIcon>iconorc.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BetterListViewExpress, Version=3.15.0.0, Culture=neutral, PublicKeyToken=e6c91a3add447be2, processorArchitecture=MSIL" />
@@ -347,12 +347,22 @@
     <Folder Include="Forms\Operaciones\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\delete243.png" />
+    <None Include="Resources\delete242.png" />
+    <None Include="Resources\16Editar1.png" />
+    <None Include="Resources\dollar24.png" />
+    <None Include="Resources\print32.png" />
+    <None Include="Resources\edit24.png" />
+    <None Include="Resources\delete241.png" />
+    <None Include="Resources\delete24.png" />
+    <None Include="Resources\16Editar.png" />
     <None Include="Recursos\48Vendedores.png" />
     <None Include="Recursos\16Add.png" />
     <None Include="Recursos\48guardar.png" />
     <None Include="Recursos\24Add.png" />
     <None Include="Recursos\16search.png" />
     <Content Include="bandera_nafta_sso_icon.ico" />
+    <Content Include="iconorc.ico" />
     <Content Include="Recursos\add24.png" />
     <Content Include="Recursos\block48.png" />
     <Content Include="Recursos\calc48.png" />
@@ -416,7 +426,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="log4net">
+    <PublishFile Include="BetterListViewExpress">
       <Visible>False</Visible>
       <Group>
       </Group>

@@ -45,22 +45,22 @@ namespace Seguros_American.Forms.Vehiculos
             dgvVehiculos.Columns[7].HeaderText = "Placas";
             dgvVehiculos.Columns[8].HeaderText = "Estado de placas";
             dgvVehiculos.Columns[9].HeaderText = "Numero de serie";
+            dgvVehiculos.Columns[11].HeaderText = "No Cliente";
             dgvVehiculos.Columns[10].HeaderText = "Nombre Cliente";
-            dgvVehiculos.Columns[11].HeaderText = "id Cliente";
-
+          
 
             dgvVehiculos.Columns[0].Width = 96;
             dgvVehiculos.Columns[1].Width = 45;
             dgvVehiculos.Columns[2].Width = 45;
-            dgvVehiculos.Columns[3].Width = 300;
-            dgvVehiculos.Columns[4].Width = 300;
-            dgvVehiculos.Columns[5].Width = 300;
-            dgvVehiculos.Columns[6].Width = 300;
-            dgvVehiculos.Columns[7].Width = 200;
-            dgvVehiculos.Columns[8].Width = 200;
+            dgvVehiculos.Columns[3].Width = 200;
+            dgvVehiculos.Columns[4].Width = 200;
+            dgvVehiculos.Columns[5].Width = 200;
+            dgvVehiculos.Columns[6].Width = 200;
+            dgvVehiculos.Columns[7].Width = 120;
+            dgvVehiculos.Columns[8].Width = 120;
             dgvVehiculos.Columns[9].Width = 200;
-            dgvVehiculos.Columns[10].Width = 200;
-            dgvVehiculos.Columns[11].Width = 200;
+            dgvVehiculos.Columns[10].Width = 300;
+            dgvVehiculos.Columns[11].Width = 90;
 
 
         }

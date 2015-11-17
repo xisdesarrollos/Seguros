@@ -41,11 +41,11 @@ namespace Seguros_American.Forms.Clientes
             dgvClientes.Columns[8].HeaderText = "Obs";
             
 
-            dgvClientes.Columns[0].Width = 100;
+            dgvClientes.Columns[0].Width = 60;
             dgvClientes.Columns[1].Width = 420;
             dgvClientes.Columns[2].Width = 180;
             dgvClientes.Columns[3].Width = 180;
-            dgvClientes.Columns[4].Width = 230;
+            dgvClientes.Columns[4].Width = 160;
             dgvClientes.Columns[5].Width = 180;
             dgvClientes.Columns[6].Width = 180;
             dgvClientes.Columns[7].Width = 180;

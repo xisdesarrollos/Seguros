@@ -122,8 +122,7 @@ namespace Seguros_American.Forms
         private void btnGestonTarifas_Click(object sender, EventArgs e)
         {
             FrmGestionTarifasVehiculos gestioVehiculos = new FrmGestionTarifasVehiculos();
-            gestioVehiculos.MdiParent = this;
-            gestioVehiculos.Show();
+            gestioVehiculos.ShowDialog();
         }
 
         private void verificaPermisos()

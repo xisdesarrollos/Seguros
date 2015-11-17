@@ -76,7 +76,9 @@ namespace Seguros_American.Forms.SegurosAmericanos
             dgvPolizas.Columns[24].Visible = false;
             dgvPolizas.Columns[25].Visible = false;
             dgvPolizas.Columns[26].Visible = false;
-            
+            dgvPolizas.Columns[27].Visible = false;
+            dgvPolizas.Columns[28].HeaderText = "Estatus";
+
 
 
             dgvPolizas.Columns[0].Width = 35;
@@ -86,18 +88,19 @@ namespace Seguros_American.Forms.SegurosAmericanos
             //dgvPolizas.Columns[4].Width = 300;
             //dgvPolizas.Columns[5].Width = 300;
             dgvPolizas.Columns[6].Width = 50;
-            dgvPolizas.Columns[7].Width = 120;
-            dgvPolizas.Columns[8].Width = 120;
-            dgvPolizas.Columns[9].Width = 120;
-            dgvPolizas.Columns[10].Width = 120;
-            dgvPolizas.Columns[11].Width = 95;
-            dgvPolizas.Columns[12].Width = 95;
+            dgvPolizas.Columns[7].Width = 100;
+            dgvPolizas.Columns[8].Width = 100;
+            dgvPolizas.Columns[9].Width = 100;
+            dgvPolizas.Columns[10].Width = 100;
+            dgvPolizas.Columns[11].Width = 90;
+            dgvPolizas.Columns[12].Width = 90;
             dgvPolizas.Columns[13].Width = 100;
             dgvPolizas.Columns[14].Width = 100;
-            dgvPolizas.Columns[15].Width = 130;
-            dgvPolizas.Columns[16].Width = 100;
-            dgvPolizas.Columns[17].Width = 235;
+            dgvPolizas.Columns[15].Width = 120;
+            dgvPolizas.Columns[16].Width = 90;
+            dgvPolizas.Columns[17].Width = 240;
             dgvPolizas.Columns[18].Width = 240;
+            dgvPolizas.Columns[28].Width = 100;
             //dgvPolizas.Columns[19].Width = 200;
             //dgvPolizas.Columns[20].Width = 96;
             //dgvPolizas.Columns[21].Width = 45;
