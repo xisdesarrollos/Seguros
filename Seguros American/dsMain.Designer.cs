@@ -274,7 +274,7 @@ namespace Seguros_American {
             this.DataSetName = "DataSet1";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/DataSet1.xsd";
-            this.EnforceConstraints = true;
+            this.EnforceConstraints = false;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tabletarifasautos = new tarifasautosDataTable();
             base.Tables.Add(this.tabletarifasautos);
@@ -1438,6 +1438,7 @@ namespace Seguros_American {
                         string obs, 
                         string noLicencia, 
                         string estadoEmision, 
+                        string Expr6, 
                         string noagente, 
                         string status, 
                         string Expr7, 
@@ -1500,7 +1501,7 @@ namespace Seguros_American {
                         obs,
                         noLicencia,
                         estadoEmision,
-                        null,
+                        Expr6,
                         noagente,
                         status,
                         Expr7,
@@ -1712,7 +1713,7 @@ namespace Seguros_American {
                 base.Columns.Add(this.columnnoLicencia);
                 this.columnestadoEmision = new global::System.Data.DataColumn("estadoEmision", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestadoEmision);
-                this.columnExpr6 = new global::System.Data.DataColumn("Expr6", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnExpr6 = new global::System.Data.DataColumn("Expr6", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExpr6);
                 this.columnnoagente = new global::System.Data.DataColumn("noagente", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnoagente);
@@ -1809,10 +1810,10 @@ namespace Seguros_American {
                 this.columnnoLicencia.MaxLength = 50;
                 this.columnestadoEmision.AllowDBNull = false;
                 this.columnestadoEmision.MaxLength = 50;
-                this.columnExpr6.AutoIncrement = true;
                 this.columnExpr6.AutoIncrementSeed = -1;
                 this.columnExpr6.AutoIncrementStep = -1;
                 this.columnExpr6.AllowDBNull = false;
+                this.columnExpr6.MaxLength = 65535;
                 this.columnnoagente.AllowDBNull = false;
                 this.columnnoagente.MaxLength = 16;
                 this.columnstatus.AllowDBNull = false;
@@ -4241,9 +4242,9 @@ namespace Seguros_American {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Expr6 {
+            public string Expr6 {
                 get {
-                    return ((int)(this[this.tablepolizas_americanas.Expr6Column]));
+                    return ((string)(this[this.tablepolizas_americanas.Expr6Column]));
                 }
                 set {
                     this[this.tablepolizas_americanas.Expr6Column] = value;

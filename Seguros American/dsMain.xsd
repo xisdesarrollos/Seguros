@@ -318,10 +318,10 @@ INNER JOIN
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tarifasautos" msprop:Generator_TableClassName="tarifasautosDataTable" msprop:Generator_TableVarName="tabletarifasautos" msprop:Generator_RowChangedName="tarifasautosRowChanged" msprop:Generator_TablePropName="tarifasautos" msprop:Generator_RowDeletingName="tarifasautosRowDeleting" msprop:Generator_RowChangingName="tarifasautosRowChanging" msprop:Generator_RowEvHandlerName="tarifasautosRowChangeEventHandler" msprop:Generator_RowDeletedName="tarifasautosRowDeleted" msprop:Generator_RowClassName="tarifasautosRow" msprop:Generator_UserTableName="tarifasautos" msprop:Generator_RowEvArgName="tarifasautosRowChangeEvent">
+        <xs:element name="tarifasautos" msprop:Generator_TableClassName="tarifasautosDataTable" msprop:Generator_TableVarName="tabletarifasautos" msprop:Generator_TablePropName="tarifasautos" msprop:Generator_RowDeletingName="tarifasautosRowDeleting" msprop:Generator_RowChangingName="tarifasautosRowChanging" msprop:Generator_RowEvHandlerName="tarifasautosRowChangeEventHandler" msprop:Generator_RowDeletedName="tarifasautosRowDeleted" msprop:Generator_UserTableName="tarifasautos" msprop:Generator_RowChangedName="tarifasautosRowChanged" msprop:Generator_RowEvArgName="tarifasautosRowChangeEvent" msprop:Generator_RowClassName="tarifasautosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="dias" msprop:Generator_ColumnVarNameInTable="columndias" msprop:Generator_ColumnPropNameInRow="dias" msprop:Generator_ColumnPropNameInTable="diasColumn" msprop:Generator_UserColumnName="dias" type="xs:int" />
@@ -332,7 +332,7 @@ INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="polizas_americanas" msprop:Generator_TableClassName="polizas_americanasDataTable" msprop:Generator_TableVarName="tablepolizas_americanas" msprop:Generator_TablePropName="polizas_americanas" msprop:Generator_RowDeletingName="polizas_americanasRowDeleting" msprop:Generator_RowChangingName="polizas_americanasRowChanging" msprop:Generator_RowEvHandlerName="polizas_americanasRowChangeEventHandler" msprop:Generator_RowDeletedName="polizas_americanasRowDeleted" msprop:Generator_UserTableName="polizas_americanas" msprop:Generator_RowChangedName="polizas_americanasRowChanged" msprop:Generator_RowEvArgName="polizas_americanasRowChangeEvent" msprop:Generator_RowClassName="polizas_americanasRow">
+        <xs:element name="polizas_americanas" msprop:Generator_TableClassName="polizas_americanasDataTable" msprop:Generator_TableVarName="tablepolizas_americanas" msprop:Generator_RowChangedName="polizas_americanasRowChanged" msprop:Generator_TablePropName="polizas_americanas" msprop:Generator_RowDeletingName="polizas_americanasRowDeleting" msprop:Generator_RowChangingName="polizas_americanasRowChanging" msprop:Generator_RowEvHandlerName="polizas_americanasRowChangeEventHandler" msprop:Generator_RowDeletedName="polizas_americanasRowDeleted" msprop:Generator_RowClassName="polizas_americanasRow" msprop:Generator_UserTableName="polizas_americanas" msprop:Generator_RowEvArgName="polizas_americanasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFolio" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidFolio" msprop:Generator_ColumnPropNameInRow="idFolio" msprop:Generator_ColumnPropNameInTable="idFolioColumn" msprop:Generator_UserColumnName="idFolio" type="xs:int" />
@@ -589,7 +589,13 @@ INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Expr6" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr6" msprop:Generator_ColumnPropNameInRow="Expr6" msprop:Generator_ColumnPropNameInTable="Expr6Column" msprop:Generator_UserColumnName="Expr6" type="xs:int" />
+              <xs:element name="Expr6" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnExpr6" msprop:Generator_ColumnPropNameInRow="Expr6" msprop:Generator_ColumnPropNameInTable="Expr6Column" msprop:Generator_UserColumnName="Expr6">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="65535" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="noagente" msprop:Generator_ColumnVarNameInTable="columnnoagente" msprop:Generator_ColumnPropNameInRow="noagente" msprop:Generator_ColumnPropNameInTable="noagenteColumn" msprop:Generator_UserColumnName="noagente">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -615,7 +621,7 @@ INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tarifasautos_2" msprop:Generator_TableClassName="tarifasautos_2DataTable" msprop:Generator_TableVarName="tabletarifasautos_2" msprop:Generator_RowChangedName="tarifasautos_2RowChanged" msprop:Generator_TablePropName="tarifasautos_2" msprop:Generator_RowDeletingName="tarifasautos_2RowDeleting" msprop:Generator_RowChangingName="tarifasautos_2RowChanging" msprop:Generator_RowEvHandlerName="tarifasautos_2RowChangeEventHandler" msprop:Generator_RowDeletedName="tarifasautos_2RowDeleted" msprop:Generator_RowClassName="tarifasautos_2Row" msprop:Generator_UserTableName="tarifasautos_2" msprop:Generator_RowEvArgName="tarifasautos_2RowChangeEvent">
+        <xs:element name="tarifasautos_2" msprop:Generator_TableClassName="tarifasautos_2DataTable" msprop:Generator_TableVarName="tabletarifasautos_2" msprop:Generator_TablePropName="tarifasautos_2" msprop:Generator_RowDeletingName="tarifasautos_2RowDeleting" msprop:Generator_RowChangingName="tarifasautos_2RowChanging" msprop:Generator_RowEvHandlerName="tarifasautos_2RowChangeEventHandler" msprop:Generator_RowDeletedName="tarifasautos_2RowDeleted" msprop:Generator_UserTableName="tarifasautos_2" msprop:Generator_RowChangedName="tarifasautos_2RowChanged" msprop:Generator_RowEvArgName="tarifasautos_2RowChangeEvent" msprop:Generator_RowClassName="tarifasautos_2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="dias" msprop:Generator_ColumnVarNameInTable="columndias" msprop:Generator_ColumnPropNameInRow="dias" msprop:Generator_ColumnPropNameInTable="diasColumn" msprop:Generator_UserColumnName="dias" type="xs:int" />
@@ -626,7 +632,7 @@ INNER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="polizas_transmigrantes" msprop:Generator_TableClassName="polizas_transmigrantesDataTable" msprop:Generator_TableVarName="tablepolizas_transmigrantes" msprop:Generator_TablePropName="polizas_transmigrantes" msprop:Generator_RowDeletingName="polizas_transmigrantesRowDeleting" msprop:Generator_RowChangingName="polizas_transmigrantesRowChanging" msprop:Generator_RowEvHandlerName="polizas_transmigrantesRowChangeEventHandler" msprop:Generator_RowDeletedName="polizas_transmigrantesRowDeleted" msprop:Generator_UserTableName="polizas_transmigrantes" msprop:Generator_RowChangedName="polizas_transmigrantesRowChanged" msprop:Generator_RowEvArgName="polizas_transmigrantesRowChangeEvent" msprop:Generator_RowClassName="polizas_transmigrantesRow">
+        <xs:element name="polizas_transmigrantes" msprop:Generator_TableClassName="polizas_transmigrantesDataTable" msprop:Generator_TableVarName="tablepolizas_transmigrantes" msprop:Generator_RowChangedName="polizas_transmigrantesRowChanged" msprop:Generator_TablePropName="polizas_transmigrantes" msprop:Generator_RowDeletingName="polizas_transmigrantesRowDeleting" msprop:Generator_RowChangingName="polizas_transmigrantesRowChanging" msprop:Generator_RowEvHandlerName="polizas_transmigrantesRowChangeEventHandler" msprop:Generator_RowDeletedName="polizas_transmigrantesRowDeleted" msprop:Generator_RowClassName="polizas_transmigrantesRow" msprop:Generator_UserTableName="polizas_transmigrantes" msprop:Generator_RowEvArgName="polizas_transmigrantesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idFolio" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidFolio" msprop:Generator_ColumnPropNameInRow="idFolio" msprop:Generator_ColumnPropNameInTable="idFolioColumn" msprop:Generator_UserColumnName="idFolio" type="xs:int" />

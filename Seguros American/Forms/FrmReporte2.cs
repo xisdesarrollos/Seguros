@@ -79,7 +79,7 @@ namespace Seguros_American.Forms
                  " WHERE polizas_americanas.idFolio = " + idFolio;
 
                 MySqlDataAdapter mysda = new MySqlDataAdapter(sql, conn);
-                mysda.Fill(poliza, "polizas_americanas");
+                mysda.Fill(poliza, "polizas_transmigrantes");
 
             }
             catch (MySqlException ex)
