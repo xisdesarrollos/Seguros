@@ -189,6 +189,12 @@
     <Compile Include="Forms\Vehiculos\FrmNuevoVehiculo.Designer.cs">
       <DependentUpon>FrmNuevoVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\SegurosTransm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SegurosTransm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="seguros_americanosDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -304,6 +310,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SegurosAmericanos\FrmSeguroAmericano.resx">
       <DependentUpon>FrmSeguroAmericano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\SegurosTransm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SegurosTransm.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
