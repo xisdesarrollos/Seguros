@@ -77,7 +77,7 @@ namespace Seguros_American
             catch (Exception)
             {
 
-                //System.Windows.Forms.MessageBox.Show(e.Message);
+                ////System.Windows.Forms.MessageBox.Show(e.Message);
 
                 cn.Close();
                 return 0;

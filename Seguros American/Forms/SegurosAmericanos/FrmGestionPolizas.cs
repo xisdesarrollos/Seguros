@@ -185,6 +185,46 @@ namespace Seguros_American.Forms.SegurosAmericanos
              }
         }
 
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
+            int index = dgvPolizas.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dgvPolizas.Rows[index];
+            string idFolio = selectedRow.Cells[0].Value.ToString();
+
+            
+
+            Basedatos bd = new Basedatos();
+            string nTabla = "polizas_americanas";
+            string condicion = "status = 'PENDIENTE' AND idFolio = " + idFolio ;
+            string sqlCustomQuery = "status = 'PAGADO' ";
+            DialogResult r = MessageBox.Show("¿SEGURO QUE DESEA MARCAR COMO PAGADO", "PAGO DE POLIZA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                try
+                {
+                   
+                    bd.Actualizar(nTabla, sqlCustomQuery, condicion);
+                    Globales.cargaGrid(sqlSelect, dgvPolizas);
+                    estilizaGrid();
+                    MessageBox.Show("PÓLIZA PAGADA ");
+
+                }
+                catch (MySqlException exsql)
+                {
+                    MessageBox.Show("NO SE PUDO MARCAR COMO PAGADA ");
+
+                }
+            }
+
+
+            
+            
+
+            
+            
+
+        }
+
 
     }
 }
