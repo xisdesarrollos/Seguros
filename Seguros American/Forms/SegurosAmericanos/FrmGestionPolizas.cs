@@ -186,14 +186,12 @@ namespace Seguros_American.Forms.SegurosAmericanos
              }
         }
 
-<<<<<<< HEAD
+
         private void btnStatus_Click(object sender, EventArgs e)
         {
             int index = dgvPolizas.CurrentCell.RowIndex;
             DataGridViewRow selectedRow = dgvPolizas.Rows[index];
             string idFolio = selectedRow.Cells[0].Value.ToString();
-
-            
 
             Basedatos bd = new Basedatos();
             string nTabla = "polizas_americanas";
@@ -217,17 +215,9 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
                 }
             }
-
-
-            
-            
-
-            
-            
-
         }
 
-=======
+
         private Form seleccionReporte(string seguro , string pIdFolio)
         {
             Form reporteResult = null;
@@ -245,7 +235,7 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
             return reporteResult;
         }
->>>>>>> cf996c773c5de30c2fa7a21bc351cb8252611048
+
 
     }
 }
