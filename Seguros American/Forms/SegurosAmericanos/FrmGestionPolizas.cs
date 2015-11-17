@@ -193,8 +193,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
             DataGridViewRow selectedRow = dgvPolizas.Rows[index];
             string idFolio = selectedRow.Cells[0].Value.ToString();
 
-            
-
             Basedatos bd = new Basedatos();
             string nTabla = "polizas_americanas";
             string condicion = "status = 'PENDIENTE' AND idFolio = " + idFolio ;
@@ -217,14 +215,6 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
                 }
             }
-
-
-            
-            
-
-            
-            
-
         }
 
 

@@ -395,39 +395,42 @@ namespace Seguros_American.Forms.SegurosAmericanos
 
         public void onDataGridAuxClientes(DataGridView dgv)
         {
-            // Obtener los datos del cliente seleccionado.
-            int index = dgv.CurrentCell.RowIndex; //no existe en el contexto actual. 
-            DataGridViewRow selectedRow = dgv.Rows[index];
-            // Mostrarlos en los campos de nuevo vehiculo.(verificar todos los campos que se asignan).
-            idCliente = selectedRow.Cells[0].Value.ToString();
-            nombreCliente = selectedRow.Cells[1].Value.ToString();
-            string telefono = selectedRow.Cells[2].Value.ToString();
-            string cel = selectedRow.Cells[3].Value.ToString();
-            string email = selectedRow.Cells[4].Value.ToString();
-            string pais = selectedRow.Cells[12].Value.ToString();
-            string cuidad = selectedRow.Cells[10].Value.ToString();
-            estado = selectedRow.Cells[9].Value.ToString();
-            clienteNacimiento = selectedRow.Cells[4].Value.ToString();
-            string calle = selectedRow.Cells[9].Value.ToString();
-            string colonia = selectedRow.Cells[10].Value.ToString();
-            string noE = selectedRow.Cells[11].Value.ToString();
-            string cp = selectedRow.Cells[12].Value.ToString();
-            clienteLicencia = selectedRow.Cells[19].Value.ToString();
-            ocupacion = selectedRow.Cells[17].Value.ToString();
-            string direccion = calle + " #" + noE + "," + colonia;
+            try
+            {
+                // Obtener los datos del cliente seleccionado.
+                int index = dgv.CurrentCell.RowIndex; //no existe en el contexto actual. 
+                DataGridViewRow selectedRow = dgv.Rows[index];
+                // Mostrarlos en los campos de nuevo vehiculo.(verificar todos los campos que se asignan).
+                idCliente = selectedRow.Cells[0].Value.ToString();
+                nombreCliente = selectedRow.Cells[1].Value.ToString();
+                clienteNacimiento = selectedRow.Cells[4].Value.ToString();
+                string calle = selectedRow.Cells[5].Value.ToString();
+                string noE = selectedRow.Cells[6].Value.ToString();
+                string colonia = selectedRow.Cells[8].Value.ToString();
+                estado = selectedRow.Cells[9].Value.ToString();
+                string cuidad = selectedRow.Cells[10].Value.ToString();
+                string cp = selectedRow.Cells[11].Value.ToString();
+                string pais = selectedRow.Cells[12].Value.ToString();
+                ocupacion = selectedRow.Cells[17].Value.ToString();
+                clienteLicencia = selectedRow.Cells[19].Value.ToString();
+               
+                string direccion = calle + " #" + noE + "," + colonia;
 
-
-            txtNoCliente.Text = idCliente;
-            txtNoLic1.Text = clienteLicencia;
-            txtNombre.Text = txtNomCod1.Text = nombreCliente;
-            cmbPais.Text = pais;
-            txtDireccion.Text = direccion;
-            txtCiudad.Text = cuidad;
-            txtEstado.Text = txtEdoEm1.Text = estado;
-            dateFechaNac1.Text = clienteNacimiento;
-            txtEdad1.Text = edadPorFecha(dateFechaNac1.Text);
-            txtOcupacion1.Text = ocupacion;
-            
+                txtNoCliente.Text = idCliente;
+                txtNoLic1.Text = clienteLicencia;
+                txtNombre.Text = txtNomCod1.Text = nombreCliente;
+                cmbPais.Text = pais;
+                txtDireccion.Text = direccion;
+                txtCiudad.Text = cuidad;
+                txtEstado.Text = txtEdoEm1.Text = estado;
+                dateFechaNac1.Text = clienteNacimiento;
+                txtEdad1.Text = edadPorFecha(dateFechaNac1.Text);
+                txtOcupacion1.Text = ocupacion;
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR #1", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void onDataGridAuxVehiculos(DataGridView dgv)
