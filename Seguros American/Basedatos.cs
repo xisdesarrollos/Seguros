@@ -34,10 +34,7 @@ namespace Seguros_American
             password = Properties.Settings.Default.password;
             db = Properties.Settings.Default.db;
 
-            //servidor = "192.168.0.200";
-            //usuario = "root";
-            //password = "9753186400";
-            //db = "seguros_americanos";
+            Console.WriteLine(servidor + "," + usuario + "," + password + "," + db);
                 
             Conectar();
         }
@@ -119,6 +116,7 @@ namespace Seguros_American
 
         public DataTable Consultar(string tabla)
         {
+            try { 
             if (cn.State == ConnectionState.Open) cn.Close();
             cn.Open();
             string sql = "SELECT * FROM " + tabla;
@@ -129,10 +127,18 @@ namespace Seguros_American
             dt = dts.Tables[tabla];
             cn.Close();
             return dt;
+            }
+            catch (MySqlException ex1)
+            {
+                Console.WriteLine(ex1);
+                cn.Close();
+                return null;
+            }
         }
 
         public DataTable Consultar(string filtro, string tabla)
         {
+            try { 
             if (cn.State == ConnectionState.Open) cn.Close();
             cn.Open();
             string sql = "SELECT " + filtro + " FROM " + tabla;
@@ -143,6 +149,13 @@ namespace Seguros_American
             dt = dts.Tables[tabla];
             cn.Close();
             return dt;
+            }
+            catch (MySqlException ex1)
+            {
+                Console.WriteLine(ex1);
+                cn.Close();
+                return null;
+            }
         }
 
         public DataTable Consultar(string filtro, string tabla, string condicion)
@@ -163,6 +176,7 @@ namespace Seguros_American
             catch (MySqlException e)
             {
                 Console.WriteLine(e);
+                
             }
             return dt;
         }

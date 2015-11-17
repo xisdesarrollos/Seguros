@@ -74,6 +74,8 @@
     <Reference Include="Elegant.Ui.NavigationBar, Version=4.3.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL" />
     <Reference Include="Elegant.Ui.Ribbon, Version=4.3.0.0, Culture=neutral, PublicKeyToken=3a2b400713aae6e0, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="MySql.Data, Version=6.9.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -140,6 +142,12 @@
     <Compile Include="Forms\Configuracion\FrmPermisos.Designer.cs">
       <DependentUpon>FrmPermisos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmReporte2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReporte2.Designer.cs">
+      <DependentUpon>FrmReporte2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +207,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>seguros_americanosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Tarifa_30_60_25.cs" />
     <Compile Include="Forms\Configuracion\FrmBaseDatos.cs">
       <SubType>Form</SubType>
@@ -273,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configuracion\FrmGestionTarifasVehiculos.resx">
       <DependentUpon>FrmGestionTarifasVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmReporte2.resx">
+      <DependentUpon>FrmReporte2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

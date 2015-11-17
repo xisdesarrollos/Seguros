@@ -17,10 +17,10 @@
     <Setting Name="seguros_americanosConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=192.168.0.200;user id=root;password=9753186400;persistsecurityinfo=True;database=seguros_americanos&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=192.168.0.200;database=seguros_americanos;user id=root;password=9753186400;persistsecurityinfo=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=192.168.0.200;user id=root;password=9753186400;persistsecurityinfo=True;database=seguros_americanos</Value>
+      <Value Profile="(Default)">server=192.168.0.200;database=seguros_americanos;user id=root;password=9753186400;persistsecurityinfo=True</Value>
     </Setting>
     <Setting Name="seguros_americanosConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -30,16 +30,16 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">server=192.168.0.200;user id=root;password=9753186400;persistsecurityinfo=True;database=seguros_americanos</Value>
     </Setting>
+    <Setting Name="impresora" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
     <Setting Name="seguros_americanosConnectionPoliza" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=192.168.0.200;user id=root;database=seguros_americanos&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=192.168.0.200;user id=root;password=9753186400;persistsecurityinfo=True;database=seguros_americanos&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=192.168.0.200;user id=root;database=seguros_americanos</Value>
-    </Setting>
-    <Setting Name="impresora" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">server=192.168.0.200;user id=root;password=9753186400;persistsecurityinfo=True;database=seguros_americanos</Value>
     </Setting>
   </Settings>
 </SettingsFile>

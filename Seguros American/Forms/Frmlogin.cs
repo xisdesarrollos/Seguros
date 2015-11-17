@@ -60,7 +60,7 @@ namespace Seguros_American
         {
            FrmBaseDatos  frmD = new FrmBaseDatos();
             frmD.ShowDialog();
-            Application.Restart();
+            //Application.Restart();
         }
 
 

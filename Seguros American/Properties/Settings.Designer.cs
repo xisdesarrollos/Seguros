@@ -74,8 +74,8 @@ namespace Seguros_American.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.0.200;user id=root;password=9753186400;persistsecurityinfo=True;da" +
-            "tabase=seguros_americanos")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.0.200;database=seguros_americanos;user id=root;password=9753186400" +
+            ";persistsecurityinfo=True")]
         public string seguros_americanosConnectionString1 {
             get {
                 return ((string)(this["seguros_americanosConnectionString1"]));
@@ -93,16 +93,6 @@ namespace Seguros_American.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.0.200;user id=root;database=seguros_americanos")]
-        public string seguros_americanosConnectionPoliza {
-            get {
-                return ((string)(this["seguros_americanosConnectionPoliza"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
@@ -112,6 +102,17 @@ namespace Seguros_American.Properties {
             }
             set {
                 this["impresora"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=192.168.0.200;user id=root;password=9753186400;persistsecurityinfo=True;da" +
+            "tabase=seguros_americanos")]
+        public string seguros_americanosConnectionPoliza {
+            get {
+                return ((string)(this["seguros_americanosConnectionPoliza"]));
             }
         }
     }
