@@ -30,6 +30,8 @@ namespace Seguros_American {
         
         private tarifasautos_2DataTable tabletarifasautos_2;
         
+        private polizas_transmigrantesDataTable tablepolizas_transmigrantes;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -66,6 +68,9 @@ namespace Seguros_American {
                 }
                 if ((ds.Tables["tarifasautos_2"] != null)) {
                     base.Tables.Add(new tarifasautos_2DataTable(ds.Tables["tarifasautos_2"]));
+                }
+                if ((ds.Tables["polizas_transmigrantes"] != null)) {
+                    base.Tables.Add(new polizas_transmigrantesDataTable(ds.Tables["polizas_transmigrantes"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -112,6 +117,16 @@ namespace Seguros_American {
         public tarifasautos_2DataTable tarifasautos_2 {
             get {
                 return this.tabletarifasautos_2;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public polizas_transmigrantesDataTable polizas_transmigrantes {
+            get {
+                return this.tablepolizas_transmigrantes;
             }
         }
         
@@ -191,6 +206,9 @@ namespace Seguros_American {
                 if ((ds.Tables["tarifasautos_2"] != null)) {
                     base.Tables.Add(new tarifasautos_2DataTable(ds.Tables["tarifasautos_2"]));
                 }
+                if ((ds.Tables["polizas_transmigrantes"] != null)) {
+                    base.Tables.Add(new polizas_transmigrantesDataTable(ds.Tables["polizas_transmigrantes"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -242,6 +260,12 @@ namespace Seguros_American {
                     this.tabletarifasautos_2.InitVars();
                 }
             }
+            this.tablepolizas_transmigrantes = ((polizas_transmigrantesDataTable)(base.Tables["polizas_transmigrantes"]));
+            if ((initTable == true)) {
+                if ((this.tablepolizas_transmigrantes != null)) {
+                    this.tablepolizas_transmigrantes.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +282,8 @@ namespace Seguros_American {
             base.Tables.Add(this.tablepolizas_americanas);
             this.tabletarifasautos_2 = new tarifasautos_2DataTable();
             base.Tables.Add(this.tabletarifasautos_2);
+            this.tablepolizas_transmigrantes = new polizas_transmigrantesDataTable();
+            base.Tables.Add(this.tablepolizas_transmigrantes);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -275,6 +301,12 @@ namespace Seguros_American {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializetarifasautos_2() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializepolizas_transmigrantes() {
             return false;
         }
         
@@ -341,6 +373,9 @@ namespace Seguros_American {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tarifasautos_2RowChangeEventHandler(object sender, tarifasautos_2RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void polizas_transmigrantesRowChangeEventHandler(object sender, polizas_transmigrantesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2229,6 +2264,1240 @@ namespace Seguros_American {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class polizas_transmigrantesDataTable : global::System.Data.TypedTableBase<polizas_transmigrantesRow> {
+            
+            private global::System.Data.DataColumn columnidFolio;
+            
+            private global::System.Data.DataColumn columnfolio;
+            
+            private global::System.Data.DataColumn columnExpr2;
+            
+            private global::System.Data.DataColumn columnExpr3;
+            
+            private global::System.Data.DataColumn columnExpr4;
+            
+            private global::System.Data.DataColumn columndias;
+            
+            private global::System.Data.DataColumn columninVig;
+            
+            private global::System.Data.DataColumn columnfinVig;
+            
+            private global::System.Data.DataColumn columnExpr1;
+            
+            private global::System.Data.DataColumn columnfechaEm;
+            
+            private global::System.Data.DataColumn columnhoraDesd;
+            
+            private global::System.Data.DataColumn columnhoraHast;
+            
+            private global::System.Data.DataColumn columnprimaBienes;
+            
+            private global::System.Data.DataColumn columnprimaGm;
+            
+            private global::System.Data.DataColumn columnprimaDerPol;
+            
+            private global::System.Data.DataColumn columntotal;
+            
+            private global::System.Data.DataColumn columnnombreCod;
+            
+            private global::System.Data.DataColumn columnnombreCod2;
+            
+            private global::System.Data.DataColumn columnedadCod;
+            
+            private global::System.Data.DataColumn columnedadCod2;
+            
+            private global::System.Data.DataColumn columnocupacionCod;
+            
+            private global::System.Data.DataColumn columnocupacionCod2;
+            
+            private global::System.Data.DataColumn columnExpr5;
+            
+            private global::System.Data.DataColumn columnnoLicencia2;
+            
+            private global::System.Data.DataColumn columnedoLicencia;
+            
+            private global::System.Data.DataColumn columnedoLicencia2;
+            
+            private global::System.Data.DataColumn columnmarca1;
+            
+            private global::System.Data.DataColumn columnplacas1;
+            
+            private global::System.Data.DataColumn columnnumeroSerie1;
+            
+            private global::System.Data.DataColumn columnnombre;
+            
+            private global::System.Data.DataColumn columnrfcCliente;
+            
+            private global::System.Data.DataColumn columnsexo;
+            
+            private global::System.Data.DataColumn columnfechaNacimiento;
+            
+            private global::System.Data.DataColumn columncalle;
+            
+            private global::System.Data.DataColumn columnnoExterior;
+            
+            private global::System.Data.DataColumn columnnoInterior;
+            
+            private global::System.Data.DataColumn columncolonia;
+            
+            private global::System.Data.DataColumn columnestado;
+            
+            private global::System.Data.DataColumn columnciudad;
+            
+            private global::System.Data.DataColumn columncp;
+            
+            private global::System.Data.DataColumn columnpais;
+            
+            private global::System.Data.DataColumn columntelefono;
+            
+            private global::System.Data.DataColumn columncel;
+            
+            private global::System.Data.DataColumn columnemail;
+            
+            private global::System.Data.DataColumn columnfechaAlta;
+            
+            private global::System.Data.DataColumn columnocupacion;
+            
+            private global::System.Data.DataColumn columnobs;
+            
+            private global::System.Data.DataColumn columnnoLicencia;
+            
+            private global::System.Data.DataColumn columnestadoEmision;
+            
+            private global::System.Data.DataColumn columnnoagente;
+            
+            private global::System.Data.DataColumn columnstatus;
+            
+            private global::System.Data.DataColumn columnExpr6;
+            
+            private global::System.Data.DataColumn columnidVehiculo2;
+            
+            private global::System.Data.DataColumn columnmodeo1;
+            
+            private global::System.Data.DataColumn columnsubmarca1;
+            
+            private global::System.Data.DataColumn columnmodeo2;
+            
+            private global::System.Data.DataColumn columnmarca2;
+            
+            private global::System.Data.DataColumn columnsubmarca2;
+            
+            private global::System.Data.DataColumn columnplacas2;
+            
+            private global::System.Data.DataColumn columnnumeroSerie2;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public polizas_transmigrantesDataTable() {
+                this.TableName = "polizas_transmigrantes";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal polizas_transmigrantesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected polizas_transmigrantesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idFolioColumn {
+                get {
+                    return this.columnidFolio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn folioColumn {
+                get {
+                    return this.columnfolio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Expr2Column {
+                get {
+                    return this.columnExpr2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Expr3Column {
+                get {
+                    return this.columnExpr3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Expr4Column {
+                get {
+                    return this.columnExpr4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn diasColumn {
+                get {
+                    return this.columndias;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn inVigColumn {
+                get {
+                    return this.columninVig;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn finVigColumn {
+                get {
+                    return this.columnfinVig;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Expr1Column {
+                get {
+                    return this.columnExpr1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechaEmColumn {
+                get {
+                    return this.columnfechaEm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn horaDesdColumn {
+                get {
+                    return this.columnhoraDesd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn horaHastColumn {
+                get {
+                    return this.columnhoraHast;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn primaBienesColumn {
+                get {
+                    return this.columnprimaBienes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn primaGmColumn {
+                get {
+                    return this.columnprimaGm;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn primaDerPolColumn {
+                get {
+                    return this.columnprimaDerPol;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn totalColumn {
+                get {
+                    return this.columntotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombreCodColumn {
+                get {
+                    return this.columnnombreCod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombreCod2Column {
+                get {
+                    return this.columnnombreCod2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn edadCodColumn {
+                get {
+                    return this.columnedadCod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn edadCod2Column {
+                get {
+                    return this.columnedadCod2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ocupacionCodColumn {
+                get {
+                    return this.columnocupacionCod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ocupacionCod2Column {
+                get {
+                    return this.columnocupacionCod2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Expr5Column {
+                get {
+                    return this.columnExpr5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn noLicencia2Column {
+                get {
+                    return this.columnnoLicencia2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn edoLicenciaColumn {
+                get {
+                    return this.columnedoLicencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn edoLicencia2Column {
+                get {
+                    return this.columnedoLicencia2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn marca1Column {
+                get {
+                    return this.columnmarca1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn placas1Column {
+                get {
+                    return this.columnplacas1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn numeroSerie1Column {
+                get {
+                    return this.columnnumeroSerie1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombreColumn {
+                get {
+                    return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn rfcClienteColumn {
+                get {
+                    return this.columnrfcCliente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn sexoColumn {
+                get {
+                    return this.columnsexo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechaNacimientoColumn {
+                get {
+                    return this.columnfechaNacimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn calleColumn {
+                get {
+                    return this.columncalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn noExteriorColumn {
+                get {
+                    return this.columnnoExterior;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn noInteriorColumn {
+                get {
+                    return this.columnnoInterior;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn coloniaColumn {
+                get {
+                    return this.columncolonia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estadoColumn {
+                get {
+                    return this.columnestado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ciudadColumn {
+                get {
+                    return this.columnciudad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cpColumn {
+                get {
+                    return this.columncp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn paisColumn {
+                get {
+                    return this.columnpais;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn telefonoColumn {
+                get {
+                    return this.columntelefono;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn celColumn {
+                get {
+                    return this.columncel;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn emailColumn {
+                get {
+                    return this.columnemail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn fechaAltaColumn {
+                get {
+                    return this.columnfechaAlta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ocupacionColumn {
+                get {
+                    return this.columnocupacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn obsColumn {
+                get {
+                    return this.columnobs;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn noLicenciaColumn {
+                get {
+                    return this.columnnoLicencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn estadoEmisionColumn {
+                get {
+                    return this.columnestadoEmision;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn noagenteColumn {
+                get {
+                    return this.columnnoagente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn statusColumn {
+                get {
+                    return this.columnstatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Expr6Column {
+                get {
+                    return this.columnExpr6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idVehiculo2Column {
+                get {
+                    return this.columnidVehiculo2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn modeo1Column {
+                get {
+                    return this.columnmodeo1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn submarca1Column {
+                get {
+                    return this.columnsubmarca1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn modeo2Column {
+                get {
+                    return this.columnmodeo2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn marca2Column {
+                get {
+                    return this.columnmarca2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn submarca2Column {
+                get {
+                    return this.columnsubmarca2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn placas2Column {
+                get {
+                    return this.columnplacas2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn numeroSerie2Column {
+                get {
+                    return this.columnnumeroSerie2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public polizas_transmigrantesRow this[int index] {
+                get {
+                    return ((polizas_transmigrantesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event polizas_transmigrantesRowChangeEventHandler polizas_transmigrantesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event polizas_transmigrantesRowChangeEventHandler polizas_transmigrantesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event polizas_transmigrantesRowChangeEventHandler polizas_transmigrantesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event polizas_transmigrantesRowChangeEventHandler polizas_transmigrantesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addpolizas_transmigrantesRow(polizas_transmigrantesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public polizas_transmigrantesRow Addpolizas_transmigrantesRow(
+                        string folio, 
+                        int Expr2, 
+                        string Expr3, 
+                        int Expr4, 
+                        int dias, 
+                        System.DateTime inVig, 
+                        System.DateTime finVig, 
+                        System.DateTime Expr1, 
+                        System.DateTime fechaEm, 
+                        System.TimeSpan horaDesd, 
+                        System.TimeSpan horaHast, 
+                        float primaBienes, 
+                        float primaGm, 
+                        float primaDerPol, 
+                        float total, 
+                        string nombreCod, 
+                        string nombreCod2, 
+                        int edadCod, 
+                        int edadCod2, 
+                        string ocupacionCod, 
+                        string ocupacionCod2, 
+                        int Expr5, 
+                        int noLicencia2, 
+                        string edoLicencia, 
+                        string edoLicencia2, 
+                        string marca1, 
+                        string placas1, 
+                        string numeroSerie1, 
+                        string nombre, 
+                        string rfcCliente, 
+                        string sexo, 
+                        System.DateTime fechaNacimiento, 
+                        string calle, 
+                        string noExterior, 
+                        string noInterior, 
+                        string colonia, 
+                        string estado, 
+                        string ciudad, 
+                        string cp, 
+                        string pais, 
+                        string telefono, 
+                        string cel, 
+                        string email, 
+                        System.DateTime fechaAlta, 
+                        string ocupacion, 
+                        string obs, 
+                        string noLicencia, 
+                        string estadoEmision, 
+                        string noagente, 
+                        string status, 
+                        string Expr6, 
+                        int idVehiculo2, 
+                        int modeo1, 
+                        string submarca1, 
+                        int modeo2, 
+                        string marca2, 
+                        string submarca2, 
+                        string placas2, 
+                        string numeroSerie2) {
+                polizas_transmigrantesRow rowpolizas_transmigrantesRow = ((polizas_transmigrantesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        folio,
+                        Expr2,
+                        Expr3,
+                        Expr4,
+                        dias,
+                        inVig,
+                        finVig,
+                        Expr1,
+                        fechaEm,
+                        horaDesd,
+                        horaHast,
+                        primaBienes,
+                        primaGm,
+                        primaDerPol,
+                        total,
+                        nombreCod,
+                        nombreCod2,
+                        edadCod,
+                        edadCod2,
+                        ocupacionCod,
+                        ocupacionCod2,
+                        Expr5,
+                        noLicencia2,
+                        edoLicencia,
+                        edoLicencia2,
+                        marca1,
+                        placas1,
+                        numeroSerie1,
+                        nombre,
+                        rfcCliente,
+                        sexo,
+                        fechaNacimiento,
+                        calle,
+                        noExterior,
+                        noInterior,
+                        colonia,
+                        estado,
+                        ciudad,
+                        cp,
+                        pais,
+                        telefono,
+                        cel,
+                        email,
+                        fechaAlta,
+                        ocupacion,
+                        obs,
+                        noLicencia,
+                        estadoEmision,
+                        noagente,
+                        status,
+                        Expr6,
+                        idVehiculo2,
+                        modeo1,
+                        submarca1,
+                        modeo2,
+                        marca2,
+                        submarca2,
+                        placas2,
+                        numeroSerie2};
+                rowpolizas_transmigrantesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowpolizas_transmigrantesRow);
+                return rowpolizas_transmigrantesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public polizas_transmigrantesRow FindByidFolio(int idFolio) {
+                return ((polizas_transmigrantesRow)(this.Rows.Find(new object[] {
+                            idFolio})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                polizas_transmigrantesDataTable cln = ((polizas_transmigrantesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new polizas_transmigrantesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnidFolio = base.Columns["idFolio"];
+                this.columnfolio = base.Columns["folio"];
+                this.columnExpr2 = base.Columns["Expr2"];
+                this.columnExpr3 = base.Columns["Expr3"];
+                this.columnExpr4 = base.Columns["Expr4"];
+                this.columndias = base.Columns["dias"];
+                this.columninVig = base.Columns["inVig"];
+                this.columnfinVig = base.Columns["finVig"];
+                this.columnExpr1 = base.Columns["Expr1"];
+                this.columnfechaEm = base.Columns["fechaEm"];
+                this.columnhoraDesd = base.Columns["horaDesd"];
+                this.columnhoraHast = base.Columns["horaHast"];
+                this.columnprimaBienes = base.Columns["primaBienes"];
+                this.columnprimaGm = base.Columns["primaGm"];
+                this.columnprimaDerPol = base.Columns["primaDerPol"];
+                this.columntotal = base.Columns["total"];
+                this.columnnombreCod = base.Columns["nombreCod"];
+                this.columnnombreCod2 = base.Columns["nombreCod2"];
+                this.columnedadCod = base.Columns["edadCod"];
+                this.columnedadCod2 = base.Columns["edadCod2"];
+                this.columnocupacionCod = base.Columns["ocupacionCod"];
+                this.columnocupacionCod2 = base.Columns["ocupacionCod2"];
+                this.columnExpr5 = base.Columns["Expr5"];
+                this.columnnoLicencia2 = base.Columns["noLicencia2"];
+                this.columnedoLicencia = base.Columns["edoLicencia"];
+                this.columnedoLicencia2 = base.Columns["edoLicencia2"];
+                this.columnmarca1 = base.Columns["marca1"];
+                this.columnplacas1 = base.Columns["placas1"];
+                this.columnnumeroSerie1 = base.Columns["numeroSerie1"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnrfcCliente = base.Columns["rfcCliente"];
+                this.columnsexo = base.Columns["sexo"];
+                this.columnfechaNacimiento = base.Columns["fechaNacimiento"];
+                this.columncalle = base.Columns["calle"];
+                this.columnnoExterior = base.Columns["noExterior"];
+                this.columnnoInterior = base.Columns["noInterior"];
+                this.columncolonia = base.Columns["colonia"];
+                this.columnestado = base.Columns["estado"];
+                this.columnciudad = base.Columns["ciudad"];
+                this.columncp = base.Columns["cp"];
+                this.columnpais = base.Columns["pais"];
+                this.columntelefono = base.Columns["telefono"];
+                this.columncel = base.Columns["cel"];
+                this.columnemail = base.Columns["email"];
+                this.columnfechaAlta = base.Columns["fechaAlta"];
+                this.columnocupacion = base.Columns["ocupacion"];
+                this.columnobs = base.Columns["obs"];
+                this.columnnoLicencia = base.Columns["noLicencia"];
+                this.columnestadoEmision = base.Columns["estadoEmision"];
+                this.columnnoagente = base.Columns["noagente"];
+                this.columnstatus = base.Columns["status"];
+                this.columnExpr6 = base.Columns["Expr6"];
+                this.columnidVehiculo2 = base.Columns["idVehiculo2"];
+                this.columnmodeo1 = base.Columns["modeo1"];
+                this.columnsubmarca1 = base.Columns["submarca1"];
+                this.columnmodeo2 = base.Columns["modeo2"];
+                this.columnmarca2 = base.Columns["marca2"];
+                this.columnsubmarca2 = base.Columns["submarca2"];
+                this.columnplacas2 = base.Columns["placas2"];
+                this.columnnumeroSerie2 = base.Columns["numeroSerie2"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnidFolio = new global::System.Data.DataColumn("idFolio", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidFolio);
+                this.columnfolio = new global::System.Data.DataColumn("folio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfolio);
+                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr2);
+                this.columnExpr3 = new global::System.Data.DataColumn("Expr3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr3);
+                this.columnExpr4 = new global::System.Data.DataColumn("Expr4", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr4);
+                this.columndias = new global::System.Data.DataColumn("dias", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndias);
+                this.columninVig = new global::System.Data.DataColumn("inVig", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columninVig);
+                this.columnfinVig = new global::System.Data.DataColumn("finVig", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfinVig);
+                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr1);
+                this.columnfechaEm = new global::System.Data.DataColumn("fechaEm", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaEm);
+                this.columnhoraDesd = new global::System.Data.DataColumn("horaDesd", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhoraDesd);
+                this.columnhoraHast = new global::System.Data.DataColumn("horaHast", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhoraHast);
+                this.columnprimaBienes = new global::System.Data.DataColumn("primaBienes", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprimaBienes);
+                this.columnprimaGm = new global::System.Data.DataColumn("primaGm", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprimaGm);
+                this.columnprimaDerPol = new global::System.Data.DataColumn("primaDerPol", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprimaDerPol);
+                this.columntotal = new global::System.Data.DataColumn("total", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotal);
+                this.columnnombreCod = new global::System.Data.DataColumn("nombreCod", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombreCod);
+                this.columnnombreCod2 = new global::System.Data.DataColumn("nombreCod2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombreCod2);
+                this.columnedadCod = new global::System.Data.DataColumn("edadCod", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnedadCod);
+                this.columnedadCod2 = new global::System.Data.DataColumn("edadCod2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnedadCod2);
+                this.columnocupacionCod = new global::System.Data.DataColumn("ocupacionCod", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnocupacionCod);
+                this.columnocupacionCod2 = new global::System.Data.DataColumn("ocupacionCod2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnocupacionCod2);
+                this.columnExpr5 = new global::System.Data.DataColumn("Expr5", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr5);
+                this.columnnoLicencia2 = new global::System.Data.DataColumn("noLicencia2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnoLicencia2);
+                this.columnedoLicencia = new global::System.Data.DataColumn("edoLicencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnedoLicencia);
+                this.columnedoLicencia2 = new global::System.Data.DataColumn("edoLicencia2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnedoLicencia2);
+                this.columnmarca1 = new global::System.Data.DataColumn("marca1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmarca1);
+                this.columnplacas1 = new global::System.Data.DataColumn("placas1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnplacas1);
+                this.columnnumeroSerie1 = new global::System.Data.DataColumn("numeroSerie1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumeroSerie1);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnrfcCliente = new global::System.Data.DataColumn("rfcCliente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrfcCliente);
+                this.columnsexo = new global::System.Data.DataColumn("sexo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsexo);
+                this.columnfechaNacimiento = new global::System.Data.DataColumn("fechaNacimiento", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaNacimiento);
+                this.columncalle = new global::System.Data.DataColumn("calle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncalle);
+                this.columnnoExterior = new global::System.Data.DataColumn("noExterior", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnoExterior);
+                this.columnnoInterior = new global::System.Data.DataColumn("noInterior", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnoInterior);
+                this.columncolonia = new global::System.Data.DataColumn("colonia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncolonia);
+                this.columnestado = new global::System.Data.DataColumn("estado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestado);
+                this.columnciudad = new global::System.Data.DataColumn("ciudad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnciudad);
+                this.columncp = new global::System.Data.DataColumn("cp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncp);
+                this.columnpais = new global::System.Data.DataColumn("pais", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpais);
+                this.columntelefono = new global::System.Data.DataColumn("telefono", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntelefono);
+                this.columncel = new global::System.Data.DataColumn("cel", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncel);
+                this.columnemail = new global::System.Data.DataColumn("email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemail);
+                this.columnfechaAlta = new global::System.Data.DataColumn("fechaAlta", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaAlta);
+                this.columnocupacion = new global::System.Data.DataColumn("ocupacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnocupacion);
+                this.columnobs = new global::System.Data.DataColumn("obs", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnobs);
+                this.columnnoLicencia = new global::System.Data.DataColumn("noLicencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnoLicencia);
+                this.columnestadoEmision = new global::System.Data.DataColumn("estadoEmision", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnestadoEmision);
+                this.columnnoagente = new global::System.Data.DataColumn("noagente", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnoagente);
+                this.columnstatus = new global::System.Data.DataColumn("status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstatus);
+                this.columnExpr6 = new global::System.Data.DataColumn("Expr6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr6);
+                this.columnidVehiculo2 = new global::System.Data.DataColumn("idVehiculo2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidVehiculo2);
+                this.columnmodeo1 = new global::System.Data.DataColumn("modeo1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmodeo1);
+                this.columnsubmarca1 = new global::System.Data.DataColumn("submarca1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsubmarca1);
+                this.columnmodeo2 = new global::System.Data.DataColumn("modeo2", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmodeo2);
+                this.columnmarca2 = new global::System.Data.DataColumn("marca2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmarca2);
+                this.columnsubmarca2 = new global::System.Data.DataColumn("submarca2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsubmarca2);
+                this.columnplacas2 = new global::System.Data.DataColumn("placas2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnplacas2);
+                this.columnnumeroSerie2 = new global::System.Data.DataColumn("numeroSerie2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumeroSerie2);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnidFolio}, true));
+                this.columnidFolio.AutoIncrement = true;
+                this.columnidFolio.AutoIncrementSeed = -1;
+                this.columnidFolio.AutoIncrementStep = -1;
+                this.columnidFolio.AllowDBNull = false;
+                this.columnidFolio.Unique = true;
+                this.columnfolio.AllowDBNull = false;
+                this.columnfolio.MaxLength = 20;
+                this.columnExpr2.AllowDBNull = false;
+                this.columnExpr3.AllowDBNull = false;
+                this.columnExpr3.MaxLength = 32;
+                this.columnExpr4.AllowDBNull = false;
+                this.columndias.AllowDBNull = false;
+                this.columninVig.AllowDBNull = false;
+                this.columnfinVig.AllowDBNull = false;
+                this.columnExpr1.AllowDBNull = false;
+                this.columnfechaEm.AllowDBNull = false;
+                this.columnprimaBienes.AllowDBNull = false;
+                this.columnprimaGm.AllowDBNull = false;
+                this.columnprimaDerPol.AllowDBNull = false;
+                this.columntotal.AllowDBNull = false;
+                this.columnnombreCod.AllowDBNull = false;
+                this.columnnombreCod.MaxLength = 150;
+                this.columnnombreCod2.MaxLength = 150;
+                this.columnedadCod.AllowDBNull = false;
+                this.columnocupacionCod.AllowDBNull = false;
+                this.columnocupacionCod.MaxLength = 100;
+                this.columnocupacionCod2.MaxLength = 100;
+                this.columnExpr5.AllowDBNull = false;
+                this.columnedoLicencia.AllowDBNull = false;
+                this.columnedoLicencia.MaxLength = 150;
+                this.columnedoLicencia2.MaxLength = 150;
+                this.columnmarca1.AllowDBNull = false;
+                this.columnmarca1.MaxLength = 150;
+                this.columnplacas1.AllowDBNull = false;
+                this.columnplacas1.MaxLength = 20;
+                this.columnnumeroSerie1.AllowDBNull = false;
+                this.columnnumeroSerie1.MaxLength = 50;
+                this.columnnombre.AllowDBNull = false;
+                this.columnnombre.MaxLength = 100;
+                this.columnrfcCliente.AllowDBNull = false;
+                this.columnrfcCliente.MaxLength = 50;
+                this.columnsexo.AllowDBNull = false;
+                this.columnsexo.MaxLength = 11;
+                this.columnfechaNacimiento.AllowDBNull = false;
+                this.columncalle.AllowDBNull = false;
+                this.columncalle.MaxLength = 99;
+                this.columnnoExterior.AllowDBNull = false;
+                this.columnnoExterior.MaxLength = 8;
+                this.columnnoInterior.AllowDBNull = false;
+                this.columnnoInterior.MaxLength = 8;
+                this.columncolonia.AllowDBNull = false;
+                this.columncolonia.MaxLength = 100;
+                this.columnestado.AllowDBNull = false;
+                this.columnestado.MaxLength = 100;
+                this.columnciudad.AllowDBNull = false;
+                this.columnciudad.MaxLength = 100;
+                this.columncp.AllowDBNull = false;
+                this.columncp.MaxLength = 5;
+                this.columnpais.AllowDBNull = false;
+                this.columnpais.MaxLength = 50;
+                this.columntelefono.AllowDBNull = false;
+                this.columntelefono.MaxLength = 30;
+                this.columncel.AllowDBNull = false;
+                this.columncel.MaxLength = 30;
+                this.columnemail.AllowDBNull = false;
+                this.columnemail.MaxLength = 99;
+                this.columnfechaAlta.AllowDBNull = false;
+                this.columnocupacion.AllowDBNull = false;
+                this.columnocupacion.MaxLength = 100;
+                this.columnobs.AllowDBNull = false;
+                this.columnobs.MaxLength = 512;
+                this.columnnoLicencia.AllowDBNull = false;
+                this.columnnoLicencia.MaxLength = 50;
+                this.columnestadoEmision.AllowDBNull = false;
+                this.columnestadoEmision.MaxLength = 50;
+                this.columnnoagente.AllowDBNull = false;
+                this.columnnoagente.MaxLength = 16;
+                this.columnstatus.AllowDBNull = false;
+                this.columnstatus.MaxLength = 150;
+                this.columnExpr6.AllowDBNull = false;
+                this.columnExpr6.MaxLength = 50;
+                this.columnmodeo1.AllowDBNull = false;
+                this.columnsubmarca1.AllowDBNull = false;
+                this.columnsubmarca1.MaxLength = 150;
+                this.columnmodeo2.AllowDBNull = false;
+                this.columnmarca2.AllowDBNull = false;
+                this.columnmarca2.MaxLength = 150;
+                this.columnsubmarca2.AllowDBNull = false;
+                this.columnsubmarca2.MaxLength = 150;
+                this.columnplacas2.AllowDBNull = false;
+                this.columnplacas2.MaxLength = 20;
+                this.columnnumeroSerie2.AllowDBNull = false;
+                this.columnnumeroSerie2.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public polizas_transmigrantesRow Newpolizas_transmigrantesRow() {
+                return ((polizas_transmigrantesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new polizas_transmigrantesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(polizas_transmigrantesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.polizas_transmigrantesRowChanged != null)) {
+                    this.polizas_transmigrantesRowChanged(this, new polizas_transmigrantesRowChangeEvent(((polizas_transmigrantesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.polizas_transmigrantesRowChanging != null)) {
+                    this.polizas_transmigrantesRowChanging(this, new polizas_transmigrantesRowChangeEvent(((polizas_transmigrantesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.polizas_transmigrantesRowDeleted != null)) {
+                    this.polizas_transmigrantesRowDeleted(this, new polizas_transmigrantesRowChangeEvent(((polizas_transmigrantesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.polizas_transmigrantesRowDeleting != null)) {
+                    this.polizas_transmigrantesRowDeleting(this, new polizas_transmigrantesRowChangeEvent(((polizas_transmigrantesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removepolizas_transmigrantesRow(polizas_transmigrantesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "polizas_transmigrantesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class tarifasautosRow : global::System.Data.DataRow {
@@ -3210,6 +4479,825 @@ namespace Seguros_American {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class polizas_transmigrantesRow : global::System.Data.DataRow {
+            
+            private polizas_transmigrantesDataTable tablepolizas_transmigrantes;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal polizas_transmigrantesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablepolizas_transmigrantes = ((polizas_transmigrantesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idFolio {
+                get {
+                    return ((int)(this[this.tablepolizas_transmigrantes.idFolioColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.idFolioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string folio {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.folioColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.folioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Expr2 {
+                get {
+                    return ((int)(this[this.tablepolizas_transmigrantes.Expr2Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.Expr2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Expr3 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.Expr3Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.Expr3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Expr4 {
+                get {
+                    return ((int)(this[this.tablepolizas_transmigrantes.Expr4Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.Expr4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int dias {
+                get {
+                    return ((int)(this[this.tablepolizas_transmigrantes.diasColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.diasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime inVig {
+                get {
+                    return ((global::System.DateTime)(this[this.tablepolizas_transmigrantes.inVigColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.inVigColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime finVig {
+                get {
+                    return ((global::System.DateTime)(this[this.tablepolizas_transmigrantes.finVigColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.finVigColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Expr1 {
+                get {
+                    return ((global::System.DateTime)(this[this.tablepolizas_transmigrantes.Expr1Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.Expr1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fechaEm {
+                get {
+                    return ((global::System.DateTime)(this[this.tablepolizas_transmigrantes.fechaEmColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.fechaEmColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan horaDesd {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tablepolizas_transmigrantes.horaDesdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'horaDesd\' de la tabla \'polizas_transmigrantes\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.horaDesdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan horaHast {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tablepolizas_transmigrantes.horaHastColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'horaHast\' de la tabla \'polizas_transmigrantes\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.horaHastColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float primaBienes {
+                get {
+                    return ((float)(this[this.tablepolizas_transmigrantes.primaBienesColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.primaBienesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float primaGm {
+                get {
+                    return ((float)(this[this.tablepolizas_transmigrantes.primaGmColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.primaGmColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float primaDerPol {
+                get {
+                    return ((float)(this[this.tablepolizas_transmigrantes.primaDerPolColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.primaDerPolColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float total {
+                get {
+                    return ((float)(this[this.tablepolizas_transmigrantes.totalColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.totalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombreCod {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.nombreCodColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.nombreCodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombreCod2 {
+                get {
+                    try {
+                        return ((string)(this[this.tablepolizas_transmigrantes.nombreCod2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombreCod2\' de la tabla \'polizas_transmigrantes\' es DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.nombreCod2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int edadCod {
+                get {
+                    return ((int)(this[this.tablepolizas_transmigrantes.edadCodColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.edadCodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int edadCod2 {
+                get {
+                    try {
+                        return ((int)(this[this.tablepolizas_transmigrantes.edadCod2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'edadCod2\' de la tabla \'polizas_transmigrantes\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.edadCod2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ocupacionCod {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.ocupacionCodColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.ocupacionCodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ocupacionCod2 {
+                get {
+                    try {
+                        return ((string)(this[this.tablepolizas_transmigrantes.ocupacionCod2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ocupacionCod2\' de la tabla \'polizas_transmigrantes\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.ocupacionCod2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Expr5 {
+                get {
+                    return ((int)(this[this.tablepolizas_transmigrantes.Expr5Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.Expr5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int noLicencia2 {
+                get {
+                    try {
+                        return ((int)(this[this.tablepolizas_transmigrantes.noLicencia2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'noLicencia2\' de la tabla \'polizas_transmigrantes\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.noLicencia2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string edoLicencia {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.edoLicenciaColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.edoLicenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string edoLicencia2 {
+                get {
+                    try {
+                        return ((string)(this[this.tablepolizas_transmigrantes.edoLicencia2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'edoLicencia2\' de la tabla \'polizas_transmigrantes\' es DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.edoLicencia2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string marca1 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.marca1Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.marca1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string placas1 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.placas1Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.placas1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string numeroSerie1 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.numeroSerie1Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.numeroSerie1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.nombreColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string rfcCliente {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.rfcClienteColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.rfcClienteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string sexo {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.sexoColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.sexoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fechaNacimiento {
+                get {
+                    return ((global::System.DateTime)(this[this.tablepolizas_transmigrantes.fechaNacimientoColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.fechaNacimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string calle {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.calleColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.calleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string noExterior {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.noExteriorColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.noExteriorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string noInterior {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.noInteriorColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.noInteriorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string colonia {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.coloniaColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.coloniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string estado {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.estadoColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.estadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ciudad {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.ciudadColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.ciudadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cp {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.cpColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.cpColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pais {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.paisColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.paisColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string telefono {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.telefonoColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.telefonoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cel {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.celColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.celColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string email {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.emailColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.emailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime fechaAlta {
+                get {
+                    return ((global::System.DateTime)(this[this.tablepolizas_transmigrantes.fechaAltaColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.fechaAltaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ocupacion {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.ocupacionColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.ocupacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string obs {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.obsColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.obsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string noLicencia {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.noLicenciaColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.noLicenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string estadoEmision {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.estadoEmisionColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.estadoEmisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string noagente {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.noagenteColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.noagenteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string status {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.statusColumn]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.statusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Expr6 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.Expr6Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.Expr6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int idVehiculo2 {
+                get {
+                    try {
+                        return ((int)(this[this.tablepolizas_transmigrantes.idVehiculo2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idVehiculo2\' de la tabla \'polizas_transmigrantes\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.idVehiculo2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int modeo1 {
+                get {
+                    return ((int)(this[this.tablepolizas_transmigrantes.modeo1Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.modeo1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string submarca1 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.submarca1Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.submarca1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int modeo2 {
+                get {
+                    return ((int)(this[this.tablepolizas_transmigrantes.modeo2Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.modeo2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string marca2 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.marca2Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.marca2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string submarca2 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.submarca2Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.submarca2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string placas2 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.placas2Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.placas2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string numeroSerie2 {
+                get {
+                    return ((string)(this[this.tablepolizas_transmigrantes.numeroSerie2Column]));
+                }
+                set {
+                    this[this.tablepolizas_transmigrantes.numeroSerie2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IshoraDesdNull() {
+                return this.IsNull(this.tablepolizas_transmigrantes.horaDesdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SethoraDesdNull() {
+                this[this.tablepolizas_transmigrantes.horaDesdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IshoraHastNull() {
+                return this.IsNull(this.tablepolizas_transmigrantes.horaHastColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SethoraHastNull() {
+                this[this.tablepolizas_transmigrantes.horaHastColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnombreCod2Null() {
+                return this.IsNull(this.tablepolizas_transmigrantes.nombreCod2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnombreCod2Null() {
+                this[this.tablepolizas_transmigrantes.nombreCod2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsedadCod2Null() {
+                return this.IsNull(this.tablepolizas_transmigrantes.edadCod2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetedadCod2Null() {
+                this[this.tablepolizas_transmigrantes.edadCod2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsocupacionCod2Null() {
+                return this.IsNull(this.tablepolizas_transmigrantes.ocupacionCod2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetocupacionCod2Null() {
+                this[this.tablepolizas_transmigrantes.ocupacionCod2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnoLicencia2Null() {
+                return this.IsNull(this.tablepolizas_transmigrantes.noLicencia2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnoLicencia2Null() {
+                this[this.tablepolizas_transmigrantes.noLicencia2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsedoLicencia2Null() {
+                return this.IsNull(this.tablepolizas_transmigrantes.edoLicencia2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetedoLicencia2Null() {
+                this[this.tablepolizas_transmigrantes.edoLicencia2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidVehiculo2Null() {
+                return this.IsNull(this.tablepolizas_transmigrantes.idVehiculo2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidVehiculo2Null() {
+                this[this.tablepolizas_transmigrantes.idVehiculo2Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3297,6 +5385,40 @@ namespace Seguros_American {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tarifasautos_2Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class polizas_transmigrantesRowChangeEvent : global::System.EventArgs {
+            
+            private polizas_transmigrantesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public polizas_transmigrantesRowChangeEvent(polizas_transmigrantesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public polizas_transmigrantesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -4480,6 +6602,257 @@ namespace Seguros_American.DataSet1TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(float p2, float p3, float p4, float p5, int p6, float p7, float p8, float p9, float p10) {
             return this.Update(p6, p2, p3, p4, p5, p6, p7, p8, p9, p10);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class polizas_transmigrantesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public polizas_transmigrantesTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "polizas_transmigrantes";
+            tableMapping.ColumnMappings.Add("idFolio", "idFolio");
+            tableMapping.ColumnMappings.Add("folio", "folio");
+            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
+            tableMapping.ColumnMappings.Add("Expr3", "Expr3");
+            tableMapping.ColumnMappings.Add("Expr4", "Expr4");
+            tableMapping.ColumnMappings.Add("dias", "dias");
+            tableMapping.ColumnMappings.Add("inVig", "inVig");
+            tableMapping.ColumnMappings.Add("finVig", "finVig");
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
+            tableMapping.ColumnMappings.Add("fechaEm", "fechaEm");
+            tableMapping.ColumnMappings.Add("horaDesd", "horaDesd");
+            tableMapping.ColumnMappings.Add("horaHast", "horaHast");
+            tableMapping.ColumnMappings.Add("primaBienes", "primaBienes");
+            tableMapping.ColumnMappings.Add("primaGm", "primaGm");
+            tableMapping.ColumnMappings.Add("primaDerPol", "primaDerPol");
+            tableMapping.ColumnMappings.Add("total", "total");
+            tableMapping.ColumnMappings.Add("nombreCod", "nombreCod");
+            tableMapping.ColumnMappings.Add("nombreCod2", "nombreCod2");
+            tableMapping.ColumnMappings.Add("edadCod", "edadCod");
+            tableMapping.ColumnMappings.Add("edadCod2", "edadCod2");
+            tableMapping.ColumnMappings.Add("ocupacionCod", "ocupacionCod");
+            tableMapping.ColumnMappings.Add("ocupacionCod2", "ocupacionCod2");
+            tableMapping.ColumnMappings.Add("Expr5", "Expr5");
+            tableMapping.ColumnMappings.Add("noLicencia2", "noLicencia2");
+            tableMapping.ColumnMappings.Add("edoLicencia", "edoLicencia");
+            tableMapping.ColumnMappings.Add("edoLicencia2", "edoLicencia2");
+            tableMapping.ColumnMappings.Add("marca1", "marca1");
+            tableMapping.ColumnMappings.Add("placas1", "placas1");
+            tableMapping.ColumnMappings.Add("numeroSerie1", "numeroSerie1");
+            tableMapping.ColumnMappings.Add("nombre", "nombre");
+            tableMapping.ColumnMappings.Add("rfcCliente", "rfcCliente");
+            tableMapping.ColumnMappings.Add("sexo", "sexo");
+            tableMapping.ColumnMappings.Add("fechaNacimiento", "fechaNacimiento");
+            tableMapping.ColumnMappings.Add("calle", "calle");
+            tableMapping.ColumnMappings.Add("noExterior", "noExterior");
+            tableMapping.ColumnMappings.Add("noInterior", "noInterior");
+            tableMapping.ColumnMappings.Add("colonia", "colonia");
+            tableMapping.ColumnMappings.Add("estado", "estado");
+            tableMapping.ColumnMappings.Add("ciudad", "ciudad");
+            tableMapping.ColumnMappings.Add("cp", "cp");
+            tableMapping.ColumnMappings.Add("pais", "pais");
+            tableMapping.ColumnMappings.Add("telefono", "telefono");
+            tableMapping.ColumnMappings.Add("cel", "cel");
+            tableMapping.ColumnMappings.Add("email", "email");
+            tableMapping.ColumnMappings.Add("fechaAlta", "fechaAlta");
+            tableMapping.ColumnMappings.Add("ocupacion", "ocupacion");
+            tableMapping.ColumnMappings.Add("obs", "obs");
+            tableMapping.ColumnMappings.Add("noLicencia", "noLicencia");
+            tableMapping.ColumnMappings.Add("estadoEmision", "estadoEmision");
+            tableMapping.ColumnMappings.Add("noagente", "noagente");
+            tableMapping.ColumnMappings.Add("status", "status");
+            tableMapping.ColumnMappings.Add("Expr6", "Expr6");
+            tableMapping.ColumnMappings.Add("idVehiculo2", "idVehiculo2");
+            tableMapping.ColumnMappings.Add("modeo1", "modeo1");
+            tableMapping.ColumnMappings.Add("submarca1", "submarca1");
+            tableMapping.ColumnMappings.Add("modeo2", "modeo2");
+            tableMapping.ColumnMappings.Add("marca2", "marca2");
+            tableMapping.ColumnMappings.Add("submarca2", "submarca2");
+            tableMapping.ColumnMappings.Add("placas2", "placas2");
+            tableMapping.ColumnMappings.Add("numeroSerie2", "numeroSerie2");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::Seguros_American.Properties.Settings.Default.seguros_americanosConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT polizas_americanas.idFolio, polizas_americanas.folio, polizas_americanas.i" +
+                "dCliente AS Expr2, polizas_americanas.usuario AS Expr3, polizas_americanas.idVeh" +
+                "iculo AS Expr4, polizas_americanas.dias, polizas_americanas.inVig, polizas_ameri" +
+                "canas.finVig, polizas_americanas.fechaAlta AS Expr1, polizas_americanas.fechaEm," +
+                " polizas_americanas.horaDesd, polizas_americanas.horaHast, polizas_americanas.pr" +
+                "imaBienes, polizas_americanas.primaGm, polizas_americanas.primaDerPol, polizas_a" +
+                "mericanas.total, polizas_americanas.nombreCod, polizas_americanas.nombreCod2, po" +
+                "lizas_americanas.edadCod, polizas_americanas.edadCod2, polizas_americanas.ocupac" +
+                "ionCod, polizas_americanas.ocupacionCod2, polizas_americanas.noLicencia AS Expr5" +
+                ", polizas_americanas.noLicencia2, polizas_americanas.edoLicencia, polizas_americ" +
+                "anas.edoLicencia2, \r\nv1.modelo AS modeo1,v1.marca AS marca1, v1.subMarca AS subm" +
+                "arca1, v1.placas AS placas1, v1.numeroSerie AS numeroSerie1,\r\nv2.modelo AS modeo" +
+                "2,v2.marca AS marca2, v2.subMarca AS submarca2, v2.placas AS placas2, v2.numeroS" +
+                "erie AS numeroSerie2,\r\nclientes.nombre, clientes.rfcCliente, clientes.sexo, clie" +
+                "ntes.fechaNacimiento, clientes.calle, clientes.noExterior, clientes.noInterior, " +
+                "clientes.colonia, clientes.estado, clientes.ciudad, clientes.cp, clientes.pais, " +
+                "\r\n                         clientes.telefono, clientes.cel, clientes.email, clie" +
+                "ntes.fechaAlta, clientes.ocupacion, clientes.obs, clientes.noLicencia, clientes." +
+                "estadoEmision, usuarios.noagente, polizas_americanas.status, \r\n                 " +
+                "        polizas_americanas.tipo AS Expr6, polizas_americanas.idVehiculo2\r\nFROM  " +
+                "          polizas_americanas \r\nINNER JOIN\r\n                         clientes ON " +
+                "polizas_americanas.idCliente = clientes.idCliente\r\n INNER JOIN \r\nvehiculos_clien" +
+                "te AS v1 \r\nON polizas_americanas.idVehiculo = v1.idVehiculo \r\nINNER JOIN \r\nvehic" +
+                "ulos_cliente AS v2\r\nON polizas_americanas.idVehiculo2 = v2.idVehiculo\r\n\r\nINNER J" +
+                "OIN\r\n                         usuarios ON polizas_americanas.usuario = usuarios." +
+                "usuario";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSet1.polizas_transmigrantesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSet1.polizas_transmigrantesDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.polizas_transmigrantesDataTable dataTable = new DataSet1.polizas_transmigrantesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
