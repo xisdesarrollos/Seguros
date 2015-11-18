@@ -166,6 +166,12 @@ namespace Seguros_American.Forms
                                       .Where(c => c.GetType() == type);
         }
 
+        private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Rob
+            Application.Exit();
+        }
+
       
         
         

@@ -34,6 +34,8 @@
             this.txtUsuario = new Elegant.Ui.TextBox();
             this.txtServer = new Elegant.Ui.TextBox();
             this.btnGuardar = new Elegant.Ui.Button();
+            this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
+            this.label2 = new Elegant.Ui.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +46,7 @@
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.txtServer);
             this.groupBox1.Id = "c4ca1365-98fa-4a99-82b7-a9502686e767";
-            this.groupBox1.Location = new System.Drawing.Point(9, 9);
+            this.groupBox1.Location = new System.Drawing.Point(10, 68);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(322, 138);
             this.groupBox1.TabIndex = 3;
@@ -93,7 +95,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Id = "81358128-bbfd-4f70-8b26-733cfa17764f";
-            this.btnGuardar.Location = new System.Drawing.Point(256, 155);
+            this.btnGuardar.Location = new System.Drawing.Point(256, 217);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
             this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -101,21 +103,42 @@
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // formFrameSkinner
+            // 
+            this.formFrameSkinner.Form = this;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(-1, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(364, 42);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "CONFIGURACIÓN MYSQL";
+            this.label2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.UseVisualThemeForBackground = false;
+            this.label2.UseVisualThemeForForeground = false;
+            // 
             // FrmBaseDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 217);
+            this.ClientSize = new System.Drawing.Size(344, 286);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnGuardar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmBaseDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Configuración MySQL";
             this.Load += new System.EventHandler(this.FrmBaseDatos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -127,5 +150,7 @@
         private Elegant.Ui.TextBox txtUsuario;
         private Elegant.Ui.TextBox txtServer;
         private Elegant.Ui.Button btnGuardar;
+        private Elegant.Ui.FormFrameSkinner formFrameSkinner;
+        private Elegant.Ui.Label label2;
     }
 }

@@ -263,6 +263,16 @@ namespace Seguros_American.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exit48 {
+            get {
+                object obj = ResourceManager.GetObject("exit48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Folder_32 {
             get {
                 object obj = ResourceManager.GetObject("Folder_32", resourceCulture);
@@ -286,6 +296,16 @@ namespace Seguros_American.Properties {
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new32 {
+            get {
+                object obj = ResourceManager.GetObject("new32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

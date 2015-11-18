@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new Elegant.Ui.Label();
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.dgvTarifa = new System.Windows.Forms.DataGridView();
             this.diasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.tarifasautosTableAdapter = new Seguros_American.DataSet1TableAdapters.tarifasautosTableAdapter();
             this.tarifasautos2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tarifasautos_2TableAdapter = new Seguros_American.DataSet1TableAdapters.tarifasautos_2TableAdapter();
+            this.label2 = new Elegant.Ui.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tarifasautosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
@@ -54,23 +54,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.tarifasautos2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(113, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(352, 33);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "TARIFAS AUTOS ";
-            this.label1.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // formFrameSkinner
             // 
             this.formFrameSkinner.Form = this;
             // 
             // dgvTarifa
             // 
-            this.dgvTarifa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvTarifa.AutoGenerateColumns = false;
             this.dgvTarifa.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvTarifa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -80,9 +69,9 @@
             this.dpDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn});
             this.dgvTarifa.DataSource = this.tarifasautosBindingSource1;
-            this.dgvTarifa.Location = new System.Drawing.Point(26, 96);
+            this.dgvTarifa.Location = new System.Drawing.Point(14, 95);
             this.dgvTarifa.Name = "dgvTarifa";
-            this.dgvTarifa.Size = new System.Drawing.Size(544, 631);
+            this.dgvTarifa.Size = new System.Drawing.Size(543, 413);
             this.dgvTarifa.TabIndex = 1;
             this.dgvTarifa.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarifa_CellEndEdit);
             this.dgvTarifa.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvTarifa_DataError);
@@ -130,17 +119,17 @@
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.EnforceConstraints = false;
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnTarifaGuardar
             // 
-            this.btnTarifaGuardar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnTarifaGuardar.Id = "eb7a0091-c9f9-42b6-9222-e0183ff7d5e4";
-            this.btnTarifaGuardar.Location = new System.Drawing.Point(505, 742);
+            this.btnTarifaGuardar.Location = new System.Drawing.Point(492, 514);
             this.btnTarifaGuardar.Name = "btnTarifaGuardar";
             this.btnTarifaGuardar.Size = new System.Drawing.Size(65, 59);
             this.btnTarifaGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
-            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources._48guardar)});
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.ok48)});
             this.btnTarifaGuardar.TabIndex = 6;
             this.btnTarifaGuardar.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -153,7 +142,7 @@
             "TARIFA 30/60/25",
             "TARIFA ALTERNATIVA"});
             this.cmbTarifa.LabelText = "Tarifa:";
-            this.cmbTarifa.Location = new System.Drawing.Point(22, 53);
+            this.cmbTarifa.Location = new System.Drawing.Point(14, 71);
             this.cmbTarifa.Name = "cmbTarifa";
             this.cmbTarifa.Size = new System.Drawing.Size(243, 21);
             this.cmbTarifa.TabIndex = 7;
@@ -180,19 +169,34 @@
             // 
             this.tarifasautos_2TableAdapter.ClearBeforeFill = true;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(-12, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(589, 42);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "TARIFAS AUTOS";
+            this.label2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.UseVisualThemeForBackground = false;
+            this.label2.UseVisualThemeForForeground = false;
+            // 
             // FrmGestionTarifasVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 810);
+            this.ClientSize = new System.Drawing.Size(569, 578);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbTarifa);
             this.Controls.Add(this.btnTarifaGuardar);
             this.Controls.Add(this.dgvTarifa);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmGestionTarifasVehiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gestión Tarifas Vehiculos";
             this.Load += new System.EventHandler(this.FrmTarifasAutos_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.d);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarifa)).EndInit();
@@ -208,7 +212,6 @@
 
         #endregion
 
-        private Elegant.Ui.Label label1;
         private Elegant.Ui.FormFrameSkinner formFrameSkinner;
         private System.Windows.Forms.DataGridView dgvTarifa;
         private DataSet1 dataSet1;
@@ -225,6 +228,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gmDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private Elegant.Ui.Label label2;
 
     }
 }

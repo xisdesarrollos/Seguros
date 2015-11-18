@@ -154,7 +154,7 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="log4net" version="1.2.10.0" publicKeyToken="692FBEA5521E1304" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="log4net" version="1.2.10.0" publicKeyToken="692FBEA5521E1304" language="neutral" processorArchitecture="x86" />
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -524,26 +524,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Seguros American.exe" size="565264">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Seguros American.exe" size="572944">
       <assemblyIdentity name="Seguros American" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jl6iB8/+J2e8xQ7zJyGRQ/a61RWspNHEp4cpCUzGytc=</dsig:DigestValue>
+        <dsig:DigestValue>2yjg9dll/esGhyFwl1zBMUZ1IfOhZOqvQ8rkk/8J41k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stdole.dll" size="32408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stdole.dll" size="32416">
       <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>e7GAY4jkz3nqgF4d+XlONwnN/PrnOZfRZAfBSLWQlVY=</dsig:DigestValue>
+        <dsig:DigestValue>V7mfoRRmE6RC/ZLNxKdhZgTrwNymvx0W/KmNUJKMI7I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -44,6 +44,7 @@
             this.groupObs = new Elegant.Ui.GroupBox();
             this.txtBoxObs = new Elegant.Ui.TextBox();
             this.btnGuardar = new Elegant.Ui.Button();
+            this.label2 = new Elegant.Ui.Label();
             this.groupAuto.SuspendLayout();
             this.groupCliente.SuspendLayout();
             this.groupObs.SuspendLayout();
@@ -63,9 +64,9 @@
             this.groupAuto.Controls.Add(this.cmbMarca);
             this.groupAuto.Controls.Add(this.txtSub);
             this.groupAuto.Id = "833c2dfa-0304-4fd6-b8ac-843fb6310f6c";
-            this.groupAuto.Location = new System.Drawing.Point(16, 92);
+            this.groupAuto.Location = new System.Drawing.Point(16, 164);
             this.groupAuto.Name = "groupAuto";
-            this.groupAuto.Size = new System.Drawing.Size(469, 234);
+            this.groupAuto.Size = new System.Drawing.Size(469, 181);
             this.groupAuto.TabIndex = 3;
             this.groupAuto.Text = "Informacón del automovil";
             // 
@@ -109,7 +110,7 @@
             "YUCATÁN",
             "ZACATECAS"});
             this.cmbEstado.LabelText = "Estado de las Placas:";
-            this.cmbEstado.Location = new System.Drawing.Point(237, 133);
+            this.cmbEstado.Location = new System.Drawing.Point(239, 99);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(212, 21);
             this.cmbEstado.TabIndex = 8;
@@ -122,18 +123,18 @@
             this.cmbModelo.FormattingEnabled = false;
             this.cmbModelo.Id = "e7a5ebf1-988b-406a-9744-e3d8a47a6a7d";
             this.cmbModelo.LabelText = "Modelo:";
-            this.cmbModelo.Location = new System.Drawing.Point(21, 89);
+            this.cmbModelo.Location = new System.Drawing.Point(59, 72);
             this.cmbModelo.Name = "cmbModelo";
-            this.cmbModelo.Size = new System.Drawing.Size(201, 21);
+            this.cmbModelo.Size = new System.Drawing.Size(156, 21);
             this.cmbModelo.TabIndex = 5;
-            this.cmbModelo.TextEditorWidth = 141;
+            this.cmbModelo.TextEditorWidth = 96;
             // 
             // cmbTipo
             // 
             this.cmbTipo.FormattingEnabled = false;
             this.cmbTipo.Id = "afb48d49-4a83-4bf8-ab46-d7ec4dea3255";
             this.cmbTipo.LabelText = "Tipo de Vehiculo:";
-            this.cmbTipo.Location = new System.Drawing.Point(21, 45);
+            this.cmbTipo.Location = new System.Drawing.Point(14, 45);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(201, 21);
             this.cmbTipo.TabIndex = 3;
@@ -144,22 +145,22 @@
             this.txtPlacas.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPlacas.Id = "8b2043c5-42c8-4a86-8077-16d279f73885";
             this.txtPlacas.LabelText = "Placas:";
-            this.txtPlacas.Location = new System.Drawing.Point(21, 133);
+            this.txtPlacas.Location = new System.Drawing.Point(62, 99);
             this.txtPlacas.Name = "txtPlacas";
-            this.txtPlacas.Size = new System.Drawing.Size(201, 21);
+            this.txtPlacas.Size = new System.Drawing.Size(153, 21);
             this.txtPlacas.TabIndex = 7;
-            this.txtPlacas.TextEditorWidth = 157;
+            this.txtPlacas.TextEditorWidth = 109;
             // 
             // txtNoS
             // 
             this.txtNoS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNoS.Id = "f8b3eb43-154a-475a-adc3-6c0a850088b5";
             this.txtNoS.LabelText = "Número de Serie:";
-            this.txtNoS.Location = new System.Drawing.Point(116, 177);
+            this.txtNoS.Location = new System.Drawing.Point(40, 133);
             this.txtNoS.Name = "txtNoS";
-            this.txtNoS.Size = new System.Drawing.Size(193, 21);
+            this.txtNoS.Size = new System.Drawing.Size(420, 21);
             this.txtNoS.TabIndex = 9;
-            this.txtNoS.TextEditorWidth = 102;
+            this.txtNoS.TextEditorWidth = 329;
             // 
             // cmbMarca
             // 
@@ -168,18 +169,18 @@
             this.cmbMarca.FormattingEnabled = false;
             this.cmbMarca.Id = "eb3f3480-fec0-44ac-8e3b-261f72d423cd";
             this.cmbMarca.LabelText = "Marca:";
-            this.cmbMarca.Location = new System.Drawing.Point(237, 45);
+            this.cmbMarca.Location = new System.Drawing.Point(255, 45);
             this.cmbMarca.Name = "cmbMarca";
-            this.cmbMarca.Size = new System.Drawing.Size(212, 21);
+            this.cmbMarca.Size = new System.Drawing.Size(196, 21);
             this.cmbMarca.TabIndex = 4;
-            this.cmbMarca.TextEditorWidth = 157;
+            this.cmbMarca.TextEditorWidth = 141;
             // 
             // txtSub
             // 
             this.txtSub.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSub.Id = "28dd927f-7ec3-400f-aa00-59791bf1c0b0";
             this.txtSub.LabelText = "Submarca:";
-            this.txtSub.Location = new System.Drawing.Point(235, 89);
+            this.txtSub.Location = new System.Drawing.Point(237, 72);
             this.txtSub.Name = "txtSub";
             this.txtSub.Size = new System.Drawing.Size(214, 21);
             this.txtSub.TabIndex = 6;
@@ -202,7 +203,7 @@
             this.groupCliente.Controls.Add(this.btnBuscarCliente);
             this.groupCliente.Controls.Add(this.txtNoCliente);
             this.groupCliente.Id = "3f85fe7e-2cdf-4dfc-aab3-800176f1f18d";
-            this.groupCliente.Location = new System.Drawing.Point(16, 17);
+            this.groupCliente.Location = new System.Drawing.Point(16, 89);
             this.groupCliente.Name = "groupCliente";
             this.groupCliente.Size = new System.Drawing.Size(469, 55);
             this.groupCliente.TabIndex = 0;
@@ -231,9 +232,9 @@
             // 
             this.groupObs.Controls.Add(this.txtBoxObs);
             this.groupObs.Id = "efdb789f-caf0-4468-817b-28d2fbe5a900";
-            this.groupObs.Location = new System.Drawing.Point(16, 343);
+            this.groupObs.Location = new System.Drawing.Point(9, 356);
             this.groupObs.Name = "groupObs";
-            this.groupObs.Size = new System.Drawing.Size(469, 101);
+            this.groupObs.Size = new System.Drawing.Size(476, 101);
             this.groupObs.TabIndex = 10;
             this.groupObs.Text = "Observaciones:";
             // 
@@ -243,14 +244,14 @@
             this.txtBoxObs.Location = new System.Drawing.Point(10, 17);
             this.txtBoxObs.Multiline = true;
             this.txtBoxObs.Name = "txtBoxObs";
-            this.txtBoxObs.Size = new System.Drawing.Size(450, 71);
+            this.txtBoxObs.Size = new System.Drawing.Size(457, 71);
             this.txtBoxObs.TabIndex = 10;
-            this.txtBoxObs.TextEditorWidth = 444;
+            this.txtBoxObs.TextEditorWidth = 451;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Id = "79bfdc32-d0f8-4cb3-9df4-cddcb6a3e2df";
-            this.btnGuardar.Location = new System.Drawing.Point(410, 451);
+            this.btnGuardar.Location = new System.Drawing.Point(410, 470);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 63);
             this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -258,19 +259,35 @@
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(-6, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(515, 42);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "NUEVO VEHICULO";
+            this.label2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.UseVisualThemeForBackground = false;
+            this.label2.UseVisualThemeForForeground = false;
+            // 
             // FrmNuevoVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 534);
+            this.ClientSize = new System.Drawing.Size(502, 539);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupObs);
             this.Controls.Add(this.groupCliente);
             this.Controls.Add(this.groupAuto);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmNuevoVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo Vehiculo";
             this.Load += new System.EventHandler(this.FrmCatalogoVehiculos_Load);
             this.groupAuto.ResumeLayout(false);
             this.groupAuto.PerformLayout();
@@ -279,6 +296,7 @@
             this.groupObs.ResumeLayout(false);
             this.groupObs.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -300,5 +318,6 @@
         private Elegant.Ui.Button btnBuscarCliente;
         private Elegant.Ui.Label lblNombreCliente;
         private Elegant.Ui.ComboBox cmbEstado;
+        private Elegant.Ui.Label label2;
     }
 }

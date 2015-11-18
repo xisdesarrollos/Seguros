@@ -336,6 +336,11 @@ namespace Seguros_American.Forms.Clientes
 
         }
 
+        private void groupBoxClientes_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         
         
        

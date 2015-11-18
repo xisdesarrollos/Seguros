@@ -38,6 +38,7 @@
             this.formFrameSkinner = new Elegant.Ui.FormFrameSkinner();
             this.btnGuardar = new Elegant.Ui.Button();
             this.virtualGridControl1 = new Elegant.Ui.Grid.VirtualGridControl();
+            this.label2 = new Elegant.Ui.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.virtualGridControl1)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,7 @@
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Id = "c26d9906-e020-47ff-815a-7238e148f4f0";
-            this.groupBox1.Location = new System.Drawing.Point(9, 13);
+            this.groupBox1.Location = new System.Drawing.Point(9, 71);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(519, 141);
             this.groupBox1.TabIndex = 0;
@@ -134,8 +135,8 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Id = "81358128-bbfd-4f70-8b26-733cfa17764f";
-            this.btnGuardar.Location = new System.Drawing.Point(453, 161);
+            this.btnGuardar.Id = "ea4551cf-5b82-494a-a4b6-9ecf3a9fb9c4";
+            this.btnGuardar.Location = new System.Drawing.Point(453, 219);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 56);
             this.btnGuardar.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
@@ -157,22 +158,39 @@
             this.virtualGridControl1.VerticalScrollBarEnabled = true;
             this.virtualGridControl1.VerticalScrollBarVisible = true;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Gray;
+            this.label2.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(-10, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(565, 42);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "NUEVO USUARIO";
+            this.label2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.UseVisualThemeForBackground = false;
+            this.label2.UseVisualThemeForForeground = false;
+            // 
             // FrmNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 222);
+            this.ClientSize = new System.Drawing.Size(539, 287);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmNuevoUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nuevo Usuario";
             this.Load += new System.EventHandler(this.NuevoUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.virtualGridControl1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -188,5 +206,6 @@
         private Elegant.Ui.Button btnGuardar;
         private Elegant.Ui.Grid.VirtualGridControl virtualGridControl1;
         private Elegant.Ui.MaskedTextBox txtNoagente;
+        private Elegant.Ui.Label label2;
     }
 }

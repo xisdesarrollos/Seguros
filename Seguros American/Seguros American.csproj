@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Josue Santacruz\Desktop\</PublishUrl>
+    <PublishUrl>publish/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -368,6 +368,8 @@
     <Folder Include="Forms\Operaciones\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\new32.png" />
+    <None Include="Resources\exit48.png" />
     <None Include="Resources\delete243.png" />
     <None Include="Resources\delete242.png" />
     <None Include="Resources\16Editar1.png" />
@@ -448,6 +450,16 @@
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="BetterListViewExpress">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="log4net">
       <Visible>False</Visible>
       <Group>
       </Group>

@@ -80,6 +80,12 @@ namespace Seguros_American
             bd = new Basedatos();
         }
 
+        private void btnCancela_Click_1(object sender, EventArgs e)
+        {
+            //Rob
+            Application.Exit();
+        }
+
         
 
     }

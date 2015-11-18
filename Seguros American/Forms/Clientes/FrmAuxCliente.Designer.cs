@@ -93,14 +93,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 312);
+            this.ClientSize = new System.Drawing.Size(458, 310);
             this.Controls.Add(this.btnNuevoCliente);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.txtCriterio);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmAuxCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Auxiliar Cliente";
+            this.Text = "Busqueda por cliente";
             this.Load += new System.EventHandler(this.FrmAuxCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);

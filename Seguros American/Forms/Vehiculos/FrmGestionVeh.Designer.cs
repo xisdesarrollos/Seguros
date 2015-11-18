@@ -42,6 +42,7 @@
             this.btnEditarVehiculo = new Elegant.Ui.Button();
             this.btnEliminarVehiculo = new Elegant.Ui.Button();
             this.contextMenuExtenderProvider1 = new Elegant.Ui.ContextMenuExtenderProvider(this.components);
+            this.label2 = new Elegant.Ui.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
             this.groupFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).BeginInit();
@@ -74,11 +75,11 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvVehiculos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVehiculos.GridColor = System.Drawing.SystemColors.Window;
-            this.dgvVehiculos.Location = new System.Drawing.Point(11, 106);
+            this.dgvVehiculos.Location = new System.Drawing.Point(11, 134);
             this.dgvVehiculos.Name = "dgvVehiculos";
             this.dgvVehiculos.RowHeadersVisible = false;
             this.dgvVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehiculos.Size = new System.Drawing.Size(1267, 497);
+            this.dgvVehiculos.Size = new System.Drawing.Size(1275, 477);
             this.dgvVehiculos.TabIndex = 14;
             this.dgvVehiculos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVehiculos_CellValueChanged);
             // 
@@ -91,9 +92,9 @@
             this.groupFiltro.Controls.Add(this.cmbFiltro);
             this.groupFiltro.Controls.Add(this.btnMostrarTodos);
             this.groupFiltro.Id = "c4d31b6a-286b-427b-aecd-87ee16dc8b03";
-            this.groupFiltro.Location = new System.Drawing.Point(4, 2);
+            this.groupFiltro.Location = new System.Drawing.Point(11, 60);
             this.groupFiltro.Name = "groupFiltro";
-            this.groupFiltro.Size = new System.Drawing.Size(1276, 100);
+            this.groupFiltro.Size = new System.Drawing.Size(1277, 70);
             this.groupFiltro.TabIndex = 15;
             // 
             // btnNuevo
@@ -101,9 +102,11 @@
             this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevo.Id = "0ded2b42-9c1f-4ca4-82ad-3d4aae35331e";
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(1144, 16);
+            this.btnNuevo.Location = new System.Drawing.Point(1132, 14);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(108, 45);
+            this.btnNuevo.Size = new System.Drawing.Size(136, 45);
+            this.btnNuevo.SmallImages.Images.AddRange(new Elegant.Ui.ControlImage[] {
+            new Elegant.Ui.ControlImage("Normal", global::Seguros_American.Properties.Resources.new32)});
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Nuevo Vehiculo..  ";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -115,9 +118,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCriterio.Id = "87770c17-b79f-4694-a7a1-f8c7bf3c3c68";
             this.txtCriterio.LabelText = "Criterio:";
-            this.txtCriterio.Location = new System.Drawing.Point(419, 28);
+            this.txtCriterio.Location = new System.Drawing.Point(419, 26);
             this.txtCriterio.Name = "txtCriterio";
-            this.txtCriterio.Size = new System.Drawing.Size(543, 21);
+            this.txtCriterio.Size = new System.Drawing.Size(544, 21);
             this.txtCriterio.TabIndex = 1;
             this.txtCriterio.TextEditorWidth = 244;
             this.txtCriterio.TextChanged += new System.EventHandler(this.txtCriterio_TextChanged);
@@ -136,7 +139,7 @@
             "PLACAS",
             "NUMEROSERIE"});
             this.cmbFiltro.LabelText = "Filtrar por:";
-            this.cmbFiltro.Location = new System.Drawing.Point(31, 28);
+            this.cmbFiltro.Location = new System.Drawing.Point(31, 26);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(352, 21);
             this.cmbFiltro.TabIndex = 0;
@@ -147,7 +150,7 @@
             this.btnMostrarTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMostrarTodos.Id = "b7d2eae5-43e7-428d-8607-32ecb3f22c93";
             this.btnMostrarTodos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMostrarTodos.Location = new System.Drawing.Point(1029, 20);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(985, 16);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(82, 38);
             this.btnMostrarTodos.TabIndex = 2;
@@ -188,11 +191,26 @@
             this.btnEliminarVehiculo.Text = "Eliminar";
             this.btnEliminarVehiculo.Click += new System.EventHandler(this.btnEliminarVehiculo_Click);
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(-6, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1320, 42);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "GESTIÓN DE VEHICULOS";
+            this.label2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.UseVisualThemeForBackground = false;
+            this.label2.UseVisualThemeForForeground = false;
+            // 
             // FrmGestionVeh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1289, 612);
+            this.ClientSize = new System.Drawing.Size(1297, 620);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvVehiculos);
             this.Controls.Add(this.groupFiltro);
             this.MinimumSize = new System.Drawing.Size(600, 300);
@@ -206,6 +224,7 @@
             this.groupFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contextMenu1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -222,5 +241,6 @@
         private Elegant.Ui.ContextMenu contextMenu1;
         private Elegant.Ui.Button btnEditarVehiculo;
         private Elegant.Ui.Button btnEliminarVehiculo;
+        private Elegant.Ui.Label label2;
     }
 }
